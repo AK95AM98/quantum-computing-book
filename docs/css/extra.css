@@ -1,0 +1,73 @@
+/* ── Business Implication admonition (tip variant) ── */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-left-color: #1565C0;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(21, 101, 192, 0.1);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #1565C0;
+}
+
+/* ── Delivered / Projected / Controversial ── */
+.md-typeset .admonition.success { border-left-color: #2E7D32; }
+.md-typeset .admonition.danger  { border-left-color: #B71C1C; }
+
+/* ── Figure captions ── */
+figure {
+  text-align: center;
+  margin: 2em auto;
+}
+figcaption {
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.5em;
+}
+
+/* ── MicroSim iframes ── */
+.microsim-container {
+  width: 100%;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+.microsim-container iframe {
+  width: 100%;
+  height: 560px;
+  border: none;
+  display: block;
+}
+
+/* ── Quiz collapsible answers ── */
+.md-typeset details.success > summary {
+  background-color: rgba(46, 125, 50, 0.1);
+}
+
+/* ── Chapter summary box ── */
+.md-typeset .admonition.abstract {
+  border-left-color: #6A1B9A;
+}
+.md-typeset .abstract > .admonition-title {
+  background-color: rgba(106, 27, 154, 0.1);
+}
+
+/* ── Vendor label badges ── */
+.badge-delivered    { background: #2E7D32; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+.badge-projected    { background: #F57F17; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+.badge-controversial { background: #B71C1C; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.8em; }
+
+/* ── Tables ── */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* ── Code blocks ── */
+.md-typeset pre > code {
+  font-size: 0.85em;
+}

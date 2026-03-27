@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Computing Learning Graph</title>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1a2540;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #header {
+      background: #1a2540;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    #toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: #fff;
+      border-bottom: 1px solid #d0d8e8;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    #toolbar label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    #toolbar select,
+    #toolbar input[type="text"] {
+      font-size: 13px;
+      padding: 4px 8px;
+      border: 1px solid #c0c8d8;
+      border-radius: 4px;
+      outline: none;
+      background: #f8f9fb;
+    }
+
+    #toolbar select:focus,
+    #toolbar input[type="text"]:focus {
+      border-color: #3498db;
+      background: #fff;
+    }
+
+    #toolbar input[type="text"] {
+      width: 160px;
+    }
+
+    #toolbar button {
+      padding: 4px 14px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    #toolbar button:hover { background: #2176ae; }
+
+    #main-area {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    #graph-container {
+      flex: 1;
+      height: 600px;
+      min-height: 400px;
+      background: #ffffff;
+      border-right: 1px solid #d0d8e8;
+      position: relative;
+    }
+
+    /* vis-network navigation buttons */
+    #graph-container .vis-navigation {
+      bottom: 8px;
+      right: 8px;
+    }
+
+    #sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      overflow-y: auto;
+    }
+
+    #info-panel {
+      padding: 14px;
+      border-bottom: 1px solid #e8ecf0;
+    }
+
+    #info-panel h3 {
+      font-size: 14px;
+      color: #1a2540;
+      margin-bottom: 8px;
+    }
+
+    #info-panel p, #info-panel table {
+      font-size: 13px;
+      color: #555;
+    }
+
+    #info-panel table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #info-panel table td {
+      padding: 3px 4px;
+      vertical-align: top;
+    }
+
+    #info-panel table td:first-child {
+      width: 95px;
+      color: #888;
+    }
+
+    #info-placeholder {
+      color: #aaa;
+      font-style: italic;
+      font-size: 13px;
+    }
+
+    #legend {
+      padding: 12px 14px;
+      font-size: 12px;
+      color: #444;
+      border-top: 1px solid #e8ecf0;
+    }
+
+    #legend strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin: 2px 4px 2px 0;
+      white-space: nowrap;
+    }
+
+    .legend-swatch {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">Quantum Computing — Learning Graph</div>
+  <div id="app">
+    <!-- toolbar, graph-container, info-panel, legend injected by JS -->
+  </div>
+
+  <script>
+    // Wrap graph-container and sidebar in a flex row
+    document.addEventListener("DOMContentLoaded", () => {
+      const app = document.getElementById("app");
+      // The JS will inject #toolbar into #app, then we restructure
+    });
+  </script>
+  <script src="learning-graph.js"></script>
+  <script>
+    // After JS builds toolbar + graph-container + info-panel + legend,
+    // wrap graph-container and sidebar in a row div.
+    document.addEventListener("DOMContentLoaded", () => {
+      // Give vis-network a moment to populate, then restructure layout
+      requestAnimationFrame(() => {
+        const app = document.getElementById("app");
+        const toolbar = document.getElementById("toolbar");
+        const graphEl = document.getElementById("graph-container");
+        const infoPanel = document.getElementById("info-panel");
+        const legend = document.getElementById("legend");
+
+        if (!toolbar || !graphEl || !infoPanel) return;
+
+        // Build sidebar wrapper
+        const sidebar = document.createElement("div");
+        sidebar.id = "sidebar";
+        sidebar.appendChild(infoPanel);
+        sidebar.appendChild(legend);
+
+        const mainArea = document.createElement("div");
+        mainArea.id = "main-area";
+        mainArea.appendChild(graphEl);
+        mainArea.appendChild(sidebar);
+
+        app.innerHTML = "";
+        app.appendChild(toolbar);
+        app.appendChild(mainArea);
+      });
+    }, { once: false });
+  </script>
+</body>
+</html>

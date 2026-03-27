@@ -1,0 +1,136 @@
+site_name: "Quantum Computing: From Qubits to Business Value"
+site_description: "A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution."
+site_author: "Prof. Sharat Batra, University of Minnesota"
+repo_name: "GitHub Repo"
+site_url: "https://AK95AM98.github.io/quantum-computing-book/"
+repo_url: "https://github.com/AK95AM98/quantum-computing-book"
+edit_uri: "blob/main/docs"
+copyright: "© 2026 Prof. Sharat Batra, University of Minnesota"
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - attr_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - css/extra.css
+
+extra:
+  schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AK95AM98/quantum-computing-book
+
+nav:
+  - Home: index.md
+  - Preface: preface.md
+  - How to Use This Book: how-to-use.md
+  - Course Description: course-description.md
+  - Part I — Foundations:
+    - chapters/01-classical-vs-quantum/index.md
+    - Quiz 1: chapters/01-classical-vs-quantum/quiz.md
+    - chapters/02-entanglement/index.md
+    - Quiz 2: chapters/02-entanglement/quiz.md
+    - chapters/03-gates-circuits/index.md
+    - Quiz 3: chapters/03-gates-circuits/quiz.md
+    - chapters/04-algorithms/index.md
+    - Quiz 4: chapters/04-algorithms/quiz.md
+    - chapters/05-communication/index.md
+    - Quiz 5: chapters/05-communication/quiz.md
+    - chapters/06-density-matrices/index.md
+    - Quiz 6: chapters/06-density-matrices/quiz.md
+  - Part II — Engineering:
+    - chapters/07-noise/index.md
+    - Quiz 7: chapters/07-noise/quiz.md
+    - chapters/08-error-correction/index.md
+    - Quiz 8: chapters/08-error-correction/quiz.md
+    - chapters/09-roadmaps/index.md
+    - Quiz 9: chapters/09-roadmaps/quiz.md
+    - chapters/10-modular-scaling/index.md
+    - Quiz 10: chapters/10-modular-scaling/quiz.md
+    - chapters/11-milestones/index.md
+    - Quiz 11: chapters/11-milestones/quiz.md
+  - Part III — Business:
+    - chapters/12-pqc-imperative/index.md
+    - Quiz 12: chapters/12-pqc-imperative/quiz.md
+    - chapters/13-use-cases/index.md
+    - Quiz 13: chapters/13-use-cases/quiz.md
+    - chapters/14-readiness/index.md
+    - Quiz 14: chapters/14-readiness/quiz.md
+    - chapters/15-action-plan/index.md
+    - Quiz 15: chapters/15-action-plan/quiz.md
+  - MicroSims:
+    - sims/index.md
+    - Bloch Sphere: sims/bloch-sphere/index.md
+    - Gate Explorer: sims/gate-explorer/index.md
+    - Grover Visualization: sims/grover-visualization/index.md
+    - Surface Code: sims/surface-code-sim/index.md
+    - QEC Overhead: sims/qec-overhead/index.md
+    - Mosca Calculator: sims/mosca-calculator/index.md
+    - PQC Key Sizes: sims/pqc-key-sizes/index.md
+    - Roadmap Timeline: sims/roadmap-timeline/index.md
+    - Learning Graph Viewer: sims/learning-graph/index.md
+  - Learning Graph:
+    - learning-graph/index.md
+    - Concept List: learning-graph/concept-list.md
+  - Glossary: glossary.md
+  - References: references.md
+  - FAQ: faq.md
+  - About: about.md
