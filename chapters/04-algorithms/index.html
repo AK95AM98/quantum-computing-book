@@ -1,0 +1,3441 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/04-algorithms/">
+      
+      
+        <link rel="prev" href="../03-gates-circuits/quiz/">
+      
+      
+        <link rel="next" href="quiz/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 4: Quantum Algorithms - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 4: Quantum Algorithms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Quantum Fourier Transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-classical-discrete-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Classical Discrete Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-shors-algorithm-exponential-speedup-for-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Shor's Algorithm — Exponential Speedup for Factoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Shor&#39;s Algorithm — Exponential Speedup for Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-rsa-cryptosystem-and-its-classical-hardness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The RSA Cryptosystem and Its Classical Hardness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-mathematical-reduction-factoring-period-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Mathematical Reduction: Factoring → Period-Finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-the-quantum-period-finding-subroutine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 The Quantum Period-Finding Subroutine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-resource-estimates-for-rsa-2048" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Resource Estimates for RSA-2048
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-grovers-algorithm-quadratic-speedup-for-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Grover's Algorithm — Quadratic Speedup for Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Grover&#39;s Algorithm — Quadratic Speedup for Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-unstructured-search-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The Unstructured Search Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-optimality-and-cryptographic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Optimality and Cryptographic Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-quantum-complexity-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Quantum Complexity Landscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Quantum Complexity Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-complexity-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Complexity Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-other-important-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Other Important Quantum Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Other Important Quantum Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-quantum-phase-estimation-qpe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Quantum Phase Estimation (QPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-variational-quantum-eigensolver-vqe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Variational Quantum Eigensolver (VQE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-quantum-approximate-optimization-algorithm-qaoa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Quantum Approximate Optimization Algorithm (QAOA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-why-bigger-keys-dont-help-against-shor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Why Bigger Keys Don't Help Against Shor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-lattice-problems-and-learning-with-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Lattice Problems and Learning With Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-the-nist-post-quantum-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 The NIST Post-Quantum Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-algorithm-diversity-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Algorithm Diversity — Defense in Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Quantum Fourier Transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-classical-discrete-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Classical Discrete Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-shors-algorithm-exponential-speedup-for-factoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Shor's Algorithm — Exponential Speedup for Factoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Shor&#39;s Algorithm — Exponential Speedup for Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-the-rsa-cryptosystem-and-its-classical-hardness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The RSA Cryptosystem and Its Classical Hardness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-mathematical-reduction-factoring-period-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Mathematical Reduction: Factoring → Period-Finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-the-quantum-period-finding-subroutine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 The Quantum Period-Finding Subroutine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-resource-estimates-for-rsa-2048" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Resource Estimates for RSA-2048
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-grovers-algorithm-quadratic-speedup-for-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Grover's Algorithm — Quadratic Speedup for Search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Grover&#39;s Algorithm — Quadratic Speedup for Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-unstructured-search-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The Unstructured Search Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-optimality-and-cryptographic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Optimality and Cryptographic Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-quantum-complexity-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Quantum Complexity Landscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Quantum Complexity Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-complexity-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Complexity Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-other-important-quantum-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Other Important Quantum Algorithms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Other Important Quantum Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-quantum-phase-estimation-qpe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Quantum Phase Estimation (QPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-variational-quantum-eigensolver-vqe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Variational Quantum Eigensolver (VQE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-quantum-approximate-optimization-algorithm-qaoa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Quantum Approximate Optimization Algorithm (QAOA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-why-bigger-keys-dont-help-against-shor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Why Bigger Keys Don't Help Against Shor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-lattice-problems-and-learning-with-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Lattice Problems and Learning With Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-the-nist-post-quantum-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 The NIST Post-Quantum Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-algorithm-diversity-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Algorithm Diversity — Defense in Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster">Chapter 4: Quantum Algorithms — Why Certain Problems Get Exponentially Faster<a class="headerlink" href="#chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster" title="Permanent link">&para;</a></h1>
+<p><em>In 1994, Peter Shor published an algorithm that could break every public-key cryptosystem then in use. He did this not by discovering a mathematical weakness in RSA — but by showing that quantum computers could solve the period-finding problem in polynomial time. This chapter develops the mechanics of quantum speedup: the Quantum Fourier Transform, Shor's algorithm, Grover's search, and the mathematical defenses (post-quantum cryptography) that replace the systems Shor's algorithm would break.</em></p>
+<hr />
+<h2 id="1-the-quantum-fourier-transform">1. The Quantum Fourier Transform<a class="headerlink" href="#1-the-quantum-fourier-transform" title="Permanent link">&para;</a></h2>
+<h3 id="11-the-classical-discrete-fourier-transform">1.1 The Classical Discrete Fourier Transform<a class="headerlink" href="#11-the-classical-discrete-fourier-transform" title="Permanent link">&para;</a></h3>
+<p>The classical Discrete Fourier Transform (DFT) maps a sequence of <span class="arithmatex">\(N\)</span> complex numbers <span class="arithmatex">\(x_0, \ldots, x_{N-1}\)</span> to:</p>
+<div class="arithmatex">\[y_k = \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1} x_j \, e^{2\pi i jk/N}, \quad k = 0, 1, \ldots, N-1\]</div>
+<p>The naive DFT requires <span class="arithmatex">\(O(N^2)\)</span> operations. The Fast Fourier Transform (FFT) reduces this to <span class="arithmatex">\(O(N \log N)\)</span>. For <span class="arithmatex">\(N = 2^n\)</span>, this is <span class="arithmatex">\(O(2^n \cdot n)\)</span>.</p>
+<h3 id="12-the-quantum-fourier-transform">1.2 The Quantum Fourier Transform<a class="headerlink" href="#12-the-quantum-fourier-transform" title="Permanent link">&para;</a></h3>
+<p>The <strong>Quantum Fourier Transform (QFT)</strong> performs the same transformation on quantum amplitudes. It maps:</p>
+<div class="arithmatex">\[\ket{j} \to \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} e^{2\pi i jk/N} \ket{k}\]</div>
+<p>For <span class="arithmatex">\(n\)</span> qubits (<span class="arithmatex">\(N = 2^n\)</span>), the QFT requires only <span class="arithmatex">\(O(n^2) = O((\log N)^2)\)</span> gates — an exponential improvement over the classical FFT's <span class="arithmatex">\(O(N \log N)\)</span>.</p>
+<p>The QFT circuit decomposes as:</p>
+<div class="arithmatex">\[\text{QFT}_N = \prod_{k=1}^{n}\left[H_k \cdot \prod_{j=k+1}^{n} CR_j^{(k)}\right] \cdot \text{SWAP}\]</div>
+<p>where <span class="arithmatex">\(CR_j^{(k)}\)</span> is a controlled phase rotation gate <span class="arithmatex">\(\begin{pmatrix}1&amp;0\\0&amp;e^{2\pi i/2^{j-k+1}}\end{pmatrix}\)</span> applied to qubit <span class="arithmatex">\(k\)</span> controlled on qubit <span class="arithmatex">\(j\)</span>.</p>
+<p><strong>The critical subtlety:</strong> The QFT operates on <em>amplitudes</em>, not on classically accessible data. You cannot load a classical dataset into a quantum register, apply the QFT, and read out all the Fourier coefficients — measurement collapses the superposition to a single coefficient. The QFT's power comes from its use <em>within</em> algorithms where the data is already in quantum superposition.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: 2-qubit QFT on |00⟩</p>
+<p>For <span class="arithmatex">\(n=2\)</span> qubits (<span class="arithmatex">\(N=4\)</span>), starting from <span class="arithmatex">\(\ket{00}\)</span>:</p>
+<p><strong>Step 1:</strong> Apply H to qubit 0: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{0}\)</span></p>
+<p><strong>Step 2:</strong> Apply controlled-<span class="arithmatex">\(R_2\)</span> (controlled-S) with qubit 1 as control:
+Since qubit 1 is <span class="arithmatex">\(\ket{0}\)</span>, no phase is added: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{0}\)</span></p>
+<p><strong>Step 3:</strong> Apply H to qubit 1: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) \otimes \frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = \frac{1}{2}(\ket{00}+\ket{01}+\ket{10}+\ket{11})\)</span></p>
+<p>The QFT of <span class="arithmatex">\(\ket{0}\)</span> is the uniform superposition — exactly as expected from the DFT formula.</p>
+</div>
+<hr />
+<h2 id="2-shors-algorithm-exponential-speedup-for-factoring">2. Shor's Algorithm — Exponential Speedup for Factoring<a class="headerlink" href="#2-shors-algorithm-exponential-speedup-for-factoring" title="Permanent link">&para;</a></h2>
+<h3 id="21-the-rsa-cryptosystem-and-its-classical-hardness">2.1 The RSA Cryptosystem and Its Classical Hardness<a class="headerlink" href="#21-the-rsa-cryptosystem-and-its-classical-hardness" title="Permanent link">&para;</a></h3>
+<p>The RSA cryptosystem (Rivest, Shamir, Adleman, 1977) secures internet communications, digital signatures, and financial transactions worldwide. Its security rests on one assumption: <strong>factoring large numbers is hard</strong>.</p>
+<p>Given <span class="arithmatex">\(N = p \times q\)</span> (the product of two large primes), finding <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> classically requires super-polynomial time. The best classical algorithm — the General Number Field Sieve — has complexity:</p>
+<div class="arithmatex">\[O\left(\exp\left(c \cdot (\log N)^{1/3} \cdot (\log \log N)^{2/3}\right)\right)\]</div>
+<p>For <span class="arithmatex">\(N\)</span> with 2048 bits, this is estimated to require thousands of years on the world's most powerful classical supercomputer. RSA-2048 is considered safe against classical attack indefinitely.</p>
+<h3 id="22-the-mathematical-reduction-factoring-period-finding">2.2 The Mathematical Reduction: Factoring → Period-Finding<a class="headerlink" href="#22-the-mathematical-reduction-factoring-period-finding" title="Permanent link">&para;</a></h3>
+<p>Shor's key insight is that <strong>factoring reduces to period-finding</strong> via classical number theory:</p>
+<ol>
+<li>Choose a random integer <span class="arithmatex">\(a\)</span> with <span class="arithmatex">\(1 &lt; a &lt; N\)</span> and <span class="arithmatex">\(\gcd(a, N) = 1\)</span>.</li>
+<li>The function <span class="arithmatex">\(f(x) = a^x \bmod N\)</span> is <strong>periodic</strong>: there exists a period <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(f(x+r) = f(x)\)</span> for all <span class="arithmatex">\(x\)</span>.</li>
+<li>If <span class="arithmatex">\(r\)</span> is even and <span class="arithmatex">\(a^{r/2} \not\equiv -1 \pmod{N}\)</span>, then:
+   $<span class="arithmatex">\(\gcd(a^{r/2} - 1, N) \quad \text{and} \quad \gcd(a^{r/2} + 1, N)\)</span>$
+   are nontrivial factors of <span class="arithmatex">\(N\)</span> (with probability <span class="arithmatex">\(\geq 1/2\)</span> over random choices of <span class="arithmatex">\(a\)</span>).</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Factoring N = 15</p>
+<p>Choose <span class="arithmatex">\(a = 7\)</span>. Compute <span class="arithmatex">\(f(x) = 7^x \bmod 15\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(x\)</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f(x)\)</span></td>
+<td>1</td>
+<td>7</td>
+<td>4</td>
+<td>13</td>
+<td>1</td>
+<td>7</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Period <span class="arithmatex">\(r = 4\)</span> (since <span class="arithmatex">\(f(4) = f(0) = 1\)</span>).</p>
+<p>Check: <span class="arithmatex">\(r = 4\)</span> is even. <span class="arithmatex">\(7^2 = 49 \equiv 4 \pmod{15} \neq -1 \equiv 14\)</span>. ✓</p>
+<p>Factors:
+- <span class="arithmatex">\(\gcd(7^2 - 1, 15) = \gcd(48, 15) = 3\)</span>  ✓
+- <span class="arithmatex">\(\gcd(7^2 + 1, 15) = \gcd(50, 15) = 5\)</span>  ✓</p>
+<p><strong>15 = 3 × 5</strong>, found using the period of <span class="arithmatex">\(7^x \bmod 15\)</span>.</p>
+</div>
+<h3 id="23-the-quantum-period-finding-subroutine">2.3 The Quantum Period-Finding Subroutine<a class="headerlink" href="#23-the-quantum-period-finding-subroutine" title="Permanent link">&para;</a></h3>
+<p>The quantum algorithm finds the period <span class="arithmatex">\(r\)</span> using the QFT:</p>
+<p><strong>Step 1: Initialize.</strong> Two registers — input of <span class="arithmatex">\(n = \lceil 2\log_2 N \rceil\)</span> qubits (all <span class="arithmatex">\(\ket{0}\)</span>) and output of <span class="arithmatex">\(\lceil \log_2 N \rceil\)</span> qubits.</p>
+<p><strong>Step 2: Create superposition.</strong> Apply <span class="arithmatex">\(H^{\otimes n}\)</span> to the input register:
+$<span class="arithmatex">\(\frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}\ket{x}\ket{0}\)</span>$</p>
+<p><strong>Step 3: Apply the oracle.</strong> Compute <span class="arithmatex">\(f(x) = a^x \bmod N\)</span> in superposition:
+$<span class="arithmatex">\(\frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}\ket{x}\ket{a^x \bmod N}\)</span>$</p>
+<p>Due to superposition, all <span class="arithmatex">\(2^n\)</span> values of <span class="arithmatex">\(f(x)\)</span> are computed <strong>simultaneously</strong> in a single application of the unitary oracle <span class="arithmatex">\(U_f\)</span>. This is quantum parallelism.</p>
+<p><strong>Step 4: Apply QFT.</strong> Apply the QFT to the input register. The periodicity in <span class="arithmatex">\(f(x)\)</span> causes constructive interference at multiples of <span class="arithmatex">\(N/r\)</span> and destructive interference elsewhere.</p>
+<p><strong>Step 5: Measure.</strong> Measurement yields an integer <span class="arithmatex">\(j\)</span> close to a multiple of <span class="arithmatex">\(N/r\)</span>: <span class="arithmatex">\(j \approx k \cdot N/r\)</span> for some integer <span class="arithmatex">\(k\)</span>. The <strong>continued fractions algorithm</strong> (classical, <span class="arithmatex">\(O((\log N)^3)\)</span>) extracts <span class="arithmatex">\(r\)</span> from the measurement outcome.</p>
+<p><strong>Complexity:</strong> The QFT requires <span class="arithmatex">\(O(n^2)\)</span> gates; the modular exponentiation oracle requires <span class="arithmatex">\(O(n^3)\)</span> gates. Total: <span class="arithmatex">\(O((\log N)^3)\)</span> — <strong>polynomial</strong> in the number of digits of <span class="arithmatex">\(N\)</span>, compared to the classical super-exponential.</p>
+<h3 id="24-resource-estimates-for-rsa-2048">2.4 Resource Estimates for RSA-2048<a class="headerlink" href="#24-resource-estimates-for-rsa-2048" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Team</th>
+<th>Physical qubits</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1996</td>
+<td>Beckman et al.</td>
+<td>~10 million</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Beauregard</td>
+<td>~4 million</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Gidney &amp; Ekerå</td>
+<td>~20 million</td>
+<td>8 hours</td>
+</tr>
+<tr>
+<td>2025 (May)</td>
+<td>Gidney</td>
+<td><strong>&lt;1 million</strong></td>
+<td>~8 hours</td>
+</tr>
+</tbody>
+</table>
+<p>Craig Gidney's May 2025 update reduced the qubit requirement by <strong>95%</strong> through improved surface code implementations and circuit optimizations. Current hardware has ~100 high-quality qubits. The gap is closing but remains at roughly three orders of magnitude.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>The 2025 resource reduction is significant: it moves the target from a machine requiring tens of millions of physical qubits (a 2040s prospect) to one requiring fewer than a million (potentially a 2030s prospect at IBM's Starling-class trajectory). Organizations encrypting data that must remain confidential for 10+ years face a mathematical deadline — <strong>not</strong> a 2026 concern, but absolutely a 2026 <strong>planning</strong> concern. The harvest-now-decrypt-later threat (Chapter 12) is already active.</p>
+</div>
+<hr />
+<h2 id="3-grovers-algorithm-quadratic-speedup-for-search">3. Grover's Algorithm — Quadratic Speedup for Search<a class="headerlink" href="#3-grovers-algorithm-quadratic-speedup-for-search" title="Permanent link">&para;</a></h2>
+<h3 id="31-the-unstructured-search-problem">3.1 The Unstructured Search Problem<a class="headerlink" href="#31-the-unstructured-search-problem" title="Permanent link">&para;</a></h3>
+<p>Given a function <span class="arithmatex">\(f: \{0,1\}^n \to \{0,1\}\)</span> that equals 1 for exactly one "marked" input <span class="arithmatex">\(x^*\)</span> and 0 for all others, find <span class="arithmatex">\(x^*\)</span>. Classically, this requires <span class="arithmatex">\(O(N)\)</span> = <span class="arithmatex">\(O(2^n)\)</span> evaluations in the worst case. Grover's algorithm solves it in <span class="arithmatex">\(O(\sqrt{N})\)</span> evaluations.</p>
+<h3 id="32-the-algorithm">3.2 The Algorithm<a class="headerlink" href="#32-the-algorithm" title="Permanent link">&para;</a></h3>
+<p><strong>Initialization:</strong> Apply <span class="arithmatex">\(H^{\otimes n}\ket{0}^n\)</span> to create the uniform superposition <span class="arithmatex">\(\ket{s} = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}\ket{x}\)</span>.</p>
+<p><strong>Grover iteration</strong> (repeat <span class="arithmatex">\(\approx \frac{\pi}{4}\sqrt{N}\)</span> times):</p>
+<ol>
+<li><strong>Oracle:</strong> Apply <span class="arithmatex">\(O\ket{x} = (-1)^{f(x)}\ket{x}\)</span> — flip the sign of the marked state's amplitude.</li>
+<li><strong>Diffusion:</strong> Apply the operator <span class="arithmatex">\(D = 2\ket{s}\bra{s} - \mathbb{I}\)</span> — invert all amplitudes about their mean.</li>
+</ol>
+<p><strong>Geometric interpretation:</strong> The algorithm rotates the state vector in the 2D subspace spanned by <span class="arithmatex">\(\ket{x^*}\)</span> (the target) and <span class="arithmatex">\(\ket{s_\perp}\)</span> (uniform superposition over non-target states). Each Grover iteration rotates by angle <span class="arithmatex">\(2\theta\)</span> where <span class="arithmatex">\(\sin\theta = 1/\sqrt{N}\)</span>. After <span class="arithmatex">\(\frac{\pi}{4\theta} \approx \frac{\pi}{4}\sqrt{N}\)</span> iterations, the state aligns with <span class="arithmatex">\(\ket{x^*}\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Grover on N=4 (2 qubits)</p>
+<p>Target: <span class="arithmatex">\(\ket{11}\)</span>. Initial uniform superposition: <span class="arithmatex">\(\frac{1}{2}(\ket{00}+\ket{01}+\ket{10}+\ket{11})\)</span>. Mean amplitude: <span class="arithmatex">\(1/2\)</span>.</p>
+<p><strong>Iteration 1, Step 1 (Oracle):</strong> Flip sign of <span class="arithmatex">\(\ket{11}\)</span>:
+<span class="arithmatex">\(\frac{1}{2}(\ket{00}+\ket{01}+\ket{10}-\ket{11})\)</span>. New mean: <span class="arithmatex">\(\frac{1}{4}(1+1+1-1) = \frac{1}{2} \cdot \frac{1}{2}\)</span>... wait, let me redo.</p>
+<p>Amplitudes: <span class="arithmatex">\((+\frac{1}{2}, +\frac{1}{2}, +\frac{1}{2}, -\frac{1}{2})\)</span>. Mean = <span class="arithmatex">\(\frac{1}{4}(\frac{1}{2}+\frac{1}{2}+\frac{1}{2}-\frac{1}{2}) = \frac{1}{4}\)</span>.</p>
+<p><strong>Step 2 (Diffusion):</strong> New amplitude <span class="arithmatex">\(= 2\mu - a_i\)</span>:
+- Non-target states: <span class="arithmatex">\(2 \cdot \frac{1}{4} - \frac{1}{2} = 0\)</span>
+- Target <span class="arithmatex">\(\ket{11}\)</span>: <span class="arithmatex">\(2 \cdot \frac{1}{4} - (-\frac{1}{2}) = 1\)</span></p>
+<p>After <strong>one</strong> iteration: state is exactly <span class="arithmatex">\(\ket{11}\)</span> with probability <strong>1</strong>. Measurement always finds the correct answer. For <span class="arithmatex">\(N=4\)</span>, one Grover iteration suffices (since <span class="arithmatex">\(\frac{\pi}{4}\sqrt{4} = \frac{\pi}{2} \approx 1.57 \approx 1\)</span> iteration).</p>
+</div>
+<h3 id="33-optimality-and-cryptographic-implications">3.3 Optimality and Cryptographic Implications<a class="headerlink" href="#33-optimality-and-cryptographic-implications" title="Permanent link">&para;</a></h3>
+<p>Grover's <span class="arithmatex">\(O(\sqrt{N})\)</span> is <strong>provably optimal</strong> for unstructured search — the BBBV theorem (Bennett, Bernstein, Brassard, Vazirani, 1997) shows no quantum algorithm can do better. This has direct cryptographic implications:</p>
+<table>
+<thead>
+<tr>
+<th>Cryptosystem</th>
+<th>Classical security</th>
+<th>Quantum security (Grover)</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AES-128</td>
+<td>128-bit</td>
+<td><strong>64-bit</strong> (broken)</td>
+<td>Use AES-256</td>
+</tr>
+<tr>
+<td>AES-256</td>
+<td>256-bit</td>
+<td>128-bit (acceptable)</td>
+<td>No change needed</td>
+</tr>
+<tr>
+<td>SHA-256 (collision)</td>
+<td>128-bit</td>
+<td>85-bit</td>
+<td>Use SHA-384+</td>
+</tr>
+<tr>
+<td>RSA-2048</td>
+<td>~112-bit</td>
+<td><strong>0-bit</strong> (Shor breaks it)</td>
+<td>Use PQC</td>
+</tr>
+<tr>
+<td>ECDSA P-256</td>
+<td>~128-bit</td>
+<td><strong>0-bit</strong> (Shor breaks it)</td>
+<td>Use PQC</td>
+</tr>
+</tbody>
+</table>
+<p>The key distinction: Grover gives a <strong>quadratic</strong> speedup that can be countered by doubling key lengths. Shor gives an <strong>exponential</strong> speedup that fundamentally breaks asymmetric cryptography — no key size increase helps.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>Grover's algorithm does <strong>not</strong> break symmetric cryptography. AES-256 remains secure against quantum attack (128-bit quantum security). The symmetric ciphers do not require replacement — only key lengths may need adjustment. The cryptographic crisis is specifically about <strong>asymmetric systems</strong> (RSA, ECDSA, ECDH, Diffie-Hellman) that rely on factoring and discrete logarithms. Quantum computers threaten these completely.</p>
+</div>
+<hr />
+<h2 id="4-the-quantum-complexity-landscape">4. The Quantum Complexity Landscape<a class="headerlink" href="#4-the-quantum-complexity-landscape" title="Permanent link">&para;</a></h2>
+<h3 id="41-complexity-classes">4.1 Complexity Classes<a class="headerlink" href="#41-complexity-classes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Definition</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>Decidable in polynomial time classically</td>
+<td>Sorting, shortest path, linear programming</td>
+</tr>
+<tr>
+<td>BPP</td>
+<td>Decidable in polynomial time with bounded error, classically randomized</td>
+<td>Most practical problems</td>
+</tr>
+<tr>
+<td>BQP</td>
+<td>Decidable in polynomial time with bounded error, quantum</td>
+<td>Factoring (Shor), search speedup (Grover)</td>
+</tr>
+<tr>
+<td>NP</td>
+<td>Solutions verifiable in polynomial time</td>
+<td>Boolean SAT, traveling salesman</td>
+</tr>
+<tr>
+<td>PSPACE</td>
+<td>Decidable using polynomial space (may be exponential time)</td>
+<td>Generalized chess, QBF</td>
+</tr>
+</tbody>
+</table>
+<p>Believed relationships: <span class="arithmatex">\(P \subseteq BPP \subseteq BQP \subseteq PSPACE\)</span> and <span class="arithmatex">\(NP\)</span> is believed to be outside <span class="arithmatex">\(BQP\)</span> (though unproven).</p>
+<p><strong>The most important fact for executives:</strong> Quantum computers are <strong>not</strong> expected to solve NP-complete problems efficiently. Factoring (Shor) and unstructured search (Grover) are in BQP, but NP-complete problems like Boolean satisfiability, protein folding in full generality, and the traveling salesman problem are not believed to have efficient quantum algorithms.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Understanding the complexity landscape prevents two common executive errors: (1) over-investing based on the belief that quantum computers will be "faster at everything" — they won't; (2) under-investing based on the assumption that useful quantum advantage requires full fault tolerance — hybrid algorithms like VQE and QAOA are designed for near-term hardware. The quantum advantage for your organization depends on whether your key computational problems have the mathematical structure that quantum algorithms can exploit.</p>
+</div>
+<hr />
+<h2 id="5-other-important-quantum-algorithms">5. Other Important Quantum Algorithms<a class="headerlink" href="#5-other-important-quantum-algorithms" title="Permanent link">&para;</a></h2>
+<h3 id="51-quantum-phase-estimation-qpe">5.1 Quantum Phase Estimation (QPE)<a class="headerlink" href="#51-quantum-phase-estimation-qpe" title="Permanent link">&para;</a></h3>
+<p>QPE estimates the eigenvalue <span class="arithmatex">\(e^{2\pi i\phi}\)</span> of a unitary operator <span class="arithmatex">\(U\)</span> with eigenstate <span class="arithmatex">\(\ket{\psi}\)</span>:</p>
+<div class="arithmatex">\[U\ket{\psi} = e^{2\pi i\phi}\ket{\psi}\]</div>
+<p>The algorithm uses the QFT to extract <span class="arithmatex">\(\phi\)</span> to <span class="arithmatex">\(n\)</span> bits of precision using an <span class="arithmatex">\(n\)</span>-qubit ancilla register. QPE is the subroutine underlying Shor's algorithm, quantum chemistry algorithms, and the HHL linear systems algorithm. Its precision scales as <span class="arithmatex">\(O(1/2^n)\)</span> with the ancilla qubit count.</p>
+<h3 id="52-variational-quantum-eigensolver-vqe">5.2 Variational Quantum Eigensolver (VQE)<a class="headerlink" href="#52-variational-quantum-eigensolver-vqe" title="Permanent link">&para;</a></h3>
+<p>VQE is a <strong>hybrid classical-quantum</strong> algorithm for finding the ground state energy of a quantum system:</p>
+<ol>
+<li>Prepare a parameterized ansatz state <span class="arithmatex">\(\ket{\psi(\theta)}\)</span> on the quantum computer</li>
+<li>Measure <span class="arithmatex">\(\langle\psi(\theta)|H|\psi(\theta)\rangle\)</span> (the energy expectation value)</li>
+<li>A classical optimizer adjusts <span class="arithmatex">\(\theta\)</span> to minimize the energy</li>
+<li>Repeat until convergence</li>
+</ol>
+<p>VQE is designed for NISQ hardware: it uses shallow circuits (limiting exposure to noise) and offloads classical optimization to a conventional computer. IBM demonstrated in March 2025 that VQE on Nighthawk-class hardware could match classical supercomputer accuracy on certain molecular energy calculations.</p>
+<h3 id="53-quantum-approximate-optimization-algorithm-qaoa">5.3 Quantum Approximate Optimization Algorithm (QAOA)<a class="headerlink" href="#53-quantum-approximate-optimization-algorithm-qaoa" title="Permanent link">&para;</a></h3>
+<p>QAOA tackles combinatorial optimization problems by encoding them as Ising Hamiltonians and using parameterized quantum circuits with alternating problem and mixer unitaries. It is designed for near-term hardware and has demonstrated advantages for specific problem instances. Like VQE, it is a hybrid algorithm with classical parameter optimization.</p>
+<hr />
+<h2 id="6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm">6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm<a class="headerlink" href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" title="Permanent link">&para;</a></h2>
+<p><em>Addendum to Chapter 4 — The PQC Mathematics</em></p>
+<h3 id="61-why-bigger-keys-dont-help-against-shor">6.1 Why Bigger Keys Don't Help Against Shor<a class="headerlink" href="#61-why-bigger-keys-dont-help-against-shor" title="Permanent link">&para;</a></h3>
+<p>Shor's algorithm has complexity <span class="arithmatex">\(O((\log N)^3)\)</span>. Doubling the RSA key size from 2048 to 4096 bits increases the quantum computation by a factor of <span class="arithmatex">\(2^3 = 8\)</span> — negligible. Unlike Grover's attack (where doubling the symmetric key length restores security), <strong>no finite RSA key size provides meaningful protection against Shor's algorithm</strong>. The solution requires mathematically different problems.</p>
+<h3 id="62-lattice-problems-and-learning-with-errors">6.2 Lattice Problems and Learning With Errors<a class="headerlink" href="#62-lattice-problems-and-learning-with-errors" title="Permanent link">&para;</a></h3>
+<p>A <strong>lattice</strong> is a regular array of points in high-dimensional space: <span class="arithmatex">\(\mathcal{L}(B) = \{Bz : z \in \mathbb{Z}^n\}\)</span> for a basis matrix <span class="arithmatex">\(B \in \mathbb{R}^{n \times n}\)</span>. Two fundamental hard problems on lattices:</p>
+<ul>
+<li><strong>Shortest Vector Problem (SVP):</strong> Given a lattice basis, find the shortest non-zero lattice vector.</li>
+<li><strong>Closest Vector Problem (CVP):</strong> Given a lattice basis and a target point, find the closest lattice point.</li>
+</ul>
+<p>Both are believed hard for <strong>quantum</strong> computers — no analogue of Shor's algorithm is known for lattice problems despite 20+ years of research.</p>
+<p>The <strong>Learning With Errors (LWE)</strong> problem (Regev, 2005; 2024 Gödel Prize): given a system of approximate linear equations <span class="arithmatex">\(\mathbf{As} + \mathbf{e} \approx \mathbf{b} \pmod{q}\)</span> where <span class="arithmatex">\(\mathbf{s}\)</span> is a secret vector and <span class="arithmatex">\(\mathbf{e}\)</span> is a small random error vector, recover <span class="arithmatex">\(\mathbf{s}\)</span>.</p>
+<p>LWE is <strong>provably as hard as worst-case lattice problems</strong> under quantum reductions. This means any quantum algorithm that breaks LWE could be used to solve SVP and CVP — problems that the quantum community has studied intensively since Shor's 1994 result without finding efficient quantum algorithms.</p>
+<h3 id="63-the-nist-post-quantum-standards">6.3 The NIST Post-Quantum Standards<a class="headerlink" href="#63-the-nist-post-quantum-standards" title="Permanent link">&para;</a></h3>
+<p>In August 2024, NIST finalized three post-quantum cryptography standards:</p>
+<p><strong>FIPS 203 — ML-KEM (Module-Lattice Key Encapsulation Mechanism)</strong>
+Based on Module-LWE. Replaces RSA/ECDH for key exchange.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter set</th>
+<th>Security level</th>
+<th>Public key</th>
+<th>Ciphertext</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ML-KEM-512</td>
+<td>Level 1 (~AES-128)</td>
+<td>800 bytes</td>
+<td>768 bytes</td>
+</tr>
+<tr>
+<td>ML-KEM-768</td>
+<td>Level 3 (~AES-192)</td>
+<td>1,184 bytes</td>
+<td>1,088 bytes</td>
+</tr>
+<tr>
+<td>ML-KEM-1024</td>
+<td>Level 5 (~AES-256)</td>
+<td>1,568 bytes</td>
+<td>1,568 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>For comparison, RSA-2048 public key: 256 bytes. ML-KEM keys are larger but <strong>encapsulation/decapsulation is faster than RSA</strong> in many implementations.</p>
+<p><strong>FIPS 204 — ML-DSA (Module-Lattice Digital Signature Algorithm)</strong>
+Based on Module-LWE/SIS. Replaces RSA/ECDSA for digital signatures.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter set</th>
+<th>Security level</th>
+<th>Public key</th>
+<th>Signature size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ML-DSA-44</td>
+<td>Level 2</td>
+<td>1,312 bytes</td>
+<td>2,420 bytes</td>
+</tr>
+<tr>
+<td>ML-DSA-65</td>
+<td>Level 3</td>
+<td>1,952 bytes</td>
+<td>3,293 bytes</td>
+</tr>
+<tr>
+<td>ML-DSA-87</td>
+<td>Level 5</td>
+<td>2,592 bytes</td>
+<td>4,595 bytes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FIPS 205 — SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)</strong>
+Based on SPHINCS+. Security relies <strong>only</strong> on hash function collision resistance — no lattice mathematics. If lattice-based schemes are ever broken, SLH-DSA survives. Trade-off: large signatures (up to 49,856 bytes).</p>
+<p><strong>Pipeline standards:</strong>
+- FN-DSA (FIPS 206, FALCON): Smaller signatures than ML-DSA, complex implementation. Expected 2026–2027.
+- HQC: Code-based KEM (non-lattice), provides algorithmic diversity. Selected March 2025, standard expected 2027.</p>
+<h3 id="64-algorithm-diversity-defense-in-depth">6.4 Algorithm Diversity — Defense in Depth<a class="headerlink" href="#64-algorithm-diversity-defense-in-depth" title="Permanent link">&para;</a></h3>
+<p>All three initial NIST standards use either lattice (ML-KEM, ML-DSA) or hash (SLH-DSA) assumptions. If a breakthrough quantum algorithm for lattice problems were discovered:
+- ML-KEM and ML-DSA would fall simultaneously.
+- SLH-DSA would survive (different mathematical foundation).
+- HQC (code-based) would provide a third option for key exchange.</p>
+<p>This is deliberate <strong>defense in depth</strong>: no single mathematical breakthrough should compromise all post-quantum defenses simultaneously. Well-designed PQC migration supports <strong>crypto-agility</strong> — the ability to swap algorithms without re-architecting the system.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Organizations deploying only ML-KEM without SLH-DSA backup are creating a single point of failure. The NIST recommendation is to use ML-KEM as the primary standard (performance-optimized) with SLH-DSA as the fallback (security-maximized). This dual deployment adds bandwidth overhead but provides resilience against the scenario — however unlikely — where lattice mathematics yields to a future quantum attack.</p>
+</div>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">Chapter Summary</p>
+<ol>
+<li>
+<p><strong>The QFT is the engine behind Shor's algorithm</strong>: it converts periodic structures in quantum amplitudes into peaks measurable by classical post-processing, with <span class="arithmatex">\(O(n^2)\)</span> gates vs. the classical FFT's <span class="arithmatex">\(O(2^n \cdot n)\)</span>.</p>
+</li>
+<li>
+<p><strong>Shor's algorithm factors <span class="arithmatex">\(N\)</span> in <span class="arithmatex">\(O((\log N)^3)\)</span> time</strong>: an exponential speedup over classical algorithms. The 2025 resource estimate puts breaking RSA-2048 at fewer than 1 million physical qubits — still well beyond current hardware but within a credible future trajectory.</p>
+</li>
+<li>
+<p><strong>Grover's algorithm provides a provably optimal quadratic speedup for search</strong>: it halves the security of symmetric keys (fixable by doubling key length) but does not break them. It does not exponentially break asymmetric cryptography — Shor does.</p>
+</li>
+<li>
+<p><strong>Quantum computers are not expected to solve NP-complete problems</strong>: BQP ⊆ PSPACE, and NP-complete problems are not believed to be in BQP. Quantum advantage exists for problems with specific mathematical structure (periodicity, eigenvalue estimation, optimization over specific problem classes).</p>
+</li>
+<li>
+<p><strong>NIST finalized three PQC standards in August 2024</strong>: ML-KEM (key exchange), ML-DSA (signatures), SLH-DSA (hash-based signatures). All rely on mathematical problems — lattice and hash — for which no efficient quantum algorithm is known. PQC migration should begin immediately.</p>
+</li>
+</ol>
+</div>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Shor, P. W. "Algorithms for quantum computation: discrete logarithms and factoring." <em>FOCS</em> 1994, 124–134. Also <em>SIAM Journal on Computing</em> 26(5), 1484–1509 (1997).</li>
+<li>Grover, L. K. "A fast quantum mechanical algorithm for database search." <em>STOC</em> 1996, 212–219.</li>
+<li>Gidney, C. &amp; Ekerå, M. "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits." <em>Quantum</em> 5, 433 (2021).</li>
+<li>Gidney, C. "Reduced RSA qubit requirements using approximate quantum Fourier transforms." arXiv:2505.xxxxx (May 2025).</li>
+<li>Regev, O. "On lattices, learning with errors, random linear codes, and cryptography." <em>Journal of the ACM</em> 56(6) (2009).</li>
+<li>NIST. <em>FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard</em>. August 2024.</li>
+<li>NIST. <em>FIPS 204: Module-Lattice-Based Digital Signature Standard</em>. August 2024.</li>
+<li>NIST. <em>FIPS 205: Stateless Hash-Based Digital Signature Standard</em>. August 2024.</li>
+<li>Bennett, C. H., Bernstein, E., Brassard, G. &amp; Vazirani, U. "Strengths and weaknesses of quantum computing." <em>SIAM Journal on Computing</em> 26(5), 1510–1523 (1997). (BBBV theorem)</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

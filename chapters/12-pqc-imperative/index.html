@@ -1,0 +1,3223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/12-pqc-imperative/">
+      
+      
+        <link rel="prev" href="../11-milestones/quiz/">
+      
+      
+        <link rel="next" href="quiz/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 12: The Post-Quantum Cryptography Imperative - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-12-the-post-quantum-cryptography-imperative-from-shors-algorithm-to-enterprise-migration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 12: The Post-Quantum Cryptography Imperative
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#121-the-harvest-now-decrypt-later-threat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1 The Harvest-Now, Decrypt-Later Threat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.1 The Harvest-Now, Decrypt-Later Threat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-being-targeted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is Being Targeted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moscas-theorem-a-planning-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mosca's Theorem: A Planning Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-moscas-theorem-across-data-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Mosca's Theorem Across Data Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-the-nist-standards-and-the-deprecation-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2 The NIST Standards and the Deprecation Timeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.2 The NIST Standards and the Deprecation Timeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fips-203-ml-kem-the-highest-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 203 — ML-KEM: The Highest Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-204-ml-dsa-digital-signatures-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 204 — ML-DSA: Digital Signatures at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-205-slh-dsa-the-conservative-backstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 205 — SLH-DSA: The Conservative Backstop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-standards-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Standards Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-deprecation-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Deprecation Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-algorithm-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Algorithm Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-hybrid-migration-and-crypto-agility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3 Hybrid Migration and Crypto-Agility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.3 Hybrid Migration and Crypto-Agility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-case-for-hybrid-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Case for Hybrid Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-deployment-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Deployment State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crypto-agility-the-architectural-imperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crypto-Agility: The Architectural Imperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-the-cryptographic-bill-of-materials-cbom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4 The Cryptographic Bill of Materials (CBOM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.4 The Cryptographic Bill of Materials (CBOM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-a-cbom-captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a CBOM Captures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standards-and-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards and Tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-the-four-phase-migration-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5 The Four-Phase Migration Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12.5 The Four-Phase Migration Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-discover-months-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Discover (Months 1–6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-prioritize-months-49-overlapping-with-phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Prioritize (Months 4–9, Overlapping with Phase 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-migrate-months-636" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Migrate (Months 6–36+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-validate-and-iterate-ongoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Validate and Iterate (Ongoing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-12-the-post-quantum-cryptography-imperative-from-shors-algorithm-to-enterprise-migration">Chapter 12: The Post-Quantum Cryptography Imperative — From Shor's Algorithm to Enterprise Migration<a class="headerlink" href="#chapter-12-the-post-quantum-cryptography-imperative-from-shors-algorithm-to-enterprise-migration" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Chapter Summary</p>
+<p>This chapter translates the mathematical threat of Shor's algorithm (Chapter 4) into an immediate enterprise risk management problem. The central message is urgent and specific: the harvest-now, decrypt-later (HNDL) threat requires action today, not at some future point when quantum computers become available. By the end of this chapter you will be able to apply Mosca's theorem to determine whether your organization's data is already at risk; identify the three NIST-finalized post-quantum cryptographic standards and their deployment characteristics; design a hybrid migration strategy that protects against both quantum and classical threats simultaneously; build a Cryptographic Bill of Materials (CBOM) as the foundation of your migration program; and sequence a four-phase migration across a real enterprise environment.</p>
+</div>
+<hr />
+<h2 id="121-the-harvest-now-decrypt-later-threat">12.1 The Harvest-Now, Decrypt-Later Threat<a class="headerlink" href="#121-the-harvest-now-decrypt-later-threat" title="Permanent link">&para;</a></h2>
+<p>The most important thing to understand about post-quantum cryptography is this: <strong>the threat does not require a quantum computer.</strong> It requires only an adversary with network access and storage capacity — both of which nation-state actors have possessed for decades.</p>
+<p><strong>Harvest-now, decrypt-later (HNDL)</strong> is an intelligence collection strategy in which an adversary intercepts and archives encrypted communications today, intending to decrypt them retrospectively once a cryptographically relevant quantum computer (CRQC) becomes available. The data targeted is encrypted with RSA or elliptic curve cryptography (ECC). Once a sufficiently powerful quantum computer can run Shor's algorithm at scale (Chapter 4), that encryption is broken — retroactively, applied to data collected years or decades earlier.</p>
+<p>This threat is not hypothetical. The National Security Agency, CISA, the UK's National Cyber Security Centre (NCSC), and Germany's Federal Office for Information Security (BSI) have all publicly stated their assessment that HNDL campaigns are actively underway. This is the <strong>assessed intelligence position of multiple allied Western governments</strong>, not vendor speculation. These agencies cannot publicly confirm operational details — but their open guidance documents use language that leaves little ambiguity: <em>collect now, decrypt later</em> is a documented adversarial capability and posture.</p>
+<p>The logic of HNDL exploits a fundamental asymmetry in the cryptographic timeline:</p>
+<ul>
+<li><strong>Interception</strong> happens now, at the cost of network access and storage — cheap and scalable.</li>
+<li><strong>Decryption</strong> happens later, when quantum hardware is available — expensive and speculative today, but not forever.</li>
+<li><strong>The data cannot be re-encrypted after the fact.</strong> Once a TLS session has terminated and its ciphertext has been archived by an adversary, no future cryptographic upgrade can protect it.</li>
+</ul>
+<p>This asymmetry is why the conventional risk management response — "we'll migrate when quantum computers are ready" — is precisely wrong. By the time a CRQC exists, the opportunity to protect data that was in transit years earlier has already passed.</p>
+<h3 id="what-is-being-targeted">What Is Being Targeted<a class="headerlink" href="#what-is-being-targeted" title="Permanent link">&para;</a></h3>
+<p>The primary target of HNDL campaigns is not the encrypted payload but the <strong>cryptographic key exchange</strong> that establishes the shared secret used to encrypt that payload.</p>
+<p>In TLS (the protocol securing essentially all HTTPS traffic, VPN connections, and most enterprise network communications), the session proceeds in two stages:</p>
+<ol>
+<li>
+<p><strong>Handshake phase</strong>: The client and server use an asymmetric algorithm — RSA or elliptic curve Diffie-Hellman (ECDH) — to agree on a shared secret without transmitting it directly. This is the step vulnerable to Shor's algorithm.</p>
+</li>
+<li>
+<p><strong>Data transfer phase</strong>: The shared secret is used to derive a symmetric key (typically AES-128 or AES-256), which encrypts the actual payload.</p>
+</li>
+</ol>
+<p>An adversary archiving a TLS session captures both the handshake and the encrypted payload. Once they can break the asymmetric key exchange with Shor's algorithm, they derive the symmetric key and decrypt everything — regardless of AES's continuing strength.</p>
+<p><strong>What about AES?</strong> AES is addressed by Grover's algorithm, which provides a quadratic speedup for unstructured search. This reduces the effective security of AES-256 from 256 bits to approximately 128 bits — still considered computationally infeasible. The mitigation is straightforward: use AES-256 instead of AES-128 (doubling the symmetric key length). The asymmetric key exchange is the urgent, unsolved problem.</p>
+<h3 id="moscas-theorem-a-planning-framework">Mosca's Theorem: A Planning Framework<a class="headerlink" href="#moscas-theorem-a-planning-framework" title="Permanent link">&para;</a></h3>
+<p>Mosca's theorem, developed by Michele Mosca at the Institute for Quantum Computing, provides the canonical framework for determining whether an organization's data is already at quantum risk. It defines three variables:</p>
+<div class="arithmatex">\[x = \text{years the data must remain confidential (shelf-life)}\]</div>
+<div class="arithmatex">\[y = \text{years required to complete migration to quantum-safe cryptography}\]</div>
+<div class="arithmatex">\[z = \text{estimated years until a cryptographically relevant quantum computer arrives}\]</div>
+<p><strong>The core inequality:</strong></p>
+<div class="arithmatex">\[\boxed{x + y &gt; z \implies \text{data is at risk NOW}}\]</div>
+<p>If the sum of how long your data must remain secure and how long it takes you to migrate exceeds the time until a CRQC exists, that data is currently being collected by adversaries who will eventually decrypt it.</p>
+<p>The theorem forces organizations to confront three uncomfortable realities simultaneously: the sensitivity horizon of their data, the organizational inertia of their migration programs, and the technical trajectory of quantum hardware. IBM surveys indicate that enterprise executives estimate an average of <strong>12 years</strong> for full PQC integration — a number that, combined with typical data shelf-lives, pushes most large organizations well past any credible CRQC timeline.</p>
+<h3 id="applying-moscas-theorem-across-data-categories">Applying Mosca's Theorem Across Data Categories<a class="headerlink" href="#applying-moscas-theorem-across-data-categories" title="Permanent link">&para;</a></h3>
+<p>The following table applies Mosca's theorem to representative enterprise data categories. For the CRQC timeline (<span class="arithmatex">\(z\)</span>), expert surveys in 2024–2025 produced estimates ranging from 2028 to 2040, with the modal expert consensus placing a 50% probability on <span class="arithmatex">\(z &lt; 2035\)</span> and a meaningful fraction (15–20%) assigning <span class="arithmatex">\(z &lt; 2030\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Shelf-life (<span class="arithmatex">\(x\)</span>, years)</th>
+<th>Migration time (<span class="arithmatex">\(y\)</span>, years)</th>
+<th><span class="arithmatex">\(x + y\)</span></th>
+<th>At risk if <span class="arithmatex">\(z &lt;\)</span> (year)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Healthcare records</td>
+<td>50</td>
+<td>5</td>
+<td>55</td>
+<td>2076</td>
+</tr>
+<tr>
+<td>Financial transaction data</td>
+<td>7–30</td>
+<td>4</td>
+<td>11–34</td>
+<td>2030–2053</td>
+</tr>
+<tr>
+<td>Trade secrets</td>
+<td>Indefinite</td>
+<td>7</td>
+<td><span class="arithmatex">\(\infty\)</span></td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Government contracts</td>
+<td>25+</td>
+<td>6</td>
+<td>31+</td>
+<td>2051+</td>
+</tr>
+<tr>
+<td>M&amp;A communications</td>
+<td>10</td>
+<td>4</td>
+<td>14</td>
+<td>2038</td>
+</tr>
+<tr>
+<td>Defense procurement data</td>
+<td>30+</td>
+<td>7</td>
+<td>37+</td>
+<td>2058+</td>
+</tr>
+<tr>
+<td>Critical infrastructure configs</td>
+<td>20</td>
+<td>6</td>
+<td>26</td>
+<td>2046</td>
+</tr>
+</tbody>
+</table>
+<p>Starting from 2026, with <span class="arithmatex">\(z\)</span> estimates between 2028 and 2035 carrying 50–85% probability across expert cohorts: <strong>for every data category in this table, the threat window is already open under a meaningful fraction of plausible futures.</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>"We don't need to worry about PQC because quantum computers don't exist yet." This reverses the logic entirely. HNDL requires no quantum computer — only network access and storage. The adversary collects data today and waits. By the time a CRQC exists and the threat is "proven," data that was in transit five years earlier cannot be retroactively protected. The urgency of PQC migration is precisely that it must <em>precede</em> the threat's full materialization.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Organizations handling healthcare records, trade secrets, government contracts, or M&amp;A communications have already crossed the Mosca threshold under any CRQC timeline estimate shorter than 2040. For these organizations, every month of delay in beginning PQC migration increases the volume of irreversibly exposed data. The question is not whether to migrate but how quickly.</p>
+</div>
+<hr />
+<h2 id="122-the-nist-standards-and-the-deprecation-timeline">12.2 The NIST Standards and the Deprecation Timeline<a class="headerlink" href="#122-the-nist-standards-and-the-deprecation-timeline" title="Permanent link">&para;</a></h2>
+<p>NIST published three finalized post-quantum cryptographic standards on <strong>August 13, 2024</strong>, completing an eight-year evaluation process that began in 2016, attracted 82 candidate algorithms, and subjected the survivors to years of public cryptanalysis by the global research community. This section describes each standard in deployment terms — not the underlying mathematics (covered in Chapter 4, §4.6) but the characteristics that determine how and where each algorithm is deployed.</p>
+<h3 id="fips-203-ml-kem-the-highest-priority">FIPS 203 — ML-KEM: The Highest Priority<a class="headerlink" href="#fips-203-ml-kem-the-highest-priority" title="Permanent link">&para;</a></h3>
+<p><strong>ML-KEM (Module-Lattice Key Encapsulation Mechanism)</strong>, standardized as FIPS 203 and derived from CRYSTALS-Kyber, is the most immediately critical of the three standards because it directly addresses the HNDL threat.</p>
+<p>ML-KEM replaces RSA and ECDH in the <strong>key exchange</strong> step of TLS, VPN protocols, and any other protocol where two parties must agree on a shared secret. It is a <strong>Key Encapsulation Mechanism (KEM)</strong> rather than a key agreement protocol: one party generates a public/private key pair, the other encapsulates a random shared secret using the public key and sends the resulting ciphertext, and the first party decapsulates using the private key to recover the shared secret.</p>
+<p>Three parameter sets provide a range of security levels:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Set</th>
+<th>Security Level</th>
+<th>Public Key (bytes)</th>
+<th>Ciphertext (bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ML-KEM-512</td>
+<td>Level 1 (AES-128 equiv.)</td>
+<td>800</td>
+<td>768</td>
+</tr>
+<tr>
+<td>ML-KEM-768</td>
+<td>Level 3 (AES-192 equiv.)</td>
+<td>1,184</td>
+<td>1,088</td>
+</tr>
+<tr>
+<td>ML-KEM-1024</td>
+<td>Level 5 (AES-256 equiv.)</td>
+<td>1,568</td>
+<td>1,568</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ML-KEM-768</strong> is the recommended general-purpose choice, balancing security and performance. Its public key of 1,184 bytes is larger than RSA-2048's 256 bytes, but ML-KEM encapsulation and decapsulation are <strong>faster than RSA</strong> in most implementations because the underlying lattice arithmetic does not require large-integer modular exponentiation.</p>
+<p>The API differences from ECDH are real but manageable: ECDH is a Non-Interactive Key Exchange (NIKE) where both parties need only each other's public keys, while ML-KEM requires an explicit encapsulation step. Existing TLS 1.3 and SSH protocol structures accommodate this with minor changes, which is why ML-KEM is sometimes described as "almost a drop-in replacement for ECDH."</p>
+<h3 id="fips-204-ml-dsa-digital-signatures-at-scale">FIPS 204 — ML-DSA: Digital Signatures at Scale<a class="headerlink" href="#fips-204-ml-dsa-digital-signatures-at-scale" title="Permanent link">&para;</a></h3>
+<p><strong>ML-DSA (Module-Lattice Digital Signature Algorithm)</strong>, standardized as FIPS 204 and derived from CRYSTALS-Dilithium, replaces RSA and ECDSA for <strong>digital signatures</strong>: code signing, certificate authority operations, document signing, authentication tokens, and any application requiring non-repudiation.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Set</th>
+<th>Security Level</th>
+<th>Public Key (bytes)</th>
+<th>Signature (bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ML-DSA-44</td>
+<td>Level 2</td>
+<td>1,312</td>
+<td>2,420</td>
+</tr>
+<tr>
+<td>ML-DSA-65</td>
+<td>Level 3</td>
+<td>1,952</td>
+<td>3,293</td>
+</tr>
+<tr>
+<td>ML-DSA-87</td>
+<td>Level 5</td>
+<td>2,592</td>
+<td>4,595</td>
+</tr>
+</tbody>
+</table>
+<p>The signature size increase is significant: ML-DSA-65 produces 3,293-byte signatures versus 256 bytes for RSA-2048. This matters in constrained environments — IoT firmware updates, TLS handshake sizes, code-signing pipeline throughput — and requires capacity planning for certificate databases and signing infrastructure. For most enterprise deployments the bandwidth and storage overhead is manageable; the primary concern is protocol-level constraints that assume small signature sizes.</p>
+<p>Signing and verification speed for ML-DSA is comparable to ECDSA and substantially faster than RSA for equivalent security levels.</p>
+<h3 id="fips-205-slh-dsa-the-conservative-backstop">FIPS 205 — SLH-DSA: The Conservative Backstop<a class="headerlink" href="#fips-205-slh-dsa-the-conservative-backstop" title="Permanent link">&para;</a></h3>
+<p><strong>SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)</strong>, standardized as FIPS 205 and derived from SPHINCS+, occupies a unique position in the PQC landscape: its security relies <strong>exclusively on the collision resistance of cryptographic hash functions</strong> (SHA-2 or SHAKE), not on the hardness of lattice problems.</p>
+<p>This matters because it provides <strong>algorithm diversity</strong>. ML-KEM and ML-DSA both rely on the hardness of Module Learning With Errors (MLWE), a lattice problem that has resisted three decades of academic cryptanalysis. But "resisted so far" and "will resist forever" are different statements. If a future mathematical breakthrough undermined lattice-based cryptography — an event most cryptographers consider unlikely but not impossible — SLH-DSA would remain secure because it makes no use of lattice mathematics.</p>
+<p>SLH-DSA's trade-offs are substantial:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Set</th>
+<th>Security Level</th>
+<th>Public Key (bytes)</th>
+<th>Signature (bytes)</th>
+<th>Optimization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SLH-DSA-SHA2-128s</td>
+<td>Level 1</td>
+<td>32</td>
+<td>7,856</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-128f</td>
+<td>Level 1</td>
+<td>32</td>
+<td>17,088</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-192s</td>
+<td>Level 3</td>
+<td>48</td>
+<td>16,224</td>
+<td>Small</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-256s</td>
+<td>Level 5</td>
+<td>64</td>
+<td>29,792</td>
+<td>Small</td>
+</tr>
+</tbody>
+</table>
+<p>The 12 parameter sets span three security levels and two optimization targets (small signatures vs. faster generation). For most high-throughput signing operations, ML-DSA is preferred. SLH-DSA is the appropriate choice where algorithm diversity is a priority, long-term archive signatures are required, or the deployment context can absorb the larger signature sizes.</p>
+<h3 id="the-standards-pipeline">The Standards Pipeline<a class="headerlink" href="#the-standards-pipeline" title="Permanent link">&para;</a></h3>
+<p>Two additional algorithms are in the standardization pipeline:</p>
+<p><strong>FN-DSA (FIPS 206, based on FALCON)</strong> produces significantly smaller signatures than ML-DSA — 666 bytes at security level 1 — and is computationally fast, making it attractive for constrained environments. Its limitation is implementation complexity: FN-DSA requires precise floating-point arithmetic over Gaussian distributions, which creates subtle implementation risks on platforms with non-IEEE 754 floating-point behavior. NIST expects to finalize FIPS 206 in late 2026 or early 2027.</p>
+<p><strong>HQC (Hamming Quasi-Cyclic)</strong>, selected in March 2025, is a code-based KEM providing a non-lattice alternative to ML-KEM. Its security relies on the hardness of decoding random linear codes — a problem independent of lattice mathematics. The standard is expected in 2027. Like SLH-DSA, HQC's value is primarily in algorithm diversity.</p>
+<h3 id="the-deprecation-timeline">The Deprecation Timeline<a class="headerlink" href="#the-deprecation-timeline" title="Permanent link">&para;</a></h3>
+<p>NIST Internal Report 8547 establishes the federal deprecation schedule for classical public-key algorithms:</p>
+<ul>
+<li><strong>2030</strong>: RSA (all key sizes), ECDH, ECDSA, and Diffie-Hellman are <strong>deprecated</strong> — no new deployments in federal systems, and any system undergoing a technology refresh must migrate.</li>
+<li><strong>2035</strong>: These algorithms are <strong>disallowed</strong> — all federal systems must have completed migration.</li>
+</ul>
+<p>For enterprises outside the federal government, the direct enforcement mechanism is FIPS 140-3 validation (required for cryptographic modules used in federal procurement). As federal agencies enforce these timelines through procurement requirements, the effect cascades to any enterprise that sells to the U.S. government, operates under frameworks that reference FIPS 140-3 (PCI-DSS, HIPAA, FedRAMP), or operates internationally in jurisdictions with coordinated timelines.</p>
+<p><strong>OpenSSL 3.5</strong>, released April 2025, integrates ML-KEM, ML-DSA, and SLH-DSA with hybrid TLS support enabled by default — removing a significant deployment barrier.</p>
+<h3 id="full-algorithm-comparison">Full Algorithm Comparison<a class="headerlink" href="#full-algorithm-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Type</th>
+<th>Public Key (bytes)</th>
+<th>Ciphertext/Signature (bytes)</th>
+<th>Security Level</th>
+<th>Speed vs RSA-2048</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA-2048</td>
+<td>Classical</td>
+<td>256</td>
+<td>256 (sig)</td>
+<td>~112-bit</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>ECDSA P-256</td>
+<td>Classical</td>
+<td>64</td>
+<td>64 (sig)</td>
+<td>~128-bit</td>
+<td>~10× faster</td>
+</tr>
+<tr>
+<td>ML-KEM-768</td>
+<td>PQC KEM</td>
+<td>1,184</td>
+<td>1,088 (ct)</td>
+<td>Level 3</td>
+<td>Faster than RSA</td>
+</tr>
+<tr>
+<td>ML-DSA-65</td>
+<td>PQC signature</td>
+<td>1,952</td>
+<td>3,293 (sig)</td>
+<td>Level 3</td>
+<td>Comparable</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-128f</td>
+<td>PQC signature</td>
+<td>32</td>
+<td>17,088 (sig)</td>
+<td>Level 1</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>FN-DSA-512</td>
+<td>PQC signature</td>
+<td>897</td>
+<td>666 (sig)</td>
+<td>Level 1</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>HQC-128</td>
+<td>PQC KEM</td>
+<td>2,249</td>
+<td>4,433 (ct)</td>
+<td>Level 1</td>
+<td>Slower than ML-KEM</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>"We can just increase our RSA key sizes to stay secure." RSA-4096 or RSA-8192 do not protect against Shor's algorithm. Gidney and Ekerå (2021) estimated approximately 20 million physical qubits to factor RSA-2048; larger keys increase the quantum resources required by a polynomial — not exponential — factor. Shor's algorithm renders RSA cryptographically broken regardless of key size once sufficient quantum hardware exists.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Key Reference</p>
+<p>NIST FIPS 203, 204, 205 (August 2024); NIST IR 8547 (2024): <em>Transition to Post-Quantum Cryptography Standards</em>; Gidney, C. and Ekerå, M. (2021). "How to factor 2048-bit RSA integers in 8 hours using 20 million noisy qubits." <em>Quantum</em>, 5, 433.</p>
+</div>
+<hr />
+<h2 id="123-hybrid-migration-and-crypto-agility">12.3 Hybrid Migration and Crypto-Agility<a class="headerlink" href="#123-hybrid-migration-and-crypto-agility" title="Permanent link">&para;</a></h2>
+<h3 id="the-case-for-hybrid-deployment">The Case for Hybrid Deployment<a class="headerlink" href="#the-case-for-hybrid-deployment" title="Permanent link">&para;</a></h3>
+<p>The quantum threat is certain in direction but uncertain in timing. PQC algorithms have survived eight years of NIST evaluation and extensive public cryptanalysis — but they have not survived the decades of real-world adversarial use that RSA and ECC have. New algorithms, however well-designed, lack this track record.</p>
+<p><strong>Hybrid cryptography</strong> addresses both uncertainties simultaneously by combining a classical algorithm with a PQC algorithm in a single protocol negotiation. The canonical TLS hybrid construction is:</p>
+<div class="arithmatex">\[\text{Shared Secret} = \text{KDF}\!\left(\underbrace{X25519 \text{ output}}_{\text{classical}} \,\|\, \underbrace{\text{ML-KEM-768 output}}_{\text{post-quantum}}\right)\]</div>
+<p>Both components contribute entropy to the final shared secret via a Key Derivation Function (KDF). If either component is compromised — whether because a quantum computer breaks X25519 or because an unforeseen mathematical attack breaks ML-KEM — the session remains secure, because breaking the session requires simultaneously defeating both algorithms.</p>
+<p>This is why hybrid deployment is recommended by every major national cryptographic authority: NIST, UK NCSC, Germany BSI, and France ANSSI. It is not a compromise position — it is the technically correct approach for the current transitional period.</p>
+<h3 id="current-deployment-state">Current Deployment State<a class="headerlink" href="#current-deployment-state" title="Permanent link">&para;</a></h3>
+<p>Hybrid PQC is not a future aspiration. As of early 2026:</p>
+<ul>
+<li><strong>Chrome, Firefox, and Safari</strong> all support hybrid ML-KEM + X25519 by default.</li>
+<li><strong>OpenSSL 3.5</strong> (April 2025): hybrid TLS enabled by default; the upgrade from OpenSSL 3.x is a minor version bump.</li>
+<li><strong>Cloudflare</strong>: over 35% of human-generated internet traffic flowing through Cloudflare's network already carries post-quantum protection via hybrid ML-KEM.</li>
+<li><strong>AWS</strong>: first FIPS 140-3 validation of an open-source module including ML-KEM.</li>
+<li><strong>Microsoft</strong>: ML-KEM integrated into Windows 11 and Windows Server 2025 TLS stack.</li>
+</ul>
+<p>The infrastructure for hybrid PQC deployment exists today and is being actively used at internet scale. The bottleneck is not technology availability — it is organizational awareness and internal migration programs.</p>
+<h3 id="crypto-agility-the-architectural-imperative">Crypto-Agility: The Architectural Imperative<a class="headerlink" href="#crypto-agility-the-architectural-imperative" title="Permanent link">&para;</a></h3>
+<p>Beyond deploying specific PQC algorithms, the most durable architectural investment an organization can make is <strong>crypto-agility</strong>: designing systems so that cryptographic algorithms can be updated without requiring application code changes, protocol redesigns, or extended system outages.</p>
+<p>The PQC transition is larger in scope than any previous migration, and it will not be the last. FN-DSA, HQC, and future standards will require updates. Quantum-safe symmetric algorithm guidance will evolve. Crypto-agile architecture converts future migrations from multi-year programs into configuration management exercises.</p>
+<p><strong>Four structural requirements for crypto-agility:</strong></p>
+<p><strong>1. Abstract cryptographic operations from application logic</strong></p>
+<p>Cryptographic operations must be accessed through configurable APIs, not hardcoded algorithm choices. The application calls <code>encrypt(data, key, algorithm_policy)</code> where <code>algorithm_policy</code> is resolved at runtime from a configuration store — not <code>AES_CBC_encrypt(data, key)</code> baked into source code. When the algorithm must change, only the configuration changes; application code does not.</p>
+<p><strong>2. Centralize key and certificate lifecycle management</strong></p>
+<p>Fragmented key management — where different teams manage their own keys, certificates expire silently, and algorithm updates require manual coordination across hundreds of systems — is incompatible with crypto-agility. Centralized platforms (HashiCorp Vault, AWS Certificate Manager, Azure Key Vault) provide the policy enforcement point through which algorithm transitions can be executed organizationally.</p>
+<p><strong>3. Automate certificate lifecycle management</strong></p>
+<p>Manual certificate management cannot scale across the thousands of certificates in a typical enterprise environment, and the PQC transition requires updating all of them. Certificate lifecycle automation platforms — Venafi, Keyfactor, Sectigo, DigiCert — provide discovery, renewal, and revocation automation with policy enforcement.</p>
+<p><strong>4. Implement and preserve algorithm negotiation</strong></p>
+<p>TLS 1.3's cipher suite negotiation is the correct model: client and server advertise their supported algorithms; the protocol selects the strongest mutually supported option. This provides automatic backward compatibility during migration and automatic adoption of stronger algorithms as they become available. The failure mode is organizations that override this negotiation with hardcoded cipher suite configurations "for performance" — destroying the agility the protocol provides and requiring manual intervention for every algorithm update.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Every architectural decision that hardcodes a specific cryptographic algorithm — in application code, infrastructure configuration, protocol implementation, or hardware — creates technical debt that must be paid during the PQC migration. The cost of crypto-agility is paid once, at design time. The cost of crypto-rigidity is paid repeatedly, at each migration event, and compounds with organizational scale.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Critical Risk</p>
+<p>IoT and embedded systems represent the highest-risk segment for PQC migration. Devices with 5–15 year deployment lifespans that were shipped with hardcoded RSA or ECC implementations and no over-the-air update capability cannot be migrated through software changes. Organizations must audit their embedded device inventory now to identify systems that will require physical replacement — a process that can take years for industrial, medical, or critical infrastructure deployments.</p>
+</div>
+<hr />
+<h2 id="124-the-cryptographic-bill-of-materials-cbom">12.4 The Cryptographic Bill of Materials (CBOM)<a class="headerlink" href="#124-the-cryptographic-bill-of-materials-cbom" title="Permanent link">&para;</a></h2>
+<p>A migration program cannot succeed without a complete inventory of what must be migrated. In the PQC context, this inventory is the <strong>Cryptographic Bill of Materials (CBOM)</strong>: a structured record of every cryptographic asset in an organization's environment and the dependencies that connect them.</p>
+<p>The urgency of this step is starkly illustrated by current organizational readiness:</p>
+<ul>
+<li><strong>87% of organizations have not completed a cryptographic inventory</strong> (Gartner, 2025)</li>
+<li><strong>IBM Quantum-Safe Readiness Index</strong>: global average score of 25/100 as of October 2025</li>
+</ul>
+<p>Organizations that have not completed a CBOM are, by definition, unable to scope their migration effort, prioritize their remediation work, or demonstrate progress to regulators.</p>
+<h3 id="what-a-cbom-captures">What a CBOM Captures<a class="headerlink" href="#what-a-cbom-captures" title="Permanent link">&para;</a></h3>
+<p>A complete CBOM documents the following for each cryptographic asset:</p>
+<p><strong>Algorithms and parameters</strong>: The specific algorithm and its configuration — not just "RSA" but "RSA-2048 with PKCS#1 v1.5 padding." Parameter precision matters because security levels vary substantially within algorithm families.</p>
+<p><strong>Cryptographic libraries and versions</strong>: OpenSSL 3.2.1, BouncyCastle 1.78, Windows CNG. Versions determine which PQC algorithms are available without library replacement.</p>
+<p><strong>Protocols and versions</strong>: TLS 1.2 vs. 1.3 (TLS 1.2 does not support the KEM API used by ML-KEM directly); SSH protocol version and key exchange algorithms; IPsec IKEv1 vs. IKEv2; PKCS#11 HSM interface versions.</p>
+<p><strong>Certificates and their properties</strong>: Issuer, validity period, subject, key type, key size, signing algorithm — for every certificate in the environment, along with which systems depend on each.</p>
+<p><strong>Keys and secrets metadata</strong>: Key type, length, creation date, rotation policy, storage location (HSM slot, software keystore, cloud KMS), and access control policy. The CBOM captures metadata only, never key material.</p>
+<p><strong>Application dependencies</strong>: Which applications call which cryptographic libraries, which certificates, and which key management systems. This dependency map is essential for understanding the blast radius of each algorithm change.</p>
+<h3 id="standards-and-tooling">Standards and Tooling<a class="headerlink" href="#standards-and-tooling" title="Permanent link">&para;</a></h3>
+<p><strong>CycloneDX 1.6 (OWASP)</strong> is the definitive CBOM schema, providing native support for cryptographic asset types including algorithms, certificates, keys, protocols, and related-crypto-material. CycloneDX CBOMs are machine-readable (JSON or XML) and interoperable across tooling vendors.</p>
+<p><strong>Discovery approaches</strong> fall into three categories:</p>
+<ul>
+<li><strong>Static analysis</strong>: Scan source code and compiled binaries for cryptographic API calls, algorithm strings, and library imports. Tools: IBM CBOMkit-hyperion (SonarQube integration), Checkmarx SCA, GitHub CodeQL queries. Coverage: application-layer cryptography in owned code.</li>
+<li><strong>Runtime observation</strong>: Monitor actual TLS negotiations and cryptographic operations during system operation. Coverage: actual algorithm usage including third-party and legacy systems.</li>
+<li><strong>Network analysis</strong>: Passive inspection of network traffic to identify TLS versions, cipher suites, and certificate characteristics. Tools: Qualys SSL Labs API, Shodan, custom packet capture analysis. Coverage: all network-exposed endpoints regardless of application architecture.</li>
+</ul>
+<p><strong>Vendor tooling</strong> for enterprise CBOM generation and management:</p>
+<ul>
+<li><strong>IBM CBOMkit</strong> (open-source): CBOMkit-hyperion for source code scanning, CBOMkit-theia for container image scanning. Produces CycloneDX-compliant CBOMs.</li>
+<li><strong>IBM Quantum Safe Explorer</strong>: end-to-end discovery, CBOM generation, risk scoring, and migration planning workflow.</li>
+<li><strong>Keyfactor, Sectigo, DigiCert</strong>: certificate lifecycle management platforms with discovery capabilities that form the certificate layer of the CBOM.</li>
+<li><strong>Venafi</strong>: machine identity management with cryptographic asset visibility and policy enforcement.</li>
+</ul>
+<p><strong>NIST SP 1800-38B</strong> explicitly recommends automated CBOM generation as the foundational step for PQC readiness assessment and migration planning.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example</p>
+<p>A regional healthcare system with 12,000 employees conducts a CBOM discovery exercise. Static analysis of 847 repositories finds 23 distinct combinations of algorithm, library, and parameter set. Runtime observation identifies 156 active TLS endpoints; 34 are still negotiating TLS 1.2 with RSA key exchange. Network scanning finds 8 internet-facing endpoints with expired or near-expiry certificates. Critically, the CBOM reveals that 3 production applications are using a vendored OpenSSL 1.1.1 fork (end-of-life since September 2023) that cannot be upgraded to OpenSSL 3.x without application changes — creating a blocking dependency for ML-KEM deployment on those endpoints. Without the CBOM, this dependency would have been discovered only when the PQC migration attempted to update those endpoints and failed.</p>
+</div>
+<hr />
+<h2 id="125-the-four-phase-migration-framework">12.5 The Four-Phase Migration Framework<a class="headerlink" href="#125-the-four-phase-migration-framework" title="Permanent link">&para;</a></h2>
+<p>PQC migration is not a single project but a multi-year program requiring coordination across network engineering, application development, PKI operations, HSM management, vendor management, and executive governance. The following framework sequences the work to maximize risk reduction earliest while maintaining forward momentum.</p>
+<h3 id="phase-1-discover-months-16">Phase 1: Discover (Months 1–6)<a class="headerlink" href="#phase-1-discover-months-16" title="Permanent link">&para;</a></h3>
+<p>The objective of Phase 1 is a complete, machine-readable CBOM for all internet-facing systems, with preliminary inventory for internal systems.</p>
+<p><strong>Target</strong>: Complete CBOM covering all external-facing TLS endpoints, VPN infrastructure, code signing systems, and CA hierarchy within six months of program initiation.</p>
+<p><strong>Workstreams</strong>:</p>
+<ul>
+<li>Deploy static analysis tooling across all source code repositories (CBOMkit-hyperion, CodeQL).</li>
+<li>Run network scanning against all internet-facing IP ranges (TLS fingerprinting, certificate discovery).</li>
+<li>Enumerate HSM inventory with vendor and firmware versions.</li>
+<li>Catalog all certificate authorities — internal, external, subordinate, issuing — with algorithm inventory.</li>
+<li>Document all third-party vendor dependencies that involve cryptography (payment processors, identity providers, EDI partners).</li>
+</ul>
+<p><strong>Deliverable</strong>: CBOM inventory report with algorithm distribution, TLS version breakdown, certificate expiry timeline, library version map, and identification of blocking dependencies (EOL libraries, non-upgradeable embedded systems, vendor-controlled endpoints).</p>
+<h3 id="phase-2-prioritize-months-49-overlapping-with-phase-1">Phase 2: Prioritize (Months 4–9, Overlapping with Phase 1)<a class="headerlink" href="#phase-2-prioritize-months-49-overlapping-with-phase-1" title="Permanent link">&para;</a></h3>
+<p>The objective of Phase 2 is a risk-ranked migration plan with Mosca's theorem applied to each critical data category.</p>
+<p><strong>Risk ranking for migration priority:</strong></p>
+<ol>
+<li><strong>Internet-facing TLS endpoints</strong> — highest HNDL exposure; actively targeted; highest priority</li>
+<li><strong>VPN infrastructure</strong> — site-to-site and remote access VPNs carry sensitive long-lived traffic</li>
+<li><strong>Internal PKI and certificate authorities</strong> — CA compromise has cascade effects; root CA key upgrade required before issuing PQC certificates</li>
+<li><strong>Code signing infrastructure</strong> — integrity of software supply chain; mandated by CNSA 2.0</li>
+<li><strong>Data-at-rest encryption</strong> — lower HNDL exposure; addressed primarily by AES-256 upgrade</li>
+<li><strong>Embedded and IoT systems</strong> — longest replacement timeline; begin inventory and vendor engagement immediately</li>
+</ol>
+<p><strong>Deliverable</strong>: Prioritized migration plan with Mosca's theorem calculations for the top 10 data categories, estimated migration timeline by system tier, budget estimates, and vendor engagement plan.</p>
+<h3 id="phase-3-migrate-months-636">Phase 3: Migrate (Months 6–36+)<a class="headerlink" href="#phase-3-migrate-months-636" title="Permanent link">&para;</a></h3>
+<p>Migration proceeds in priority order, with hybrid mode deployed before pure PQC to maintain backward compatibility.</p>
+<p><strong>TLS key exchange (ML-KEM) — Priority 1</strong></p>
+<p>Configure ML-KEM-768 + X25519 hybrid in OpenSSL 3.5+ or equivalent TLS library. Enable in web servers (nginx, Apache, IIS), load balancers (F5, AWS ALB, Cloudflare), and API gateways. Monitor for client compatibility failures — clients that do not support hybrid ML-KEM fall back to classical X25519 in properly configured hybrid deployments.</p>
+<p><strong>Code signing and certificates (ML-DSA) — Priority 2</strong></p>
+<p>Issue new code signing certificates with ML-DSA-65. Update CI/CD pipeline signing tooling. Issue dual-algorithm certificates (classical + PQC) during the transition period to maintain compatibility with existing verification infrastructure.</p>
+<p><strong>VPN tunnels — Priority 3</strong></p>
+<p>IKEv2 supports PQC key exchange through RFC 9370 (Multiple Key Exchanges in IKEv2). Major VPN vendors (Cisco, Palo Alto, Fortinet) have released or are releasing PQC-capable firmware.</p>
+<p><strong>Application-layer encryption — Priority 4</strong></p>
+<p>Replace RSA-encrypted key wrapping with ML-KEM; apply AES-256 upgrade for symmetric components. Application-level encryption migrates after the transport layer because HNDL primarily targets data in transit.</p>
+<p><strong>HSM upgrades</strong></p>
+<p>Hardware Security Modules require firmware or hardware upgrades to support PQC operations. Current PQC-capable HSM platforms include Thales Luna Network HSM v7.9+, Entrust nShield 5s, and AWS CloudHSM (ML-KEM support announced). Procurement lead times for HSM upgrades can be 6–18 months; begin vendor engagement in Phase 2.</p>
+<h3 id="phase-4-validate-and-iterate-ongoing">Phase 4: Validate and Iterate (Ongoing)<a class="headerlink" href="#phase-4-validate-and-iterate-ongoing" title="Permanent link">&para;</a></h3>
+<p><strong>Interoperability testing</strong>: Verify that PQC-protected connections successfully negotiate with all expected clients and servers. Common failure modes include MTU fragmentation issues with larger PQC key sizes in constrained network paths, and handshake failures with legacy clients that reject unrecognized extensions.</p>
+<p><strong>Performance validation</strong>: Measure TLS handshake latency, CPU utilization on HSMs, and signing throughput under load. ML-KEM should show latency improvement over RSA; ML-DSA signature size may require HTTP/2 header compression tuning.</p>
+<p><strong>Standards monitoring</strong>: FN-DSA (FIPS 206) and HQC are expected in 2026–2027. A crypto-agile architecture enables their adoption without a new migration program — but this must be tested by deliberately exercising algorithm rotation.</p>
+<p><strong>Annual board reporting</strong>: PQC migration progress, percentage of endpoints protected, outstanding blocking dependencies, budget vs. plan, and quantum risk posture assessment should be presented to the board annually. This converts PQC from a technical project into an enterprise risk management program with appropriate governance visibility.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example</p>
+<p>A mid-size financial services firm has 847 TLS endpoints (public-facing APIs and partner integrations), 23 internal certificate authorities in a three-tier hierarchy, 1,200 code-signed applications, and embedded cryptography in 6,000 IoT devices (ATMs, POS terminals, branch networking equipment).</p>
+<p>Applying Mosca's theorem: customer transaction data has a shelf-life of 30 years (<span class="arithmatex">\(x = 30\)</span>), estimated migration time is 5 years (<span class="arithmatex">\(y = 5\)</span>), so <span class="arithmatex">\(x + y = 35\)</span>. With <span class="arithmatex">\(z\)</span> estimates placing a 50% probability on CRQC before 2035, the firm has already crossed the Mosca risk threshold.</p>
+<p><strong>Phase 1 result</strong>: 780 TLS endpoints run nginx or Apache on Linux with OpenSSL 3.2+; upgrading to OpenSSL 3.5 and enabling hybrid ciphers requires 4 FTE-months of engineering. 67 endpoints run Windows Server with IIS; covered by Windows Server 2025 update. 3 legacy appliances require hardware replacement with an 18-month procurement lead time — identified by CBOM, procurement begun immediately.</p>
+<p><strong>Phase 3 timeline</strong>: Priority 1 (TLS endpoints, months 1–6): 97% of internet-facing endpoints protected by ML-KEM hybrid. Priority 2 (CA hierarchy and code signing, months 4–12): 23 CAs upgraded; 1,200 signing workflows updated via Keyfactor automation. Priority 3 (VPN, months 12–24): 23 site-to-site tunnels and 4,000 remote access endpoints migrated. Priority 4 (IoT, months 24–48): ATMs covered by existing vendor replacement contract; POS terminals covered by vendor patch; branch networking covered by standard hardware refresh cycle.</p>
+<p><strong>Total estimated budget</strong>: $2.8M over 4 years, 60% personnel and 40% hardware/vendor costs. Risk reduction: 95% of internet-facing TLS traffic protected by ML-KEM within 18 months of program start.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>PQC migration is not a technology project — it is a compliance and risk management imperative with hard regulatory deadlines. CNSA 2.0 requires U.S. government suppliers to begin PQC deployment by January 2027. UK NCSC mandates discovery phase completion by 2028. NIST IR 8547 triggers FIPS 140-3 non-compliance for RSA/ECDH starting in 2030. Organizations without an active, board-governed migration program today are accumulating technical debt, regulatory exposure, and — for organizations with long-lived sensitive data — irreversible data exposure. The time to start is now.</p>
+</div>
+<hr />
+<h2 id="chapter-summary">Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Five Key Takeaways</p>
+<ol>
+<li>
+<p><strong>The HNDL threat is active today.</strong> Nation-state adversaries are intercepting and archiving encrypted communications now, requiring no quantum hardware. Multiple allied governments have assessed HNDL campaigns as underway. The window for protecting data already collected has closed; the window for data generated today is closing.</p>
+</li>
+<li>
+<p><strong>Mosca's theorem quantifies the urgency.</strong> If your data's shelf-life (<span class="arithmatex">\(x\)</span>) plus your migration time (<span class="arithmatex">\(y\)</span>) exceeds the CRQC arrival estimate (<span class="arithmatex">\(z\)</span>), your data is already at risk under a meaningful fraction of plausible futures. For organizations with long-lived sensitive data and multi-year migration programs, the Mosca threshold has already been crossed.</p>
+</li>
+<li>
+<p><strong>Three NIST standards are finalized and deployable.</strong> FIPS 203 (ML-KEM) addresses key exchange and is the highest priority; FIPS 204 (ML-DSA) addresses signatures; FIPS 205 (SLH-DSA) provides algorithm diversity through hash-based signatures that do not depend on lattice mathematics. Hybrid deployment combining classical and PQC algorithms is the recommended approach during the transitional period.</p>
+</li>
+<li>
+<p><strong>Crypto-agility is the durable architectural investment.</strong> Abstracting cryptography from applications, centralizing key management, automating certificate lifecycle, and preserving algorithm negotiation converts future migrations from multi-year programs into configuration changes.</p>
+</li>
+<li>
+<p><strong>You cannot migrate what you cannot see.</strong> A CBOM is the non-negotiable foundation of any PQC migration program. The 87% of organizations that have not completed a cryptographic inventory cannot know their migration scope, cannot prioritize their remediation, and cannot demonstrate compliance with approaching regulatory deadlines.</p>
+</li>
+</ol>
+</div>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Mosca, M. (2018). "Cybersecurity in an era of quantum computing." <em>IEEE Security &amp; Privacy</em>, 16(5), 38–41.</p>
+</li>
+<li>
+<p>NIST. (2024). <em>FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard</em>. National Institute of Standards and Technology.</p>
+</li>
+<li>
+<p>NIST. (2024). <em>FIPS 204: Module-Lattice-Based Digital Signature Standard</em>. National Institute of Standards and Technology.</p>
+</li>
+<li>
+<p>NIST. (2024). <em>FIPS 205: Stateless Hash-Based Digital Signature Standard</em>. National Institute of Standards and Technology.</p>
+</li>
+<li>
+<p>NIST. (2024). <em>NIST IR 8547 (Initial Public Draft): Transition to Post-Quantum Cryptography Standards</em>. National Institute of Standards and Technology.</p>
+</li>
+<li>
+<p>NIST. (2023). <em>NIST SP 1800-38B: Migration to Post-Quantum Cryptography</em>. National Cybersecurity Center of Excellence.</p>
+</li>
+<li>
+<p>NSA. (2022). <em>Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) Advisory</em>. National Security Agency Cybersecurity Advisory.</p>
+</li>
+<li>
+<p>Gidney, C. and Ekerå, M. (2021). "How to factor 2048-bit RSA integers in 8 hours using 20 million noisy qubits." <em>Quantum</em>, 5, 433.</p>
+</li>
+<li>
+<p>IBM Research. (2025). <em>Quantum-Safe Readiness Index: Global Assessment 2025</em>. IBM Institute for Business Value.</p>
+</li>
+<li>
+<p>Bernstein, D. J. and Lange, T. (2017). "Post-quantum cryptography." <em>Nature</em>, 549(7671), 188–194.</p>
+</li>
+<li>
+<p>UK National Cyber Security Centre. (2023). <em>Post-Quantum Cryptography: Preparing for the Quantum Threat</em>. NCSC Guidance.</p>
+</li>
+<li>
+<p>BSI. (2024). <em>Recommendations for Post-Quantum Cryptography</em>. Federal Office for Information Security (Germany).</p>
+</li>
+<li>
+<p>Alagic, G. et al. (2022). <em>Status Report on the Third Round of the NIST Post-Quantum Cryptography Standardization Process</em>. NISTIR 8413.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

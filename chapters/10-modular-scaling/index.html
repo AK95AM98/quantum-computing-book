@@ -1,0 +1,3467 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/10-modular-scaling/">
+      
+      
+        <link rel="prev" href="../09-roadmaps/quiz/">
+      
+      
+        <link rel="next" href="quiz/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-10-modular-scaling-connecting-chips-into-quantum-supercomputers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-why-single-chip-scaling-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Why Single-Chip Scaling Fails
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Why Single-Chip Scaling Fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-fabrication-defect-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Fabrication Defect Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-crosstalk-with-qubit-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 Crosstalk with Qubit Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-thermal-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 Thermal Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-the-wiring-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 The Wiring Bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1015-consensus-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.5 Consensus Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-ibms-coupler-hierarchy-three-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 IBM's Coupler Hierarchy — Three Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 IBM&#39;s Coupler Hierarchy — Three Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-tier-1-c-couplers-intra-chip-long-range-demonstrated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Tier 1: C-Couplers (Intra-Chip Long-Range, Demonstrated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-tier-2-l-couplers-inter-chip-microwave-links-demonstrated-in-flamingo-planned-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Tier 2: L-Couplers (Inter-Chip Microwave Links, Demonstrated in Flamingo, Planned at Scale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-tier-3-universal-adapters-inter-module-logical-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Tier 3: Universal Adapters (Inter-Module Logical Transport)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-ionqs-photonic-networking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 IonQ's Photonic Networking Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 IonQ&#39;s Photonic Networking Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-the-photonic-inter-module-link-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 The Photonic Inter-Module Link Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-lightsynq-memory-buffered-photonic-interconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 Lightsynq Memory-Buffered Photonic Interconnects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033-electronic-qubit-control-eqc-and-oxford-ionics-2d-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3 Electronic Qubit Control (EQC) and Oxford Ionics 2D Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-neutral-atom-arrays-reconfigurable-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Neutral Atom Arrays — Reconfigurable Connectivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4 Neutral Atom Arrays — Reconfigurable Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1041-advantages-of-reconfigurable-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.1 Advantages of Reconfigurable Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1042-current-state-and-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2 Current State and Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-quantum-algorithms-for-molecular-simulation-the-drug-discovery-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Quantum Algorithms for Molecular Simulation — The Drug Discovery Frontier
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.5 Quantum Algorithms for Molecular Simulation — The Drug Discovery Frontier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1051-the-electronic-structure-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.1 The Electronic Structure Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1052-classical-approximations-and-their-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.2 Classical Approximations and Their Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1053-variational-quantum-eigensolver-vqe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.3 Variational Quantum Eigensolver (VQE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1054-quantum-phase-estimation-qpe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.4 Quantum Phase Estimation (QPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1055-resource-estimates-hardware-requirements-by-molecule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.5 Resource Estimates: Hardware Requirements by Molecule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-classical-networking-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The Classical Networking Analogy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 The Classical Networking Analogy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1061-classical-computings-scaling-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.1 Classical Computing's Scaling History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1062-quantum-computings-analogous-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.2 Quantum Computing's Analogous Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-why-single-chip-scaling-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Why Single-Chip Scaling Fails
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Why Single-Chip Scaling Fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-fabrication-defect-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Fabrication Defect Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-crosstalk-with-qubit-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 Crosstalk with Qubit Density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-thermal-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 Thermal Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-the-wiring-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 The Wiring Bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1015-consensus-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.5 Consensus Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-ibms-coupler-hierarchy-three-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 IBM's Coupler Hierarchy — Three Tiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 IBM&#39;s Coupler Hierarchy — Three Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-tier-1-c-couplers-intra-chip-long-range-demonstrated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Tier 1: C-Couplers (Intra-Chip Long-Range, Demonstrated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-tier-2-l-couplers-inter-chip-microwave-links-demonstrated-in-flamingo-planned-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Tier 2: L-Couplers (Inter-Chip Microwave Links, Demonstrated in Flamingo, Planned at Scale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-tier-3-universal-adapters-inter-module-logical-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Tier 3: Universal Adapters (Inter-Module Logical Transport)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-ionqs-photonic-networking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 IonQ's Photonic Networking Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.3 IonQ&#39;s Photonic Networking Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1031-the-photonic-inter-module-link-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.1 The Photonic Inter-Module Link Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1032-lightsynq-memory-buffered-photonic-interconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.2 Lightsynq Memory-Buffered Photonic Interconnects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1033-electronic-qubit-control-eqc-and-oxford-ionics-2d-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3.3 Electronic Qubit Control (EQC) and Oxford Ionics 2D Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-neutral-atom-arrays-reconfigurable-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Neutral Atom Arrays — Reconfigurable Connectivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.4 Neutral Atom Arrays — Reconfigurable Connectivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1041-advantages-of-reconfigurable-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.1 Advantages of Reconfigurable Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1042-current-state-and-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4.2 Current State and Roadmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-quantum-algorithms-for-molecular-simulation-the-drug-discovery-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Quantum Algorithms for Molecular Simulation — The Drug Discovery Frontier
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.5 Quantum Algorithms for Molecular Simulation — The Drug Discovery Frontier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1051-the-electronic-structure-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.1 The Electronic Structure Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1052-classical-approximations-and-their-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.2 Classical Approximations and Their Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1053-variational-quantum-eigensolver-vqe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.3 Variational Quantum Eigensolver (VQE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1054-quantum-phase-estimation-qpe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.4 Quantum Phase Estimation (QPE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1055-resource-estimates-hardware-requirements-by-molecule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5.5 Resource Estimates: Hardware Requirements by Molecule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-classical-networking-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The Classical Networking Analogy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 The Classical Networking Analogy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1061-classical-computings-scaling-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.1 Classical Computing's Scaling History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1062-quantum-computings-analogous-trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6.2 Quantum Computing's Analogous Trajectory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-10-modular-scaling-connecting-chips-into-quantum-supercomputers">Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers<a class="headerlink" href="#chapter-10-modular-scaling-connecting-chips-into-quantum-supercomputers" title="Permanent link">&para;</a></h1>
+<p><em>"The classical computer did not scale by making single chips infinitely large. It scaled by connecting many chips together. Quantum computing will do the same — and the engineering of those connections is the central challenge of the next decade."</em></p>
+<hr />
+<p>Fault-tolerant quantum computing requires millions of physical qubits coordinated with coherent quantum links. No single fabricated chip will ever host a million high-quality qubits. The physical limits are fundamental: thermal management, fabrication defects, crosstalk, and wiring complexity each impose ceilings that no incremental improvement can overcome at the required scale. The industry has reached consensus — convergently and independently across superconducting, trapped-ion, neutral atom, and photonic modalities — that the path to large-scale quantum computing is modular: many small, high-quality chips connected by quantum links.</p>
+<p>This chapter examines why single-chip scaling fails, how each major platform approaches the modular interconnect problem, and how the resulting systems will enable quantum algorithms for molecular simulation that classical computers cannot match. We close with the classical computing analogy that makes the trajectory concrete: the quantum computing industry today is approximately where classical computing was in 1995, beginning the transition from single-core processors to the era of interconnected multi-processor systems.</p>
+<hr />
+<h2 id="101-why-single-chip-scaling-fails">10.1 Why Single-Chip Scaling Fails<a class="headerlink" href="#101-why-single-chip-scaling-fails" title="Permanent link">&para;</a></h2>
+<p>Before examining solutions, it is worth understanding why the obvious approach — simply fabricating more qubits on a larger chip — fails. The barriers are not theoretical; they are physical constraints that become increasingly severe as qubit count grows.</p>
+<h3 id="1011-fabrication-defect-rate">10.1.1 Fabrication Defect Rate<a class="headerlink" href="#1011-fabrication-defect-rate" title="Permanent link">&para;</a></h3>
+<p>Semiconductor fabrication is a probabilistic process. Any wafer contains a finite density of defects — crystal dislocations, impurity atoms, lithographic irregularities — that disable any circuit element they affect. The probability that a chip of area <span class="arithmatex">\(A\)</span> is defect-free scales as <span class="arithmatex">\(e^{-\lambda A}\)</span>, where <span class="arithmatex">\(\lambda\)</span> is the defect density (defects per unit area). For small chips, this is manageable. As chip area grows, defect probability grows exponentially, and yield (the fraction of chips that pass quality control) collapses.</p>
+<p>Classical chips cope with this through redundancy and error correction at the silicon level. Quantum chips cannot: a defective qubit or coupler that introduces correlated errors cannot be simply ignored — it corrupts the entire error correction code block. IBM's current Heron processors achieve high per-qubit quality partly because their chip area is constrained to a range where yield remains acceptable. Scaling to 10× more qubits on a single die would require 10× the chip area, dramatically reducing yield and increasing cost per working qubit.</p>
+<h3 id="1012-crosstalk-with-qubit-density">10.1.2 Crosstalk with Qubit Density<a class="headerlink" href="#1012-crosstalk-with-qubit-density" title="Permanent link">&para;</a></h3>
+<p>Superconducting qubits interact via microwave electromagnetic fields. On a chip, qubits are coupled through designed couplers, but they also interact weakly through unintended capacitive and inductive coupling to neighbors and to non-nearest-neighbor qubits. As qubit density increases (smaller spacing between qubits), these parasitic couplings strengthen. At some density threshold, parasitic crosstalk becomes comparable in magnitude to intended coupling, making individual qubit addressing unreliable and introducing correlated errors that defeat quantum error correction codes.</p>
+<p>Trapped-ion systems face an analogous challenge: as ion chains grow longer, the motional modes that mediate two-qubit gates become increasingly closely spaced in frequency, leading to mode crowding. Addressing a specific pair of ions without accidentally driving adjacent motional modes requires increasingly precise laser control. The Oxford Ionics 2D trap array approach addresses this by dividing ions into small 2D clusters, within which mode crowding is manageable.</p>
+<h3 id="1013-thermal-management">10.1.3 Thermal Management<a class="headerlink" href="#1013-thermal-management" title="Permanent link">&para;</a></h3>
+<p>Superconducting qubits must operate at approximately 15 mK — colder than deep space. This temperature is achieved by dilution refrigerators, which have finite cooling power at each temperature stage. A single transmon qubit requires approximately 100 nW of cooling power at the 15 mK stage to absorb the heat dissipated by its microwave drive lines and readout signals. A 1,000-qubit processor therefore requires approximately 100 μW of cooling power — at the edge of what today's dilution refrigerators can sustain. Scaling to 100,000 qubits on a single chip would require approximately 10 mW of cooling at 15 mK — roughly 1,000 times beyond the capability of any existing dilution refrigerator design.</p>
+<p>Modular architecture provides the solution: each chip module is housed in its own dilution refrigerator (or a dedicated stage of a shared refrigerator), and the modules are connected via quantum links. The total cooling power requirement scales with the number of refrigerators, not with the total qubit count per refrigerator. This is not a temporary engineering limitation — it reflects fundamental thermodynamics: the Carnot efficiency of a refrigerator operating between 15 mK and room temperature is approximately <span class="arithmatex">\(15/300,000 = 5 \times 10^{-5}\)</span>, meaning every watt of cooling at 15 mK costs approximately 20 kW of input power.</p>
+<h3 id="1014-the-wiring-bottleneck">10.1.4 The Wiring Bottleneck<a class="headerlink" href="#1014-the-wiring-bottleneck" title="Permanent link">&para;</a></h3>
+<p>IBM engineers have identified what they call the "wire bottleneck" as the single most immediate barrier to large-scale single-chip quantum computing. Each superconducting qubit requires multiple control signals from room-temperature electronics:</p>
+<ul>
+<li>A microwave drive line for qubit rotations</li>
+<li>A flux bias line for frequency tuning (in tunable-coupler architectures)</li>
+<li>A dispersive readout line for qubit state measurement</li>
+<li>A coupler control line for each tunable coupler</li>
+</ul>
+<p>This amounts to roughly 3–5 cables per qubit threading through the cryostat from room temperature to 15 mK. Each cable carries heat from room temperature, adding to the thermal load. Today's IBM processors use approximately 3,000 cables for 433 qubits — about 7 cables per qubit, including ancillary signals.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 10.1: The Wiring Impossibility at One Million Qubits</p>
+<p>Suppose a single chip hosts 1,000 qubits and requires 3 cables per qubit (drive, flux, readout). That is 3,000 cables threading through the cryostat.</p>
+<p>Scaling to 1,000,000 qubits (the scale required for practically useful fault-tolerant quantum computing):</p>
+<div class="arithmatex">\[\text{Cables} = 1{,}000{,}000 \times 3 = 3{,}000{,}000\]</div>
+<p>Three million cables through a single dilution refrigerator are physically impossible. The entire interior of a large dilution refrigerator — the vacuum can, mixing chamber, cold plate, thermal shields — has a total cross-sectional area of perhaps 0.5 m². Three million cables, even at 0.5 mm diameter each, would occupy approximately <span class="arithmatex">\(3{,}000{,}000 \times \pi (0.25\text{ mm})^2 \approx 589{,}000 \text{ mm}^2 = 0.59 \text{ m}^2\)</span> of cross-section — more area than the refrigerator contains.</p>
+<p>This is not an engineering challenge to be overcome with ingenuity. It is a geometric impossibility. The solution must involve on-chip or near-chip classical control electronics that replace room-temperature control signals — a technology IBM calls multiplexed cryo-CMOS, still under development — or modular architectures where each small chip has its own set of manageable wiring.</p>
+</div>
+<h3 id="1015-consensus-conclusion">10.1.5 Consensus Conclusion<a class="headerlink" href="#1015-consensus-conclusion" title="Permanent link">&para;</a></h3>
+<p>No serious quantum hardware vendor has a credible path to millions of qubits on a single die. The consensus across IBM (superconducting, microwave inter-chip links), IonQ (trapped ion, photonic inter-module links), Google (superconducting, pursuing modular architecture), QuEra (neutral atom, optical tweezer reconfiguration), and PsiQuantum (photonic) is identical: build many small, high-quality chips and connect them with quantum links. The implementations differ; the conclusion is the same.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>It is tempting to assume that quantum computing will follow Moore's Law — that qubit counts will simply double every 18–24 months on a single chip, as transistor counts did. This analogy breaks down precisely because qubits require quantum coherence. Classical transistors can be packed more densely because their errors are classical and correctable with voting or redundancy at negligible overhead. Quantum errors require active error correction that consumes most of the available qubits. Scaling a quantum computer is not like scaling a classical processor; it is more like scaling a precision physics instrument while simultaneously deploying it in an industrial environment.</p>
+</div>
+<hr />
+<h2 id="102-ibms-coupler-hierarchy-three-tiers">10.2 IBM's Coupler Hierarchy — Three Tiers<a class="headerlink" href="#102-ibms-coupler-hierarchy-three-tiers" title="Permanent link">&para;</a></h2>
+<p>IBM has articulated the clearest engineering framework for modular quantum computing: a three-tier hierarchy of quantum interconnects, each addressing connectivity at a different physical scale. The framework is worth examining in detail because it provides a template that other vendors are implicitly following with their own implementations.</p>
+<h3 id="1021-tier-1-c-couplers-intra-chip-long-range-demonstrated">10.2.1 Tier 1: C-Couplers (Intra-Chip Long-Range, Demonstrated)<a class="headerlink" href="#1021-tier-1-c-couplers-intra-chip-long-range-demonstrated" title="Permanent link">&para;</a></h3>
+<p>C-couplers are tunable coupling elements that enable non-nearest-neighbor qubit connectivity on a single chip without routing quantum information through intermediate data qubits. In a standard heavy-hex or square lattice, qubit <span class="arithmatex">\(A\)</span> and qubit <span class="arithmatex">\(C\)</span> can only interact by first interacting with qubit <span class="arithmatex">\(B\)</span> between them — a sequence of two-qubit gates that introduces additional noise and circuit depth. C-couplers create a direct quantum channel between qubits that are not geometrically adjacent.</p>
+<p>Why does this matter? The bivariate bicycle (BB) qLDPC codes that IBM targets for Kookaburra require what is topologically a 3D torus connectivity — each qubit must be connected to six specific neighbors, some of which are geometrically far away on a 2D chip surface. Without c-couplers, implementing BB codes requires many additional SWAP operations that increase circuit depth and reduce effective code performance. With c-couplers, the native connectivity of the chip matches the code's connectivity requirements.</p>
+<p><strong>Technical challenges.</strong> Maintaining gate fidelity across longer coupler distances requires careful engineering: the longer the coupler, the more susceptible it is to parasitic capacitance to other chip elements, and the harder it is to achieve clean on/off switching. IBM's Loon chip demonstrated c-couplers with fidelity sufficient for qLDPC operation in 2025, one year ahead of schedule.</p>
+<h3 id="1022-tier-2-l-couplers-inter-chip-microwave-links-demonstrated-in-flamingo-planned-at-scale">10.2.2 Tier 2: L-Couplers (Inter-Chip Microwave Links, Demonstrated in Flamingo, Planned at Scale)<a class="headerlink" href="#1022-tier-2-l-couplers-inter-chip-microwave-links-demonstrated-in-flamingo-planned-at-scale" title="Permanent link">&para;</a></h3>
+<p>L-couplers transmit entangling signals between chips via microwave photons propagating through cryogenic coaxial cables. Two chips, each in its own section of a dilution refrigerator, are connected by a cable at 15 mK. A microwave photon emitted from chip A travels through the cable and is absorbed by a specific qubit on chip B, creating entanglement between the two chips.</p>
+<p>IBM demonstrated the foundational physics of l-couplers in the Flamingo processor (2024). The key metrics:
+- <strong>Entanglement fidelity target:</strong> &gt;99% (versus &gt;99.9% for on-chip CNOT gates — a factor of ~10 worse due to photon transmission losses)
+- <strong>Bell pair generation rate:</strong> target &gt;10 kHz — 10,000 entangled qubit pairs per second between chips
+- <strong>Operating condition:</strong> Both chips must be at 15 mK, and the connecting cable must be thermally isolated and vibration-dampened</p>
+<p>The fidelity gap between inter-chip (99%) and on-chip (99.9%) operations means that the QEC code must be designed to tolerate slightly higher error rates on inter-chip operations. The gross code used in Kookaburra is specifically designed with this asymmetry in mind.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 10.2: Kookaburra's Logical Qubit Count with the Gross Code</p>
+<p>Kookaburra links three Nighthawk-class chips via l-couplers. Each chip has approximately 1,386 physical qubits, for a total of:</p>
+<div class="arithmatex">\[3 \times 1{,}386 = 4{,}158 \text{ physical qubits}\]</div>
+<p>The gross code encodes 12 logical qubits per block of 288 physical qubits at code distance <span class="arithmatex">\(d = 12\)</span>. The physical-to-logical ratio is <span class="arithmatex">\(288/12 = 24\)</span> physical qubits per logical qubit.</p>
+<div class="arithmatex">\[\text{Logical qubits} = \left\lfloor \frac{4{,}158}{24} \right\rfloor = 173 \text{ logical qubits}\]</div>
+<p>IBM's Starling processor targets 200 logical qubits. Kookaburra at 173 already approaches this target, meaning the Kookaburra → Starling progression may involve modest physical qubit additions and software/decoder improvements rather than a dramatic hardware leap. This engineering margin is characteristic of well-planned roadmaps.</p>
+<p>Note: in practice, not all 4,158 physical qubits participate in data blocks. Some qubits are used for ancilla (syndrome measurement) and magic state distillation. The practical logical qubit count available for computation may be lower than 173 depending on distillation overhead.</p>
+</div>
+<h3 id="1023-tier-3-universal-adapters-inter-module-logical-transport">10.2.3 Tier 3: Universal Adapters (Inter-Module Logical Transport)<a class="headerlink" href="#1023-tier-3-universal-adapters-inter-module-logical-transport" title="Permanent link">&para;</a></h3>
+<p>Universal adapters are the most abstract tier: they enable logical qubit transport between separate quantum modules without re-encoding. The challenge is that a logical qubit in module A is encoded across a block of, say, 288 physical qubits — all in module A's quantum error correction cycle. To "move" the logical qubit to module B, one could decode it (exposing the physical qubit to noise), transmit the physical state, and re-encode in module B. This decode-transmit-encode sequence is error-prone and slow.</p>
+<p>Universal adapters instead teleport the logical qubit state between modules using pre-distributed Bell pairs, consuming entanglement rather than decoding the logical qubit. The Bell pairs are generated by l-couplers and stored in quantum memories near the inter-module boundary. When a logical gate needs to span module boundaries, the adapter consumes Bell pairs to execute the operation without exposing the logical information to physical qubit noise.</p>
+<p>The analogy to classical computing is precise: universal adapters are the quantum equivalent of PCIe — a standardized interface that allows independently fabricated modules to exchange data without each module needing to understand the other's internal implementation. IBM has not yet demonstrated universal adapters; they are part of the Starling-era (2028–2029) architecture.</p>
+<hr />
+<h2 id="103-ionqs-photonic-networking-approach">10.3 IonQ's Photonic Networking Approach<a class="headerlink" href="#103-ionqs-photonic-networking-approach" title="Permanent link">&para;</a></h2>
+<p>Trapped-ion quantum computers face the inter-module connectivity problem differently from superconducting systems. Ions cannot be connected by microwave photons (which require cryogenic cables between systems). But photons in the visible or telecom range can travel between ion trap modules at room temperature through standard optical fiber — making photonic networking the natural interconnect for trapped-ion modular systems.</p>
+<h3 id="1031-the-photonic-inter-module-link-problem">10.3.1 The Photonic Inter-Module Link Problem<a class="headerlink" href="#1031-the-photonic-inter-module-link-problem" title="Permanent link">&para;</a></h3>
+<p>The straightforward approach to photonic quantum networking between ion trap modules is to emit a photon entangled with the ion's spin state from module A, transmit it through fiber, and absorb it at module B, creating an entangled ion pair across the two modules. The problem: photon loss during transmission is probabilistic. A fiber link with 90% transmission efficiency will fail to deliver the photon 10% of the time, and that failure destroys the entanglement attempt. At telecom wavelengths through several meters of fiber, transmission efficiency may be 95–99% — but for long-distance links or at higher photon rates, loss accumulates.</p>
+<p>The result: with naive single-photon approaches, the inter-module entanglement rate is limited to:</p>
+<div class="arithmatex">\[R_{\text{entangle}} = R_{\text{photon}} \times \eta_{\text{transmission}} \times \eta_{\text{detection}}\]</div>
+<p>Where <span class="arithmatex">\(R_{\text{photon}}\)</span> is the photon emission rate, <span class="arithmatex">\(\eta_{\text{transmission}}\)</span> is fiber transmission efficiency, and <span class="arithmatex">\(\eta_{\text{detection}}\)</span> is photon detector efficiency. With typical values (<span class="arithmatex">\(R_{\text{photon}} = 10^4\)</span> Hz, <span class="arithmatex">\(\eta_{\text{transmission}} = 0.95\)</span>, <span class="arithmatex">\(\eta_{\text{detection}} = 0.90\)</span>), the entanglement rate is approximately 8,550 Bell pairs per second — much lower than the on-chip gate rate of ~<span class="arithmatex">\(10^6\)</span> per second. This rate mismatch means inter-module operations are the computational bottleneck.</p>
+<h3 id="1032-lightsynq-memory-buffered-photonic-interconnects">10.3.2 Lightsynq Memory-Buffered Photonic Interconnects<a class="headerlink" href="#1032-lightsynq-memory-buffered-photonic-interconnects" title="Permanent link">&para;</a></h3>
+<p>Lightsynq's approach addresses the rate mismatch with quantum memory buffers at each module endpoint. The architecture works as follows:</p>
+<ol>
+<li>Module A emits a photon entangled with a "herald" qubit stored in quantum memory at A's boundary.</li>
+<li>The photon travels toward module B.</li>
+<li>If the photon arrives successfully (detected at B), the herald qubit at A and a corresponding memory qubit at B are now entangled — a Bell pair has been established.</li>
+<li>If the photon is lost in transit, the herald qubit at A can be reset and the attempt retried, without disturbing the data qubits inside module A.</li>
+<li>Once a Bell pair is available in the quantum memories, it is consumed on-demand for a logical operation spanning the two modules — the "asynchronous" part of the architecture.</li>
+</ol>
+<p>The critical advantages of this design:</p>
+<p><strong>Asynchronous entanglement:</strong> The two modules do not need nanosecond-level synchronization. Module A can attempt photon emission whenever convenient; module B stores the received entanglement in memory until module A signals readiness. This decouples the entanglement generation process from the computation schedule.</p>
+<p><strong>Rate improvement:</strong> Because the quantum memory buffers store successful entanglement events and retry failures, the effective entanglement delivery rate approaches the photon emission rate (limited by memory lifetime), rather than being multiplied by the single-shot success probability. IonQ claims 50× higher effective entanglement rate over synchronous probabilistic approaches — a claim that awaits peer-reviewed experimental confirmation but is theoretically well-founded.</p>
+<p><strong>Fault tolerance of the link:</strong> A failed entanglement attempt does not corrupt data. The data qubits inside each module are never exposed to the photon loss event.</p>
+<h3 id="1033-electronic-qubit-control-eqc-and-oxford-ionics-2d-arrays">10.3.3 Electronic Qubit Control (EQC) and Oxford Ionics 2D Arrays<a class="headerlink" href="#1033-electronic-qubit-control-eqc-and-oxford-ionics-2d-arrays" title="Permanent link">&para;</a></h3>
+<p>The photonic networking approach addresses inter-module connectivity. Oxford Ionics' 2D trap arrays address intra-module scalability — specifically, the laser-alignment bottleneck that limits traditional trapped-ion quantum computers to approximately 50 ions in a single chain.</p>
+<p><strong>The laser bottleneck.</strong> Traditional trapped-ion quantum computers apply two-qubit gates using focused laser beams that drive coherent transitions mediated by the motional modes of the ion chain. Each qubit requires a precisely aligned laser beam; maintaining alignment over dozens of qubits is difficult, expensive, and sensitive to mechanical vibrations. As chain length grows, the motional modes crowd together in frequency, requiring increasingly narrow laser pulses to address individual mode pairs. At approximately 50 ions, laser-gate fidelity degrades prohibitively.</p>
+<p><strong>Oxford Ionics' microwave solution.</strong> Oxford Ionics replaces laser-driven gates with microwave-driven gates: the qubit transition is driven by a microwave field generated by an on-chip electrode adjacent to each ion. Microwave fields can be generated by electronics fabricated directly on the trap chip — no optical alignment required, no vibration sensitivity, no maintenance. The Electronic Qubit Control (EQC) architecture allows:
+- Gate control signals delivered by on-chip electronics rather than external laser optics
+- 2D ion arrays rather than 1D chains, enabling 300× higher trap density
+- Wafer-scale manufacturing of trap chips with integrated control electronics</p>
+<p>The 2D array removes the mode-crowding limitation: in a 2D array, ions within a small local cluster (e.g., <span class="arithmatex">\(3 \times 3\)</span> or <span class="arithmatex">\(4 \times 4\)</span>) share motional modes, but different clusters are isolated from each other. Two-qubit gates occur within clusters; quantum information moves between clusters via ion shuttling (physically moving ions through the trap lattice). This shuttle-and-gate architecture scales without the linear chain's crowding problem.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>EQC and Oxford Ionics' microwave-gate technology represent the trapped-ion equivalent of the shift from vacuum tubes to transistors: not an incremental improvement but an architectural change that enables manufacturing-scale production. If IonQ successfully integrates Oxford Ionics' 2D arrays into production systems by 2027, the cost per physical qubit for trapped-ion systems could decrease by an order of magnitude relative to laser-based systems. This cost reduction would narrow (or eliminate) the economic disadvantage that trapped-ion systems currently face relative to superconducting systems.</p>
+</div>
+<hr />
+<h2 id="104-neutral-atom-arrays-reconfigurable-connectivity">10.4 Neutral Atom Arrays — Reconfigurable Connectivity<a class="headerlink" href="#104-neutral-atom-arrays-reconfigurable-connectivity" title="Permanent link">&para;</a></h2>
+<p>Neutral atom quantum computers (QuEra, Atom Computing, Pasqal) use optical tweezers — tightly focused laser beams — to trap individual atoms in programmable 2D arrays. Each atom is a qubit; two-qubit gates are performed by briefly exciting atoms to high-energy Rydberg states, which have strong long-range interactions. The key distinction from superconducting and trapped-ion systems is <strong>reconfigurability</strong>: the 2D array can be rearranged in real time by moving the optical tweezers, creating new qubit connectivity patterns on-demand.</p>
+<h3 id="1041-advantages-of-reconfigurable-connectivity">10.4.1 Advantages of Reconfigurable Connectivity<a class="headerlink" href="#1041-advantages-of-reconfigurable-connectivity" title="Permanent link">&para;</a></h3>
+<p>A standard superconducting qubit processor has a fixed connectivity graph determined by the coupler layout at fabrication time. Running an algorithm that requires non-nearest-neighbor qubit interactions means using SWAP gates to route information to adjacent positions — overhead that grows with problem size.</p>
+<p>A neutral atom array can physically move atoms to new positions between algorithm layers. If a circuit requires qubit <span class="arithmatex">\(i\)</span> and qubit <span class="arithmatex">\(j\)</span> to interact and they are currently far apart in the array, the tweezers move them adjacent, the gate is applied, and they are moved back. This eliminates SWAP overhead entirely for any connectivity requirement — the array is dynamically reconfigurable.</p>
+<p>This property has a specific significance for qLDPC codes: the bivariate bicycle and related codes require non-nearest-neighbor qubit connections as part of their stabilizer structure. On a superconducting array, these connections require c-couplers (IBM's Loon milestone) or additional SWAP gates. On a neutral atom array, the required connections can be created by rearranging the atom positions before each QEC cycle.</p>
+<h3 id="1042-current-state-and-roadmap">10.4.2 Current State and Roadmap<a class="headerlink" href="#1042-current-state-and-roadmap" title="Permanent link">&para;</a></h3>
+<p>QuEra's Aquila processor, available through AWS Braket, operates with up to 256 atoms in a 2D Rydberg array. QuEra is targeting 10,000+ physical qubits by 2026–2027, exploiting neutral atoms' long coherence times (tens of milliseconds, versus microseconds for superconducting qubits) and reconfigurable connectivity.</p>
+<p>The principal challenges for neutral atom systems are:
+- <strong>Atom loss:</strong> Atoms occasionally escape from optical tweezers (finite trap lifetime, typically seconds to minutes). Lost atoms create "holes" in the qubit array that must be repaired by loading replacement atoms — a process that interrupts computation.
+- <strong>Rydberg state decay:</strong> Two-qubit gates via Rydberg interactions are fast (<span class="arithmatex">\(\sim\)</span>1 μs) but require short-lived Rydberg states. Gate fidelity is limited by Rydberg state lifetime and state preparation.
+- <strong>Reconfiguration time:</strong> Moving atoms between positions takes time (microseconds to milliseconds), during which the system is not computing.</p>
+<p>Recent results (Harvard group, 2023; MIT-Harvard collaboration, 2024) have demonstrated fault-tolerant operation of small logical qubits in neutral atom systems with <span class="arithmatex">\(\Lambda &gt; 1\)</span> — confirming that neutral atoms, like superconducting systems, can operate below the QEC threshold. Combined with native long-range connectivity, neutral atom arrays are a strong complement to superconducting systems for qLDPC-based fault-tolerant computing.</p>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>QuEra's 10,000-qubit roadmap by 2026–2027, if achieved, would create a competitive three-way race in modular fault-tolerant quantum computing between IBM (superconducting), IonQ (trapped ion), and QuEra (neutral atom). For enterprise decision-makers, this competitive landscape is favorable: it reduces vendor lock-in risk and creates pricing pressure. Organizations developing quantum algorithms in 2026 should build on CUDA-Q or another hardware-agnostic framework to preserve the ability to deploy on whichever platform leads in 2028–2029.</p>
+</div>
+<hr />
+<h2 id="105-quantum-algorithms-for-molecular-simulation-the-drug-discovery-frontier">10.5 Quantum Algorithms for Molecular Simulation — The Drug Discovery Frontier<a class="headerlink" href="#105-quantum-algorithms-for-molecular-simulation-the-drug-discovery-frontier" title="Permanent link">&para;</a></h2>
+<p>The most commercially significant near-term application of fault-tolerant quantum computing is molecular simulation for drug discovery. This section explains why the problem is hard classically, how quantum algorithms address it, and — critically — what hardware resources are required to solve each class of problem. Connecting hardware milestones to algorithm resource requirements is the basis for realistic commercial timelines.</p>
+<h3 id="1051-the-electronic-structure-problem">10.5.1 The Electronic Structure Problem<a class="headerlink" href="#1051-the-electronic-structure-problem" title="Permanent link">&para;</a></h3>
+<p>The binding affinity of a drug molecule to its target protein — and thus its pharmaceutical activity — is governed by the electronic structure of the drug-protein complex. The relevant quantum mechanical equation is the electronic Schrödinger equation:</p>
+<div class="arithmatex">\[\hat{H} |\Psi\rangle = E |\Psi\rangle\]</div>
+<p>where <span class="arithmatex">\(\hat{H}\)</span> is the electronic Hamiltonian, <span class="arithmatex">\(|\Psi\rangle\)</span> is the many-electron wavefunction, and <span class="arithmatex">\(E\)</span> is the energy. For a drug molecule with <span class="arithmatex">\(N\)</span> electrons in <span class="arithmatex">\(M\)</span> spin-orbitals, the Hilbert space dimension grows combinatorially:</p>
+<div class="arithmatex">\[\dim(\mathcal{H}) = \binom{M}{N}\]</div>
+<p>For a medium-sized drug candidate — say, 54 electrons in 108 spin-orbitals (the "large" ibrutinib active space in the table below) — this dimension is approximately <span class="arithmatex">\(\binom{108}{54} \approx 10^{31}\)</span>. No classical computer that will ever exist can store or manipulate a vector of <span class="arithmatex">\(10^{31}\)</span> complex numbers.</p>
+<h3 id="1052-classical-approximations-and-their-failures">10.5.2 Classical Approximations and Their Failures<a class="headerlink" href="#1052-classical-approximations-and-their-failures" title="Permanent link">&para;</a></h3>
+<p>Classical quantum chemistry methods approximate the full many-body wavefunction:</p>
+<ul>
+<li><strong>Hartree-Fock (HF):</strong> Assumes each electron moves in the mean field of all others. Fast, but misses electron correlation entirely. Typical error: 100–1,000 kJ/mol — far too large for drug design.</li>
+<li><strong>Density Functional Theory (DFT):</strong> Replaces the many-body wavefunction with the electron density. Accurate for many organic molecules. Fails for strongly correlated systems: transition metal catalysts, metalloenzyme active sites, excited states, bond-breaking.</li>
+<li><strong>Coupled Cluster CCSD(T):</strong> The "gold standard" of classical quantum chemistry. Highly accurate for weakly correlated systems. Scales as <span class="arithmatex">\(O(N^7)\)</span> in system size — computationally feasible for ~30 electrons, prohibitively expensive for &gt;50 electrons.</li>
+</ul>
+<p>The molecules most relevant for drug discovery — metalloenzyme inhibitors, transition state structures for reaction mechanism elucidation, excited-state pharmacophores — are precisely the strongly correlated systems where DFT fails and CCSD(T) is too expensive. This is the quantum computing opportunity.</p>
+<h3 id="1053-variational-quantum-eigensolver-vqe">10.5.3 Variational Quantum Eigensolver (VQE)<a class="headerlink" href="#1053-variational-quantum-eigensolver-vqe" title="Permanent link">&para;</a></h3>
+<p>VQE (Peruzzo et al., 2014) is a hybrid quantum-classical algorithm for computing molecular ground-state energies on NISQ hardware:</p>
+<ol>
+<li>Prepare a parameterized trial state <span class="arithmatex">\(|\psi(\vec{\theta})\rangle\)</span> on the quantum processor</li>
+<li>Measure the expectation value of the molecular Hamiltonian: <span class="arithmatex">\(E(\vec{\theta}) = \langle\psi(\vec{\theta})|\hat{H}|\psi(\vec{\theta})\rangle\)</span></li>
+<li>Use a classical optimizer to update <span class="arithmatex">\(\vec{\theta}\)</span> to minimize <span class="arithmatex">\(E\)</span></li>
+<li>Repeat until convergence</li>
+</ol>
+<p>VQE's advantages: shallow circuits (accessible on NISQ hardware), hybrid architecture allows classical pre-processing. Current demonstrations include chemical accuracy for <span class="arithmatex">\(H_2\)</span>, LiH, <span class="arithmatex">\(BeH_2\)</span>, and <span class="arithmatex">\(H_2O\)</span>. In 2025, IonQ, AstraZeneca, and AWS demonstrated a Suzuki-Miyaura cross-coupling reaction simulation with 20× speedup over classical methods for a specific reaction pathway.</p>
+<p>VQE's limitations: the "barren plateau" problem (gradients vanish exponentially with system size, making optimization impossible for large molecules), <span class="arithmatex">\(O(M^4)\)</span> terms in the Hamiltonian (requiring many measurements), and NISQ noise limiting the circuit depth of useful trial states.</p>
+<h3 id="1054-quantum-phase-estimation-qpe">10.5.4 Quantum Phase Estimation (QPE)<a class="headerlink" href="#1054-quantum-phase-estimation-qpe" title="Permanent link">&para;</a></h3>
+<p>QPE computes eigenvalues of the molecular Hamiltonian directly, without the variational optimization:</p>
+<ol>
+<li>Prepare an initial state <span class="arithmatex">\(|\phi\rangle\)</span> with overlap with the target eigenstate</li>
+<li>Apply the time-evolution operator <span class="arithmatex">\(e^{-i\hat{H}t}\)</span> in a quantum phase kickback circuit</li>
+<li>Apply quantum Fourier transform to ancilla qubits</li>
+<li>Measure ancilla qubits to read out the eigenvalue (energy) to precision <span class="arithmatex">\(2^{-k}\)</span> where <span class="arithmatex">\(k\)</span> is the ancilla qubit count</li>
+</ol>
+<p>QPE gives the exact energy of the molecular Hamiltonian eigenstate, with no ansatz bias. The precision is exponential in ancilla qubit count. The limitation: QPE requires deep circuits — millions to billions of T-gates — demanding fault-tolerant hardware. QPE is not a NISQ algorithm; it requires Starling-class or Blue Jay-class systems.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>A common misconception is that quantum computers will provide an exponential speedup for drug discovery — comparable to Shor's algorithm's exponential speedup for factoring. This is incorrect. Quantum computers provide a <em>space</em> advantage: the quantum computer stores the full many-body wavefunction in polynomial space (<span class="arithmatex">\(M\)</span> qubits for <span class="arithmatex">\(M\)</span> spin-orbitals), while classical computers need exponential space. The <em>time</em> advantage for chemistry is more nuanced: for strongly correlated systems where classical methods fail, quantum computing provides the <em>correct answer</em> while classical methods provide only wrong approximations. The value is not a pure speedup; it is accuracy in a regime where classical methods are qualitatively wrong.</p>
+</div>
+<h3 id="1055-resource-estimates-hardware-requirements-by-molecule">10.5.5 Resource Estimates: Hardware Requirements by Molecule<a class="headerlink" href="#1055-resource-estimates-hardware-requirements-by-molecule" title="Permanent link">&para;</a></h3>
+<p>The following table maps molecular systems to hardware requirements, connecting IBM's roadmap milestones to specific pharmaceutical targets.</p>
+<table>
+<thead>
+<tr>
+<th>Molecule / System</th>
+<th>Active Space</th>
+<th>Logical Qubits</th>
+<th>T-gate Count</th>
+<th>Hardware Required</th>
+<th>Projected Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(H_2\)</span> (benchmark)</td>
+<td>(2e, 4o)</td>
+<td>4</td>
+<td>~<span class="arithmatex">\(10^2\)</span></td>
+<td>NISQ (today)</td>
+<td>Available now</td>
+</tr>
+<tr>
+<td>LiH (benchmark)</td>
+<td>(2e, 6o)</td>
+<td>6</td>
+<td>~<span class="arithmatex">\(10^3\)</span></td>
+<td>NISQ (today)</td>
+<td>Available now</td>
+</tr>
+<tr>
+<td>Caffeine</td>
+<td>(10e, 20o)</td>
+<td>~40</td>
+<td>~<span class="arithmatex">\(10^6\)</span></td>
+<td>Early fault-tolerant</td>
+<td>2027–2028</td>
+</tr>
+<tr>
+<td>Ibrutinib binding (small)</td>
+<td>(20e, 40o)</td>
+<td>~80</td>
+<td>~<span class="arithmatex">\(10^8\)</span></td>
+<td>Starling-class</td>
+<td>2029</td>
+</tr>
+<tr>
+<td>Ibrutinib binding (large)</td>
+<td>(54e, 108o)</td>
+<td>~216</td>
+<td>~<span class="arithmatex">\(10^{10}\)</span></td>
+<td>Blue Jay-class</td>
+<td>2033+</td>
+</tr>
+<tr>
+<td>FeMoco (nitrogenase)</td>
+<td>(54e, 54o)</td>
+<td>~108</td>
+<td>~<span class="arithmatex">\(10^{11}\)</span></td>
+<td>Beyond Blue Jay</td>
+<td>2035+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Active space notation: (Ne, Mo) = N active electrons in M active spin-orbitals. Logical qubit counts and T-gate counts are QPE-based estimates; VQE would require fewer T-gates but introduces ansatz bias.</em></p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 10.3: Ibrutinib and the IBM Starling Timeline</p>
+<p>Ibrutinib is a BTK inhibitor approved for treatment of chronic lymphocytic leukemia and mantle cell lymphoma. Its mechanism involves covalent binding to a cysteine residue in the ATP-binding pocket of BTK. Accurate quantum simulation of the binding interaction — including the transition state for covalent bond formation — requires simulating approximately 20 active electrons in 40 active spin-orbitals.</p>
+<p><strong>Qubit estimate:</strong>
+Using Jordan-Wigner mapping: <span class="arithmatex">\(2 \times 40 = 80\)</span> spin-orbital qubits + <span class="arithmatex">\(\sim 10\)</span> ancilla qubits for QPE <span class="arithmatex">\(\approx\)</span> 80–90 logical qubits needed.</p>
+<p><strong>T-gate estimate:</strong>
+The Hamiltonian evolution operator <span class="arithmatex">\(e^{-i\hat{H}\tau}\)</span> for <span class="arithmatex">\(M\)</span> spin-orbitals requires <span class="arithmatex">\(O(M^3 / \epsilon)\)</span> T-gates for precision <span class="arithmatex">\(\epsilon\)</span> in energy. For <span class="arithmatex">\(M = 40\)</span>, <span class="arithmatex">\(\epsilon = 1\)</span> kcal/mol chemical accuracy:
+$$T\text{-gates} \approx \frac{40^3}{0.001} \approx 6.4 \times 10^7 \approx 10^8 $$</p>
+<p><strong>Hardware match:</strong>
+IBM Starling targets 200 logical qubits and <span class="arithmatex">\(10^8\)</span> T-gates. The small ibrutinib calculation (80 logical qubits, <span class="arithmatex">\(10^8\)</span> T-gates) fits within Starling's capabilities with margin.</p>
+<p><strong>Commercial value:</strong>
+Drug development costs approximately $2.6 billion per approved drug (Tufts Center for the Study of Drug Development). Approximately 90% of drug candidates fail in clinical trials. If quantum simulation allows accurate prediction of protein-ligand binding affinity for candidates like ibrutinib that defeat classical methods, and improves candidate selection from 10% to 20% success rate, the expected value per drug discovery program is approximately $1.3 billion in avoided development costs. Even if quantum simulation improves candidate selection by only 1–2%, the return on quantum computing investment is substantial for pharmaceutical companies.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>The smaller ibrutinib calculation is within reach of IBM's Starling (200 logical qubits, <span class="arithmatex">\(10^8\)</span> gates, target 2029). Drug development costs $2.6 billion per approved drug. A single successful quantum simulation-guided candidate selection, improving clinical trial success probability by even a few percentage points, justifies substantial quantum computing investment. Pharmaceutical companies that begin quantum algorithm development now — on today's NISQ systems for small molecules, building toward Starling-class systems for medium molecules — will have a 3–5 year head start on competitors who wait for fault-tolerant systems to arrive.</p>
+</div>
+<hr />
+<h2 id="106-the-classical-networking-analogy">10.6 The Classical Networking Analogy<a class="headerlink" href="#106-the-classical-networking-analogy" title="Permanent link">&para;</a></h2>
+<p>The trajectory of quantum computing modular scaling maps precisely onto the evolution of classical computing's interconnect architecture. Making this analogy explicit helps calibrate both the timeline and the expected outcome.</p>
+<h3 id="1061-classical-computings-scaling-history">10.6.1 Classical Computing's Scaling History<a class="headerlink" href="#1061-classical-computings-scaling-history" title="Permanent link">&para;</a></h3>
+<p><strong>1970s — Monolithic single-core processors.</strong> The Intel 4004 (1971) had 2,300 transistors on a single die. All computation happened within one physical chip. Communication between chips was slow, expensive, and unreliable. The dominant scaling assumption: make the chip bigger and faster.</p>
+<p><strong>1990s — Multi-core processors.</strong> Intel Core 2 Duo (2006) put two independent processor cores on a single die. Communication between cores occurred via shared cache, with cache coherency protocols managing memory consistency. The realization: inter-core bandwidth on a single die is cheap; moving computation to separate cores with private caches improves both performance and power efficiency.</p>
+<p><strong>2000s — Multi-socket servers.</strong> Enterprise servers with 2–8 physical processor sockets, each processor a separate die, connected via QPI or HyperTransport interconnects. NUMA (Non-Uniform Memory Access) architectures acknowledged that communication between sockets is more expensive than within a socket. Cache coherency across sockets required sophisticated protocols.</p>
+<p><strong>2010s — HPC clusters.</strong> High-Performance Computing data centers connect thousands of multi-socket nodes via InfiniBand or high-speed Ethernet. MPI (Message Passing Interface) programming model: explicit communication between processes on different nodes. Network bandwidth and latency become first-class design considerations.</p>
+<p><strong>2020s — Hyperscale data centers.</strong> NVIDIA GPU clusters at 100,000+ GPU scale. NVLink for GPU-to-GPU communication within nodes; InfiniBand between nodes. CUDA programming model abstracts the communication hierarchy. The data center is the computer.</p>
+<h3 id="1062-quantum-computings-analogous-trajectory">10.6.2 Quantum Computing's Analogous Trajectory<a class="headerlink" href="#1062-quantum-computings-analogous-trajectory" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Era</th>
+<th>Classical Computing</th>
+<th>Quantum Computing</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single monolithic chip</td>
+<td>Intel 4004 (2,300 transistors)</td>
+<td>Sycamore, Eagle, Heron (50–433 physical qubits)</td>
+<td>2019–2023</td>
+</tr>
+<tr>
+<td>Single chip with QEC</td>
+<td>Pentium (3M transistors)</td>
+<td>Willow (<span class="arithmatex">\(\Lambda &gt; 1\)</span>), Loon (qLDPC), Nighthawk</td>
+<td>2024–2026</td>
+</tr>
+<tr>
+<td>Multi-chip single module</td>
+<td>Core 2 Duo</td>
+<td>Kookaburra (3-chip, ~173 logical qubits)</td>
+<td>2026–2027</td>
+</tr>
+<tr>
+<td>Multi-module cluster</td>
+<td>Multi-socket server</td>
+<td>Starling, IonQ 2-chip</td>
+<td>2028–2029</td>
+</tr>
+<tr>
+<td>Large-scale network</td>
+<td>HPC cluster</td>
+<td>Quantum data centers</td>
+<td>2030+</td>
+</tr>
+</tbody>
+</table>
+<p>The structural parallel is not coincidental. Both classical and quantum computing face the same fundamental constraint: the speed of quantum (or classical) information cannot exceed the speed of light, and physical components have finite coupling strengths. The engineering response — build high-quality local units and connect them with fast, reliable links — is the universal solution.</p>
+<p>The key difference is that quantum links must preserve quantum coherence, not just transmit classical bits. This is why the inter-chip quantum link (IBM's l-couplers, IonQ's photonic interconnects) is more technically demanding than classical chip-to-chip communication. But it is engineering difficulty, not physical impossibility — and both IBM and IonQ have demonstrated the foundational physics required.</p>
+<p><strong>The Modular Approach is Industry Consensus.</strong> It is worth emphasizing that modular quantum computing is not a single vendor's strategy. IBM (superconducting), IonQ (trapped ion), Google (superconducting), QuEra (neutral atom), PsiQuantum (photonic), and Quantinuum (trapped ion) have all publicly converged on modular architectures as the path to large-scale fault-tolerant quantum computing. When an architectural conclusion is independently reached by competitors using different physical implementations, it is almost certainly correct.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 10.4: Mapping Quantum Scaling to Classical Networking Milestones</p>
+<p>Consider an enterprise that began investing in HPC networking in 1995, when single-socket servers dominated. By 2000, multi-socket servers were standard; by 2005, InfiniBand clusters connected thousands of nodes. A company that understood the modular networking trajectory in 1995 could have:</p>
+<ul>
+<li>Built MPI expertise while single-node computing was still dominant</li>
+<li>Deployed production multi-socket systems in 2000 before competitors</li>
+<li>Had InfiniBand HPC production workloads running by 2005</li>
+</ul>
+<p>Competitors who waited for "HPC clusters to mature" before investing missed a 5–10 year window of competitive advantage.</p>
+<p>The quantum analogy: companies that begin quantum algorithm development today (2026) on NISQ/early logical qubit systems will have:
+- Deep algorithm expertise when Kookaburra-class systems arrive (2026–2027)
+- Production-ready pipelines when Starling-class systems arrive (2029)
+- Competitive advantage over organizations that wait for fault-tolerant quantum computing to "mature"</p>
+<p>The window for pre-competitive quantum algorithm development is open now, precisely because the hardware is not yet fully capable. When it is fully capable, the window will have closed.</p>
+</div>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">Chapter Summary</p>
+<ol>
+<li>
+<p><strong>Single-chip scaling fails for four independent physical reasons:</strong> fabrication defect scaling, crosstalk with qubit density, cryogenic thermal management limits (~100 nW per qubit at 15 mK), and wiring impossibility (3 million cables for 1 million qubits). The consensus solution — modular multi-chip architectures — has been independently reached by every major quantum hardware platform.</p>
+</li>
+<li>
+<p><strong>IBM's three-tier coupler hierarchy (c-couplers, l-couplers, universal adapters) provides the clearest engineering roadmap.</strong> C-couplers are delivered (Loon 2025); l-couplers at scale are planned (Cockatoo 2027); universal adapters for logical qubit transport are the Starling-era target (2028–2029). The hierarchy mirrors the evolution from single-die to chiplet to PCIe in classical computing.</p>
+</li>
+<li>
+<p><strong>IonQ's photonic networking approach addresses trapped-ion modular scaling through memory-buffered asynchronous entanglement.</strong> Lightsynq's claimed 50× rate improvement over probabilistic photon approaches, combined with Oxford Ionics' 2D microwave-gate arrays, provides a plausible path to 10,000-qubit single-chip systems by 2027 and 20,000-qubit two-chip systems by 2028 — if acquisition integration succeeds.</p>
+</li>
+<li>
+<p><strong>Quantum chemistry for drug discovery is the most commercially significant near-term fault-tolerant quantum application.</strong> The small ibrutinib binding calculation (80 logical qubits, <span class="arithmatex">\(10^8\)</span> T-gates) is within reach of IBM's Starling (2029). Drug development costs $2.6 billion per approved drug; quantum simulation of strongly correlated molecular systems could meaningfully improve candidate selection success rates in the 2029–2033 window.</p>
+</li>
+<li>
+<p><strong>The classical networking analogy is both accurate and actionable.</strong> The quantum computing industry is approximately at the 1995 classical computing milestone — beginning the transition from isolated chips to modular interconnected systems. Companies that invest in quantum algorithm capability now are positioned to deploy competitive applications in the 2027–2029 window, when logical qubit counts cross the threshold for pharmaceutical, financial, and optimization use cases.</p>
+</li>
+</ol>
+</div>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bravyi, S. et al. "High-threshold and low-overhead fault-tolerant quantum memory." <em>Nature</em> 627, 778–782 (2024). [Bivariate bicycle codes and resource estimates]</li>
+<li>IBM Research. "Kookaburra and the path to modular quantum computing." IBM Research Blog, 2025.</li>
+<li>Peruzzo, A. et al. "A variational eigenvalue solver on a photonic chip." <em>Nature Communications</em> 5, 4213 (2014). [VQE original paper]</li>
+<li>Babbush, R. et al. "Encoding electronic spectra in quantum circuits with linear T complexity." <em>Physical Review X</em> 8, 041015 (2018). [QPE T-gate resource estimates for chemistry]</li>
+<li>Lee, J. et al. "Even more efficient quantum computations of chemistry through tensor hypercontraction." <em>PRX Quantum</em> 2, 030305 (2021). [Improved resource estimates]</li>
+<li>Reiher, M. et al. "Elucidating reaction mechanisms on quantum computers." <em>PNAS</em> 114, 7555–7560 (2017). [FeMoco resource estimates]</li>
+<li>IonQ Inc. "Oxford Ionics acquisition: 2D ion trap arrays for scalable quantum computing." IonQ Press Release, 2025.</li>
+<li>Lightsynq Technologies. "Memory-buffered photonic interconnects for modular quantum computing." arXiv:2501.XXXXX (2025).</li>
+<li>Bluvstein, D. et al. "Logical quantum processor based on reconfigurable atom arrays." <em>Nature</em> 626, 58–65 (2024). [QuEra fault-tolerant neutral atom results]</li>
+<li>Lau, H. K. and Plenio, M. B. "Universal quantum computing with arbitrary continuous-variable encoding." <em>Physical Review Letters</em> 117, 100501 (2016).</li>
+<li>DiVincenzo, D. P. "The physical implementation of quantum computation." <em>Fortschritte der Physik</em> 48, 771–783 (2000). [DiVincenzo criteria — foundational scaling requirements]</li>
+<li>Tufts Center for the Study of Drug Development. "Cost of developing a new drug." Impact Report, 2023. [The $2.6B figure]</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

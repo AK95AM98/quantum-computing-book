@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloch Sphere Visualizer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #1a2a4a;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    #canvas-container {
+      border: 2px solid #b0c4de;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      background: #fff;
+    }
+
+    #canvas-container canvas {
+      display: block;
+    }
+
+    p.hint {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bloch Sphere Visualizer</h1>
+  <div id="canvas-container"></div>
+  <p class="hint">
+    Use the sliders to set θ (polar) and φ (azimuthal) angles.
+    Click <strong>Start</strong> to slowly rotate the view.
+    Use preset buttons to jump to common quantum states.
+  </p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="bloch-sphere.js"></script>
+</body>
+</html>

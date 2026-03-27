@@ -1,0 +1,2910 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/09-roadmaps/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../10-modular-scaling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 9 Quiz: Hardware Roadmaps - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-9-quiz-hardware-roadmaps-ibm-google-microsoft-ionq-and-the-modular-scaling-revolution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 9 Quiz: Hardware Roadmaps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember-questions-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember (Questions 1–5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand-questions-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand (Questions 6–10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply-questions-1115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply (Questions 11–15)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze-questions-1620" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze (Questions 16–20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate-questions-2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate (Questions 21–25)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create-questions-2630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create (Questions 26–30)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember-questions-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember (Questions 1–5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand-questions-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand (Questions 6–10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply-questions-1115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply (Questions 11–15)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze-questions-1620" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze (Questions 16–20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate-questions-2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate (Questions 21–25)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create-questions-2630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create (Questions 26–30)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-9-quiz-hardware-roadmaps-ibm-google-microsoft-ionq-and-the-modular-scaling-revolution">Chapter 9 Quiz: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution<a class="headerlink" href="#chapter-9-quiz-hardware-roadmaps-ibm-google-microsoft-ionq-and-the-modular-scaling-revolution" title="Permanent link">&para;</a></h1>
+<p><em>Answer each question based on the content of Chapter 9. Questions progress through Bloom's Taxonomy from recall to creation.</em></p>
+<hr />
+<h2 id="level-1-remember-questions-15">Level 1 — Remember (Questions 1–5)<a class="headerlink" href="#level-1-remember-questions-15" title="Permanent link">&para;</a></h2>
+<p><strong>1.</strong> What was the qubit count of IBM's Osprey processor, delivered in 2022?</p>
+<ul>
+<li>A) 127 qubits</li>
+<li>B) 433 qubits</li>
+<li>C) 133 qubits</li>
+<li>D) 120 qubits</li>
+</ul>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>B) 433 qubits.</strong> Osprey (2022) had 433 qubits, more than tripling Eagle's 127-qubit count.</p>
+</details>
+<hr />
+<p><strong>2.</strong> What does the acronym "#AQ" stand for in IonQ's roadmap terminology?</p>
+<ul>
+<li>A) Advanced Qubits</li>
+<li>B) Algorithmic Qubits</li>
+<li>C) Addressable Qubits</li>
+<li>D) Annealing Quotient</li>
+</ul>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>B) Algorithmic Qubits.</strong> #AQ is IonQ's proprietary metric defined as the largest <span class="arithmatex">\(n\)</span> for which the system can execute a representative <span class="arithmatex">\(n\)</span>-qubit algorithm with greater than 50% success probability.</p>
+</details>
+<hr />
+<p><strong>3.</strong> Which IBM processor first demonstrated real-time qLDPC decoding under 480 nanoseconds?</p>
+<ul>
+<li>A) Nighthawk</li>
+<li>B) Kookaburra</li>
+<li>C) Loon</li>
+<li>D) Heron r2</li>
+</ul>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>C) Loon (2025).</strong> Loon was specifically designed to validate c-couplers and a real-time qLDPC decoder operating below 480 ns. It was delivered one year ahead of schedule.</p>
+</details>
+<hr />
+<p><strong>4.</strong> What value of <span class="arithmatex">\(\Lambda\)</span> (error suppression factor) did Google's Willow processor achieve at code distance <span class="arithmatex">\(d = 7\)</span>?</p>
+<ul>
+<li>A) 1.02</li>
+<li>B) 2.14</li>
+<li>C) 3.50</li>
+<li>D) 0.87</li>
+</ul>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>B) 2.14.</strong> Google's Willow demonstrated <span class="arithmatex">\(\Lambda = 2.14\)</span> — the first unambiguous demonstration of below-threshold surface code operation on a real device.</p>
+</details>
+<hr />
+<p><strong>5.</strong> D-Wave's Advantage2 processor uses which computational paradigm?</p>
+<ul>
+<li>A) Gate-based universal quantum computing</li>
+<li>B) Quantum annealing</li>
+<li>C) Topological qubit computation</li>
+<li>D) Photonic linear optical computing</li>
+</ul>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>B) Quantum annealing.</strong> Advantage2 uses quantum annealing, where the system physically evolves toward the minimum-energy configuration of a problem Hamiltonian. It is not a gate-based or universal quantum computer.</p>
+</details>
+<hr />
+<h2 id="level-2-understand-questions-610">Level 2 — Understand (Questions 6–10)<a class="headerlink" href="#level-2-understand-questions-610" title="Permanent link">&para;</a></h2>
+<p><strong>6.</strong> Why is <span class="arithmatex">\(\Lambda &gt; 1\)</span> in a quantum error correction experiment significant? What would <span class="arithmatex">\(\Lambda &lt; 1\)</span> indicate?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(\Lambda &gt; 1\)</span> means that as the code distance increases (more physical qubits per logical qubit), the logical error rate <em>decreases</em> exponentially — the error correction is working as designed. This is the fundamental requirement for fault-tolerant scaling: more qubits makes the logical qubit better. <span class="arithmatex">\(\Lambda &lt; 1\)</span> would mean that adding more qubits makes the logical qubit <em>worse</em> — the overhead of the error correction introduces more errors than it corrects. Prior to Willow, no real device had unambiguously demonstrated <span class="arithmatex">\(\Lambda &gt; 1\)</span> for the surface code.</p>
+</details>
+<hr />
+<p><strong>7.</strong> Explain the difference between IBM's "c-couplers" and "l-couplers." Which has been experimentally demonstrated, and which is projected?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>C-couplers</strong> (chip-level couplers) enable non-nearest-neighbor qubit connectivity within a single chip — long-range intra-chip connections required for bivariate bicycle qLDPC codes. C-couplers were <strong>demonstrated</strong> in IBM's Loon chip (2025). <strong>L-couplers</strong> (link-level couplers) are inter-chip microwave links that transmit entangling signals between physically separate chips via cryogenic cables, enabling multi-chip quantum processors. L-couplers are <strong>projected</strong> for the Cockatoo processor in 2027. The foundational physics of l-couplers was demonstrated in IBM's Flamingo processor (2024) but full integration into a multi-chip system is planned, not delivered.</p>
+</details>
+<hr />
+<p><strong>8.</strong> Why does all-to-all connectivity give IonQ's trapped-ion systems an advantage over superconducting nearest-neighbor architectures?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>On nearest-neighbor superconducting architectures, any two-qubit gate between non-adjacent qubits requires a series of SWAP gates to move quantum information to adjacent positions — each SWAP costs 3 CNOT gates and adds noise. For a 36-qubit algorithm with many non-adjacent interactions, this SWAP overhead can consume a large fraction of the available circuit depth. IonQ's trapped-ion systems allow any pair of ions to interact directly via laser-mediated phonon modes, eliminating SWAP overhead entirely. This means IonQ's effective computational power is higher than raw qubit count suggests: a 36-qubit all-to-all system can run circuits that would require significantly more qubits on a nearest-neighbor architecture.</p>
+</details>
+<hr />
+<p><strong>9.</strong> What is the Nature editorial caveat about Microsoft's Majorana 1 paper, and why is it significant?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Nature editorial accompanying the Majorana 1 paper (February 2025) stated that "the results do not represent evidence for the presence of Majorana zero modes." This is significant because Nature's editors, who accepted the paper for publication, felt it necessary to explicitly clarify that the experimental results did not demonstrate the claimed physical phenomenon. This is unusual in high-profile journal publication and signals that even the paper's publishers do not endorse the strongest interpretations of the work. It also places a burden on independent researchers to scrutinize whether the interferometric parity measurement described constitutes evidence for topological protection.</p>
+</details>
+<hr />
+<p><strong>10.</strong> What distinguishes D-Wave's commercial value proposition from that of IBM, Google, and IonQ?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>D-Wave delivers commercial value today for combinatorial optimization problems using quantum annealing — without waiting for fault-tolerant quantum error correction. IBM, Google, and IonQ are building toward fault-tolerant universal quantum computing (a 2026–2030+ timeline depending on vendor). D-Wave cannot run algorithms requiring universal gates (Shor's, Grover's) but is already deployed in production at Ford Otosan and a major U.S. airline for optimization. The distinction is: D-Wave solves a narrower class of problems (combinatorial optimization) but delivers value now, while gate-based vendors solve a broader class of problems but require several more years of hardware development.</p>
+</details>
+<hr />
+<h2 id="level-3-apply-questions-1115">Level 3 — Apply (Questions 11–15)<a class="headerlink" href="#level-3-apply-questions-1115" title="Permanent link">&para;</a></h2>
+<p><strong>11.</strong> IBM's Blue Jay processor targets 2,000 logical qubits. If the gross code uses a 24:1 physical-to-logical qubit ratio (as described for Kookaburra), approximately how many physical qubits would Blue Jay require?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(2{,}000 \text{ logical} \times 24 \text{ physical/logical} = 48{,}000\)</span> physical qubits. This is approximately 48,000 physical qubits, spread across multiple modules. At Nighthawk-class chip density (~1,400 qubits per chip), this would require roughly 34 chips — consistent with IBM's modular multi-chip architecture described in Chapter 10.</p>
+</details>
+<hr />
+<p><strong>12.</strong> A technology executive is evaluating whether to plan a quantum computing initiative around IBM's Starling (2028–2029) or IonQ's two-chip system (2028). Apply the five-criterion roadmap evaluation framework from Worked Example 9.3 to compare these two milestones.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>IBM Starling:</strong> (1) Track record: 5/5 on-schedule deliveries; (2) Peer review: all milestones leading to Starling are published; (3) Replication: foundational physics confirmed; (4) Specificity: explicit qubit counts and gate counts projected; (5) Physical plausibility: engineering execution of demonstrated component technologies. <strong>High credibility.</strong></p>
+<p><strong>IonQ 2028 two-chip system:</strong> (1) Track record: met every #AQ target; (2) Peer review: 99.99% fidelity paper under review; (3) Replication: foundational Oxford Ionics and Lightsynq physics need independent confirmation; (4) Specificity: explicit qubit counts and timelines stated; (5) Physical plausibility: requires successful integration of multiple newly acquired technologies simultaneously — higher engineering risk than IBM's internally developed architecture. <strong>Moderate credibility, higher upside if acquisitions integrate well.</strong></p>
+<p>Executive recommendation: plan primary quantum initiative around IBM Starling (higher credibility, explicit pharmaceutical use case); monitor IonQ for potentially better near-term performance if acquisition integration proceeds.</p>
+</details>
+<hr />
+<p><strong>13.</strong> Using the gross code ratio described in Chapter 9, if a processor has 1,440 physical qubits and uses the gross code with 12 logical qubits per 288 physical, how many logical qubits can it support? What is the code distance?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(\lfloor 1{,}440 / 288 \rfloor = 5\)</span> code blocks <span class="arithmatex">\(\times 12\)</span> logical qubits per block <span class="arithmatex">\(= 60\)</span> logical qubits. The code distance for the gross code as described is <span class="arithmatex">\(d = 12\)</span>. So this processor supports 60 logical qubits at code distance 12.</p>
+</details>
+<hr />
+<p><strong>14.</strong> NVIDIA's NVQLink targets sub-4 μs latency between Grace Blackwell GPUs and quantum processors. A surface code cycle time for a superconducting processor is approximately 1 μs. Is NVQLink's latency fast enough for real-time error correction decoding? Explain.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>A surface code running at 1 μs cycle time generates syndrome data that must be decoded before the <em>next</em> cycle completes — ideally within 1 μs, or at minimum within a few cycles to avoid backlog. NVQLink's sub-4 μs latency is at the boundary of being fast enough: it is faster than many alternatives (e.g., Ethernet at ~1ms), but a 4 μs decoder latency means the decoder may lag 4 cycles behind the hardware. In practice, GPU decoders using NVQLink are designed to process multiple syndrome rounds in parallel, keeping the backlog manageable. The sub-4 μs threshold is therefore a minimum specification; actual deployed systems aim for sub-1 μs decoder throughput. NVQLink is necessary but not sufficient — the GPU decoder algorithms also matter.</p>
+</details>
+<hr />
+<p><strong>15.</strong> IonQ's Forte Enterprise has 36 physical qubits with all-to-all connectivity and 99.6% two-qubit gate fidelity. A competitor has 100 physical qubits with nearest-neighbor connectivity and 99.5% two-qubit gate fidelity. Which system would you expect to have a higher #AQ for a 30-qubit circuit? Why?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>IonQ Forte Enterprise would likely have a higher #AQ for a 30-qubit circuit. Two reasons: First, all-to-all connectivity means a 30-qubit random algorithm runs without SWAP overhead; on the nearest-neighbor 100-qubit system, implementing 30-qubit all-to-all gates requires many SWAPs that multiply gate count and error. Second, gate fidelity (99.6% vs 99.5%) differs by only 0.1%, but SWAP overhead can double or triple the effective two-qubit gate count. The nearest-neighbor system's SWAP overhead likely more than offsets its higher physical qubit count. This is precisely what #AQ is designed to measure: integrated system performance, not raw physical qubit count.</p>
+</details>
+<hr />
+<h2 id="level-4-analyze-questions-1620">Level 4 — Analyze (Questions 16–20)<a class="headerlink" href="#level-4-analyze-questions-1620" title="Permanent link">&para;</a></h2>
+<p><strong>16.</strong> Analyze the pattern of IBM's milestone delivery from Eagle (2021) through Loon (2025). What does the delivery pattern suggest about Kookaburra's (2026) probability of delivery? What are the main risks?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>IBM has delivered Eagle (2021), Osprey (2022), Heron (2023-2024), Nighthawk (2025), and Loon (2025) — five consecutive milestones on or ahead of schedule. Loon was explicitly delivered one year ahead of schedule. This consistent execution suggests a mature development process with reliable milestone estimation. Kookaburra's probability of delivery on schedule appears high relative to any other vendor.</p>
+<p>Main risks: (1) <strong>Integration complexity</strong> — Kookaburra requires chip-to-chip coupling, which involves new fabrication and assembly steps not previously demonstrated at production scale; (2) <strong>Yield</strong> — the gross code requires all three chips to perform at high fidelity simultaneously; a single low-quality chip could limit the logical qubit count; (3) <strong>Decoder</strong> — the real-time qLDPC decoder demonstrated in Loon must now operate at 3× the problem size; (4) <strong>Supply chain</strong> — multi-chip cryogenic assembly introduces new points of failure. None of these risks are novel physics risks — they are engineering risks, which IBM's track record suggests it manages well.</p>
+</details>
+<hr />
+<p><strong>17.</strong> Compare and contrast the scaling approaches of IBM (superconducting, modular chips) and IonQ (trapped ion, photonic networking). What are the fundamental advantages and limitations of each approach for reaching 1,000+ logical qubits?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>IBM (superconducting, microwave chip-to-chip links):</strong>
+- Advantages: demonstrated fabrication scalability, fast gate times (~100ns), mature control electronics, on-schedule delivery history
+- Limitations: requires all modules at 15 mK (enormous cryogenic overhead at scale), microwave chip-to-chip links are lossy (target &gt;99% fidelity, vs &gt;99.9% on-chip), low physical error rates (0.3%) require high QEC overhead</p>
+<p><strong>IonQ (trapped ion, photonic networking):</strong>
+- Advantages: very low physical error rates (99.99% achieved), photonic interconnects can work at room temperature between cryostats, all-to-all connectivity reduces SWAP overhead, long coherence times
+- Limitations: slow gate times (~1 μs vs 100ns for superconducting), photonic interconnect success rates are probabilistic (partially addressed by Lightsynq memory buffering), integration of multiple acquisitions creates organizational risk, no on-chip 10,000-qubit system yet demonstrated</p>
+<p>For 1,000+ logical qubits: IBM's path requires more physical qubits per logical qubit but has a clearer engineering roadmap. IonQ's path requires fewer physical qubits per logical qubit (due to lower error rates) but has higher integration risk. Both are plausible; IBM is nearer-term credible.</p>
+</details>
+<hr />
+<p><strong>18.</strong> The chapter describes Google's quantum advantage claim for Sycamore (2019) as "disputed by later classical algorithms." Yet the October 2025 Willow quantum advantage result is described as "verifiable." What changed between 2019 and 2025 in how quantum advantage is demonstrated and verified?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The 2019 Sycamore claim used random circuit sampling with an estimated classical simulation time of 10,000 years. The limitation was that this estimate depended on the best <em>known</em> classical algorithms at the time — and within months, improved tensor network simulation methods reduced the classical time to days. The "advantage" was effectively an advantage over known algorithms, not an unconditional advantage.</p>
+<p>The 2025 Willow result used a verification protocol designed to be resistant to tensor network attacks: a random circuit sampling task with a cross-entropy benchmarking variant where the classical difficulty can be more rigorously lower-bounded. The 13,000× speedup is measured against <em>current best</em> classical algorithms on <em>current best</em> classical hardware (including classical supercomputers), and the protocol is designed so that classical simulation cannot exploit the same shortcuts that defeated the 2019 claim. The 2025 result is therefore "verifiable" in the sense that the quantum advantage is established against a stronger adversarial classical baseline.</p>
+</details>
+<hr />
+<p><strong>19.</strong> Microsoft's 2021 Science paper on Majorana modes was retracted, and now the 2025 Nature paper carries an editorial caveat. Analyze what this history implies for how the scientific community should (and does) treat extraordinary experimental claims in quantum computing.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The pattern — a 2021 retraction followed by a 2025 paper with editorial caveat — suggests a systemic challenge specific to Majorana research: the signals expected from Majorana modes are subtle, easily mimicked by mundane physics, and extremely difficult to distinguish experimentally from trivial effects. Sergey Frolov's role in both episodes illustrates the importance of persistent external scrutiny.</p>
+<p>The scientific community's response has been appropriately calibrated: not blanket dismissal (the Nature paper was published, the theoretical physics is sound, Sankar Das Sarma and Scott Aaronson take the claims seriously) but elevated evidentiary standards (the Nature editorial caveat, the absence of independent replication, the Australian preprint on 1/f noise limits). This represents peer review working as intended — extraordinary claims receive extraordinary scrutiny, not reflexive acceptance or reflexive rejection.</p>
+<p>For technology planning, the lesson is: distinguish between the <em>theoretical plausibility</em> of an approach (high for topological qubits) and the <em>experimental confirmation</em> of its practical implementation (absent for topological qubits as of March 2026). Both matter, and conflating them leads to either premature investment or premature dismissal.</p>
+</details>
+<hr />
+<p><strong>20.</strong> Analyze why NVIDIA's investment in quantum computing (CUDA-Q, NVQLink, minority stakes across multiple vendors) represents a strategically different position than the investments of IBM, Google, or IonQ in their own hardware.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>IBM, Google, and IonQ are placing <em>technology bets</em>: each has committed to a specific physical implementation (superconducting, superconducting, trapped-ion respectively) and must be right about that technology winning or be stranded. NVIDIA is placing a <em>platform bet</em>: by building CUDA-Q as a vendor-neutral programming interface and NVQLink as a hardware interconnect that works across modalities, NVIDIA profits regardless of which physical platform wins.</p>
+<p>This mirrors NVIDIA's historical strategy in AI: NVIDIA did not try to determine whether image recognition, language modeling, or protein folding would dominate deep learning. It built the GPU and CUDA ecosystem that all of them require. If IBM wins and all quantum computing runs on superconducting chips, CUDA-Q runs on IBM backends. If IonQ wins, CUDA-Q runs on ion trap backends. NVIDIA collects the tolls on either path.</p>
+<p>The additional insight is that the classical decoding and control problem — running real-time QEC decoders that must operate on microsecond timescales — is a large, GPU-amenable workload that will exist regardless of hardware platform. NVQLink's sub-4 μs latency is a genuine technical contribution, not just marketing positioning.</p>
+</details>
+<hr />
+<h2 id="level-5-evaluate-questions-2125">Level 5 — Evaluate (Questions 21–25)<a class="headerlink" href="#level-5-evaluate-questions-2125" title="Permanent link">&para;</a></h2>
+<p><strong>21.</strong> A CXO asks you to evaluate whether to commit $50M to a quantum computing initiative centered on IBM's Kookaburra (projected 2026) versus waiting for Starling (projected 2028–2029). What factors would you weigh, and what recommendation would you make?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Factors favoring Kookaburra (2026) investment:</strong>
+- Strong delivery credibility (5/5 IBM milestones delivered)
+- Kookaburra provides first access to logical qubit operation — valuable for building organizational capability and algorithm development pipelines
+- 2026 timing allows 2+ years of learning before Starling-class systems appear
+- First-mover advantage in developing quantum algorithms for your specific industry</p>
+<p><strong>Factors favoring waiting for Starling:</strong>
+- Kookaburra's ~173 logical qubits may be insufficient for production-scale pharmaceutical or financial calculations (Starling's 200 logical qubits + <span class="arithmatex">\(10^8\)</span> gates is the threshold for early drug discovery applications per Chapter 10)
+- Starling represents a more mature platform with less technical risk for deploying actual applications
+- $50M committed to Kookaburra-era algorithm development may produce results only deployable on Starling-era hardware anyway</p>
+<p><strong>Recommendation:</strong> A hybrid approach. Commit $10–15M now to a Kookaburra-era capability-building program — algorithm development, talent acquisition, partnership with IBM Research — but do not commit the full $50M until Kookaburra delivers logical qubit operation results (expected late 2026). The $50M deployment decision should be made on the basis of Kookaburra's actual performance, not its projected performance.</p>
+</details>
+<hr />
+<p><strong>22.</strong> Evaluate the strength of evidence for IonQ's claim that Lightsynq photonic interconnects achieve 50× higher inter-module entanglement rates than probabilistic photon approaches. What evidence would you want to see before treating this as established fact?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>As of March 2026, the 50× figure is a <strong>projected specification</strong>, not a demonstrated experimental result. Lightsynq was acquired in 2025; independent peer-reviewed experimental results from the Lightsynq technology have not yet appeared in the literature under IonQ ownership.</p>
+<p>To treat this claim as established fact, one would want:
+(1) A peer-reviewed paper demonstrating two-module entanglement generation with the memory-buffered architecture at the claimed rate
+(2) Independent replication by a group not affiliated with IonQ or Lightsynq
+(3) Characterization of the entanglement fidelity (rate alone is insufficient — high rate with low fidelity does not constitute a useful interconnect)
+(4) Demonstration at cryogenic operating conditions representative of full system deployment (not room-temperature proof-of-concept)</p>
+<p>The theoretical basis for memory-buffered asynchronous photonic links achieving higher rates than synchronous probabilistic links is sound — quantum memory buffering eliminates the penalty for timing mismatches. But the specific 50× figure requires experimental validation. IonQ's credibility in meeting #AQ targets supports tentative confidence; the acquisition-integration risk counsels caution.</p>
+</details>
+<hr />
+<p><strong>23.</strong> A quantum computing vendor announces a processor with 10,000 qubits and claims it demonstrates "quantum advantage for financial portfolio optimization." Applying the five-criterion framework from Worked Example 9.3, evaluate what information you would need to assess this claim.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Using the five criteria:</p>
+<p><strong>1. Track record:</strong> Has this vendor previously delivered processors meeting their specified qubit count and gate fidelity? Have prior claims been peer-reviewed and independently verified?</p>
+<p><strong>2. Peer-reviewed publication:</strong> Is the quantum advantage claim published in a refereed journal with full methodology? "Quantum advantage" claims require comparison against the best available classical algorithms, not just slow classical implementations. Is the computational task well-defined?</p>
+<p><strong>3. Independent replication:</strong> Have other groups reproduced the quantum advantage result? Financial optimization tasks are classical-algorithm-rich domains; has the comparison been made against state-of-the-art classical portfolio optimizers?</p>
+<p><strong>4. Near-term milestone specificity:</strong> Are the 10,000-qubit specifications verified by independent benchmarks? What is the #AQ or equivalent integrated quality metric — raw qubit count on its own is insufficient?</p>
+<p><strong>5. Physical plausibility:</strong> What error correction scheme supports 10,000 physical qubits? How many logical qubits does this represent? Portfolio optimization at commercially relevant scale likely requires hundreds of logical qubits — are those available from this system?</p>
+<p>Without positive answers to criteria 2 (peer review) and 3 (classical comparison against best algorithms), the claim should be treated as unverified marketing.</p>
+</details>
+<hr />
+<p><strong>24.</strong> The chapter notes that Microsoft's topological approach has been "probably 20–30 years behind other platforms" according to Hensinger, yet Microsoft has invested in this approach since approximately 2005. Evaluate whether this continued investment represents irrational persistence or rational strategic choice.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Case for rational strategy:</strong> Topological protection, if achieved, would provide error rates low enough that fault-tolerant quantum computing might require 10–100× fewer physical qubits than any other approach. The expected value calculation — low probability of a very large payoff — can rationally justify sustained investment, especially for a company (Microsoft) with the financial resources to carry a 20-year research program. The theoretical foundations are rigorous; the experimental difficulty is engineering, not physics impossibility.</p>
+<p><strong>Case for irrational persistence:</strong> Microsoft has invested approximately two decades and very large resources (Station Q, multiple nanowire research programs) in a technology that has produced zero independently verified qubits. The 2021 retraction represents a significant setback. The 2025 Nature paper's editorial caveat suggests the community remains unpersuaded. At some point, continued investment without results shifts from patient strategy to sunk-cost fallacy.</p>
+<p><strong>Balanced assessment:</strong> Microsoft's investment is probably rational at the <em>corporate level</em> — the potential payoff justifies some continued investment — but the implicit claim that topological qubits are on a near-term competitive timeline with superconducting or trapped-ion systems is not supported by evidence. Microsoft should invest in topological research while building quantum capabilities on proven platforms (as it does via Azure Quantum partnerships with IonQ and Quantinuum) — not treat unconfirmed results as a substitute for demonstrated systems.</p>
+</details>
+<hr />
+<p><strong>25.</strong> Google publishes Willow results in Nature with <span class="arithmatex">\(\Lambda = 2.14\)</span> at <span class="arithmatex">\(d = 7\)</span>. IBM's Loon chip demonstrates real-time qLDPC decoding under 480 ns. Both are described as critical milestones. Which result is more significant for the long-term prospects of fault-tolerant quantum computing, and why?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Both results are critical and address different bottlenecks; their relative importance depends on the specific path to fault-tolerant quantum computing.</p>
+<p><strong>Google's <span class="arithmatex">\(\Lambda = 2.14\)</span></strong> is more fundamental scientifically: it demonstrates that the surface code actually operates in the below-threshold regime on a real physical device. Without <span class="arithmatex">\(\Lambda &gt; 1\)</span>, no amount of engineering can make the surface code work — more qubits would make things worse. Willow closes the question of whether fault-tolerant QEC is physically achievable.</p>
+<p><strong>IBM's sub-480 ns decoder</strong> is more significant for a specific architecture (qLDPC-based modular systems). qLDPC codes offer dramatically lower physical-to-logical qubit overhead than surface codes (<span class="arithmatex">\(O(\log n)\)</span> vs <span class="arithmatex">\(O(1)\)</span> scaling in some regimes), but require decoders that can operate at the code cycle rate. If IBM's decoder work enables qLDPC codes to operate in real-time, the resource reduction could be 10–100× compared to surface code alternatives.</p>
+<p><strong>Net assessment:</strong> Google's Willow result is more broadly significant — it confirms the physics works for any surface-code-based approach. IBM's Loon result is more significant for the specific modular-qLDPC path, which may ultimately be more resource-efficient. Both should be considered together as establishing that fault-tolerant quantum computing is an engineering problem, not a physics problem.</p>
+</details>
+<hr />
+<h2 id="level-6-create-questions-2630">Level 6 — Create (Questions 26–30)<a class="headerlink" href="#level-6-create-questions-2630" title="Permanent link">&para;</a></h2>
+<p><strong>26.</strong> Design a quantum hardware evaluation scorecard for a pharmaceutical company considering a 3-year quantum computing initiative. What metrics would you track quarterly, what thresholds would trigger acceleration or pause, and how would you weight delivered vs. projected milestones?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Quarterly tracking metrics:</strong>
+- Logical qubit count (IBM Kookaburra target: 173 by Q4 2026; Cockatoo: 24 by Q4 2027)
+- Logical gate fidelity (target: &gt;99.9% for pharmaceutical applications)
+- Circuit depth achievable (gate count before circuit fidelity degrades)
+- Peer-reviewed publications from key vendors (number per year, journal quality)
+- Independent replication of vendor claims by academic groups
+- Algorithm resource estimates for your specific target molecules (quarterly update as hardware improves)</p>
+<p><strong>Acceleration triggers:</strong> IBM Kookaburra delivers 100+ logical qubits by Q2 2027 (ahead of schedule); IonQ smooth gate result peer-reviewed and confirmed; quantum simulation of a target molecule active site with &gt;5× speedup over classical DFT</p>
+<p><strong>Pause triggers:</strong> Kookaburra misses logical qubit target by &gt;50%; no peer-reviewed demonstrations of logical qubits from any vendor by Q1 2027; classical simulation improvements eliminate the molecular simulation quantum advantage window</p>
+<p><strong>Weighting scheme:</strong> Delivered milestones count 3× projected milestones when forecasting timelines. A delivered result from any vendor informs estimates for all vendors. Independently replicated results count 2× single-vendor results.</p>
+</details>
+<hr />
+<p><strong>27.</strong> IBM's modular scaling roadmap uses c-couplers → l-couplers → universal adapters as three hierarchical tiers. Create an analogous three-tier hierarchy for IonQ's photonic networking approach, naming the analogous technology at each tier and its current delivery status.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>IonQ three-tier photonic hierarchy:</strong></p>
+<p><strong>Tier 1 — Intra-trap connectivity (analogous to c-couplers):</strong> All-to-all connectivity within a single ion trap via laser-mediated phonon modes. IonQ's current systems achieve this with 99.99% two-qubit gate fidelity. <strong>Status: DELIVERED</strong> (Forte Enterprise, October 2025 smooth gates result).</p>
+<p><strong>Tier 2 — On-chip 2D array connectivity (analogous to l-couplers, intra-module):</strong> Oxford Ionics 2D trap arrays with microwave-driven gates enabling connectivity across a wafer-scale 2D ion array. Eliminates the need for photonic links within a single chip. <strong>Status: PROJECTED</strong> (256-qubit system 2026, 10,000-qubit system 2027).</p>
+<p><strong>Tier 3 — Inter-module photonic networking (analogous to universal adapters):</strong> Lightsynq memory-buffered photonic interconnects linking separate trap modules via fiber optic channels. Asynchronous entanglement enables inter-module logical qubit operations without re-encoding. <strong>Status: PROJECTED</strong> (two-chip system 2028).</p>
+<p>The key structural difference from IBM's hierarchy: IonQ's Tier 2 (2D trap arrays) replaces the need for intra-module quantum links (IBM's l-couplers) with a fundamentally different physical substrate, while IonQ's Tier 3 (photonic networking) provides inter-module connectivity at longer range than IBM's microwave l-couplers can support.</p>
+</details>
+<hr />
+<p><strong>28.</strong> Create a 2-page briefing document outline (section headers and key bullets only) for a CXO who must decide in Q1 2026 whether to partner with IBM, IonQ, or Google for a quantum computing initiative in financial services (specifically: portfolio optimization and credit risk modeling).</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>CXO Briefing: Quantum Computing Partnership Selection for Financial Services</strong>
+<em>Q1 2026 Decision Document</em></p>
+<p><strong>Executive Summary</strong>
+- Recommendation: Primary partnership with IBM; secondary monitoring of IonQ; defer Google
+- Decision timeline: 60 days; commitment level: $5M proof-of-concept, with $20M decision gate at Kookaburra delivery</p>
+<p><strong>Section 1: Current State of Quantum Hardware</strong>
+- No vendor has demonstrated fault-tolerant computation useful for portfolio optimization or credit risk at production scale
+- IBM Kookaburra (2026): first logical qubit system — proof-of-concept feasibility window
+- IonQ Forte Enterprise: #AQ 36, production system, appropriate for algorithm development
+- D-Wave: deployable today for combinatorial optimization; separate evaluation recommended</p>
+<p><strong>Section 2: Use Case Fit Analysis</strong>
+- Portfolio optimization: D-Wave (today), IBM Kookaburra (2026–2027 algorithm dev), IBM Starling (2029 production)
+- Credit risk modeling: Monte Carlo acceleration possible with gate-based NISQ (limited) → fault-tolerant target 2029+
+- Algorithm development timeline: 18–24 months to production-ready algorithms regardless of hardware</p>
+<p><strong>Section 3: Vendor Risk Assessment</strong>
+- IBM: highest credibility, cloud access available now, Poughkeepsie QDC for enterprise SLA
+- IonQ: higher upside if Oxford Ionics integration succeeds, higher integration risk, cloud available
+- Google: no enterprise cloud product for financial use cases; research partnership possible; defer</p>
+<p><strong>Section 4: Recommended Partnership Structure</strong>
+- Immediate: IBM Quantum Network membership ($500K/yr); algorithm development for target use cases
+- Q3 2026: Evaluate Kookaburra performance; decision on expanding to IonQ Tempo partnership
+- 2028: Production pilot on IBM Cockatoo or IonQ 256-qubit system
+- 2029: Starling-era production deployment decision</p>
+<p><strong>Section 5: Key Risk Factors</strong>
+- Classical algorithm improvements may close quantum advantage window for specific use cases
+- Talent scarcity: quantum algorithm developers with finance domain knowledge are rare
+- Regulatory uncertainty: quantum computing outputs in regulated financial models may require validation frameworks not yet established</p>
+</details>
+<hr />
+<p><strong>29.</strong> Synthesize the roadmap information from Chapter 9 to create a predicted "state of quantum computing" timeline for 2026, 2027, 2028, and 2029. For each year, identify the most credible hardware milestone, the most credible algorithm capability, and the most plausible commercial application.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>2026:</strong>
+- Hardware: IBM Kookaburra — first multi-chip processor with ~173 logical qubits (PROJECTED, HIGH CREDIBILITY). Google: continued Willow-class demonstrations. IonQ: 256-qubit Oxford Ionics processor.
+- Algorithm capability: First demonstrations of small fault-tolerant circuits on logical qubits. Quantum simulation of small molecules (<span class="arithmatex">\(\leq 20\)</span> active electrons) with full QEC. IBM + HPC hybrid advantage demonstration.
+- Commercial application: Early pharmaceutical algorithm development on logical qubits; D-Wave optimization at scale for logistics and scheduling.</p>
+<p><strong>2027:</strong>
+- Hardware: IBM Cockatoo — 24 logical qubits across entangled multi-chip system. IonQ: ~10,000-qubit single chip, ~800 logical qubits (if Oxford Ionics integration succeeds). Quantinuum and QuEra: 1,000+ physical qubits.
+- Algorithm capability: ~24–100 logical qubits available; quantum chemistry for drug-like molecules (~40 active electrons); fault-tolerant quantum Monte Carlo begins.
+- Commercial application: First quantum-assisted drug candidate screening for small lead compounds; financial risk modeling proof-of-concepts.</p>
+<p><strong>2028:</strong>
+- Hardware: IBM pre-Starling class; IonQ two-chip photonic system (~1,600 logical qubits if Lightsynq delivers). Google: large-scale surface code demonstration.
+- Algorithm capability: 100–200 logical qubits available. Ibrutinib-class drug simulations feasible (~80 active electrons per Chapter 10 resource estimates). T-gate counts in the <span class="arithmatex">\(10^7-10^8\)</span> range.
+- Commercial application: First pharmaceutical company runs quantum simulation to inform a drug candidate selection. Quantum portfolio optimization for large asset managers.</p>
+<p><strong>2029:</strong>
+- Hardware: IBM Starling — 200 logical qubits, <span class="arithmatex">\(10^8\)</span> T-gates. Multiple vendors at 100+ logical qubits.
+- Algorithm capability: Full quantum chemistry for real drug discovery targets. Quantum advantage over classical CCSD(T) for strongly correlated systems. Early cryptographically relevant integer factoring demonstrations (small key sizes).
+- Commercial application: First quantum simulation results contributing to an approved drug development pipeline. Quantum computing as a standard tool in computational chemistry groups at top pharmaceutical companies.</p>
+</details>
+<hr />
+<p><strong>30.</strong> Design a hypothetical study that would definitively resolve whether Microsoft has demonstrated Majorana zero modes. Specify the experimental conditions, the measurements required, the comparison groups, and the publication standards that would satisfy the scientific community's current skepticism.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Study Design: Definitive Majorana Zero Mode Verification</strong></p>
+<p><strong>Hypothesis to test:</strong> InAs/Al topoconductor nanowire devices host topological Majorana zero modes that provide measurable topological protection against local perturbations.</p>
+<p><strong>Required experimental conditions:</strong>
+- Multiple device samples from at least two independent fabrication runs (to demonstrate reproducibility)
+- Disorder characterization meeting Sankar Das Sarma's "factor of two" improvement threshold (mean free path and coherence length measurements)
+- Temperature: base temperature <span class="arithmatex">\(\leq 30\)</span> mK to suppress trivial Andreev bound states that mimic Majorana signatures</p>
+<p><strong>Required measurements:</strong>
+- Topological phase boundary mapping: demonstrate a clear phase transition as a function of magnetic field and chemical potential consistent with topological band structure theory
+- Non-Abelian braiding statistics: fuse two Majorana modes and measure the resulting state — non-Abelian statistics would give a definitive signature impossible with trivial Andreev states
+- Single-shot parity measurement with error rate below 1% (demonstrated independently of braiding)
+- Decoherence characterization specifically testing for 1/f noise at operating conditions, with comparison to the Australian preprint's theoretical predictions</p>
+<p><strong>Comparison groups:</strong>
+- Same device architecture fabricated without topoconductor (pure semiconductor nanowire): should not show Majorana signatures
+- Same device measured above the topological phase boundary (paramagnetic phase): should not show topological protection</p>
+<p><strong>Publication standards:</strong>
+- Submission to Nature or Science with full raw data deposited in a public repository
+- Independent analysis of raw data by at least one group not affiliated with Microsoft (open data requirement)
+- Replication by at least two independent groups (academic laboratories with no Microsoft funding) within 12 months of publication
+- Explicit response to Frolov's reproducibility criteria checklist in the supplementary methods</p>
+<p><strong>Specific test against the 2025 Nature caveat:</strong> The 2025 paper demonstrated interferometric parity measurement but not Majorana zero modes per se. The definitive study must demonstrate that the parity measurement tracks a <em>topologically protected</em> degree of freedom — specifically, that applying a local perturbation at one end of the nanowire does not corrupt the parity state. This non-locality test is the gold standard that distinguishes topological Majorana modes from trivial Andreev bound states.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

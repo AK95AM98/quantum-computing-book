@@ -1,0 +1,3069 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/06-density-matrices/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../07-noise/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quiz 6 - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-6-quiz-density-matrices-and-open-quantum-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-6-quiz-density-matrices-and-open-quantum-systems">Chapter 6 Quiz: Density Matrices and Open Quantum Systems<a class="headerlink" href="#chapter-6-quiz-density-matrices-and-open-quantum-systems" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of density matrices, quantum channels, error correction, adiabatic quantum computing, and quantum annealing.</p>
+<hr />
+<h2 id="level-1-remember">Level 1 — Remember<a class="headerlink" href="#level-1-remember" title="Permanent link">&para;</a></h2>
+<p><strong>Question 1.</strong> State the definition of the density matrix for a statistical mixture of pure states, and give the condition that distinguishes a pure state from a mixed state using <span class="arithmatex">\(\text{Tr}(\rho^2)\)</span>.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The density matrix for a statistical ensemble of pure states <span class="arithmatex">\(\{(p_i, |\psi_i\rangle)\}\)</span> is:</p>
+<div class="arithmatex">\[\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|\]</div>
+<p>where <span class="arithmatex">\(p_i \geq 0\)</span> and <span class="arithmatex">\(\sum_i p_i = 1\)</span>. The density matrix is Hermitian (<span class="arithmatex">\(\rho = \rho^\dagger\)</span>), positive semidefinite (<span class="arithmatex">\(\rho \geq 0\)</span>), and has unit trace (<span class="arithmatex">\(\text{Tr}(\rho) = 1\)</span>).</p>
+<p><strong>Pure vs. mixed state condition:</strong>
+- <strong>Pure state:</strong> <span class="arithmatex">\(\text{Tr}(\rho^2) = 1\)</span> (equivalently, <span class="arithmatex">\(\rho^2 = \rho\)</span>, i.e., <span class="arithmatex">\(\rho\)</span> is a projector)
+- <strong>Mixed state:</strong> <span class="arithmatex">\(\text{Tr}(\rho^2) &lt; 1\)</span></p>
+<p>The quantity <span class="arithmatex">\(\text{Tr}(\rho^2)\)</span> is called the purity. For a maximally mixed state on <span class="arithmatex">\(d\)</span> dimensions, <span class="arithmatex">\(\rho = I/d\)</span> and <span class="arithmatex">\(\text{Tr}(\rho^2) = 1/d\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 2.</strong> State the von Neumann entropy formula and give its value for a pure state and for the maximally mixed state of a qubit.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The von Neumann entropy is:</p>
+<div class="arithmatex">\[S(\rho) = -\text{Tr}(\rho \log_2 \rho) = -\sum_i \lambda_i \log_2 \lambda_i\]</div>
+<p>where <span class="arithmatex">\(\lambda_i\)</span> are the eigenvalues of <span class="arithmatex">\(\rho\)</span> (using the convention <span class="arithmatex">\(0 \log_2 0 = 0\)</span>).</p>
+<ul>
+<li><strong>Pure state</strong> (<span class="arithmatex">\(\rho = |\psi\rangle\langle\psi|\)</span>): eigenvalues are <span class="arithmatex">\(\{1, 0, \ldots, 0\}\)</span>, so <span class="arithmatex">\(S(\rho) = -1 \cdot \log_2 1 = \mathbf{0}\)</span>.</li>
+<li><strong>Maximally mixed qubit</strong> (<span class="arithmatex">\(\rho = I/2\)</span>): eigenvalues are <span class="arithmatex">\(\{1/2, 1/2\}\)</span>, so <span class="arithmatex">\(S(\rho) = -2 \cdot \frac{1}{2}\log_2\frac{1}{2} = \mathbf{1}\)</span> bit.</li>
+</ul>
+<p>The von Neumann entropy quantifies the "quantumness" of ignorance: 0 for known pure states, maximum for maximally uncertain mixed states.</p>
+</details>
+<hr />
+<p><strong>Question 3.</strong> Write the Kraus operator decomposition of a quantum channel (CPTP map) and state the completeness condition on the Kraus operators.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>A quantum channel (completely positive trace-preserving map) <span class="arithmatex">\(\mathcal{E}\)</span> acts on a density matrix as:</p>
+<div class="arithmatex">\[\mathcal{E}(\rho) = \sum_k K_k \rho K_k^\dagger\]</div>
+<p>where the operators <span class="arithmatex">\(\{K_k\}\)</span> are the <strong>Kraus operators</strong> of the channel. The completeness (trace-preserving) condition is:</p>
+<div class="arithmatex">\[\sum_k K_k^\dagger K_k = I\]</div>
+<p>This ensures that <span class="arithmatex">\(\text{Tr}(\mathcal{E}(\rho)) = \text{Tr}(\rho) = 1\)</span> for all <span class="arithmatex">\(\rho\)</span>. The number of Kraus operators can range from 1 (unitary evolution) to <span class="arithmatex">\(d^2\)</span> (for a <span class="arithmatex">\(d\)</span>-dimensional system), though the minimum Kraus rank may be smaller.</p>
+</details>
+<hr />
+<p><strong>Question 4.</strong> What is the QUBO formulation? Write the general QUBO objective function and state what problem structure it captures.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>QUBO stands for Quadratic Unconstrained Binary Optimization. The general objective function is:</p>
+<div class="arithmatex">\[\min_{x \in \{0,1\}^n} \sum_{i} Q_{ii} x_i + \sum_{i &lt; j} Q_{ij} x_i x_j = \min_{x \in \{0,1\}^n} x^T Q x\]</div>
+<p>where <span class="arithmatex">\(Q\)</span> is an <span class="arithmatex">\(n \times n\)</span> upper triangular (or symmetric) real matrix and <span class="arithmatex">\(x_i \in \{0,1\}\)</span> are binary variables. QUBO captures all quadratic interactions between binary variables without linear or higher-order terms explicitly (though higher-order terms can be reduced to QUBO form). It is the standard input format for D-Wave quantum annealers and is NP-hard in general (it includes Max-Cut, number partitioning, and other NP-hard problems as special cases).</p>
+</details>
+<hr />
+<p><strong>Question 5.</strong> Name the three Pauli quantum noise channels and briefly describe what physical process each models.</p>
+<details class="success">
+<summary>Answer</summary>
+<ul>
+<li>
+<p><strong>Bit-flip channel:</strong> Models classical bit-flip errors — the qubit state <span class="arithmatex">\(|0\rangle \leftrightarrow |1\rangle\)</span> is flipped with probability <span class="arithmatex">\(p\)</span> and left unchanged with probability <span class="arithmatex">\(1-p\)</span>. Kraus operators: <span class="arithmatex">\(\{\sqrt{1-p}\, I,\ \sqrt{p}\, X\}\)</span>. Models charge noise, classical crosstalk.</p>
+</li>
+<li>
+<p><strong>Phase-flip channel:</strong> Models dephasing — the relative phase between <span class="arithmatex">\(|0\rangle\)</span> and <span class="arithmatex">\(|1\rangle\)</span> is flipped (multiplied by <span class="arithmatex">\(-1\)</span>) with probability <span class="arithmatex">\(p\)</span>. Kraus operators: <span class="arithmatex">\(\{\sqrt{1-p}\, I,\ \sqrt{p}\, Z\}\)</span>. Models interactions with a fluctuating magnetic or electric environment.</p>
+</li>
+<li>
+<p><strong>Depolarizing channel:</strong> Models symmetric noise in all three Pauli directions — with probability <span class="arithmatex">\(p\)</span>, one of the three Pauli errors <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(Z\)</span> is applied uniformly at random. Kraus operators: <span class="arithmatex">\(\{\sqrt{1-p}\, I,\ \sqrt{p/3}\, X,\ \sqrt{p/3}\, Y,\ \sqrt{p/3}\, Z\}\)</span>. A common model for gate errors in superconducting and trapped-ion systems.</p>
+</li>
+</ul>
+</details>
+<hr />
+<h2 id="level-2-understand">Level 2 — Understand<a class="headerlink" href="#level-2-understand" title="Permanent link">&para;</a></h2>
+<p><strong>Question 6.</strong> Explain the physical meaning of the partial trace operation. Why is it necessary to use density matrices (rather than pure state vectors) when describing a subsystem of a larger entangled system?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The partial trace <span class="arithmatex">\(\text{Tr}_B(\rho_{AB})\)</span> is the unique operation that correctly computes expectation values of observables acting only on subsystem <span class="arithmatex">\(A\)</span>, regardless of the state of <span class="arithmatex">\(B\)</span>. For any observable <span class="arithmatex">\(O_A \otimes I_B\)</span>:
+$<span class="arithmatex">\(\langle O_A \rangle = \text{Tr}_{AB}[(O_A \otimes I_B)\rho_{AB}] = \text{Tr}_A[O_A \cdot \text{Tr}_B(\rho_{AB})]\)</span>$</p>
+<p>The necessity of density matrices for subsystems arises from entanglement. If <span class="arithmatex">\(|\Psi_{AB}\rangle\)</span> is an entangled pure state (e.g., <span class="arithmatex">\(|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}\)</span>), then subsystem <span class="arithmatex">\(A\)</span> alone has no well-defined pure state description: there is no <span class="arithmatex">\(|\phi_A\rangle\)</span> such that <span class="arithmatex">\(|\Psi_{AB}\rangle = |\phi_A\rangle \otimes |\phi_B\rangle\)</span>. The reduced state <span class="arithmatex">\(\rho_A = \text{Tr}_B(|\Phi^+\rangle\langle\Phi^+|) = I/2\)</span> is maximally mixed — all local measurements on <span class="arithmatex">\(A\)</span> give maximally random results. A pure state vector cannot represent this; a density matrix is mandatory. Physically, the partial trace represents the inaccessibility of the environment's degrees of freedom: any realistic quantum system is entangled with its environment, making density matrices the correct description of open systems.</p>
+</details>
+<hr />
+<p><strong>Question 7.</strong> Explain the amplitude damping channel and its physical significance. Write its Kraus operators and describe how it models the T1 relaxation process.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The amplitude damping channel models energy relaxation from the excited state <span class="arithmatex">\(|1\rangle\)</span> to the ground state <span class="arithmatex">\(|0\rangle\)</span> — the <span class="arithmatex">\(T_1\)</span> process (longitudinal relaxation). The Kraus operators are:</p>
+<div class="arithmatex">\[K_0 = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; \sqrt{1-\gamma}\end{pmatrix}, \qquad K_1 = \begin{pmatrix}0 &amp; \sqrt{\gamma} \\ 0 &amp; 0\end{pmatrix}\]</div>
+<p>where <span class="arithmatex">\(\gamma = 1 - e^{-t/T_1}\)</span> is the damping parameter, increasing from 0 to 1 as <span class="arithmatex">\(t\)</span> grows from 0 to <span class="arithmatex">\(\infty\)</span>.</p>
+<p><strong>Physical action:</strong> <span class="arithmatex">\(K_0\)</span> represents "no decay" — the excited state amplitude is reduced by <span class="arithmatex">\(\sqrt{1-\gamma}\)</span>; <span class="arithmatex">\(K_1\)</span> represents "decay event" — the qubit jumps from <span class="arithmatex">\(|1\rangle\)</span> to <span class="arithmatex">\(|0\rangle\)</span> (emitting a photon or phonon to the environment). For a general state <span class="arithmatex">\(\rho = \begin{pmatrix}p &amp; r^* \\ r &amp; 1-p\end{pmatrix}\)</span>, the channel gives:
+$<span class="arithmatex">\(\mathcal{E}_{AD}(\rho) = \begin{pmatrix}p + \gamma(1-p) &amp; r^*\sqrt{1-\gamma} \\ r\sqrt{1-\gamma} &amp; (1-p)(1-\gamma)\end{pmatrix}\)</span>$</p>
+<p>As <span class="arithmatex">\(t \to \infty\)</span> (<span class="arithmatex">\(\gamma \to 1\)</span>): <span class="arithmatex">\(\rho \to |0\rangle\langle 0|\)</span> — the qubit decays to the ground state regardless of its initial state. The off-diagonal coherences decay as <span class="arithmatex">\(e^{-t/(2T_1)}\)</span>, faster than the population <span class="arithmatex">\(T_1\)</span> decay.</p>
+</details>
+<hr />
+<p><strong>Question 8.</strong> Explain the stabilizer formalism for quantum error correction. What is a stabilizer group, and how does syndrome measurement work without revealing the quantum information?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The stabilizer formalism (Gottesman 1997) describes quantum error-correcting codes using groups of Pauli operators that "stabilize" the code space — they have eigenvalue <span class="arithmatex">\(+1\)</span> on all codewords. Formally, for an <span class="arithmatex">\([[n,k,d]]\)</span> code encoding <span class="arithmatex">\(k\)</span> logical qubits into <span class="arithmatex">\(n\)</span> physical qubits, the stabilizer group <span class="arithmatex">\(\mathcal{S}\)</span> is an abelian subgroup of the <span class="arithmatex">\(n\)</span>-qubit Pauli group, with <span class="arithmatex">\(|\mathcal{S}| = 2^{n-k}\)</span> independent generators <span class="arithmatex">\(\{g_1, \ldots, g_{n-k}\}\)</span>.</p>
+<p><strong>Syndrome measurement:</strong> To detect errors without measuring the encoded information, the error correction procedure measures each generator <span class="arithmatex">\(g_i\)</span>. For a codeword <span class="arithmatex">\(|\psi\rangle\)</span> in the code space, <span class="arithmatex">\(g_i|\psi\rangle = +|\psi\rangle\)</span>, so all syndrome bits are 0. When error <span class="arithmatex">\(E\)</span> acts on the codeword, the corrupted state <span class="arithmatex">\(E|\psi\rangle\)</span> may satisfy <span class="arithmatex">\(g_i(E|\psi\rangle) = \pm E|\psi\rangle\)</span>: if <span class="arithmatex">\(E\)</span> anticommutes with <span class="arithmatex">\(g_i\)</span>, the syndrome bit for <span class="arithmatex">\(g_i\)</span> is <span class="arithmatex">\(-1\)</span> (outcome 1). The syndrome <span class="arithmatex">\((s_1, \ldots, s_{n-k})\)</span> identifies the error type without revealing <span class="arithmatex">\(|\psi\rangle\)</span>, because the measurements commute with the logical operators (by the definition of the code space). This is the key insight: error location information is encoded in the commutation relations with stabilizers, while the logical quantum information is encoded in the commutation relations with logical operators.</p>
+</details>
+<hr />
+<p><strong>Question 9.</strong> Explain the discretization theorem (the idea that quantum error correction need only correct a discrete set of errors to protect against all errors). Why is this non-obvious and why does it work?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The discretization theorem (Knill-Laflamme) states that if a quantum error-correcting code can correct a discrete set of errors <span class="arithmatex">\(\{E_k\}\)</span> spanning all errors on up to <span class="arithmatex">\(t\)</span> qubits (i.e., the Pauli group on <span class="arithmatex">\(t\)</span> qubits), then the code can correct all physical errors (including continuous rotations, weak measurements, and correlated noise) on those qubits.</p>
+<p><strong>Why it is non-obvious:</strong> Physical noise is continuous — a qubit might undergo a tiny rotation <span class="arithmatex">\(e^{i\epsilon X}\)</span> rather than a clean <span class="arithmatex">\(X\)</span> error. It is not obvious that correcting only discrete Pauli errors protects against such infinitesimal or partial errors.</p>
+<p><strong>Why it works:</strong> The syndrome measurement itself discretizes the error. Measuring the syndrome of a state subjected to continuous noise <span class="arithmatex">\(E = \sum_k c_k E_k\)</span> (where <span class="arithmatex">\(E_k\)</span> are Pauli operators) projects the state into one of finitely many syndrome eigenspaces. The projection randomly selects one of the discrete Pauli errors with probability <span class="arithmatex">\(|c_k|^2\)</span>, collapsing the continuous rotation into one of the correctable discrete cases. The error correction then applies the corresponding discrete correction. Effectively, the syndrome measurement performs quantum error discretization for free — the continuous error is converted into a discrete one by the act of syndrome extraction. This is one of the most remarkable features of quantum error correction and has no direct classical analog.</p>
+</details>
+<hr />
+<p><strong>Question 10.</strong> Explain the adiabatic quantum computing model and describe how it connects to the quantum gate model through the adiabatic theorem.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Adiabatic quantum computing (AQC) (Farhi et al. 2000) solves optimization problems by slowly evolving a quantum system from an easy-to-prepare ground state to the ground state of a problem Hamiltonian that encodes the solution. The system evolves under:</p>
+<div class="arithmatex">\[H(t) = \left(1 - \frac{t}{T}\right) H_0 + \frac{t}{T} H_f\]</div>
+<p>where <span class="arithmatex">\(H_0\)</span> is the initial Hamiltonian (e.g., <span class="arithmatex">\(H_0 = -\sum_i X_i\)</span>, with ground state <span class="arithmatex">\(|+\rangle^{\otimes n}\)</span>), <span class="arithmatex">\(H_f\)</span> is the problem Hamiltonian (e.g., an Ising model encoding the QUBO), and <span class="arithmatex">\(T\)</span> is the total evolution time.</p>
+<p><strong>Adiabatic theorem:</strong> If the system starts in the ground state of <span class="arithmatex">\(H(0)\)</span> and evolves sufficiently slowly — specifically, if <span class="arithmatex">\(T \gg 1/\Delta_{\min}^2\)</span> where <span class="arithmatex">\(\Delta_{\min}\)</span> is the minimum spectral gap of <span class="arithmatex">\(H(t)\)</span> over <span class="arithmatex">\(t \in [0,T]\)</span> — then the system remains in the instantaneous ground state and ends in the ground state of <span class="arithmatex">\(H_f\)</span>. Reading out the final state gives the solution.</p>
+<p><strong>Connection to gate model:</strong> AQC is computationally equivalent to the standard gate model (Aharonov et al. 2007): any quantum gate circuit can be simulated by an adiabatic evolution and vice versa, with at most polynomial overhead. The key challenge is that <span class="arithmatex">\(\Delta_{\min}\)</span> can be exponentially small for NP-hard problems, requiring exponentially long evolution times — the same computational hardness shows up as a gap-closing problem. AQC does not solve NP-hard problems in polynomial time; it is a different computational model with equivalent power.</p>
+</details>
+<hr />
+<h2 id="level-3-apply">Level 3 — Apply<a class="headerlink" href="#level-3-apply" title="Permanent link">&para;</a></h2>
+<p><strong>Question 11.</strong> Compute the density matrix of the mixed state that is 50% <span class="arithmatex">\(|0\rangle\)</span> and 50% <span class="arithmatex">\(|+\rangle\)</span>. Find its eigenvalues and determine whether it is a pure or mixed state.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Density matrix:</strong>
+$<span class="arithmatex">\(\rho = \frac{1}{2}|0\rangle\langle 0| + \frac{1}{2}|+\rangle\langle +|\)</span>$
+$<span class="arithmatex">\(= \frac{1}{2}\begin{pmatrix}1 &amp; 0\\0 &amp; 0\end{pmatrix} + \frac{1}{2}\cdot\frac{1}{2}\begin{pmatrix}1 &amp; 1\\1 &amp; 1\end{pmatrix} = \begin{pmatrix}3/4 &amp; 1/4\\1/4 &amp; 1/4\end{pmatrix}\)</span>$</p>
+<p><strong>Eigenvalues:</strong> Solve <span class="arithmatex">\(\det(\rho - \lambda I) = 0\)</span>:
+$<span class="arithmatex">\((3/4 - \lambda)(1/4 - \lambda) - 1/16 = 0\)</span>$
+$<span class="arithmatex">\(\lambda^2 - \lambda + 3/16 - 1/16 = \lambda^2 - \lambda + 1/8 = 0\)</span>$
+$<span class="arithmatex">\(\lambda = \frac{1 \pm \sqrt{1 - 1/2}}{2} = \frac{1 \pm 1/\sqrt{2}}{2}\)</span>$</p>
+<p><span class="arithmatex">\(\lambda_1 = \frac{1 + 1/\sqrt{2}}{2} \approx 0.854\)</span>, <span class="arithmatex">\(\lambda_2 = \frac{1 - 1/\sqrt{2}}{2} \approx 0.146\)</span></p>
+<p><strong>Check:</strong> <span class="arithmatex">\(\lambda_1 + \lambda_2 = 1\)</span> ✓, <span class="arithmatex">\(\lambda_1\lambda_2 = 1/8\)</span> ✓</p>
+<p><strong>Purity:</strong>
+$<span class="arithmatex">\(\text{Tr}(\rho^2) = \lambda_1^2 + \lambda_2^2 = \left(\frac{1+1/\sqrt{2}}{2}\right)^2 + \left(\frac{1-1/\sqrt{2}}{2}\right)^2 = \frac{1 + 1/2 + 1 + 1/2 \cdot 2}{4} = \frac{3}{4} &lt; 1\)</span>$</p>
+<p>The state is <strong>mixed</strong> (not a pure state).</p>
+</details>
+<hr />
+<p><strong>Question 12.</strong> Apply the bit-flip channel with error probability <span class="arithmatex">\(p = 0.1\)</span> to the density matrix <span class="arithmatex">\(\rho = |+\rangle\langle+| = \frac{1}{2}\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\)</span>. What is the output state <span class="arithmatex">\(\mathcal{E}(\rho)\)</span>?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The bit-flip channel has Kraus operators <span class="arithmatex">\(K_0 = \sqrt{0.9}\, I\)</span> and <span class="arithmatex">\(K_1 = \sqrt{0.1}\, X\)</span>.</p>
+<div class="arithmatex">\[\mathcal{E}(\rho) = K_0 \rho K_0^\dagger + K_1 \rho K_1^\dagger = 0.9 \cdot I\rho I + 0.1 \cdot X\rho X\]</div>
+<p>Compute <span class="arithmatex">\(X|+\rangle\langle+|X\)</span>:
+$<span class="arithmatex">\(X \frac{1}{2}\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix} X = \frac{1}{2}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} = \frac{1}{2}\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\)</span>$</p>
+<p>(Note: <span class="arithmatex">\(X|+\rangle = |+\rangle\)</span>, so <span class="arithmatex">\(X\rho X = \rho\)</span>.)</p>
+<p>Therefore:
+$<span class="arithmatex">\(\mathcal{E}(\rho) = 0.9\rho + 0.1\rho = \rho = \frac{1}{2}\begin{pmatrix}1&amp;1\\1&amp;1\end{pmatrix}\)</span>$</p>
+<p>The <span class="arithmatex">\(|+\rangle\)</span> state is <strong>unchanged</strong> by the bit-flip channel. This makes sense: <span class="arithmatex">\(|+\rangle\)</span> is the <span class="arithmatex">\(+1\)</span> eigenstate of <span class="arithmatex">\(X\)</span>, so applying <span class="arithmatex">\(X\)</span> leaves it invariant. The bit-flip channel does not dephase <span class="arithmatex">\(|+\rangle\)</span> — it is immune to <span class="arithmatex">\(X\)</span> errors but not to <span class="arithmatex">\(Z\)</span> errors (phase-flip channel would destroy it).</p>
+</details>
+<hr />
+<p><strong>Question 13.</strong> Apply the three-qubit bit-flip code to encode the logical state <span class="arithmatex">\(|0_L\rangle = |000\rangle\)</span> and demonstrate that it can detect and correct a single bit-flip error on qubit 2.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Code:</strong>
+- Logical <span class="arithmatex">\(|0_L\rangle = |000\rangle\)</span>, logical <span class="arithmatex">\(|1_L\rangle = |111\rangle\)</span>
+- Encoded state: <span class="arithmatex">\(|\bar{\psi}\rangle = \alpha|000\rangle + \beta|111\rangle\)</span></p>
+<p><strong>Error:</strong> Bit flip on qubit 2: <span class="arithmatex">\(X_2|\bar{\psi}\rangle = \alpha|010\rangle + \beta|101\rangle\)</span></p>
+<p><strong>Syndrome measurement:</strong>
+- Stabilizer <span class="arithmatex">\(g_1 = Z_1 Z_2\)</span>: measures the parity of qubits 1 and 2
+  - For <span class="arithmatex">\(|010\rangle\)</span>: <span class="arithmatex">\(Z_1 Z_2|010\rangle = (+1)(-1)|010\rangle = -|010\rangle\)</span> → outcome <span class="arithmatex">\(-1\)</span> (syndrome bit 1)
+  - For <span class="arithmatex">\(|101\rangle\)</span>: <span class="arithmatex">\(Z_1 Z_2|101\rangle = (-1)(+1)|101\rangle = -|101\rangle\)</span> → outcome <span class="arithmatex">\(-1\)</span> (syndrome bit 1)
+  - So <span class="arithmatex">\(g_1\)</span> gives outcome <span class="arithmatex">\(-1\)</span> with certainty
+- Stabilizer <span class="arithmatex">\(g_2 = Z_2 Z_3\)</span>: measures the parity of qubits 2 and 3
+  - For <span class="arithmatex">\(|010\rangle\)</span>: <span class="arithmatex">\((-1)(+1) = -1\)</span> → outcome <span class="arithmatex">\(-1\)</span> (syndrome bit 1)
+  - For <span class="arithmatex">\(|101\rangle\)</span>: <span class="arithmatex">\((+1)(-1) = -1\)</span> → outcome <span class="arithmatex">\(-1\)</span> (syndrome bit 1)</p>
+<p><strong>Syndrome table:</strong>
+| Syndrome <span class="arithmatex">\((s_1, s_2)\)</span> | Error |
+|---|---|
+| <span class="arithmatex">\((+1,+1)\)</span> | No error |
+| <span class="arithmatex">\((-1,+1)\)</span> | <span class="arithmatex">\(X_1\)</span> |
+| <span class="arithmatex">\((-1,-1)\)</span> | <span class="arithmatex">\(X_2\)</span> |
+| <span class="arithmatex">\((+1,-1)\)</span> | <span class="arithmatex">\(X_3\)</span> |</p>
+<p>Syndrome <span class="arithmatex">\((-1,-1)\)</span> correctly identifies <span class="arithmatex">\(X_2\)</span>. Apply <span class="arithmatex">\(X_2\)</span> correction:
+$<span class="arithmatex">\(X_2(\alpha|010\rangle + \beta|101\rangle) = \alpha|000\rangle + \beta|111\rangle = |\bar{\psi}\rangle \checkmark\)</span>$</p>
+</details>
+<hr />
+<p><strong>Question 14.</strong> Map the following QUBO problem to an Ising Hamiltonian: <span class="arithmatex">\(\min_{x_1,x_2 \in \{0,1\}} 2x_1 + 3x_2 - 4x_1 x_2\)</span>. Write the corresponding Ising Hamiltonian and identify the ground state.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>QUBO to Ising substitution:</strong> Replace <span class="arithmatex">\(x_i = (1 - s_i)/2\)</span> where <span class="arithmatex">\(s_i \in \{-1, +1\}\)</span> (equivalently, <span class="arithmatex">\(s_i = 1 - 2x_i\)</span>).</p>
+<p><strong>Substitution:</strong>
+- <span class="arithmatex">\(x_1 = (1-s_1)/2\)</span>, <span class="arithmatex">\(x_2 = (1-s_2)/2\)</span>
+- <span class="arithmatex">\(x_1 x_2 = (1-s_1)(1-s_2)/4 = (1 - s_1 - s_2 + s_1 s_2)/4\)</span></p>
+<p><strong>Expanded QUBO:</strong>
+$<span class="arithmatex">\(E = 2\cdot\frac{1-s_1}{2} + 3\cdot\frac{1-s_2}{2} - 4\cdot\frac{1-s_1-s_2+s_1s_2}{4}\)</span>$
+$<span class="arithmatex">\(= (1 - s_1) + \frac{3}{2}(1-s_2) - (1 - s_1 - s_2 + s_1 s_2)\)</span>$
+$<span class="arithmatex">\(= 1 - s_1 + \frac{3}{2} - \frac{3}{2}s_2 - 1 + s_1 + s_2 - s_1 s_2\)</span>$
+$<span class="arithmatex">\(= \frac{3}{2} - \frac{1}{2}s_2 - s_1 s_2\)</span>$</p>
+<p><strong>Ising Hamiltonian:</strong>
+$<span class="arithmatex">\(H_{Ising} = -s_1 s_2 - \frac{1}{2}s_2 + \text{const}\)</span>$</p>
+<p>Dropping constants (irrelevant for ground state): <span class="arithmatex">\(H_{Ising} = -J_{12}s_1 s_2 - h_2 s_2\)</span> with <span class="arithmatex">\(J_{12} = 1\)</span>, <span class="arithmatex">\(h_2 = 1/2\)</span>.</p>
+<p><strong>Ground state:</strong> Enumerate <span class="arithmatex">\(2^2 = 4\)</span> configurations:
+| <span class="arithmatex">\(x_1, x_2\)</span> | QUBO value | <span class="arithmatex">\((s_1, s_2)\)</span> | Ising value |
+|---|---|---|---|
+| 0,0 | 0 | <span class="arithmatex">\((+1,+1)\)</span> | <span class="arithmatex">\(-1 - 1/2 = -3/2\)</span> |
+| 1,0 | 2 | <span class="arithmatex">\((-1,+1)\)</span> | <span class="arithmatex">\(+1 - 1/2 = +1/2\)</span> |
+| 0,1 | 3 | <span class="arithmatex">\((+1,-1)\)</span> | <span class="arithmatex">\(+1 + 1/2 = +3/2\)</span> |
+| 1,1 | 1 | <span class="arithmatex">\((-1,-1)\)</span> | <span class="arithmatex">\(-1 + 1/2 = -1/2\)</span> |</p>
+<p>Ground state: <span class="arithmatex">\((x_1, x_2) = (0, 0)\)</span> with QUBO value 0, corresponding to Ising ground state <span class="arithmatex">\((s_1, s_2) = (+1, +1)\)</span> with energy <span class="arithmatex">\(-3/2\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 15.</strong> Compute the von Neumann entropy of the reduced density matrix of qubit <span class="arithmatex">\(A\)</span> when the joint system is in the Bell state <span class="arithmatex">\(|\Phi^+\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span>.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Step 1 — Compute <span class="arithmatex">\(\rho_{AB}\)</span>:</strong>
+$<span class="arithmatex">\(\rho_{AB} = |\Phi^+\rangle\langle\Phi^+| = \frac{1}{2}\begin{pmatrix}1\\0\\0\\1\end{pmatrix}(1,0,0,1) = \frac{1}{2}\begin{pmatrix}1&amp;0&amp;0&amp;1\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\\1&amp;0&amp;0&amp;1\end{pmatrix}\)</span>$</p>
+<p><strong>Step 2 — Partial trace over <span class="arithmatex">\(B\)</span>:</strong>
+$<span class="arithmatex">\(\rho_A = \text{Tr}_B(\rho_{AB}) = \langle 0|_B \rho_{AB} |0\rangle_B + \langle 1|_B \rho_{AB} |1\rangle_B\)</span>$
+$<span class="arithmatex">\(= \frac{1}{2}|0\rangle\langle 0| + \frac{1}{2}|1\rangle\langle 1| = \frac{1}{2}\begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} = \frac{I}{2}\)</span>$</p>
+<p><strong>Step 3 — Von Neumann entropy:</strong>
+Eigenvalues of <span class="arithmatex">\(\rho_A = I/2\)</span>: both equal <span class="arithmatex">\(1/2\)</span>.
+$<span class="arithmatex">\(S(\rho_A) = -\frac{1}{2}\log_2\frac{1}{2} - \frac{1}{2}\log_2\frac{1}{2} = -2 \cdot \frac{1}{2}(-1) = \mathbf{1 \text{ bit}}\)</span>$</p>
+<p>The von Neumann entropy of the reduced state equals 1 ebit — the maximum for a qubit. This is a signature of maximal entanglement: the subsystem of a maximally entangled pure state is maximally mixed. In general, <span class="arithmatex">\(S(\rho_A) = S(\rho_B)\)</span> for any pure state <span class="arithmatex">\(|\Psi_{AB}\rangle\)</span>, and this common value is the entanglement entropy, quantifying the entanglement of <span class="arithmatex">\(|\Psi_{AB}\rangle\)</span>.</p>
+</details>
+<hr />
+<h2 id="level-4-analyze">Level 4 — Analyze<a class="headerlink" href="#level-4-analyze" title="Permanent link">&para;</a></h2>
+<p><strong>Question 16.</strong> Analyze the depolarizing channel: what does it do to the Bloch vector, and why is it the most "symmetric" quantum noise model?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The depolarizing channel with error rate <span class="arithmatex">\(p\)</span> acts on a qubit as:</p>
+<div class="arithmatex">\[\mathcal{E}_{dep}(\rho) = (1-p)\rho + \frac{p}{3}(X\rho X + Y\rho Y + Z\rho Z)\]</div>
+<p>Using the Bloch vector representation <span class="arithmatex">\(\rho = (I + \vec{r} \cdot \vec{\sigma})/2\)</span> where <span class="arithmatex">\(\vec{r} = (r_x, r_y, r_z)\)</span>:</p>
+<p>After applying the channel: <span class="arithmatex">\(\mathcal{E}_{dep}(\rho) = \frac{I + (1 - 4p/3)\vec{r} \cdot \vec{\sigma}}{2}\)</span></p>
+<p>The Bloch vector shrinks isotropically: <span class="arithmatex">\(\vec{r} \to (1 - 4p/3)\vec{r}\)</span>. All three components are contracted by the same factor, preserving the direction but reducing the magnitude. At <span class="arithmatex">\(p = 3/4\)</span>: <span class="arithmatex">\(\vec{r} \to 0\)</span>, giving the maximally mixed state regardless of input.</p>
+<p><strong>Why it is the most symmetric noise model:</strong> The depolarizing channel is invariant under all unitary rotations <span class="arithmatex">\(U\)</span>: <span class="arithmatex">\(U\mathcal{E}_{dep}(\rho)U^\dagger = \mathcal{E}_{dep}(U\rho U^\dagger)\)</span>. This is because the three Pauli operators form a complete basis for traceless Hermitian operators, and applying each with equal probability <span class="arithmatex">\(p/3\)</span> is equivalent to a rotationally symmetric mixture. No direction on the Bloch sphere is preferred — the channel has the full <span class="arithmatex">\(SU(2)\)</span> symmetry of the qubit. This makes it the quantum analog of a symmetric classical binary symmetric channel, and it is the most common model used in threshold calculations for quantum error correcting codes.</p>
+</details>
+<hr />
+<p><strong>Question 17.</strong> Analyze the three-qubit bit-flip code's ability to correct errors. What errors can it correct, what errors can it detect but not correct, and what errors defeat it entirely?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The three-qubit bit-flip code <span class="arithmatex">\(|0_L\rangle = |000\rangle\)</span>, <span class="arithmatex">\(|1_L\rangle = |111\rangle\)</span> has distance <span class="arithmatex">\(d = 3\)</span>, encoding 1 logical qubit in 3 physical qubits.</p>
+<p><strong>Correctable errors (weight ≤ 1 bit-flip errors):</strong>
+- No error: <span class="arithmatex">\(I \otimes I \otimes I\)</span>
+- Single <span class="arithmatex">\(X\)</span> errors: <span class="arithmatex">\(X_1\)</span>, <span class="arithmatex">\(X_2\)</span>, <span class="arithmatex">\(X_3\)</span></p>
+<p>The code can correct any single bit-flip on any of the three qubits. Since 4 syndromes uniquely identify these 4 error patterns, correction is unambiguous.</p>
+<p><strong>Detectable but not correctable errors (weight 2 bit-flip errors):</strong>
+- <span class="arithmatex">\(X_1 X_2\)</span>, <span class="arithmatex">\(X_1 X_3\)</span>, <span class="arithmatex">\(X_2 X_3\)</span>: these produce syndromes that indicate errors, but the syndrome is the same as a single error on the uncorrupted qubit (by syndrome ambiguity). If the correction algorithm assumes at most 1 error and a weight-2 error occurs, it applies the wrong correction, introducing a logical <span class="arithmatex">\(X\)</span> error. The code can detect these (syndrome is non-trivial) but the correction would be wrong.</p>
+<p><strong>Undetectable (logical) errors:</strong>
+- <span class="arithmatex">\(X_1 X_2 X_3\)</span> (weight 3): maps <span class="arithmatex">\(|000\rangle \to |111\rangle\)</span> and <span class="arithmatex">\(|111\rangle \to |000\rangle\)</span>, implementing a logical <span class="arithmatex">\(X_L\)</span> error. The syndrome is trivial (all stabilizers are satisfied), so this error is indistinguishable from the identity — it is undetectable and incorrectable.</p>
+<p><strong>Phase errors:</strong>
+The code provides no protection against <span class="arithmatex">\(Z\)</span> errors. A single <span class="arithmatex">\(Z_1\)</span> maps <span class="arithmatex">\(|000\rangle \to |000\rangle\)</span> and <span class="arithmatex">\(|111\rangle \to -|111\rangle\)</span>, implementing a logical <span class="arithmatex">\(Z_L\)</span> error, which the code cannot detect because <span class="arithmatex">\(Z\)</span> commutes with all stabilizers <span class="arithmatex">\(\{Z_1Z_2, Z_2Z_3\}\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 18.</strong> Analyze the relationship between the spectral gap of the adiabatic Hamiltonian and the required computation time. Why does this make quantum annealing ineffective for worst-case NP-hard instances?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The adiabatic theorem requires evolution time <span class="arithmatex">\(T = O(1/\Delta_{\min}^2)\)</span> where <span class="arithmatex">\(\Delta_{\min} = \min_{t\in[0,T]} [E_1(t) - E_0(t)]\)</span> is the minimum spectral gap between the ground state and first excited state during the evolution. If the gap closes exponentially — <span class="arithmatex">\(\Delta_{\min} = e^{-cn}\)</span> for problem size <span class="arithmatex">\(n\)</span> — then the required evolution time is <span class="arithmatex">\(T = O(e^{2cn})\)</span>, which is exponential. This is the critical obstacle: for many NP-hard optimization problems (satisfiability, graph coloring, certain QUBO instances), the spectral gap along any adiabatic path between <span class="arithmatex">\(H_0\)</span> and <span class="arithmatex">\(H_f\)</span> closes exponentially in the worst case. This is consistent with computational complexity: if adiabatic quantum computing could solve NP-hard problems in polynomial time, it would imply <span class="arithmatex">\(P = NP\)</span> or <span class="arithmatex">\(BQP \supseteq NP\)</span>, both strongly believed to be false. D-Wave quantum annealing exacerbates this issue by running at finite temperature and using a fixed annealing schedule that may not satisfy the adiabatic condition for hard instances. Annealing can find approximate or heuristic solutions quickly for many practical instances (where the gap is not worst-case), but it provides no polynomial-time worst-case guarantee for NP-hard problems. The spectral gap analysis thus explains both the theoretical limitation and the observed empirical performance of quantum annealers.</p>
+</details>
+<hr />
+<p><strong>Question 19.</strong> Analyze the role of the Bloch vector representation in understanding decoherence. How do the <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(T_2\)</span> times relate to the Bloch vector, and what distinguishes them physically?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Bloch vector <span class="arithmatex">\(\vec{r} = (\langle X \rangle, \langle Y \rangle, \langle Z \rangle)\)</span> provides a complete description of a single qubit's state. In the presence of decoherence, the Bloch vector components decay:</p>
+<div class="arithmatex">\[r_z(t) = r_z(0)e^{-t/T_1} + r_{z,eq}(1 - e^{-t/T_1})$$
+$$r_x(t) = r_x(0)e^{-t/T_2}, \quad r_y(t) = r_y(0)e^{-t/T_2}\]</div>
+<p><strong><span class="arithmatex">\(T_1\)</span> (longitudinal/energy relaxation time):</strong> Governs the decay of the <span class="arithmatex">\(z\)</span>-component toward thermal equilibrium. Physically, <span class="arithmatex">\(T_1\)</span> captures energy exchange between the qubit and its environment — the qubit emits (or absorbs) a quantum of energy, causing <span class="arithmatex">\(|1\rangle \to |0\rangle\)</span> transitions (or vice versa at finite temperature). <span class="arithmatex">\(T_1\)</span> determines how long population information is retained.</p>
+<p><strong><span class="arithmatex">\(T_2\)</span> (transverse/dephasing time):</strong> Governs decay of the equatorial (<span class="arithmatex">\(x\)</span>-<span class="arithmatex">\(y\)</span>) components — the loss of phase coherence. <span class="arithmatex">\(T_2\)</span> combines two mechanisms: <span class="arithmatex">\(T_2 = (2T_1)^{-1} + T_\phi^{-1}\)</span>)^{-1}, where <span class="arithmatex">\(T_\phi\)</span> is the "pure dephasing" time from random phase kicks (low-frequency noise, charge fluctuations, magnetic noise) without energy exchange. <span class="arithmatex">\(T_2 \leq 2T_1\)</span> always (energy relaxation necessarily causes dephasing). Physically: <span class="arithmatex">\(T_2\)</span> destroys quantum interference, causing superposition states <span class="arithmatex">\(|+\rangle \to\)</span> mixed state <span class="arithmatex">\(I/2\)</span>. For quantum computing, <span class="arithmatex">\(T_2\)</span> is typically the more stringent constraint because qubit operations require maintained coherence and <span class="arithmatex">\(T_2 \leq 2T_1\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 20.</strong> Analyze the limitations of D-Wave quantum annealing compared to fault-tolerant gate-based quantum computing. Under what conditions might a quantum annealer outperform a classical computer?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Fundamental limitations of quantum annealing (D-Wave):</strong></p>
+<ol>
+<li>
+<p><strong>No error correction:</strong> D-Wave operates with thousands of noisy physical qubits without quantum error correction. At operating temperature (~15 mK), residual thermal fluctuations and control errors corrupt the annealing process for long or complex problems. The "quantum" nature of the speedup is therefore limited to regimes where the system maintains quantum coherence.</p>
+</li>
+<li>
+<p><strong>Limited connectivity:</strong> D-Wave's Pegasus graph has limited qubit connectivity (degree 15). Embedding an arbitrary <span class="arithmatex">\(n\)</span>-variable QUBO requires multiple physical qubits per logical variable (embedding overhead), reducing the effective problem size to <span class="arithmatex">\(\sim n_{physical}/5\)</span>.</p>
+</li>
+<li>
+<p><strong>Fixed annealing schedule:</strong> The annealing schedule <span class="arithmatex">\(H(t)\)</span> is smooth and fixed (though programmable in recent versions). For problems with exponentially small gaps, no fixed schedule achieves adiabatic evolution. Reverse annealing and pause-quench protocols provide partial flexibility.</p>
+</li>
+<li>
+<p><strong>Analog control errors:</strong> The <span class="arithmatex">\(J_{ij}\)</span> coupling strengths and <span class="arithmatex">\(h_i\)</span> biases have finite precision (<span class="arithmatex">\(\pm 1\)</span>–5%), introducing effective noise in the problem Hamiltonian.</p>
+</li>
+</ol>
+<p><strong>Conditions for potential advantage over classical computers:</strong>
+- <strong>Structured optimization problems</strong> where the energy landscape has an exponential number of local minima that trap classical simulated annealing, but quantum tunneling can traverse thin barriers between them
+- <strong>Dense, low-connectivity graphs</strong> native to the D-Wave architecture (avoiding embedding overhead)
+- <strong>Specific real-world instances</strong> (traffic optimization, financial portfolio, drug target identification) where empirical quantum annealing outperforms Tabu search or simulated annealing on available hardware</p>
+<p><strong>Honest assessment:</strong> Despite two decades of research and numerous benchmarking studies, no definitive evidence of quantum advantage over classical optimization heuristics has been demonstrated on D-Wave hardware. Classical algorithms (tensor networks, simulated annealing, branch-and-bound) consistently match or outperform D-Wave on the problem sizes accessible to both. The debate remains active, with quantum advantage potentially emerging for larger, more structured problems as hardware scales.</p>
+</details>
+<hr />
+<h2 id="level-5-evaluate">Level 5 — Evaluate<a class="headerlink" href="#level-5-evaluate" title="Permanent link">&para;</a></h2>
+<p><strong>Question 21.</strong> Evaluate the claim that the three-qubit bit-flip code is a useful practical quantum error-correcting code. What does it protect against, and what does it fail to protect against?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The three-qubit bit-flip code is pedagogically essential but practically insufficient as a standalone error-correcting code. Its strengths: it perfectly corrects any single bit-flip (<span class="arithmatex">\(X\)</span>) error on one of three physical qubits, consumes minimal overhead (only 3 physical qubits per logical qubit), and introduces the key concepts of stabilizer measurement and syndrome extraction. For a quantum channel where only <span class="arithmatex">\(X\)</span> errors occur (a bit-flip channel), it provides exactly the protection needed.</p>
+<p>However, it fails in every physically realistic noise model. Real quantum errors are not restricted to <span class="arithmatex">\(X\)</span> errors: phase errors (<span class="arithmatex">\(Z\)</span>), depolarizing errors (<span class="arithmatex">\(XYZ\)</span> equally likely), and amplitude damping all affect the <span class="arithmatex">\(z\)</span>-basis coherences that the code does not protect. A single <span class="arithmatex">\(Z\)</span> error on any qubit is a logical <span class="arithmatex">\(Z_L\)</span> error that this code cannot detect or correct. The Shor code (9 qubits) combines the bit-flip code with a phase-flip code (its dual) to correct both, and CSS codes generalize this to correct both errors simultaneously. Furthermore, the three-qubit code offers no protection against correlated errors or errors during syndrome measurement. For fault-tolerant computing, the surface code (distance 3 version requires 9 physical qubits per logical qubit) protects against both <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Z\)</span> errors with the same hardware overhead as the Shor code but with a much more practical syndrome measurement geometry. The three-qubit bit-flip code's value is entirely conceptual — it should be viewed as the first step in a hierarchy of codes, not as a deployable solution.</p>
+</details>
+<hr />
+<p><strong>Question 22.</strong> Evaluate the prospects and limitations of adiabatic quantum computing / quantum annealing as a path to quantum advantage. Compare it to the fault-tolerant gate model.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Potential of adiabatic/annealing quantum computing:</strong>
+- The model is computationally equivalent to the gate model in principle (polynomial overhead both ways), meaning any quantum speedup achievable by gates is in principle achievable adiabatically
+- For certain structured optimization problems with polynomial spectral gaps, adiabatic evolution can find solutions in polynomial time where classical simulated annealing requires exponential time
+- Quantum tunneling may allow faster escape from local optima in complex energy landscapes than thermal hopping in classical annealing, though evidence is contested
+- Hardware implementation is arguably simpler than fault-tolerant gate computers: D-Wave operates at 15 mK with 5000+ physical qubits today, while fault-tolerant gate computers have demonstrated only ~50–1000 logical operations</p>
+<p><strong>Fundamental limitations:</strong>
+- No error correction means noise accumulates without bound for long anneal times, limiting the depth of effective quantum computation to short coherence windows
+- The equivalence to the gate model requires error correction in the adiabatic model too — without it, the polynomial equivalence does not imply equivalent computational power in practice
+- Problem encoding requires translating arbitrary problems to Ising/QUBO, often with significant overhead and precision requirements that exceed hardware capabilities
+- No provable quantum speedup has been demonstrated on any practically relevant problem</p>
+<p><strong>Comparison to fault-tolerant gate model:</strong>
+The fault-tolerant gate model has a clear theoretical foundation: proven speedups (Shor, Grover), well-understood error thresholds, and a roadmap from current hardware to useful applications. Quantum annealing has a more ambiguous status: potentially useful as a heuristic optimizer for certain near-term applications, but with no clear path to provable, general quantum advantage. For algorithm development, the gate model is the correct framework; for near-term practical optimization, quantum annealing deserves continued empirical investigation.</p>
+</details>
+<hr />
+<p><strong>Question 23.</strong> Evaluate the completeness of the Kraus representation theorem as a model of open quantum system dynamics. What physical assumptions does it require, and when does it break down?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Kraus representation theorem states that any completely positive trace-preserving (CPTP) map can be written as <span class="arithmatex">\(\mathcal{E}(\rho) = \sum_k K_k \rho K_k^\dagger\)</span> with <span class="arithmatex">\(\sum_k K_k^\dagger K_k = I\)</span>. This is one of the fundamental results of quantum information theory, and within its domain of applicability it is complete: every physically realizable quantum channel (including any possible interaction with an environment) has a Kraus decomposition.</p>
+<p><strong>Physical assumptions:</strong>
+1. <strong>Markovian dynamics:</strong> The environment has no memory — the state of the system at time <span class="arithmatex">\(t+dt\)</span> depends only on its state at time <span class="arithmatex">\(t\)</span>, not on earlier times. This is the quantum analog of the Markov assumption. It is valid when the environment correlation time is much shorter than the system's dynamical timescale.
+2. <strong>Initial product state:</strong> The system and environment start in a product state <span class="arithmatex">\(\rho_S \otimes \rho_E\)</span>. If they are initially entangled (which can occur in practice after previous interactions), the Kraus decomposition may not exist for all initial system states, or the map may not be completely positive.
+3. <strong>Fixed environment state:</strong> The environment is typically assumed to be in a fixed state (e.g., thermal equilibrium) that is not significantly disturbed by the system.</p>
+<p><strong>When it breaks down:</strong>
+- <strong>Non-Markovian noise:</strong> In superconducting qubits, <span class="arithmatex">\(1/f\)</span> charge noise and flux noise have long correlation times comparable to gate times — the environment has memory and the Lindblad (Kraus) framework is quantitatively inaccurate. The Nakajima-Zwanzig equation provides a more general framework.
+- <strong>Initially entangled system-environment:</strong> For qubits previously used in computations (without full reset), the Kraus map description may not accurately capture the dynamics.
+- <strong>Coherent back-action:</strong> In strong system-environment coupling regimes, energy flows back from the environment to the system (non-Markovian revival), which the static Kraus channel cannot capture.</p>
+</details>
+<hr />
+<p><strong>Question 24.</strong> Evaluate the role of von Neumann entropy in quantum information theory. What are three distinct settings where it serves as a meaningful measure, and where does it fail to capture the relevant information?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Three settings where <span class="arithmatex">\(S(\rho)\)</span> is meaningful:</strong></p>
+<ol>
+<li>
+<p><strong>Entanglement measure (bipartite pure states):</strong> For a bipartite pure state <span class="arithmatex">\(|\Psi_{AB}\rangle\)</span>, the entanglement entropy <span class="arithmatex">\(S(\rho_A) = S(\rho_B) = -\text{Tr}(\rho_A \log \rho_A)\)</span> is the unique measure of entanglement (unique given certain axioms: additivity, continuity, normalization). It equals the number of ebits of entanglement in <span class="arithmatex">\(|\Psi_{AB}\rangle\)</span> — the optimal rate of Bell pair conversion under local operations and classical communication.</p>
+</li>
+<li>
+<p><strong>Quantum channel capacity:</strong> The quantum channel capacity <span class="arithmatex">\(Q\)</span> of a quantum channel <span class="arithmatex">\(\mathcal{N}\)</span> is related to the coherent information <span class="arithmatex">\(I_c = S(\mathcal{N}(\rho)) - S_{AB}(\mathcal{N})\)</span>, where <span class="arithmatex">\(S(\mathcal{N}(\rho))\)</span> is the output entropy. The hashing inequality bounds <span class="arithmatex">\(Q \geq I_c\)</span>, and for degradable channels <span class="arithmatex">\(Q = \max_\rho I_c(\rho, \mathcal{N})\)</span>.</p>
+</li>
+<li>
+<p><strong>Thermodynamics of quantum systems:</strong> In quantum statistical mechanics, <span class="arithmatex">\(S(\rho) = -k_B \text{Tr}(\rho \log \rho)/\ln 2\)</span> is the thermodynamic entropy of a quantum system in state <span class="arithmatex">\(\rho\)</span>. It quantifies the heat exchanged in Landauer erasure: erasing 1 qubit of information requires work <span class="arithmatex">\(k_B T \ln 2 \cdot S(\rho)\)</span>.</p>
+</li>
+</ol>
+<p><strong>Where von Neumann entropy fails:</strong>
+- <strong>Mixed state entanglement:</strong> For mixed bipartite states <span class="arithmatex">\(\rho_{AB}\)</span>, <span class="arithmatex">\(S(\rho_A)\)</span> does not correctly quantify entanglement — a separable mixed state can have <span class="arithmatex">\(S(\rho_A) &gt; 0\)</span> due to classical correlations. Correct mixed-state entanglement measures (entanglement of formation, distillable entanglement) are harder to compute and do not generally equal <span class="arithmatex">\(S(\rho_A)\)</span>.
+- <strong>Multi-party entanglement:</strong> For three or more parties, von Neumann entropy on any subsystem cannot distinguish the GHZ state from the W state — different entanglement structures may have the same reduced state entropies.</p>
+</details>
+<hr />
+<p><strong>Question 25.</strong> Evaluate the importance of the discretization theorem for practical quantum error correction. Without it, would fault-tolerant quantum computing be feasible?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The discretization theorem is arguably the single most enabling result for the practical feasibility of fault-tolerant quantum computing. Without it, quantum error correction would face a seemingly insurmountable obstacle: physical noise is continuous — every physical gate implements a slightly wrong unitary, every qubit undergoes a tiny unwanted rotation. If error correction required detecting and correcting continuous errors, the classical description of possible errors would be infinite-dimensional, and the syndrome measurement would need to distinguish infinitely many error types.</p>
+<p>The discretization theorem resolves this by showing that measuring the syndrome of a stabilizer code inherently projects the continuous error onto a discrete set of Pauli operators. The syndrome measurement itself performs "quantum error discretization" automatically, without requiring any special engineering. This means that engineers only need to worry about the probability of error, not about characterizing its continuous nature: if a gate applies <span class="arithmatex">\(e^{i\epsilon X}\)</span> instead of <span class="arithmatex">\(I\)</span>, the syndrome measurement projects this into a "no error" outcome (with probability <span class="arithmatex">\(\cos^2\epsilon \approx 1 - \epsilon^2\)</span>) or an "<span class="arithmatex">\(X\)</span> error" outcome (with probability <span class="arithmatex">\(\sin^2\epsilon \approx \epsilon^2\)</span>). The small-angle rotation behaves exactly like a probabilistic discrete Pauli error. Without discretization, fault-tolerant computing would require tracking the exact analog error, which would itself require infinite classical resources. The theorem is what makes the threshold theorem possible: the threshold is a statement about a discrete error probability, not about a continuous error model. Fault-tolerant computing as currently understood is entirely predicated on this result.</p>
+</details>
+<hr />
+<h2 id="level-6-create">Level 6 — Create<a class="headerlink" href="#level-6-create" title="Permanent link">&para;</a></h2>
+<p><strong>Question 26.</strong> Design a quantum error-correcting code that can correct both a single <span class="arithmatex">\(X\)</span> error and a single <span class="arithmatex">\(Z\)</span> error (i.e., a distance-3 CSS code) using the minimum number of physical qubits. Specify the stabilizers, logical operators, and encoding circuit.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>The Steane <span class="arithmatex">\([[7,1,3]]\)</span> CSS code</strong> is the smallest distance-3 CSS code correcting both <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Z\)</span> errors. However, the minimal distance-3 code correcting both <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Z\)</span> errors is the <strong><span class="arithmatex">\([[5,1,3]]\)</span> code</strong> (perfect code), which uses only 5 physical qubits.</p>
+<p><strong><span class="arithmatex">\([[5,1,3]]\)</span> code stabilizers (4 generators for 5-1=4 stabilizer degrees of freedom):</strong>
+$<span class="arithmatex">\(g_1 = XZZXI, \quad g_2 = IXZZX, \quad g_3 = XIXZZ, \quad g_4 = ZXIXZ\)</span>$</p>
+<p>(using the notation <span class="arithmatex">\(A_1A_2A_3A_4A_5\)</span> for single-qubit operators on qubits 1–5)</p>
+<p><strong>Logical operators:</strong>
+$<span class="arithmatex">\(\bar{X} = XXXXX, \quad \bar{Z} = ZZZZZ\)</span>$</p>
+<p>These commute with all stabilizers and anti-commute with each other.</p>
+<p><strong>Code space:</strong> The code space is the <span class="arithmatex">\(+1\)</span> eigenspace of all four stabilizers. The two codewords are:
+$<span class="arithmatex">\(|0_L\rangle \propto \sum_{g \in \mathcal{S}} g|00000\rangle, \quad |1_L\rangle = \bar{X}|0_L\rangle\)</span>$</p>
+<p><strong>Encoding circuit</strong> (from <span class="arithmatex">\(|\psi\rangle|0000\rangle\)</span>):
+1. Apply <span class="arithmatex">\(H\)</span> to qubit 1
+2. Apply sequence of CNOTs to spread the encoding: <span class="arithmatex">\(CNOT_{1\to 2}\)</span>, <span class="arithmatex">\(CNOT_{1\to 3}\)</span>
+3. Apply additional stabilizer-generating gates to satisfy all four stabilizer conditions
+The full encoding requires <span class="arithmatex">\(O(n) = O(5)\)</span> CNOT gates; exact sequence depends on stabilizer tableau compilation.</p>
+<p><strong>Error correction:</strong> All single-qubit <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(Z\)</span> errors on any of the 5 qubits produce unique 4-bit syndromes (there are <span class="arithmatex">\(3\times5 = 15\)</span> non-trivial single-qubit Pauli errors, and <span class="arithmatex">\(2^4 = 16\)</span> possible syndromes, leaving 1 for the identity — exactly sufficient). This is the perfect code with no wasted syndrome space.</p>
+</details>
+<hr />
+<p><strong>Question 27.</strong> Design a quantum circuit that implements a noise characterization protocol (randomized benchmarking) to estimate the average error per gate on a single qubit. Specify the circuit structure, the classical data analysis, and how to extract <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span>, and average gate fidelity from the results.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Randomized Benchmarking (RB) protocol:</strong></p>
+<p><strong>Goal:</strong> Estimate the average Clifford gate fidelity without full process tomography.</p>
+<p><strong>Circuit structure:</strong></p>
+<p>For each sequence length <span class="arithmatex">\(m \in \{1, 2, 5, 10, 20, 50, 100, 200\}\)</span>:
+1. Prepare qubit in <span class="arithmatex">\(|0\rangle\)</span>
+2. Sample <span class="arithmatex">\(m\)</span> random Clifford gates <span class="arithmatex">\(C_1, C_2, \ldots, C_m\)</span> uniformly from the single-qubit Clifford group (24 elements)
+3. Compute the inverse: <span class="arithmatex">\(C_{inv} = (C_m \cdots C_1)^{-1}\)</span> (a single Clifford gate)
+4. Apply <span class="arithmatex">\(C_1, C_2, \ldots, C_m, C_{inv}\)</span> to the qubit
+5. Measure in the <span class="arithmatex">\(Z\)</span> basis; record outcome (0 or 1)</p>
+<p>Repeat steps for <span class="arithmatex">\(K = 50\)</span>–100 random sequences per length <span class="arithmatex">\(m\)</span>.</p>
+<p><strong>Classical data analysis:</strong></p>
+<p>Compute the average survival probability <span class="arithmatex">\(P(m) = \Pr[\text{measure } 0 | \text{circuit of length }m]\)</span>.</p>
+<p>Fit the model:
+$<span class="arithmatex">\(P(m) = A \cdot p^m + B\)</span>$</p>
+<p>where <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are state preparation/measurement (SPAM) error parameters and <span class="arithmatex">\(p\)</span> is the depolarizing parameter.</p>
+<p><strong>Average error per Clifford gate:</strong>
+$<span class="arithmatex">\(r = \frac{d-1}{d}(1-p) = \frac{1}{2}(1-p) \quad \text{(for } d=2 \text{ qubit)}\)</span>$</p>
+<p><strong>Average gate fidelity:</strong> <span class="arithmatex">\(F_{avg} = 1 - r\)</span>.</p>
+<p><strong>Extracting <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(T_2\)</span>:</strong></p>
+<p>RB alone does not separate <span class="arithmatex">\(T_1\)</span> from <span class="arithmatex">\(T_2\)</span>. Separate experiments:</p>
+<ul>
+<li><strong><span class="arithmatex">\(T_1\)</span> measurement:</strong> Prepare <span class="arithmatex">\(|1\rangle\)</span>, wait time <span class="arithmatex">\(\tau\)</span>, measure <span class="arithmatex">\(P(|1\rangle|\tau) = e^{-\tau/T_1}\)</span>. Fit exponential decay.</li>
+<li><strong><span class="arithmatex">\(T_2^*\)</span> measurement (Ramsey):</strong> Prepare <span class="arithmatex">\(|+\rangle\)</span> (<span class="arithmatex">\(H|0\rangle\)</span>), wait <span class="arithmatex">\(\tau\)</span>, apply <span class="arithmatex">\(H\)</span>, measure. Fit <span class="arithmatex">\(P(|0\rangle|\tau) = \frac{1}{2}(1 + e^{-\tau/T_2^*}\cos(\delta\omega\tau))\)</span> where <span class="arithmatex">\(\delta\omega\)</span> is detuning.</li>
+<li><strong><span class="arithmatex">\(T_2\)</span> (Hahn echo):</strong> Same as Ramsey but with a <span class="arithmatex">\(\pi\)</span> pulse at <span class="arithmatex">\(\tau/2\)</span> to refocus slow noise.</li>
+</ul>
+<p><strong>Cross-validation:</strong> The gate error from RB should satisfy <span class="arithmatex">\(r \approx \frac{1}{2}\left(\frac{t_{gate}}{T_1} + \frac{t_{gate}}{T_2}\right)\)</span> where <span class="arithmatex">\(t_{gate}\)</span> is the gate time, providing a consistency check between RB and <span class="arithmatex">\(T_1\)</span>/<span class="arithmatex">\(T_2\)</span> measurements. Discrepancies indicate coherent (unitary) errors not captured by the depolarizing model.</p>
+</details>
+<hr />
+<p><strong>Question 28.</strong> Design a QUBO formulation for the Maximum Independent Set (MIS) problem on a graph <span class="arithmatex">\(G = (V, E)\)</span>. Derive the Ising Hamiltonian, specify the penalty coefficient, and describe how to map this problem to D-Wave's Chimera/Pegasus connectivity graph.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>MIS problem:</strong> Find the largest subset <span class="arithmatex">\(S \subseteq V\)</span> such that no two vertices in <span class="arithmatex">\(S\)</span> are adjacent (no edge connects two selected vertices).</p>
+<p><strong>QUBO formulation:</strong></p>
+<p>Binary variable: <span class="arithmatex">\(x_i = 1\)</span> if vertex <span class="arithmatex">\(i\)</span> is in the independent set, 0 otherwise.</p>
+<p><strong>Objective (maximize number of selected vertices):</strong>
+$<span class="arithmatex">\(\max \sum_i x_i \quad \Leftrightarrow \quad \min -\sum_i x_i\)</span>$</p>
+<p><strong>Constraint (no two adjacent vertices selected):</strong>
+For each edge <span class="arithmatex">\((i,j) \in E\)</span>: <span class="arithmatex">\(x_i x_j = 0\)</span> (penalty <span class="arithmatex">\(A \cdot x_i x_j\)</span> for each violation).</p>
+<p><strong>Combined QUBO:</strong>
+$<span class="arithmatex">\(\min_{x \in \{0,1\}^{|V|}} \left[ -\sum_i x_i + A\sum_{(i,j)\in E} x_i x_j \right]\)</span>$</p>
+<p><strong>Penalty coefficient:</strong> Choose <span class="arithmatex">\(A &gt; 1\)</span> (specifically, <span class="arithmatex">\(A = 1 + \epsilon\)</span> for any <span class="arithmatex">\(\epsilon &gt; 0\)</span>) ensures that adding a conflicting pair to the set always costs more than the benefit of adding one vertex. Standard choice: <span class="arithmatex">\(A = 2\)</span> guarantees feasible solutions are preferred.</p>
+<p><strong>Ising Hamiltonian:</strong> Substitute <span class="arithmatex">\(x_i = (1-s_i)/2\)</span>:</p>
+<div class="arithmatex">\[H_{Ising} = -\sum_i \frac{1-s_i}{2} + A\sum_{(i,j)\in E}\frac{(1-s_i)(1-s_j)}{4}\]</div>
+<div class="arithmatex">\[= \sum_i \left(\frac{A \cdot \deg(i)}{4} - \frac{1}{2}\right)s_i + \frac{A}{4}\sum_{(i,j)\in E}s_i s_j + \text{const}\]</div>
+<p>So: <span class="arithmatex">\(h_i = A \cdot \deg(i)/4 - 1/2\)</span> and <span class="arithmatex">\(J_{ij} = A/4\)</span> for each edge.</p>
+<p><strong>D-Wave embedding:</strong></p>
+<p>D-Wave's Pegasus graph has 5627 physical qubits with each qubit connected to at most 15 others. For a general graph <span class="arithmatex">\(G\)</span> with maximum degree <span class="arithmatex">\(\Delta &gt; 15\)</span>, direct embedding is impossible: high-degree vertices require "chains" of physical qubits coupled ferromagnetically (<span class="arithmatex">\(J_{chain} \ll 0\)</span>) to act as a single logical qubit.</p>
+<p><strong>Embedding procedure (minor embedding):</strong>
+1. Find a minor embedding of <span class="arithmatex">\(G\)</span> into the Pegasus graph: map each vertex <span class="arithmatex">\(v\)</span> to a chain <span class="arithmatex">\(C_v\)</span> of physical qubits, and each edge <span class="arithmatex">\((u,v)\)</span> to a physical coupler between a qubit in <span class="arithmatex">\(C_u\)</span> and a qubit in <span class="arithmatex">\(C_v\)</span>.
+2. Set chain-coupling strength: <span class="arithmatex">\(J_{chain} = -A \cdot |E|\)</span> (strong ferromagnetic coupling enforces chain agreement).
+3. Distribute the <span class="arithmatex">\(h_i\)</span> bias equally among qubits in chain <span class="arithmatex">\(C_i\)</span>.
+4. Embedding overhead: a vertex of degree <span class="arithmatex">\(\Delta\)</span> requires a chain of <span class="arithmatex">\(O(\Delta/15)\)</span> qubits, reducing effective problem size by a factor of <span class="arithmatex">\(\sim 5\)</span>–<span class="arithmatex">\(10\)</span> for typical dense graphs.</p>
+<p><strong>Practical limitation:</strong> For dense random graphs with <span class="arithmatex">\(|V| &gt; 100\)</span>, embedding overhead reduces D-Wave's effective capacity to <span class="arithmatex">\(\sim 100\)</span>–200 logical variables — competitive problem sizes are much smaller than D-Wave's raw qubit count suggests.</p>
+</details>
+<hr />
+<p><strong>Question 29.</strong> Create a protocol for quantum process tomography (QPT) of a single-qubit channel using the minimum number of state preparations and measurements. Specify the input states, measurements, and the linear inversion or maximum likelihood procedure to reconstruct the Kraus operators.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Protocol: Minimal single-qubit QPT</strong></p>
+<p><strong>Goal:</strong> Reconstruct the process matrix <span class="arithmatex">\(\chi\)</span> (or equivalently the Kraus operators) of a single-qubit channel <span class="arithmatex">\(\mathcal{E}\)</span>.</p>
+<p><strong>Theoretical basis:</strong> Any single-qubit channel <span class="arithmatex">\(\mathcal{E}: \rho \to \mathcal{E}(\rho)\)</span> can be expressed in the <span class="arithmatex">\(\chi\)</span>-matrix representation:
+$<span class="arithmatex">\(\mathcal{E}(\rho) = \sum_{m,n} \chi_{mn} E_m \rho E_n^\dagger\)</span>$</p>
+<p>where <span class="arithmatex">\(\{E_m\} = \{I, X, Y, Z\}/\sqrt{2}\)</span> is a basis for single-qubit operators, and <span class="arithmatex">\(\chi\)</span> is a <span class="arithmatex">\(4\times4\)</span> positive semidefinite Hermitian matrix with <span class="arithmatex">\(\text{Tr}(\chi) = 1\)</span>.</p>
+<p><strong>Input state set (minimal informationally complete):</strong></p>
+<p>Prepare 4 linearly independent input states spanning the Bloch sphere:
+$<span class="arithmatex">\(\rho_1 = |0\rangle\langle 0|, \quad \rho_2 = |1\rangle\langle 1|, \quad \rho_3 = |+\rangle\langle +|, \quad \rho_4 = |i+\rangle\langle i+|\)</span>$</p>
+<p>where <span class="arithmatex">\(|i+\rangle = (|0\rangle + i|1\rangle)/\sqrt{2}\)</span>.</p>
+<p><strong>Measurement (quantum state tomography per output):</strong></p>
+<p>For each input <span class="arithmatex">\(\rho_j\)</span>, perform state tomography on <span class="arithmatex">\(\mathcal{E}(\rho_j)\)</span>. This requires measuring in 3 bases:
+- <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> (Z basis): measure <span class="arithmatex">\(\langle Z \rangle\)</span>
+- <span class="arithmatex">\(\{|+\rangle, |-\rangle\}\)</span> (X basis): measure <span class="arithmatex">\(\langle X \rangle\)</span>
+- <span class="arithmatex">\(\{|i+\rangle, |i-\rangle\}\)</span> (Y basis): measure <span class="arithmatex">\(\langle Y \rangle\)</span></p>
+<p>For each measurement, repeat <span class="arithmatex">\(N = 1000\)</span>–<span class="arithmatex">\(10000\)</span> shots to estimate the Bloch vector of <span class="arithmatex">\(\mathcal{E}(\rho_j)\)</span>.</p>
+<p><strong>Total measurements:</strong> <span class="arithmatex">\(4 \text{ inputs} \times 3 \text{ bases} \times N \text{ shots} = 12N\)</span> experimental runs.</p>
+<p><strong>Linear inversion procedure:</strong></p>
+<ol>
+<li>
+<p>From the measurement data, estimate the output Bloch vectors <span class="arithmatex">\((r_x^{(j)}, r_y^{(j)}, r_z^{(j)})\)</span> for each input <span class="arithmatex">\(\rho_j\)</span>, giving the <span class="arithmatex">\(2\times 2\)</span> output density matrices <span class="arithmatex">\(\tilde{\rho}_j = (\mathcal{E}(\rho_j))_{estimated}\)</span>.</p>
+</li>
+<li>
+<p>Express each output as: <span class="arithmatex">\(\tilde{\rho}_j = \sum_{mn} \chi_{mn} E_m \rho_j E_n^\dagger\)</span></p>
+</li>
+</ol>
+<p>This is a system of <span class="arithmatex">\(4 \times 4 = 16\)</span> linear equations in the 16 complex components of <span class="arithmatex">\(\chi\)</span> (reduced to 16 real parameters by Hermiticity).</p>
+<ol>
+<li>Solve by linear inversion: <span class="arithmatex">\(\vec{\chi} = M^{-1}\vec{\rho}_{out}\)</span> where <span class="arithmatex">\(M\)</span> is the <span class="arithmatex">\(16\times16\)</span> system matrix.</li>
+</ol>
+<p><strong>Maximum likelihood refinement:</strong></p>
+<p>Linear inversion can produce non-physical <span class="arithmatex">\(\chi\)</span> (not positive semidefinite) due to statistical noise. Refine using maximum likelihood estimation:</p>
+<div class="arithmatex">\[\hat{\chi} = \arg\max_{\chi \geq 0, \text{Tr}(\chi)=1} \sum_{j,b} n_{j,b} \log P(b|\mathcal{E}_\chi, \rho_j)\]</div>
+<p>where <span class="arithmatex">\(n_{j,b}\)</span> is the observed count for input <span class="arithmatex">\(j\)</span>, basis <span class="arithmatex">\(b\)</span>, and <span class="arithmatex">\(P(b|\cdot)\)</span> is the Born rule probability. This is a semidefinite programming (SDP) problem, solvable efficiently.</p>
+<p><strong>Kraus operator extraction:</strong> Eigendecompose <span class="arithmatex">\(\chi = V \Lambda V^\dagger\)</span>, then <span class="arithmatex">\(K_k = \sqrt{\lambda_k} \sum_m V_{mk} E_m\)</span> gives the Kraus operators. Operators with eigenvalue <span class="arithmatex">\(\lambda_k &lt; \text{noise threshold}\)</span> are discarded.</p>
+</details>
+<hr />
+<p><strong>Question 30.</strong> Design a complete hybrid quantum-classical error mitigation scheme for a 10-qubit NISQ circuit that combines zero-noise extrapolation (ZNE), probabilistic error cancellation (PEC), and post-selection. Specify the error model, the amplification strategy, the overhead analysis, and the conditions under which this scheme provides a meaningful improvement over unmitigated results.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Target circuit:</strong> 10-qubit variational circuit with 50 two-qubit (CNOT) gates and 100 single-qubit gates. Objective: estimate the expectation value <span class="arithmatex">\(\langle O \rangle\)</span> of a Pauli observable <span class="arithmatex">\(O\)</span> with reduced bias.</p>
+<p><strong>Error model assumption:</strong>
+Depolarizing noise per two-qubit gate: <span class="arithmatex">\(\epsilon_{2q} = 0.5\%\)</span> (500 ppm), per single-qubit gate: <span class="arithmatex">\(\epsilon_{1q} = 0.05\%\)</span>. Total expected error: <span class="arithmatex">\(\approx 50 \times 0.005 + 100 \times 0.0005 = 0.25 + 0.05 = 0.30\)</span> (30% average infidelity for deep circuits).</p>
+<p><strong>Stage 1 — Post-selection (cheapest, first):</strong></p>
+<p>If <span class="arithmatex">\(O\)</span> only has support on states satisfying a conserved quantity (e.g., particle number parity), discard measurement shots violating the conservation law. This removes errors that violate the symmetry without any additional circuit overhead. Typical rejection rate: 10–30% of shots; post-selection reduces error by a factor corresponding to the fraction of error events that violate the symmetry.</p>
+<p><strong>Stage 2 — Zero-Noise Extrapolation (ZNE):</strong></p>
+<p><strong>Noise amplification:</strong> Amplify noise by factors <span class="arithmatex">\(\lambda = \{1, 1.5, 2\}\)</span> using gate folding:
+- At <span class="arithmatex">\(\lambda = 1\)</span>: run original circuit
+- At <span class="arithmatex">\(\lambda = 1.5\)</span>: fold 50% of CNOT gates: each selected gate <span class="arithmatex">\(G\)</span> is replaced by <span class="arithmatex">\(G G^\dagger G\)</span> (3 applications), tripling that gate's error rate
+- At <span class="arithmatex">\(\lambda = 2\)</span>: fold all CNOT gates</p>
+<p><strong>Expectation value measurement:</strong> Collect <span class="arithmatex">\(N_{shots}\)</span> for each noise level. Estimate <span class="arithmatex">\(\langle O \rangle(\lambda)\)</span>.</p>
+<p><strong>Extrapolation:</strong> Fit the model <span class="arithmatex">\(\langle O \rangle(\lambda) = \langle O \rangle_0 + a\lambda + b\lambda^2\)</span> using least squares. The zero-noise extrapolant is <span class="arithmatex">\(\hat{\langle O \rangle}_0 = \langle O \rangle(\lambda=0)\)</span> from the fit.</p>
+<p><strong>ZNE overhead:</strong> <span class="arithmatex">\(3\times\)</span> more shots for 3 noise levels. Circuit depth increases by up to <span class="arithmatex">\(3\times\)</span> for fully folded circuits.</p>
+<p><strong>Stage 3 — Probabilistic Error Cancellation (PEC):</strong></p>
+<p>PEC provides unbiased estimation by importance sampling from a quasi-probability distribution that inverts the error channel.</p>
+<p><strong>Setup:</strong> Characterize each CNOT's error channel <span class="arithmatex">\(\mathcal{E}_{gate}\)</span> via gate set tomography. Express the inverse: <span class="arithmatex">\(\mathcal{E}_{gate}^{-1}(\cdot) = \sum_i \eta_i \mathcal{O}_i(\cdot)\)</span> where <span class="arithmatex">\(\mathcal{O}_i\)</span> are implementable operations and <span class="arithmatex">\(\eta_i\)</span> are real coefficients (some negative). The 1-norm <span class="arithmatex">\(\gamma = \sum_i |\eta_i|\)</span> is the overhead cost.</p>
+<p><strong>Sampling:</strong> In each shot, for each gate, sample an operation <span class="arithmatex">\(\mathcal{O}_i\)</span> with probability <span class="arithmatex">\(|\eta_i|/\gamma\)</span> and record sign <span class="arithmatex">\(\text{sgn}(\eta_i)\)</span>. Multiply the measurement outcome by the product of all signs times <span class="arithmatex">\(\gamma^{N_{gates}}\)</span>.</p>
+<p><strong>Overhead:</strong> The sampling overhead to achieve bias-corrected estimation with variance <span class="arithmatex">\(\sigma^2\)</span> is <span class="arithmatex">\(\gamma^{2N_{gates}}\)</span> times the unmitigated shot count. For 50 CNOT gates with <span class="arithmatex">\(\gamma \approx 1.01\)</span> (1% error): <span class="arithmatex">\(\gamma^{100} = (1.01)^{100} \approx 2.7\)</span>. For <span class="arithmatex">\(\epsilon_{2q} = 0.5\%\)</span>: <span class="arithmatex">\(\gamma \approx 1.01\)</span>, overhead <span class="arithmatex">\(\approx 2.7\times\)</span>.</p>
+<p><strong>Combined scheme (in order):</strong>
+1. Post-selection: reduces error, minimal overhead
+2. ZNE: <span class="arithmatex">\(3\times\)</span> shot overhead, extrapolates remaining bias
+3. PEC (if further bias reduction needed): <span class="arithmatex">\(\sim 3\times\)</span> additional overhead</p>
+<p><strong>Total overhead:</strong> <span class="arithmatex">\(\sim 10\times\)</span> shot overhead vs. unmitigated.</p>
+<p><strong>Conditions for meaningful improvement:</strong>
+- <span class="arithmatex">\(\epsilon_{2q} &lt; 1\%\)</span> (PEC overhead must be <span class="arithmatex">\(&lt; 10\times\)</span>; above 1% error, PEC overhead becomes exponential)
+- Observable <span class="arithmatex">\(O\)</span> has non-trivial unmitigated error (<span class="arithmatex">\(\langle O \rangle_{mitigated} - \langle O \rangle_{unmitigated} &gt; 2\sigma_{statistical}\)</span>)
+- The noise is well-characterized and predominantly incoherent (depolarizing); coherent errors require different mitigation strategies
+- The circuit is shallow enough that mitigated error is smaller than the target precision: mitigation reduces bias but does not eliminate it entirely; residual error is <span class="arithmatex">\(O(\epsilon^{k+1})\)</span> for <span class="arithmatex">\(k\)</span>-th order ZNE</p>
+<p><strong>When this scheme fails:</strong>
+- Deep circuits (<span class="arithmatex">\(&gt; 100\)</span> CNOT gates): PEC overhead <span class="arithmatex">\(\gamma^{2N} &gt; 100\times\)</span>, making it impractical
+- <span class="arithmatex">\(1/f\)</span> noise (non-Markovian): ZNE extrapolation model is wrong; amplifying noise changes its character
+- Limited shot budget: all three techniques trade shots for bias reduction; with <span class="arithmatex">\(&lt; 10,000\)</span> total shots, statistical errors dominate over the bias being corrected</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

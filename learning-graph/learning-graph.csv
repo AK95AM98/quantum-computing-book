@@ -1,0 +1,151 @@
+concept_id,concept_name,depends_on,chapter,bloom_level
+1,Classical bit,,1,Remember
+2,Boolean logic gates,1,1,Remember
+3,Reversibility and irreversibility,2,1,Understand
+4,Landauer's principle,3,1,Understand
+5,Information and entropy,1,1,Understand
+6,Classical register,"1,2",1,Remember
+7,Limits of classical computation,"2,5",1,Analyze
+8,Motivation for quantum computing,7,1,Understand
+9,History of quantum computing,8,1,Remember
+10,Overview of quantum hardware,9,1,Remember
+11,Qubit,1,2,Remember
+12,Dirac (bra-ket) notation,11,2,Remember
+13,Quantum state vector,12,2,Understand
+14,Normalization condition,13,2,Understand
+15,Quantum superposition,"11,14",2,Understand
+16,Bloch sphere,"13,15",2,Understand
+17,Global vs. relative phase,13,2,Understand
+18,Multi-qubit state space,11,2,Understand
+19,Tensor product,18,2,Apply
+20,Computational basis states,"12,19",2,Remember
+21,Born rule,"13,14",3,Understand
+22,Projective measurement,21,3,Understand
+23,Measurement basis,"20,22",3,Apply
+24,Expectation value,21,3,Apply
+25,Collapse of the wavefunction,22,3,Understand
+26,No-cloning theorem,25,3,Understand
+27,Observable and Hermitian operator,24,3,Analyze
+28,Pauli operators,27,3,Remember
+29,Measurement in the X and Y bases,"23,28",3,Apply
+30,Partial measurement of multi-qubit systems,"19,22",3,Analyze
+31,Unitary matrix,13,4,Understand
+32,Single-qubit gates (X Y Z),"28,31",4,Apply
+33,Hadamard gate,32,4,Apply
+34,Phase gates (S T),32,4,Apply
+35,Rotation gates (Rx Ry Rz),"31,34",4,Apply
+36,Universal gate set,"32,33,34",4,Analyze
+37,Two-qubit gates (CNOT),"19,31",4,Apply
+38,SWAP gate,37,4,Apply
+39,Controlled-U gate,37,4,Apply
+40,Toffoli gate,39,4,Apply
+41,Product state,19,5,Understand
+42,Entangled state,41,5,Understand
+43,Bell states,"33,37,42",5,Apply
+44,Schmidt decomposition,42,5,Analyze
+45,Entanglement entropy,44,5,Analyze
+46,EPR paradox,42,5,Understand
+47,Bell inequalities,46,5,Analyze
+48,Bell inequality violation,47,5,Evaluate
+49,Quantum teleportation,"43,26",5,Apply
+50,Superdense coding,43,5,Apply
+51,Quantum circuit model,"32,37",6,Apply
+52,Circuit depth and width,51,6,Analyze
+53,Circuit diagram conventions,51,6,Remember
+54,Ancilla qubits,51,6,Understand
+55,Reversible computation,"3,40",6,Understand
+56,Quantum parallelism,"15,51",6,Understand
+57,Quantum interference,"15,33",6,Understand
+58,Phase kickback,"39,57",6,Analyze
+59,Quantum Fourier transform,"34,57",6,Apply
+60,Quantum phase estimation,"58,59",6,Apply
+61,Oracle (black-box function),51,7,Understand
+62,Query complexity,61,7,Analyze
+63,Deutsch's algorithm,"61,33",7,Understand
+64,Deutsch-Jozsa algorithm,"63,56",7,Apply
+65,Bernstein-Vazirani algorithm,64,7,Apply
+66,Simon's algorithm,"64,60",7,Analyze
+67,Promise problem,62,7,Understand
+68,Quantum speedup (definition),"62,63",7,Analyze
+69,Amplitude encoding,56,7,Apply
+70,Quantum random access memory (qRAM),69,7,Analyze
+71,Unstructured search problem,"61,62",8,Understand
+72,Grover oracle,61,8,Apply
+73,Amplitude amplification,"57,72",8,Understand
+74,Diffusion operator,73,8,Apply
+75,Grover iteration,"73,74",8,Apply
+76,Optimal number of iterations,75,8,Analyze
+77,Geometric picture (rotations in 2D),75,8,Analyze
+78,Quadratic speedup,"76,68",8,Evaluate
+79,Generalized amplitude amplification,73,8,Analyze
+80,Applications of Grover's algorithm,78,8,Apply
+81,Integer factorization problem,7,9,Understand
+82,RSA cryptography,81,9,Understand
+83,Period finding,"60,81",9,Apply
+84,Quantum phase estimation for period finding,"60,83",9,Apply
+85,Continued fractions algorithm,84,9,Apply
+86,Modular exponentiation circuit,"40,83",9,Apply
+87,Shor's algorithm structure,"84,85,86",9,Apply
+88,Shor's algorithm complexity,87,9,Analyze
+89,Implications for public-key cryptography,"82,88",9,Evaluate
+90,Post-quantum cryptography overview,89,9,Understand
+91,Computational complexity basics,7,10,Understand
+92,Complexity classes P and NP,91,10,Understand
+93,BQP (bounded-error quantum polynomial time),92,10,Analyze
+94,QMA class,93,10,Analyze
+95,Relationship BQP vs. P and NP,"93,92",10,Analyze
+96,Oracle separation results,95,10,Analyze
+97,Quantum query complexity,62,10,Analyze
+98,BQPSPACE and PSPACE,93,10,Analyze
+99,Quantum advantage and supremacy,"93,95",10,Evaluate
+100,Hardness of quantum simulation,99,10,Analyze
+101,Quantum errors (bit-flip phase-flip),32,11,Understand
+102,Decoherence,101,11,Understand
+103,Quantum error correction conditions,101,11,Analyze
+104,3-qubit bit-flip code,103,11,Apply
+105,3-qubit phase-flip code,"103,33",11,Apply
+106,Shor's 9-qubit code,"104,105",11,Apply
+107,Stabilizer formalism,106,11,Analyze
+108,CSS codes,107,11,Analyze
+109,Surface code,108,11,Apply
+110,Fault-tolerant quantum computation,"109,55",11,Evaluate
+111,Two-level quantum system,11,12,Understand
+112,Superconducting qubits,111,12,Understand
+113,Transmon qubit,112,12,Analyze
+114,Trapped-ion qubits,111,12,Understand
+115,Photonic qubits,111,12,Understand
+116,Spin qubits (quantum dots),111,12,Understand
+117,Neutral atom qubits,111,12,Understand
+118,Topological qubits,"109,111",12,Analyze
+119,Qubit coherence time (T1 T2),102,12,Analyze
+120,Gate fidelity,"31,119",12,Evaluate
+121,NISQ era (definition),120,13,Understand
+122,Variational quantum eigensolver (VQE),"60,121",13,Apply
+123,Quantum approximate optimization algorithm (QAOA),121,13,Apply
+124,Parameterized quantum circuits,"35,121",13,Apply
+125,Barren plateaus,124,13,Analyze
+126,Quantum-classical hybrid algorithms,"122,123",13,Apply
+127,Noise mitigation techniques,"121,101",13,Apply
+128,Zero-noise extrapolation,127,13,Apply
+129,Randomized benchmarking,120,13,Apply
+130,Quantum volume,"120,52",13,Evaluate
+131,Quantum data encoding,69,14,Apply
+132,Quantum kernel methods,131,14,Apply
+133,Variational quantum classifiers,"124,131",14,Apply
+134,Quantum neural networks,133,14,Analyze
+135,HHL algorithm (linear systems),"60,70",14,Apply
+136,Quantum PCA,135,14,Apply
+137,Dequantization and quantum-inspired algorithms,135,14,Analyze
+138,Quantum advantage in machine learning,"137,99",14,Evaluate
+139,Quantum data (datasets on quantum hardware),131,14,Analyze
+140,Quantum generative models,134,14,Create
+141,Quantum key distribution (QKD),"26,43",15,Apply
+142,BB84 protocol,"141,29",15,Apply
+143,Quantum networks,"49,141",15,Understand
+144,Quantum repeaters,143,15,Analyze
+145,Fault-tolerant threshold theorem,110,15,Analyze
+146,Road to logical qubits,"109,145",15,Evaluate
+147,Quantum simulation,"51,100",15,Apply
+148,Quantum chemistry applications,"147,122",15,Apply
+149,Quantum optimization applications,"80,123",15,Apply
+150,Quantum computing roadmap,"146,148,149",15,Evaluate

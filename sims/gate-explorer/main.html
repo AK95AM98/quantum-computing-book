@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Gate Explorer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #1a2a4a;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    #canvas-container {
+      border: 2px solid #b0c4de;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      background: #fff;
+    }
+
+    #canvas-container canvas {
+      display: block;
+    }
+
+    p.hint {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quantum Gate Explorer</h1>
+  <div id="canvas-container"></div>
+  <p class="hint">
+    Click a <strong>gate button</strong> to apply it to the current state and watch the Bloch sphere
+    state vector animate to its new position. Use <strong>Reset</strong> to return to |0⟩.
+  </p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="gate-explorer.js"></script>
+</body>
+</html>

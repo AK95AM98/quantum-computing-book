@@ -1,0 +1,3038 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/05-communication/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../06-density-matrices/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quiz 5 - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-quiz-quantum-communication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz 5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-5-quiz-quantum-communication">Chapter 5 Quiz: Quantum Communication<a class="headerlink" href="#chapter-5-quiz-quantum-communication" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of quantum teleportation, superdense coding, quantum key distribution, and entanglement as a communication resource.</p>
+<hr />
+<h2 id="level-1-remember">Level 1 — Remember<a class="headerlink" href="#level-1-remember" title="Permanent link">&para;</a></h2>
+<p><strong>Question 1.</strong> How many classical bits and how many Bell pairs are consumed in the quantum teleportation protocol to transmit one qubit?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Quantum teleportation consumes <strong>2 classical bits</strong> and <strong>1 Bell pair</strong> (1 ebit of entanglement) to transmit the quantum state of one qubit. The 2 classical bits encode Alice's Bell-basis measurement outcome (one of four possible results: 00, 01, 10, 11) and are sent over a classical channel to Bob, who uses them to apply the appropriate Pauli correction. The Bell pair must be pre-shared between Alice and Bob before the protocol begins.</p>
+</details>
+<hr />
+<p><strong>Question 2.</strong> State the BB84 QKD protocol steps. What four quantum states does Alice use to encode her key bits?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>In BB84 (Bennett &amp; Brassard 1984), Alice encodes key bits using four quantum states drawn from two conjugate bases:</p>
+<ul>
+<li><strong>Rectilinear basis (<span class="arithmatex">\(\oplus\)</span>):</strong> <span class="arithmatex">\(|0\rangle\)</span> (bit 0) and <span class="arithmatex">\(|1\rangle\)</span> (bit 1)</li>
+<li><strong>Diagonal basis (<span class="arithmatex">\(\otimes\)</span>):</strong> <span class="arithmatex">\(|+\rangle\)</span> (bit 0) and <span class="arithmatex">\(|-\rangle\)</span> (bit 1)</li>
+</ul>
+<p><strong>Protocol steps:</strong> (1) Alice randomly chooses a basis and encodes a random bit, sending a qubit to Bob. (2) Bob randomly chooses a basis and measures. (3) After transmission, Alice and Bob announce their basis choices over a public classical channel. (4) They keep only the bits where they chose the same basis (approximately 50% of the raw key). (5) They sacrifice a fraction of these "sifted" bits to estimate the error rate (QBER); if too high, they abort. (6) Remaining bits are processed with error correction and privacy amplification to produce the final secret key.</p>
+</details>
+<hr />
+<p><strong>Question 3.</strong> What is superdense coding, and how many classical bits can be transmitted per qubit using it?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Superdense coding is a quantum communication protocol (Bennett &amp; Wiesner 1992) that allows the transmission of <strong>2 classical bits</strong> of information by sending only <strong>1 qubit</strong>, given that Alice and Bob share a pre-distributed Bell pair. Alice applies one of four local operations (<span class="arithmatex">\(I\)</span>, <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Z\)</span>, <span class="arithmatex">\(iY\)</span>) to her half of the Bell pair, encoding her 2-bit message into the joint entangled state. She then sends her single qubit to Bob, who performs a Bell measurement on both qubits and unambiguously recovers the 2-bit message. Superdense coding saturates the Holevo bound for entanglement-assisted communication.</p>
+</details>
+<hr />
+<p><strong>Question 4.</strong> What is the error rate introduced into a BB84 key by an intercept-resend attack by Eve?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>An intercept-resend attack by Eve introduces a <strong>25% Quantum Bit Error Rate (QBER)</strong> in the sifted key. Eve intercepts each qubit, measures it in a randomly chosen basis (correct basis with probability 1/2), and resends a new qubit to Bob. When Eve chooses the wrong basis (probability 1/2), she disturbs the state, causing Bob's measurement to disagree with Alice's even when they use the same basis — with probability 1/2 in those cases. Net error rate: <span class="arithmatex">\(\frac{1}{2} \times \frac{1}{2} = \frac{1}{4} = 25\%\)</span>. This elevated QBER signals eavesdropping and causes Alice and Bob to abort the protocol.</p>
+</details>
+<hr />
+<p><strong>Question 5.</strong> What does quantum teleportation destroy, and what theorem does this illustrate?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Quantum teleportation destroys the original quantum state at Alice's location — after the protocol, Alice's qubit is in one of the computational basis states (the post-measurement state), not in the original <span class="arithmatex">\(|\psi\rangle\)</span>. This illustrates the <strong>no-cloning theorem</strong>: if Alice's original state were preserved while Bob's qubit also ended up in state <span class="arithmatex">\(|\psi\rangle\)</span>, there would be two copies of an arbitrary unknown quantum state, which is forbidden. Teleportation circumvents this by destroying the original: the state is transferred, not copied. The 2 classical bits consumed in teleportation carry the information needed to complete the transfer while ensuring the no-cloning theorem is respected.</p>
+</details>
+<hr />
+<h2 id="level-2-understand">Level 2 — Understand<a class="headerlink" href="#level-2-understand" title="Permanent link">&para;</a></h2>
+<p><strong>Question 6.</strong> Explain the role of entanglement in superdense coding. Why is it impossible to transmit 2 classical bits by sending 1 qubit without a pre-shared Bell pair?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Superdense coding requires the pre-shared Bell pair as an entanglement resource. Without it, a single qubit can encode at most 1 bit of accessible classical information — this is the Holevo bound: the maximum classical information extractable from a qubit is 1 bit, regardless of what quantum state it is prepared in. When Alice sends just 1 qubit with no pre-shared entanglement, Bob receives a single-qubit state from a four-element ensemble; the Holevo theorem limits mutual information to at most <span class="arithmatex">\(\log_2(4) \cdot\)</span>[effective distinguishability] <span class="arithmatex">\(\leq 1\)</span> bit. The Bell pair transforms the situation: by entangling the transmitted qubit with Bob's local qubit, Alice's single-qubit operation changes the joint two-qubit state, which now carries 2 bits of information distinguishable via Bell measurement. The entanglement effectively "doubles" the channel capacity by providing Bob with a local quantum resource that amplifies the information content of the transmitted qubit.</p>
+</details>
+<hr />
+<p><strong>Question 7.</strong> Explain why BB84 is information-theoretically secure while RSA is only computationally secure. What does this distinction mean for long-term key security?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>RSA's security rests on the computational hardness of factoring large integers: no known efficient (polynomial-time) algorithm exists classically, but Shor's algorithm breaks it in polynomial time on a quantum computer. An adversary who records RSA-encrypted ciphertext today can decrypt it retroactively once a quantum computer is available — the security guarantee is conditional on the adversary's limited computational power at the time of decryption. Information-theoretic security means the system is secure against computationally unbounded adversaries — even given unlimited computational resources, an eavesdropper cannot extract the plaintext. BB84 achieves this because any eavesdropping disturbs the quantum states (detectable via QBER) and because the final key bits are information-theoretically hidden from Eve by privacy amplification: even if Eve measured some qubits, the information she gains is quantifiably bounded and removed. For long-term key security (data that must remain confidential for 20+ years), information-theoretic security is categorically stronger: a BB84-derived key cannot be retroactively broken even by a future computer with unlimited power, unlike any RSA-protected data.</p>
+</details>
+<hr />
+<p><strong>Question 8.</strong> Explain the 5-step derivation of quantum teleportation. Focus on why 2 classical bits are necessary and sufficient.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Step 1 — Shared entanglement:</strong> Alice and Bob share Bell pair <span class="arithmatex">\(|\Phi^+\rangle_{AB} = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span>. Alice holds qubit <span class="arithmatex">\(A\)</span>, Bob holds qubit <span class="arithmatex">\(B\)</span>.</p>
+<p><strong>Step 2 — Total state:</strong> Alice has an unknown qubit <span class="arithmatex">\(|\psi\rangle_C = \alpha|0\rangle + \beta|1\rangle\)</span> to teleport. The three-qubit state is <span class="arithmatex">\(|\psi\rangle_C \otimes |\Phi^+\rangle_{AB}\)</span>.</p>
+<p><strong>Step 3 — Alice's Bell measurement:</strong> Alice applies CNOT (C→A) then Hadamard (C), entangling her qubit with her half of the pair. The three-qubit state rewrites as:
+$<span class="arithmatex">\(\frac{1}{2}\left[|00\rangle_{CA}(\alpha|0\rangle + \beta|1\rangle)_B + |01\rangle_{CA}(\alpha|1\rangle + \beta|0\rangle)_B + |10\rangle_{CA}(\alpha|0\rangle - \beta|1\rangle)_B + |11\rangle_{CA}(\alpha|1\rangle - \beta|0\rangle)_B\right]\)</span>$</p>
+<p><strong>Step 4 — Classical communication:</strong> Alice measures qubits C and A, getting one of four outcomes (00, 01, 10, 11) with equal probability 1/4. She sends these 2 bits to Bob.</p>
+<p><strong>Step 5 — Bob's correction:</strong> Bob applies the corresponding Pauli: <span class="arithmatex">\(I\)</span> (00), <span class="arithmatex">\(X\)</span> (01), <span class="arithmatex">\(Z\)</span> (10), or <span class="arithmatex">\(XZ\)</span> (11) to his qubit B, recovering <span class="arithmatex">\(|\psi\rangle_B = \alpha|0\rangle + \beta|1\rangle\)</span>.</p>
+<p>The 2 classical bits are necessary because there are 4 equally likely measurement outcomes, requiring <span class="arithmatex">\(\log_2 4 = 2\)</span> bits to distinguish. They are sufficient because each outcome corresponds to a unique and reversible Pauli correction. Sending 0 bits leaves Bob's qubit in a maximally mixed state (no information about <span class="arithmatex">\(\alpha, \beta\)</span>), and sending 1 bit still leaves 2-fold ambiguity — only 2 bits fully specify the correction.</p>
+</details>
+<hr />
+<p><strong>Question 9.</strong> Explain the concept of "entanglement as a communication resource." How is it different from using entanglement for faster-than-light communication?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Entanglement is a communication resource in the sense that a pre-shared Bell pair enables communication protocols that are impossible without it: superdense coding (2 bits via 1 qubit) and teleportation (qubit transfer consuming 1 ebit + 2 classical bits). The resource is consumed in the process — each Bell pair is used exactly once. Entanglement can be quantified and traded against other resources (qubits, classical bits) in the quantum resource theory framework. However, entanglement cannot enable faster-than-light (FTL) communication. In both teleportation and superdense coding, the full protocol requires a classical channel whose speed is bounded by <span class="arithmatex">\(c\)</span>. In teleportation, before Bob receives Alice's 2 classical bits, his qubit is in a maximally mixed state with no information about <span class="arithmatex">\(|\psi\rangle\)</span> — the measurement outcome is random from Bob's perspective. Measuring his qubit early gives a random result, independent of Alice's choice. The non-local correlations of entanglement are real but do not carry information: Alice's measurement result is random and uncontrollable, preventing signaling. This is the no-signaling theorem: entanglement correlations cannot be used to transmit information without a classical channel.</p>
+</details>
+<hr />
+<p><strong>Question 10.</strong> Explain why the NSA does not recommend QKD for securing national security systems, even though QKD is information-theoretically secure.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The NSA's 2021 guidance explicitly recommends against QKD for national security systems, citing several practical concerns that outweigh the theoretical security advantage. First, QKD protects only the key distribution step — the classical encryption algorithm (AES), authentication protocols, and all endpoint security must still be implemented correctly; a mathematically perfect quantum channel provides no protection against implementation bugs, side-channel attacks, or Trojan hardware in the QKD devices themselves. Second, QKD has been broken in practice: numerous attacks on commercial QKD systems have been demonstrated, including detector blinding attacks (Lydersen et al. 2010), that exploit imperfections in physical implementations rather than the theoretical protocol. Third, QKD requires dedicated infrastructure (specialized fiber or free-space optical links) that is expensive, not scalable to internet deployment, and unavailable for most operational contexts (satellite, mobile, tactical communications). Fourth, PQC (NIST FIPS 203/204/205) provides a software upgrade path achieving comparable security (computationally, not information-theoretically) with no specialized hardware, interoperability with existing infrastructure, and well-understood implementation security. The NSA's position reflects a pragmatic engineering assessment: the operational limitations and attack surface of real QKD deployments outweigh its theoretical superiority over PQC.</p>
+</details>
+<hr />
+<h2 id="level-3-apply">Level 3 — Apply<a class="headerlink" href="#level-3-apply" title="Permanent link">&para;</a></h2>
+<p><strong>Question 11.</strong> Apply the quantum teleportation protocol to teleport the state <span class="arithmatex">\(|\psi\rangle = \frac{|0\rangle + i|1\rangle}{\sqrt{2}}\)</span>. Show which Pauli correction Bob must apply for each of the four possible measurement outcomes.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Setup:</strong> <span class="arithmatex">\(|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)\)</span>, so <span class="arithmatex">\(\alpha = 1/\sqrt{2}\)</span>, <span class="arithmatex">\(\beta = i/\sqrt{2}\)</span>.</p>
+<p>After Alice's Bell measurement, Bob's qubit is in one of four states:</p>
+<table>
+<thead>
+<tr>
+<th>Measurement outcome</th>
+<th>Bob's state</th>
+<th>Required correction</th>
+<th>Result after correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>00\rangle$</td>
+<td>$\frac{1}{\sqrt{2}}(\alpha</td>
+<td>0\rangle + \beta</td>
+</tr>
+<tr>
+<td>$</td>
+<td>01\rangle$</td>
+<td>$\frac{1}{\sqrt{2}}(\alpha</td>
+<td>1\rangle + \beta</td>
+</tr>
+<tr>
+<td>$</td>
+<td>10\rangle$</td>
+<td>$\frac{1}{\sqrt{2}}(\alpha</td>
+<td>0\rangle - \beta</td>
+</tr>
+<tr>
+<td>$</td>
+<td>11\rangle$</td>
+<td>$\frac{1}{\sqrt{2}}(\alpha</td>
+<td>1\rangle - \beta</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Summary:</strong> Corrections are <span class="arithmatex">\(I\)</span> (00), <span class="arithmatex">\(X\)</span> (01), <span class="arithmatex">\(Z\)</span> (10), <span class="arithmatex">\(ZX\)</span> (11) — the standard Pauli corrections, independent of the specific state <span class="arithmatex">\(|\psi\rangle\)</span> being teleported.</p>
+</details>
+<hr />
+<p><strong>Question 12.</strong> In superdense coding, Alice wants to send the 2-bit message "11" to Bob. They share the Bell state <span class="arithmatex">\(|\Phi^+\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span>. Show which operation Alice applies and what state is sent to Bob, and describe Bob's measurement.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Encoding table for superdense coding:</strong>
+| Message | Alice's operation | Resulting Bell state |
+|---|---|---|
+| 00 | <span class="arithmatex">\(I\)</span> | <span class="arithmatex">\(|\Phi^+\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span> |
+| 01 | <span class="arithmatex">\(X\)</span> | <span class="arithmatex">\(|\Psi^+\rangle = \frac{|10\rangle + |01\rangle}{\sqrt{2}}\)</span> |
+| 10 | <span class="arithmatex">\(Z\)</span> | <span class="arithmatex">\(|\Phi^-\rangle = \frac{|00\rangle - |11\rangle}{\sqrt{2}}\)</span> |
+| 11 | <span class="arithmatex">\(iY\)</span> | <span class="arithmatex">\(|\Psi^-\rangle = \frac{|10\rangle - |01\rangle}{\sqrt{2}}\)</span> |</p>
+<p><strong>For message "11":</strong> Alice applies <span class="arithmatex">\(iY = \begin{pmatrix}0 &amp; 1 \\ -1 &amp; 0\end{pmatrix}\)</span> to her qubit (qubit 1):</p>
+<div class="arithmatex">\[iY \otimes I \, \frac{|00\rangle + |11\rangle}{\sqrt{2}} = \frac{iY|0\rangle|0\rangle + iY|1\rangle|1\rangle}{\sqrt{2}} = \frac{|1\rangle|0\rangle - |0\rangle|1\rangle}{\sqrt{2}} = \frac{|10\rangle - |01\rangle}{\sqrt{2}} = |\Psi^-\rangle\]</div>
+<p>Alice sends her qubit to Bob. Bob now holds both qubits in state <span class="arithmatex">\(|\Psi^-\rangle\)</span>.</p>
+<p><strong>Bob's Bell measurement:</strong> Bob applies CNOT (qubit 1 → qubit 2) then <span class="arithmatex">\(H\)</span> to qubit 1, then measures both in the computational basis. For <span class="arithmatex">\(|\Psi^-\rangle\)</span>: after CNOT, <span class="arithmatex">\(|\Psi^-\rangle \to \frac{|11\rangle - |01\rangle}{\sqrt{2}} = \frac{|1\rangle - |0\rangle}{\sqrt{2}}|1\rangle = -|-\rangle|1\rangle\)</span>. After <span class="arithmatex">\(H\)</span> on qubit 1: <span class="arithmatex">\(-H|-\rangle|1\rangle = -|1\rangle|1\rangle = -|11\rangle\)</span>. Bob measures outcome <span class="arithmatex">\(|11\rangle\)</span> (global phase is irrelevant), correctly recovering message "11".</p>
+</details>
+<hr />
+<p><strong>Question 13.</strong> Apply the security analysis of BB84 to the following scenario: Alice and Bob measure a QBER of 8% after sifting. Should they abort the protocol? What does this QBER imply about Eve's information?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Should they abort?</strong> With a QBER of 8%, they should <strong>not</strong> abort — this is below the typical security threshold. For BB84 with one-way classical post-processing, the security threshold is approximately QBER <span class="arithmatex">\(&lt; 11\%\)</span> (Shor-Preskill security proof). For two-way post-processing (Gottesman-Lo), the threshold extends to roughly 18.9%. At 8%, the protocol can proceed to error correction and privacy amplification.</p>
+<p><strong>Implications for Eve's information:</strong>
+Under the intercept-resend attack model, a QBER of <span class="arithmatex">\(e = 0.08\)</span> implies Eve intercepted a fraction <span class="arithmatex">\(f = 4e = 32\%\)</span> of the qubits (since each intercepted qubit causes a 25% error rate: <span class="arithmatex">\(f \times 0.25 = 0.08 \Rightarrow f = 0.32\)</span>). If Eve intercepted 32% of the raw key bits, she has partial information on up to 32% of the sifted key bits. Privacy amplification hashes the sifted key to a shorter final key, reducing Eve's information exponentially — if Alice and Bob sacrifice <span class="arithmatex">\(\approx 32\%\)</span> of the sifted key to privacy amplification (in addition to error correction overhead), the final key is information-theoretically secure against this level of eavesdropping. The protocol succeeds but yields a shorter final key than in the zero-QBER case.</p>
+</details>
+<hr />
+<p><strong>Question 14.</strong> Apply the concept of entanglement swapping to sketch a quantum repeater protocol that extends the range of entanglement distribution between Alice and Bob beyond the direct fiber loss limit (~100 km).</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Problem:</strong> Photon loss in optical fiber grows exponentially with distance (<span class="arithmatex">\(\sim 0.2\)</span> dB/km for telecom fiber). At 200 km, direct transmission has success probability <span class="arithmatex">\(\sim 10^{-6}\)</span> per photon, making Bell pair distribution infeasible.</p>
+<p><strong>Quantum repeater protocol:</strong></p>
+<p><strong>Setup:</strong> Place repeater node C halfway between Alice and Bob.</p>
+<p><strong>Step 1 — Local Bell pair generation:</strong>
+- Alice generates Bell pair <span class="arithmatex">\(|\Phi^+\rangle_{A,C_1}\)</span> with the first half going to Alice, second half to node C
+- Bob generates Bell pair <span class="arithmatex">\(|\Phi^+\rangle_{C_2,B}\)</span> with first half at node C, second half at Bob
+- Each pair spans only 100 km, with a much higher success probability</p>
+<p><strong>Step 2 — Entanglement swapping at node C:</strong>
+- Node C performs a Bell measurement on its two qubits <span class="arithmatex">\(C_1\)</span> and <span class="arithmatex">\(C_2\)</span>
+- This projects Alice's qubit and Bob's qubit into a Bell state, creating <span class="arithmatex">\(|\Phi^+\rangle_{A,B}\)</span> (up to a Pauli correction)</p>
+<p><strong>Step 3 — Classical communication:</strong>
+- C broadcasts its 2-bit Bell measurement outcome to Alice and Bob
+- Bob applies the appropriate Pauli correction to his qubit</p>
+<p><strong>Step 4 — Result:</strong>
+Alice and Bob share a Bell pair across 200 km without a photon ever traveling that distance.</p>
+<p><strong>Cascading:</strong> Multiple repeater nodes can extend range further. With <span class="arithmatex">\(n\)</span> segments of 100 km each: probability of establishing all <span class="arithmatex">\(n\)</span> pairs simultaneously scales as <span class="arithmatex">\((p_{100km})^n\)</span> rather than <span class="arithmatex">\(p_{n \times 100km}\)</span>, a dramatic improvement. Quantum memories at nodes allow storing established pairs while waiting for other segments to succeed.</p>
+</details>
+<hr />
+<p><strong>Question 15.</strong> Apply privacy amplification to explain how Alice and Bob reduce Eve's partial information to negligible levels after BB84 key sifting. Sketch the mathematical tool used.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Setup after sifting and error correction:</strong> Alice and Bob share an <span class="arithmatex">\(n\)</span>-bit string <span class="arithmatex">\(K\)</span> that is identical (after error correction) but about which Eve has at most <span class="arithmatex">\(m\)</span> bits of information (estimated from the QBER).</p>
+<p><strong>Privacy amplification procedure:</strong></p>
+<p>Alice and Bob publicly agree on a random hash function <span class="arithmatex">\(h: \{0,1\}^n \to \{0,1\}^r\)</span> from a 2-universal hash family, where <span class="arithmatex">\(r = n - m - s\)</span> and <span class="arithmatex">\(s\)</span> is a security parameter (e.g., <span class="arithmatex">\(s = 100\)</span> bits).</p>
+<p>They apply <span class="arithmatex">\(h\)</span> to their shared string: final key <span class="arithmatex">\(K_{final} = h(K)\)</span>.</p>
+<p><strong>Mathematical guarantee (Leftover Hash Lemma):</strong></p>
+<div class="arithmatex">\[\|p_{K_{final}, E} - U_r \otimes p_E\|_1 \leq 2^{-(s/2)}\]</div>
+<p>where <span class="arithmatex">\(U_r\)</span> is the uniform distribution over <span class="arithmatex">\(r\)</span>-bit strings and <span class="arithmatex">\(E\)</span> is Eve's quantum side information. This says that the final key is statistically indistinguishable from a uniformly random string, independent of Eve's system, with error exponentially small in <span class="arithmatex">\(s\)</span>.</p>
+<p><strong>Practical implementation:</strong> Universal hash families can be implemented using: random Toeplitz matrices (matrix-vector product over GF(2)), polynomial hashing mod a prime, or LFSR-based constructions. The randomness of the hash function is public but the output key remains secret. The key length is shortened by <span class="arithmatex">\(m + s\)</span> bits to guarantee <span class="arithmatex">\(2^{-s/2}\)</span> composable security — a quantifiable security guarantee that allows the key to be safely used in symmetric encryption.</p>
+</details>
+<hr />
+<h2 id="level-4-analyze">Level 4 — Analyze<a class="headerlink" href="#level-4-analyze" title="Permanent link">&para;</a></h2>
+<p><strong>Question 16.</strong> Analyze the capacity advantage of superdense coding versus teleportation from a resource theory perspective. Which protocol is more "efficient" as a quantum communication protocol?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Comparing superdense coding and teleportation as resource conversion protocols reveals their dual relationship:</p>
+<ul>
+<li><strong>Superdense coding:</strong> 1 ebit + 1 qubit transmission → 2 classical bits</li>
+<li><strong>Teleportation:</strong> 1 ebit + 2 classical bits → 1 qubit transmission</li>
+</ul>
+<p>From the perspective of quantum communication complexity, teleportation is arguably more fundamental: it shows how to transmit an unknown quantum state (which requires infinitely many classical bits to describe exactly) using only a finite resource (1 ebit + 2 bits). Superdense coding is valuable when quantum channel capacity is the bottleneck but classical bits are cheap — a scenario relevant to quantum networks where qubit transmission is expensive. Neither protocol is universally "more efficient"; they solve dual problems. In the quantum Shannon theory framework, the two protocols are related by time-reversal (interchanging the roles of entanglement and channel use) and together define the capacity region of the entanglement-assisted quantum channel: <span class="arithmatex">\(C_{EA} = 2Q\)</span> (twice the quantum channel capacity <span class="arithmatex">\(Q\)</span>), with each protocol achieving one extreme of the trade-off surface. Resource efficiency depends entirely on which resource (qubit channel use, ebit consumption, or classical bit channel use) is the binding constraint in a specific application.</p>
+</details>
+<hr />
+<p><strong>Question 17.</strong> Analyze the practical limitations of quantum key distribution compared to post-quantum cryptography for securing internet communications at scale. Consider both technical and operational factors.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Technical limitations of QKD:</strong>
+- <strong>Distance:</strong> Fiber QKD is limited to ~100–150 km without quantum repeaters (which remain experimental, requiring quantum memories with second-scale coherence times not yet demonstrated). Satellite QKD (Micius experiments) achieves ~1,200 km but requires clear sky and satellite overhead windows.
+- <strong>Rate:</strong> Current QKD systems achieve secure key rates of ~kbps to Mbps at metropolitan distances — adequate for key distribution but not for bulk encryption. Continuous-variable QKD has better rates but stricter hardware requirements.
+- <strong>Authentication:</strong> QKD still requires an authenticated classical channel (using pre-shared symmetric keys or PQC signatures) to prevent man-in-the-middle attacks. It does not eliminate the key management problem.
+- <strong>Hardware attacks:</strong> Device-dependent QKD has been repeatedly compromised by physical attacks on detectors and sources. Device-independent QKD (DIQKD) is theoretically immune but experimentally immature.</p>
+<p><strong>Operational limitations:</strong>
+- Each QKD link requires dedicated quantum hardware at both endpoints: specialized single-photon sources/detectors, precise optical alignment, environmental isolation
+- No packet routing: QKD is inherently point-to-point; networks require trusted relay nodes, each a security vulnerability
+- Incompatible with existing internet infrastructure (TCP/IP, VPNs, CDNs)
+- High deployment cost: <span class="arithmatex">\(100K–\)</span>1M per link vs. PQC software upgrade costing essentially nothing</p>
+<p><strong>PQC advantages:</strong> Runs on existing hardware, software-upgradable, internet-compatible, deployable globally within years, standardized (FIPS 203/204/205). The sole advantage of QKD — information-theoretic security — is not operationally relevant for most use cases where computational security (128-bit quantum) is sufficient. QKD is appropriate for specific high-value, physically secured, point-to-point links (government, military, financial clearing); PQC is the correct solution for internet-scale security.</p>
+</details>
+<hr />
+<p><strong>Question 18.</strong> Analyze how the no-cloning theorem and the measurement disturbance principle together provide the security foundation for BB84. Which one alone would be insufficient?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>BB84 security relies on both principles working in concert, and neither alone is sufficient. The <strong>no-cloning theorem</strong> prevents Eve from copying Alice's qubits to defer measurement: if cloning were possible, Eve could copy each qubit, let the original pass to Bob undisturbed, and measure her copy later to infer Alice's bits without introducing any errors. Cloning alone would completely defeat BB84. The <strong>measurement disturbance principle</strong> (a consequence of the uncertainty principle and projection postulate) ensures that measuring an unknown quantum state in the wrong basis irreversibly disturbs it: Eve measuring in the <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> basis when Alice sent in the <span class="arithmatex">\(\{|+\rangle, |-\rangle\}\)</span> basis randomizes the qubit, causing errors that Alice and Bob detect via QBER estimation. However, if measurement could be performed without disturbance — hypothetically, if Eve could measure while leaving the qubit intact — then even with no-cloning, Eve could extract information undetected. Conversely, if cloning were allowed but measurement still caused disturbance, Eve could simply clone and measure the copy; Bob's qubit would remain undisturbed and no errors would arise. Only the combination guarantees security: no-cloning prevents undetected copying, and measurement disturbance ensures any attempt to extract information produces detectable evidence. Together, they make information gain and disturbance fundamentally inseparable in quantum mechanics.</p>
+</details>
+<hr />
+<p><strong>Question 19.</strong> Analyze the "quantum internet" architecture. What are the distinct layers of functionality a quantum internet would require, and what is the current state of technology at each layer?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>A quantum internet requires a layered architecture analogous to the classical internet's OSI model:</p>
+<p><strong>Layer 1 — Physical (quantum channel):</strong>
+Function: transmit single photons or entangled photon pairs over fiber or free-space.
+Status: Mature for metropolitan distances (&lt; 100 km). Commercial QKD systems exist. Satellite QKD demonstrated (Micius, 2017). Bottleneck: photon loss limits rates at distance.</p>
+<p><strong>Layer 2 — Entanglement distribution:</strong>
+Function: distribute Bell pairs between adjacent network nodes with high fidelity.
+Status: Demonstrated in lab over fiber (Delft, 2022: three-node entanglement). Quantum memories with second-scale coherence needed; current best: ~1 second in NV centers, rare-earth doped crystals. Not yet deployed outside research labs.</p>
+<p><strong>Layer 3 — Quantum repeaters:</strong>
+Function: extend entanglement range via entanglement swapping across multiple hops.
+Status: First-generation repeaters (without quantum error correction) demonstrated over short distances. Full fault-tolerant quantum repeaters (third generation) require quantum error correction at each node — not yet experimentally realized.</p>
+<p><strong>Layer 4 — Entanglement purification:</strong>
+Function: distill high-fidelity Bell pairs from multiple noisy pairs.
+Status: Demonstrated in small-scale experiments. Requires two-way classical communication and quantum memories.</p>
+<p><strong>Layer 5 — Quantum network protocol:</strong>
+Function: routing, resource allocation, qubit addressing.
+Status: Theoretical proposals exist (quantum network stack, QREP protocol). No deployed quantum network layer.</p>
+<p><strong>Layer 6 — Application:</strong>
+Function: QKD, distributed quantum computing, quantum sensing.
+Status: QKD is commercially deployed at Layer 6 using classical repeaters (trusted nodes). True quantum network applications remain experimental.</p>
+<p>Overall assessment: the quantum internet is approximately at the stage of classical networking in the 1970s — point-to-point links work, but multi-hop quantum networks with full entanglement distribution are a decade+ away.</p>
+</details>
+<hr />
+<p><strong>Question 20.</strong> Analyze the relationship between the channel capacity theorems of quantum information theory and the superdense coding / teleportation results. How do the Holevo bound and quantum channel capacity <span class="arithmatex">\(Q\)</span> connect to these protocols?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Holevo bound states that <span class="arithmatex">\(n\)</span> qubits can carry at most <span class="arithmatex">\(n\)</span> bits of accessible classical information, regardless of encoding. This appears to conflict with superdense coding transmitting 2 bits per qubit — but the bound is circumvented because the qubit in superdense coding is transmitted through an entanglement-assisted channel, not a bare quantum channel. The relevant capacity theorem for entanglement-assisted quantum channels (Bennett et al. 2002) states that the entanglement-assisted classical capacity is <span class="arithmatex">\(C_{EA} = Q + S(\rho)\)</span>, where <span class="arithmatex">\(Q\)</span> is the quantum channel capacity and <span class="arithmatex">\(S(\rho)\)</span> is the von Neumann entropy of the channel input. For a noiseless qubit channel (<span class="arithmatex">\(Q = 1\)</span> qubit/use, <span class="arithmatex">\(S = 1\)</span> bit for maximally mixed input), <span class="arithmatex">\(C_{EA} = 1 + 1 = 2\)</span> bits/qubit — exactly the superdense coding result. Teleportation corresponds to the complementary resource trading: 1 ebit + 2 classical bits = 1 qubit channel use, consistent with the quantum capacity formula <span class="arithmatex">\(Q = 2[C_{EA}/2 - S]\)</span> in the appropriate limit. The superdense coding capacity (2 bits/qubit-channel-use with ebits) and the teleportation capacity (1 qubit-channel-use per ebit + 2 classical bits) together define the complete entanglement-classical-quantum capacity region, showing that these protocols are not just clever tricks but achieve the information-theoretic limits of quantum communication.</p>
+</details>
+<hr />
+<h2 id="level-5-evaluate">Level 5 — Evaluate<a class="headerlink" href="#level-5-evaluate" title="Permanent link">&para;</a></h2>
+<p><strong>Question 21.</strong> Evaluate the security assumptions underlying BB84. Under what conditions does the information-theoretic security guarantee actually hold, and what are the most dangerous gaps between theory and practice?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>BB84's information-theoretic security guarantee is proven under several idealized assumptions that may not hold in practice. The theory assumes: (1) Alice sends single photons — real attenuated laser sources send weak coherent pulses that occasionally emit multiple photons, enabling the photon-number-splitting (PNS) attack where Eve intercepts extra photons without causing errors. The decoy state protocol (Lo, Ma, Chen 2005) partially addresses this. (2) Measurements are projective and basis-aligned — real detectors have efficiency imbalances, dark counts, and detector blinding vulnerabilities (Lydersen 2010 attack). (3) The classical authentication channel is secure — without this, man-in-the-middle attacks break BB84 completely; authentication requires pre-shared keys, re-introducing the key distribution problem. (4) Alice's random number generator is truly random — compromised randomness breaks security. (5) Alice's and Bob's devices are trusted — device-independent QKD removes this assumption but is experimentally immature. The most dangerous gap is the implementation vs. model mismatch: Scarani et al.'s review (2009) showed that every practical QKD implementation has been successfully attacked by exploiting physical imperfections not captured in the theoretical model. The information-theoretic security proof applies to the mathematical protocol, not necessarily to any physical realization. Device-independent QKD would close most gaps but requires loophole-free Bell test conditions that impose severe distance and rate constraints.</p>
+</details>
+<hr />
+<p><strong>Question 22.</strong> Evaluate the prospects for practical quantum repeaters. What technical milestones are needed, and how far away is a functional intercontinental quantum network?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Practical quantum repeaters require simultaneous advances on multiple fronts, each currently facing fundamental challenges. The required milestones are:</p>
+<p><strong>Quantum memories:</strong> Need storage times of seconds (to bridge the ~5ms light travel time for 1000 km) with high efficiency (<span class="arithmatex">\(&gt; 90\%\)</span>) and high fidelity (<span class="arithmatex">\(&gt; 99\%\)</span>). Current best laboratory results: NV centers in diamond achieve ~1 second coherence with ~10% efficiency; rare-earth crystals (Eu:Y<span class="arithmatex">\(_2\)</span>SiO<span class="arithmatex">\(_5\)</span>) show hours of coherence but poor efficiency. Gap: 1–2 orders of magnitude improvement needed.</p>
+<p><strong>Entanglement generation rate:</strong> Bell pairs must be generated at rates exceeding the memory decoherence rate. Current entanglement generation between nodes (Delft group, 2022): ~10–100 Hz over ~2 km fiber. Required for 1000 km network: ~kHz rates at each node.</p>
+<p><strong>Error correction at repeater nodes:</strong> Third-generation repeaters require local quantum error correction with logical qubit coherence exceeding round-trip classical communication time. This requires fault-tolerant quantum processors at each node — essentially a small quantum computer at every repeater station.</p>
+<p><strong>Timeline assessment:</strong>
+- First-generation quantum repeater (no error correction, probabilistic): 5–10 years
+- Metropolitan quantum network (&lt; 50 km, trusted nodes + limited quantum nodes): 5 years (near-term)
+- Continental quantum network with full quantum repeaters: 15–25 years
+- Intercontinental quantum network at practical rates: 20–30 years minimum</p>
+<p>Satellite-based quantum communication (ground-to-satellite entanglement distribution) may provide an alternative path to intercontinental range within 10–15 years, circumventing fiber loss, though this requires space-qualified quantum hardware and is weather-dependent.</p>
+</details>
+<hr />
+<p><strong>Question 23.</strong> Evaluate the claim that "quantum teleportation allows faster-than-light communication." Provide a rigorous argument for why this is impossible, and explain what teleportation actually achieves.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The claim is false, and multiple rigorous arguments establish this. The most direct: <strong>No-signaling from quantum mechanics.</strong> Before Alice sends her 2 classical bits, Bob's reduced state is <span class="arithmatex">\(\rho_B = \text{Tr}_{CA}(|\Psi\rangle\langle\Psi|)\)</span>, which is the maximally mixed state <span class="arithmatex">\(I/2\)</span> regardless of Alice's qubit state <span class="arithmatex">\(|\psi\rangle\)</span>. Bob cannot distinguish <span class="arithmatex">\(|\psi\rangle = |0\rangle\)</span> from <span class="arithmatex">\(|\psi\rangle = |+\rangle\)</span> by measuring his qubit without the classical bits — both give maximally mixed outcomes. No information about <span class="arithmatex">\(|\psi\rangle\)</span> reaches Bob until the classical bits arrive, which travel at most at speed <span class="arithmatex">\(c\)</span>.</p>
+<p><strong>No-cloning argument:</strong> If teleportation permitted FTL communication, Alice could send bit <span class="arithmatex">\(b\)</span> by: choosing <span class="arithmatex">\(|0\rangle\)</span> for <span class="arithmatex">\(b=0\)</span> or <span class="arithmatex">\(|1\rangle\)</span> for <span class="arithmatex">\(b=1\)</span>, teleporting it, and having Bob's qubit "instantaneously" be in the right state. But Bob's state is <span class="arithmatex">\(I/2\)</span> before classical communication — he cannot read Alice's choice. The classical channel is not a bug; it is the mechanism that carries all the information.</p>
+<p><strong>What teleportation actually achieves:</strong> It transfers an unknown quantum state from Alice to Bob using entanglement as a resource, consuming it in the process. It demonstrates that quantum states are a transferable resource and that entanglement + classical communication is equivalent to quantum channel use in certain resource-theoretic senses. It is fundamental for quantum networking: it allows quantum states to be moved between nodes that share Bell pairs, enabling distributed quantum computing and quantum key distribution relay without direct quantum channels at the time of transmission.</p>
+</details>
+<hr />
+<p><strong>Question 24.</strong> Evaluate whether the security of BB84 and the security of lattice-based PQC can be compared on the same scale. What are the fundamental differences in the nature of their security guarantees?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>BB84 and lattice-based PQC (e.g., ML-KEM) provide security guarantees of fundamentally different types that cannot be directly compared on a single scale.</p>
+<p><strong>BB84 security (information-theoretic):</strong> The guarantee is unconditional — it holds against computationally unbounded adversaries and does not depend on any mathematical hardness assumption. It is proven within the laws of quantum mechanics: any eavesdropping strategy, however clever, either leaves detectable traces or gains zero information. The security parameter is the final key length minus Eve's information bound (measured in bits of smooth min-entropy). This guarantee is permanent: a key established via BB84 remains secure forever.</p>
+<p><strong>ML-KEM security (computational):</strong> Security is reducible to the Module LWE problem — breaking ML-KEM is at least as hard as solving MLWE. The reduction is tight and well-understood. However, the security depends on: (a) the MLWE problem remaining hard (no breakthrough algorithm discovered), (b) the security reduction holding tightly (reduction losses are known and bounded), (c) correct implementation (side-channel free). Security is measured in "bits" defined as <span class="arithmatex">\(-\log_2\)</span> of the best known attack success probability per unit resource.</p>
+<p><strong>Comparison difficulty:</strong> These are qualitatively different: "secure against all adversaries" vs. "secure against known classes of algorithms." 128-bit lattice security is not equivalent to 128-bit information-theoretic security — the former means the best known attack takes <span class="arithmatex">\(2^{128}\)</span> operations; the latter means even unlimited computation gains no information. Neither scale applies to both: BB84's information-theoretic security has no classical/quantum operational complexity; ML-KEM's computational security has no meaning in information-theoretic terms. The comparison is a category error. For practical purposes: BB84 provides stronger theoretical security but with severe operational constraints; ML-KEM provides sufficient security for all foreseeable practical threats with universal deployability.</p>
+</details>
+<hr />
+<p><strong>Question 25.</strong> Evaluate the "entanglement distribution" step as the fundamental bottleneck in quantum networking. What approaches are being pursued to overcome it, and which shows the most promise?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Entanglement distribution is indeed the critical bottleneck because all quantum network protocols (teleportation, QKD, distributed quantum computing) require Bell pairs as a shared resource, and generating them reliably between distant nodes is orders of magnitude harder than classical bit transmission. The core problem is photon loss: generating and transmitting a single photon between nodes 100 km apart succeeds with probability <span class="arithmatex">\(\sim 10^{-4}\)</span>, making direct Bell pair generation at rates above a few Hz impractical.</p>
+<p><strong>Approaches and assessment:</strong></p>
+<p><strong>1. Quantum memories + heralded entanglement generation (most mature):</strong>
+Entangle a qubit (NV center, trapped ion, rare-earth atom) with a photon; transmit the photon; perform Bell measurement at a midpoint. Success is heralded by the midpoint measurement. Store the successful qubit in a quantum memory while the other segment is attempted. Status: demonstrated in lab (Delft 2022), requires memory improvements. Timeline: 5–10 years for useful deployment.</p>
+<p><strong>2. Satellite QKD / entanglement (medium-term):</strong>
+Satellites eliminate fiber loss (free-space loss scales as <span class="arithmatex">\(R^2\)</span> not <span class="arithmatex">\(e^{\alpha R}\)</span>). China's Micius demonstrated entanglement distribution at 1200 km (2017). Constellation of low-Earth-orbit quantum satellites could provide global coverage. Limitations: weather dependence, low rates (kHz), high hardware cost, primarily useful for QKD rather than general quantum networking.</p>
+<p><strong>3. All-photonic quantum repeaters (no quantum memories):</strong>
+Use photonic cluster states and linear optical Bell measurements to create "forward error corrected" entanglement distribution without storing qubits. Proposed by Azuma et al. (2015). Advantage: no coherence time requirement. Disadvantage: extremely high photon generation and detection efficiency required (<span class="arithmatex">\(&gt; 99.9\%\)</span>), not yet achievable.</p>
+<p><strong>Most promising near-term path:</strong> Quantum memories in rare-earth-doped crystals combined with frequency-converted telecom-wavelength photons, operating in quantum memory-assisted entanglement distribution networks at the metropolitan scale. This approach has the most credible experimental pathway to practical deployment within 10 years, while fully global quantum networks await third-generation repeaters.</p>
+</details>
+<hr />
+<h2 id="level-6-create">Level 6 — Create<a class="headerlink" href="#level-6-create" title="Permanent link">&para;</a></h2>
+<p><strong>Question 26.</strong> Design a three-node quantum network protocol that distributes a GHZ state <span class="arithmatex">\(|\text{GHZ}\rangle = \frac{|000\rangle + |111\rangle}{\sqrt{2}}\)</span> among Alice, Bob, and Charlie using only Bell pairs and local operations. Specify the entanglement swapping steps and classical communication requirements.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Goal:</strong> Distribute <span class="arithmatex">\(|\text{GHZ}\rangle_{ABC}\)</span> using Bell pairs as primitive resources.</p>
+<p><strong>Resource preparation:</strong>
+- Alice and Bob pre-share Bell pair: <span class="arithmatex">\(|\Phi^+\rangle_{A_1B_1} = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span>
+- Bob and Charlie pre-share Bell pair: <span class="arithmatex">\(|\Phi^+\rangle_{B_2C_1} = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span>
+- Alice holds qubit <span class="arithmatex">\(A_1\)</span>, Bob holds <span class="arithmatex">\(B_1\)</span> and <span class="arithmatex">\(B_2\)</span>, Charlie holds <span class="arithmatex">\(C_1\)</span></p>
+<p><strong>Step 1 — Prepare Alice's GHZ seed qubit:</strong>
+Alice prepares a fresh ancilla <span class="arithmatex">\(A_0 = |0\rangle\)</span> and applies:
+- <span class="arithmatex">\(H\)</span> to <span class="arithmatex">\(A_0\)</span>: <span class="arithmatex">\(|0\rangle \to |+\rangle\)</span>
+- <span class="arithmatex">\(CNOT_{A_0 \to A_1}\)</span>: entangles <span class="arithmatex">\(A_0\)</span> with the Bell pair</p>
+<p>After this: the three-qubit state <span class="arithmatex">\(A_0, A_1, B_1\)</span> is:
+$<span class="arithmatex">\(\frac{|000\rangle + |111\rangle}{\sqrt{2}}_{A_0,A_1,B_1}\)</span>$</p>
+<p><strong>Step 2 — Entanglement swapping at Bob:</strong>
+Bob performs a Bell measurement on his two qubits <span class="arithmatex">\(B_1\)</span> and <span class="arithmatex">\(B_2\)</span>. This projects the state of <span class="arithmatex">\(A_0, B_2, C_1\)</span> into a GHZ-like state (up to local Pauli corrections). Specifically, the four-qubit state <span class="arithmatex">\(A_0, A_1, B_1, B_2, C_1\)</span> before Bob's measurement is:
+$<span class="arithmatex">\(\frac{|0\rangle_{A_0}(|00\rangle + |11\rangle)_{A_1,B_1}(|00\rangle + |11\rangle)_{B_2,C_1} + |1\rangle_{A_0}...}{...}\)</span>$</p>
+<p>After Bob's Bell measurement on <span class="arithmatex">\((B_1, B_2)\)</span> with outcome <span class="arithmatex">\(|xy\rangle\)</span>: the remaining state of <span class="arithmatex">\((A_0, B_2 \to \text{discard}, C_1)\)</span> projects onto a state that, after Bob broadcasts the 2-bit outcome, can be corrected by Charlie.</p>
+<p><strong>Step 3 — Correction:</strong>
+Bob broadcasts 2 classical bits to Charlie. Charlie applies: <span class="arithmatex">\(I\)</span> (outcome 00), <span class="arithmatex">\(X\)</span> (01), <span class="arithmatex">\(Z\)</span> (10), <span class="arithmatex">\(ZX\)</span> (11) to qubit <span class="arithmatex">\(C_1\)</span>.</p>
+<p><strong>Result:</strong> <span class="arithmatex">\(\frac{|000\rangle + |111\rangle}{\sqrt{2}}_{A_0, A_1, C_1}\)</span> — the GHZ state distributed across Alice (<span class="arithmatex">\(A_0\)</span>), Alice's node (<span class="arithmatex">\(A_1\)</span> discarded or kept), and Charlie.</p>
+<p><strong>Classical communication:</strong> 2 bits from Bob to Charlie. Total resources: 2 Bell pairs + 1 ancilla qubit + local operations.</p>
+<p><strong>Extension:</strong> For a true three-party GHZ with one qubit each at Alice, Bob, Charlie, use a direct GHZ source (e.g., type-II SPDC) or extend the swapping chain with Bob keeping qubit <span class="arithmatex">\(B_2\)</span> as his share rather than discarding it.</p>
+</details>
+<hr />
+<p><strong>Question 27.</strong> Design a device-independent QKD (DIQKD) protocol outline. Explain how the CHSH inequality violation replaces the need to trust Alice's and Bob's devices, and identify the key experimental requirements.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Motivation:</strong> Standard QKD assumes Alice and Bob trust their own devices. A compromised device could leak key bits to the manufacturer. Device-independent QKD removes this assumption: security is certified by the observed violation of a Bell inequality alone.</p>
+<p><strong>Protocol outline:</strong></p>
+<p><strong>Step 1 — Entanglement generation:</strong>
+An untrusted source (potentially controlled by the adversary Eve) generates pairs of particles and sends one to Alice and one to Bob.</p>
+<p><strong>Step 2 — Random measurement settings:</strong>
+Each round, Alice independently and uniformly randomly chooses input <span class="arithmatex">\(x \in \{0, 1\}\)</span> and measures with setting <span class="arithmatex">\(A_x\)</span>; Bob independently chooses <span class="arithmatex">\(y \in \{0, 1\}\)</span> and measures with setting <span class="arithmatex">\(B_y\)</span>. Outputs are <span class="arithmatex">\(a, b \in \{-1, +1\}\)</span>.</p>
+<p><strong>Step 3 — CHSH test:</strong>
+Compute the CHSH correlation:
+$<span class="arithmatex">\(S = |\langle A_0 B_0 \rangle + \langle A_0 B_1 \rangle + \langle A_1 B_0 \rangle - \langle A_1 B_1 \rangle|\)</span>$
+Classical local hidden variable theories satisfy <span class="arithmatex">\(S \leq 2\)</span>. Quantum mechanics allows <span class="arithmatex">\(S \leq 2\sqrt{2} \approx 2.83\)</span>. Observing <span class="arithmatex">\(S &gt; 2\)</span> certifies genuine quantum correlations.</p>
+<p><strong>Step 4 — Key extraction:</strong>
+The output bits from a designated subset of rounds (e.g., <span class="arithmatex">\(x = y = 0\)</span>) form the raw key. Rounds used for the CHSH test are sacrificed (announced publicly).</p>
+<p><strong>Step 5 — Classical postprocessing:</strong>
+Apply error correction and privacy amplification. The amount of randomness that must be sacrificed in privacy amplification is quantified by Eve's conditional entropy, which is upper bounded by the observed CHSH violation via the Pironio et al. (2010) entropy accumulation framework.</p>
+<p><strong>Security guarantee:</strong> If <span class="arithmatex">\(S &gt; 2\)</span>, the outputs <span class="arithmatex">\(a\)</span> when <span class="arithmatex">\(x = 0\)</span> are partially random even from Eve's perspective. As <span class="arithmatex">\(S \to 2\sqrt{2}\)</span>, the outputs become maximally random and Eve's information approaches zero.</p>
+<p><strong>Key experimental requirements:</strong></p>
+<ol>
+<li>
+<p><strong>Loophole-free Bell test:</strong> The detection loophole (detector efficiency <span class="arithmatex">\(&gt; 82\%\)</span> for qubits) and locality loophole (space-like separated measurement events) must both be closed simultaneously. This requires: (a) high-efficiency (<span class="arithmatex">\(&gt; 90\%\)</span>) single-photon detectors, (b) measurement stations separated by hundreds of meters with synchronized fast switching.</p>
+</li>
+<li>
+<p><strong>High-rate entanglement generation:</strong> Current loophole-free Bell test rates are ~1 Hz (Hensen et al. 2015, Delft). Practical DIQKD requires rates of kHz–MHz to achieve useful key rates. This is the primary experimental gap.</p>
+</li>
+<li>
+<p><strong>Fast random number generation:</strong> Measurement settings must be chosen faster than any light-speed signal between stations.</p>
+</li>
+<li>
+<p><strong>Low noise:</strong> QBER must be low enough that <span class="arithmatex">\(S\)</span> significantly exceeds 2 with high statistical confidence.</p>
+</li>
+</ol>
+<p>DIQKD was recently demonstrated experimentally (Nadlinger et al., Nature 2022; Zhang et al., Nature 2022) at very low key rates (~bits/minute), confirming feasibility. Practical deployment requires several orders of magnitude improvement in entanglement generation rates.</p>
+</details>
+<hr />
+<p><strong>Question 28.</strong> Create a protocol for quantum secret sharing, where a secret qubit state <span class="arithmatex">\(|\psi\rangle\)</span> is split into three shares (for Alice, Bob, Charlie) such that any two shares can reconstruct the secret but one share alone reveals nothing. Specify the encoding circuit and the reconstruction procedure.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Protocol: <span class="arithmatex">\([[3,1,2]]\)</span> quantum secret sharing (Hillery, Bužek, Berthiaume 1999)</strong></p>
+<p><strong>Goal:</strong> Encode <span class="arithmatex">\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\)</span> into a three-qubit state such that any 2 of 3 parties can reconstruct <span class="arithmatex">\(|\psi\rangle\)</span> and no single party gains any information.</p>
+<p><strong>Encoding circuit:</strong></p>
+<p><strong>Inputs:</strong> Dealer has <span class="arithmatex">\(|\psi\rangle_D\)</span> (the secret) and two ancilla qubits <span class="arithmatex">\(|0\rangle_B\)</span>, <span class="arithmatex">\(|0\rangle_C\)</span>.</p>
+<p><strong>Step 1:</strong> Hadamard on all three: <span class="arithmatex">\(H_D \otimes H_B \otimes H_C\)</span></p>
+<p>Actually, a cleaner protocol uses the GHZ-based encoding:</p>
+<p><strong>Step 1:</strong> Apply <span class="arithmatex">\(H\)</span> to <span class="arithmatex">\(|\psi\rangle_D\)</span>
+<strong>Step 2:</strong> Apply <span class="arithmatex">\(CNOT_{D\to B}\)</span>
+<strong>Step 3:</strong> Apply <span class="arithmatex">\(CNOT_{D\to C}\)</span></p>
+<p>For <span class="arithmatex">\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\alpha|0\rangle_{D}\to \alpha \frac{|000\rangle + |011\rangle}{\sqrt{2}} \quad \text{(after H and CNOTs)}$$
+$$\beta|1\rangle_{D}\to \beta \frac{|111\rangle + |100\rangle}{\sqrt{2}}\]</div>
+<p>More precisely, the encoded state is:
+$<span class="arithmatex">\(|\Psi_{enc}\rangle = \alpha\frac{|000\rangle + |011\rangle}{\sqrt{2}} + \beta\frac{|110\rangle + |101\rangle}{\sqrt{2}}\)</span>$</p>
+<p>Shares: Alice holds qubit <span class="arithmatex">\(D\)</span>, Bob holds qubit <span class="arithmatex">\(B\)</span>, Charlie holds qubit <span class="arithmatex">\(C\)</span>.</p>
+<p><strong>Single-party information:</strong> Tracing out any two qubits: each party holds a maximally mixed state <span class="arithmatex">\(I/2\)</span>, independent of <span class="arithmatex">\(\alpha, \beta\)</span>. No information about the secret is accessible from any single share.</p>
+<p><strong>Two-party reconstruction (Alice + Bob have qubits <span class="arithmatex">\(D, B\)</span>; Charlie is absent):</strong></p>
+<ol>
+<li>Alice and Bob bring their qubits together</li>
+<li>Apply <span class="arithmatex">\(CNOT_{D\to B}\)</span>, then <span class="arithmatex">\(H\)</span> to <span class="arithmatex">\(D\)</span>, then measure <span class="arithmatex">\(D\)</span> and <span class="arithmatex">\(B\)</span> in computational basis</li>
+<li>Depending on measurement outcome <span class="arithmatex">\((m_D, m_B)\)</span>: apply Pauli corrections <span class="arithmatex">\(X^{m_D} Z^{m_D \oplus m_B}\)</span> to a fresh ancilla that has been teleportation-corrected — the two-qubit state of Alice+Bob holds sufficient information to reconstruct <span class="arithmatex">\(|\psi\rangle\)</span> via a local Bell measurement + correction protocol</li>
+</ol>
+<p><strong>Security:</strong> The <span class="arithmatex">\([[3,1,2]]\)</span> quantum secret sharing scheme has information-theoretic security: without Charlie, even computationally unbounded Alice+Bob (without Charlie) cannot reconstruct the secret; any two parties can reconstruct it. This is the quantum analog of Shamir's <span class="arithmatex">\(k\)</span>-of-<span class="arithmatex">\(n\)</span> classical secret sharing, here with <span class="arithmatex">\(k = 2\)</span>, <span class="arithmatex">\(n = 3\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 29.</strong> Design an experiment to demonstrate quantum teleportation using polarization-encoded photons in an optical laboratory. Specify the required optical components, the Bell state measurement approach, and the classical feed-forward system. Estimate the required detector efficiencies for a convincing demonstration.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Experimental design: Polarization-encoded photonic teleportation</strong></p>
+<p><strong>Physical encoding:</strong>
+- Qubit basis: horizontal polarization <span class="arithmatex">\(|H\rangle = |0\rangle\)</span>, vertical <span class="arithmatex">\(|V\rangle = |1\rangle\)</span>
+- Source state <span class="arithmatex">\(|\psi\rangle = \alpha|H\rangle + \beta|V\rangle\)</span> prepared with a waveplates setup</p>
+<p><strong>Component list:</strong></p>
+<p><strong>Entangled pair source (Bell pair for Alice and Bob):</strong>
+- Type-II SPDC crystal (e.g., beta-barium borate, BBO) pumped by 405 nm CW laser
+- Generates collinear or non-collinear photon pairs at 810 nm in state <span class="arithmatex">\(|\Phi^+\rangle_{AB}\)</span>
+- PBS (polarizing beam splitter) to separate signal/idler</p>
+<p><strong>State preparation (Alice's unknown state):</strong>
+- Attenuated coherent source at 810 nm
+- Half-wave plate (HWP) and quarter-wave plate (QWP) to set arbitrary <span class="arithmatex">\(|\psi\rangle = \alpha|H\rangle + \beta|V\rangle\)</span></p>
+<p><strong>Bell state measurement (Alice's node):</strong>
+- Combine Alice's qubit (<span class="arithmatex">\(C\)</span>) and her half of the entangled pair (<span class="arithmatex">\(A\)</span>) on a 50/50 fiber beam splitter (HOM setup)
+- Hong-Ou-Mandel interference occurs when photons are indistinguishable
+- Two PBS after beam splitter, each followed by two single-photon avalanche detectors (SPADs)
+- Coincidence detection in 4-fold configuration identifies which of the 4 Bell states was measured
+- Note: linear optical Bell measurement can distinguish at most 2 of 4 Bell states deterministically; partial BSM identifies <span class="arithmatex">\(|\Psi^+\rangle\)</span> and <span class="arithmatex">\(|\Psi^-\rangle\)</span> (50% efficiency)</p>
+<p><strong>Classical feed-forward (real-time):</strong>
+- FPGA-based coincidence electronics (timing resolution &lt; 1 ns)
+- Alice's BSM result triggers electro-optic modulators (EOMs) at Bob's node within &lt; 10 μs
+- EOM 1 (HWP equivalent): applies <span class="arithmatex">\(X\)</span> (bit flip correction) based on detection in <span class="arithmatex">\(|\Psi^-\rangle\)</span>
+- EOM 2 (phase modulator): applies <span class="arithmatex">\(Z\)</span> (phase flip correction) based on detection pattern</p>
+<p><strong>Bob's verification:</strong>
+- Quantum state tomography: measure Bob's output qubit in three bases (<span class="arithmatex">\(\{H,V\}\)</span>, <span class="arithmatex">\(\{D,A\}\)</span>, <span class="arithmatex">\(\{R,L\}\)</span>)
+- Reconstruct density matrix, compute fidelity <span class="arithmatex">\(F = \langle\psi|\rho_{Bob}|\psi\rangle\)</span> with target state</p>
+<p><strong>Required efficiencies:</strong>
+- For 4-fold coincidence teleportation: need <span class="arithmatex">\(\eta_{detector}^4 \cdot \eta_{fiber}^4 \cdot \eta_{source}\)</span> to be detectable
+- Minimum detector efficiency for reasonable rates (&gt; 10 events/minute at source rate <span class="arithmatex">\(10^6\)</span>/sec): <span class="arithmatex">\(\eta &gt; 0.5\)</span> (50%)
+- For high-fidelity feed-forward (<span class="arithmatex">\(F &gt; 90\%\)</span>): detector timing jitter <span class="arithmatex">\(&lt; 200\)</span> ps (to maintain photon indistinguishability at BSM)
+- Practically: Si-SPAD detectors at 810 nm achieve <span class="arithmatex">\(\eta \approx 70\%\)</span>, sufficient
+- For telecom wavelength (1550 nm) using InGaAs SPADs: <span class="arithmatex">\(\eta \approx 20–30\%\)</span>, requires source rate <span class="arithmatex">\(&gt; 10^7\)</span>/sec</p>
+<p><strong>Key figure of merit:</strong> Teleportation fidelity <span class="arithmatex">\(F &gt; 2/3\)</span> (classical limit) certifies quantum teleportation. State-of-the-art demonstrations achieve <span class="arithmatex">\(F &gt; 97\%\)</span> (Bouwmeester 1997, improved to &gt;99% in recent experiments).</p>
+</details>
+<hr />
+<p><strong>Question 30.</strong> Design a complete quantum network security architecture for a hypothetical city-scale quantum internet with 10 nodes, each pair potentially needing to share a secret key. Specify the entanglement distribution strategy, key management protocol, integration with existing classical TLS infrastructure, and your strategy for handling node compromise.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Network architecture: 10-node city-scale quantum key network</strong></p>
+<p><strong>Topology design:</strong>
+With 10 nodes (<span class="arithmatex">\(\binom{10}{2} = 45\)</span> potential pairs), direct point-to-point quantum links to all pairs is impractical. Use a hub-and-spoke + ring hybrid:</p>
+<ul>
+<li><strong>Quantum backbone ring:</strong> 5 core nodes (banks, government) connected in a ring with direct quantum links (fiber, ~10–20 km spans)</li>
+<li><strong>Edge nodes:</strong> 5 peripheral nodes (enterprise, data centers) each with a direct link to one hub node</li>
+<li><strong>Entanglement routing:</strong> Use quantum repeaters at hub nodes to distribute entanglement between non-adjacent pairs via multi-hop entanglement swapping</li>
+</ul>
+<p><strong>Entanglement distribution strategy:</strong></p>
+<ol>
+<li><strong>Continuous Bell pair generation:</strong> Each quantum link maintains a continuous entanglement generation service using single-photon sources + BSM at midpoints, targeting 1 Bell pair/second at <span class="arithmatex">\(F &gt; 95\%\)</span></li>
+<li><strong>Quantum memory buffering:</strong> Each node maintains quantum memories (rare-earth crystal, 100ms coherence) to buffer Bell pairs while the other end of a longer path is established</li>
+<li><strong>On-demand entanglement routing:</strong> Classical network control plane (quantum network controller, QNC) schedules entanglement swapping at intermediate nodes, establishes end-to-end Bell pairs for requesting node pairs</li>
+<li><strong>Entanglement monitoring:</strong> Continuous QBER and Bell violation monitoring on all links; links below <span class="arithmatex">\(F &lt; 90\%\)</span> are flagged and traffic rerouted</li>
+</ol>
+<p><strong>Key management protocol:</strong></p>
+<p>Each established Bell pair is immediately consumed by BB84 (or E91 protocol using entanglement-based QKD) to generate a shared secret key bit between the two requesting nodes. Generated key bits are stored in hardware security modules (HSMs) at each node.</p>
+<p>Key rates: at 1 Bell pair/second per link with 50% sifting efficiency, each direct link produces ~0.3–0.5 secure bits/second (accounting for error correction and privacy amplification at 8% QBER). For 10-hop paths, rates drop to ~0.05 bits/second — sufficient for key establishment but not bulk encryption.</p>
+<p><strong>Integration with existing TLS infrastructure:</strong></p>
+<p>QKD-generated keys are used as pre-shared symmetric keys (PSK) in TLS 1.3:
+- TLS connections between nodes use <code>tls_psk</code> cipher suites with AES-256-GCM
+- QKD PSKs are refreshed hourly (or when key material drops below threshold)
+- Each node runs a local "quantum key server" (QKS) exposing a standard PKCS#11 API; existing TLS stacks query the QKS for pre-shared keys by node identifier
+- Hybrid mode: combine QKD-derived PSK with ML-KEM (FIPS 203) key exchange — both must be broken for security compromise
+- Certificate authentication: node certificates signed with ML-DSA (FIPS 204) to prevent man-in-the-middle attacks on the classical authentication channel</p>
+<p><strong>Node compromise response:</strong></p>
+<p>Threat model: an attacker gains physical access to a node, extracting stored quantum keys and quantum memory states.</p>
+<p><strong>Detection:</strong> Each node monitors for physical intrusion (tamper-evident hardware, HSM zeroization triggers). Anomaly detection on key generation rates and QBER values.</p>
+<p><strong>Isolation:</strong> Compromised node is immediately isolated from the quantum network (classical control plane severs quantum link scheduling). Adjacent nodes initiate emergency key refresh from alternate paths.</p>
+<p><strong>Key revocation:</strong> All keys distributed via the compromised node are zeroized at all peer nodes. Since QKD keys are pre-shared symmetric keys, revocation is immediate and requires only classical communication.</p>
+<p><strong>Re-establishment:</strong> Node is physically inspected and re-provisioned with new HSM credentials before re-admission. All peer nodes must independently verify the new node's BB84 identity via ML-DSA-signed certificates before resuming quantum key exchange.</p>
+<p><strong>Limitation:</strong> Trusted relay nodes (where quantum memories store intermediate entanglement) are a fundamental security vulnerability — a compromised relay can reconstruct keys distributed through it. Mitigation: minimize relay trust by using quantum repeaters (no stored key material, only quantum states), multi-path key distribution with XOR combination (compromise of one path does not reveal the key if other paths are uncompromised).</p>
+<p><strong>Overall security assessment:</strong> The architecture provides information-theoretic security for all direct quantum links and computational security (ML-KEM) for paths traversing trusted relays, with crypto-agility for rapid algorithm updates and a well-defined incident response plan for node compromise.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

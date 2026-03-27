@@ -1,0 +1,3149 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/02-entanglement/">
+      
+      
+        <link rel="prev" href="../01-classical-vs-quantum/quiz/">
+      
+      
+        <link rel="next" href="quiz/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 2: Superposition, Entanglement, and Bell's Theorem - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-superposition-entanglement-and-the-quantum-resources-that-enable-speedup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2: Superposition, Entanglement, and Bell's Theorem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-superposition-from-first-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Superposition from First Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Superposition from First Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-linearity-of-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Linearity of Quantum Mechanics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-hadamard-gate-and-superposition-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 The Hadamard Gate and Superposition Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entanglement-the-resource-that-separates-quantum-from-classical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Entanglement — The Resource That Separates Quantum from Classical
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entanglement — The Resource That Separates Quantum from Classical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Bell States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-creating-entanglement-the-bell-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Creating Entanglement: The Bell Circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-entanglement-is-required-for-quantum-speedup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Why Entanglement Is Required for Quantum Speedup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Why Entanglement Is Required for Quantum Speedup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-classical-simulation-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The Classical Simulation Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-gottesman-knill-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The Gottesman-Knill Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-entanglement-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Entanglement Entropy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-decoherence-entanglement-with-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Decoherence — Entanglement with the Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Decoherence — Entanglement with the Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-what-decoherence-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 What Decoherence Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-coherence-times-t1-and-t2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Coherence Times T1 and T2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bells-theorem-and-the-chsh-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bell's Theorem and the CHSH Inequality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bell&#39;s Theorem and the CHSH Inequality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-epr-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The EPR Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-bells-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Bell's Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-experimental-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Experimental Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-superposition-from-first-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Superposition from First Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Superposition from First Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-linearity-of-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Linearity of Quantum Mechanics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-hadamard-gate-and-superposition-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 The Hadamard Gate and Superposition Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-entanglement-the-resource-that-separates-quantum-from-classical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Entanglement — The Resource That Separates Quantum from Classical
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Entanglement — The Resource That Separates Quantum from Classical">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-bell-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The Bell States
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-creating-entanglement-the-bell-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Creating Entanglement: The Bell Circuit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-why-entanglement-is-required-for-quantum-speedup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Why Entanglement Is Required for Quantum Speedup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Why Entanglement Is Required for Quantum Speedup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-classical-simulation-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The Classical Simulation Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-gottesman-knill-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The Gottesman-Knill Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-entanglement-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Entanglement Entropy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-decoherence-entanglement-with-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Decoherence — Entanglement with the Environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Decoherence — Entanglement with the Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-what-decoherence-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 What Decoherence Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-coherence-times-t1-and-t2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Coherence Times T1 and T2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bells-theorem-and-the-chsh-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bell's Theorem and the CHSH Inequality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bell&#39;s Theorem and the CHSH Inequality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-the-epr-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The EPR Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-bells-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Bell's Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-experimental-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Experimental Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-2-superposition-entanglement-and-the-quantum-resources-that-enable-speedup">Chapter 2: Superposition, Entanglement, and the Quantum Resources That Enable Speedup<a class="headerlink" href="#chapter-2-superposition-entanglement-and-the-quantum-resources-that-enable-speedup" title="Permanent link">&para;</a></h1>
+<p><em>In 1935, Einstein, Podolsky, and Rosen argued that quantum mechanics must be incomplete — that "spooky action at a distance" revealed a hidden flaw in the theory. In 1964, John Bell proved they were wrong. In 2022, the Nobel Prize in Physics was awarded for experimental confirmation of Bell's theorem. This chapter explains what entanglement actually is, why it is required for quantum speedup, and why decoherence — entanglement with the wrong partners — is the central engineering challenge of quantum computing.</em></p>
+<hr />
+<h2 id="1-superposition-from-first-principles">1. Superposition from First Principles<a class="headerlink" href="#1-superposition-from-first-principles" title="Permanent link">&para;</a></h2>
+<h3 id="11-the-linearity-of-quantum-mechanics">1.1 The Linearity of Quantum Mechanics<a class="headerlink" href="#11-the-linearity-of-quantum-mechanics" title="Permanent link">&para;</a></h3>
+<p>Superposition is not a special feature added to quantum mechanics — it is a direct consequence of the mathematical structure of the theory. The <strong>superposition principle</strong> states that if <span class="arithmatex">\(\ket{\psi_1}\)</span> and <span class="arithmatex">\(\ket{\psi_2}\)</span> are valid quantum states, then any normalized linear combination:</p>
+<div class="arithmatex">\[\ket{\psi} = \alpha\ket{\psi_1} + \beta\ket{\psi_2}, \quad |\alpha|^2 + |\beta|^2 = 1\]</div>
+<p>is also a valid quantum state. The Schrödinger equation is linear, so it preserves superpositions. This is not an approximation or an idealization — it is exact quantum mechanics.</p>
+<h3 id="12-the-hadamard-gate-and-superposition-creation">1.2 The Hadamard Gate and Superposition Creation<a class="headerlink" href="#12-the-hadamard-gate-and-superposition-creation" title="Permanent link">&para;</a></h3>
+<p>The <strong>Hadamard gate</strong> <span class="arithmatex">\(H\)</span> is the most important single-qubit gate for creating superposition:</p>
+<div class="arithmatex">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; -1 \end{pmatrix}\]</div>
+<p>Its action on the computational basis states:</p>
+<div class="arithmatex">\[H\ket{0} = \frac{\ket{0} + \ket{1}}{\sqrt{2}} \equiv \ket{+}, \qquad H\ket{1} = \frac{\ket{0} - \ket{1}}{\sqrt{2}} \equiv \ket{-}\]</div>
+<p>Note that <span class="arithmatex">\(H^2 = \mathbb{I}\)</span>: the Hadamard gate is its own inverse. The states <span class="arithmatex">\(\ket{+}\)</span> and <span class="arithmatex">\(\ket{-}\)</span> form the <strong>Hadamard basis</strong> — an alternative orthonormal basis for the qubit Hilbert space.</p>
+<p>Applying <span class="arithmatex">\(H^{\otimes n}\)</span> (the <span class="arithmatex">\(n\)</span>-fold tensor product of <span class="arithmatex">\(H\)</span>) to the all-zeros state <span class="arithmatex">\(\ket{0}^{\otimes n}\)</span> creates the <strong>uniform superposition</strong> over all <span class="arithmatex">\(2^n\)</span> computational basis states:</p>
+<div class="arithmatex">\[H^{\otimes n}\ket{0\cdots 0} = \frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n - 1}\ket{x}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Two-Qubit Uniform Superposition</p>
+<p>Apply <span class="arithmatex">\(H \otimes H\)</span> to <span class="arithmatex">\(\ket{00}\)</span>:</p>
+<div class="arithmatex">\[H\ket{0} \otimes H\ket{0} = \frac{\ket{0}+\ket{1}}{\sqrt{2}} \otimes \frac{\ket{0}+\ket{1}}{\sqrt{2}} = \frac{1}{2}(\ket{00} + \ket{01} + \ket{10} + \ket{11})\]</div>
+<p>Each of the four basis states has amplitude <span class="arithmatex">\(1/2\)</span>, probability <span class="arithmatex">\(1/4\)</span>. This equal superposition over all 4 two-bit strings is the starting point for Grover's algorithm (Chapter 4) on a 2-qubit register.</p>
+</div>
+<hr />
+<h2 id="2-entanglement-the-resource-that-separates-quantum-from-classical">2. Entanglement — The Resource That Separates Quantum from Classical<a class="headerlink" href="#2-entanglement-the-resource-that-separates-quantum-from-classical" title="Permanent link">&para;</a></h2>
+<h3 id="21-definition">2.1 Definition<a class="headerlink" href="#21-definition" title="Permanent link">&para;</a></h3>
+<p>A multi-qubit state is <strong>entangled</strong> if and only if it <strong>cannot</strong> be written as a tensor product of individual qubit states. Formally, a two-qubit state <span class="arithmatex">\(\ket{\Psi} \in \mathcal{H}_A \otimes \mathcal{H}_B\)</span> is entangled if there exist <strong>no</strong> single-qubit states <span class="arithmatex">\(\ket{\psi_A}, \ket{\psi_B}\)</span> such that <span class="arithmatex">\(\ket{\Psi} = \ket{\psi_A} \otimes \ket{\psi_B}\)</span>.</p>
+<h3 id="22-the-bell-states">2.2 The Bell States<a class="headerlink" href="#22-the-bell-states" title="Permanent link">&para;</a></h3>
+<p>The four <strong>Bell states</strong> (also called EPR pairs or maximally entangled states) are:</p>
+<div class="arithmatex">\[\ket{\Phi^+} = \frac{\ket{00} + \ket{11}}{\sqrt{2}}, \qquad \ket{\Phi^-} = \frac{\ket{00} - \ket{11}}{\sqrt{2}}\]</div>
+<div class="arithmatex">\[\ket{\Psi^+} = \frac{\ket{01} + \ket{10}}{\sqrt{2}}, \qquad \ket{\Psi^-} = \frac{\ket{01} - \ket{10}}{\sqrt{2}}\]</div>
+<p>These four states form a complete orthonormal basis for the two-qubit Hilbert space — the <strong>Bell basis</strong>.</p>
+<p><strong>Proof that <span class="arithmatex">\(\ket{\Phi^+}\)</span> is entangled:</strong> Suppose it could be written as a product: <span class="arithmatex">\((\alpha\ket{0} + \beta\ket{1}) \otimes (\gamma\ket{0} + \delta\ket{1}) = \alpha\gamma\ket{00} + \alpha\delta\ket{01} + \beta\gamma\ket{10} + \beta\delta\ket{11}\)</span>. Matching coefficients with <span class="arithmatex">\(\ket{\Phi^+} = \frac{1}{\sqrt{2}}\ket{00} + 0\cdot\ket{01} + 0\cdot\ket{10} + \frac{1}{\sqrt{2}}\ket{11}\)</span> requires:
+- <span class="arithmatex">\(\alpha\gamma = 1/\sqrt{2}\)</span> (nonzero)
+- <span class="arithmatex">\(\alpha\delta = 0\)</span> → <span class="arithmatex">\(\delta = 0\)</span> (since <span class="arithmatex">\(\alpha \neq 0\)</span>)
+- <span class="arithmatex">\(\beta\delta = 1/\sqrt{2}\)</span> → but <span class="arithmatex">\(\delta = 0\)</span> makes this impossible. <strong>Contradiction.</strong> ∎</p>
+<h3 id="23-creating-entanglement-the-bell-circuit">2.3 Creating Entanglement: The Bell Circuit<a class="headerlink" href="#23-creating-entanglement-the-bell-circuit" title="Permanent link">&para;</a></h3>
+<p>The minimal circuit for creating <span class="arithmatex">\(\ket{\Phi^+}\)</span> from <span class="arithmatex">\(\ket{00}\)</span>:</p>
+<ol>
+<li>Apply <span class="arithmatex">\(H\)</span> to qubit 1: <span class="arithmatex">\(\ket{00} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})\ket{0} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{10})\)</span></li>
+<li>Apply CNOT (control: qubit 1, target: qubit 2): <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{00} + \ket{10}) \rightarrow \frac{1}{\sqrt{2}}(\ket{00} + \ket{11}) = \ket{\Phi^+}\)</span></li>
+</ol>
+<p>This two-gate sequence (H + CNOT) is the fundamental entanglement circuit and the building block for quantum teleportation, superdense coding, and quantum error correction.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Measurement Correlations</p>
+<p>If Alice and Bob share <span class="arithmatex">\(\ket{\Phi^+}\)</span>, and Alice measures her qubit in the computational basis:</p>
+<ul>
+<li>With probability 1/2, Alice gets <span class="arithmatex">\(\ket{0}\)</span> → Bob's qubit <strong>instantly collapses</strong> to <span class="arithmatex">\(\ket{0}\)</span></li>
+<li>With probability 1/2, Alice gets <span class="arithmatex">\(\ket{1}\)</span> → Bob's qubit <strong>instantly collapses</strong> to <span class="arithmatex">\(\ket{1}\)</span></li>
+</ul>
+<p>The outcomes are <strong>perfectly correlated</strong>, regardless of the physical distance between Alice and Bob. This is "spooky action at a distance" — measurement on one qubit instantaneously determines the state of the other.</p>
+<p><strong>Crucially</strong>, Alice's outcome is random (she cannot control whether she gets 0 or 1), so Bob cannot use this to receive information faster than light. No causal signal is transmitted. The correlations are real but cannot carry classical information.</p>
+</div>
+<hr />
+<h2 id="3-why-entanglement-is-required-for-quantum-speedup">3. Why Entanglement Is Required for Quantum Speedup<a class="headerlink" href="#3-why-entanglement-is-required-for-quantum-speedup" title="Permanent link">&para;</a></h2>
+<h3 id="31-the-classical-simulation-argument">3.1 The Classical Simulation Argument<a class="headerlink" href="#31-the-classical-simulation-argument" title="Permanent link">&para;</a></h3>
+<p>Without entanglement, <span class="arithmatex">\(n\)</span> qubits can be described by <span class="arithmatex">\(n\)</span> <strong>independent</strong> Bloch vectors — a total of <span class="arithmatex">\(3n\)</span> real parameters. With entanglement, the full <span class="arithmatex">\(n\)</span>-qubit state requires <span class="arithmatex">\(2^{n+1} - 2\)</span> real parameters (the <span class="arithmatex">\(2^n\)</span> complex amplitudes minus normalization and global phase). This is the exponential gap that gives quantum computing its power.</p>
+<p>If a quantum computation never creates entanglement, the state factorizes into a product of independent qubits, and the computation can be simulated classically in <span class="arithmatex">\(O(n)\)</span> time and space — no quantum speedup is possible.</p>
+<h3 id="32-the-gottesman-knill-theorem">3.2 The Gottesman-Knill Theorem<a class="headerlink" href="#32-the-gottesman-knill-theorem" title="Permanent link">&para;</a></h3>
+<p>The <strong>Gottesman-Knill theorem</strong> makes this precise: quantum circuits composed exclusively of <strong>Clifford gates</strong> — H, S (phase gate), CNOT, and Pauli gates — can be efficiently simulated by a classical computer in <span class="arithmatex">\(O(n^2)\)</span> time, despite creating highly entangled states.</p>
+<p>The Clifford gates generate a rich family of entangled states (all the Bell states, GHZ states, etc.), but they belong to the <strong>Clifford group</strong> — a structured algebraic group that classical computers can track efficiently using the <strong>stabilizer formalism</strong> (a compact representation that grows only polynomially with <span class="arithmatex">\(n\)</span>).</p>
+<p>It is the addition of <strong>non-Clifford gates</strong> — specifically the <span class="arithmatex">\(T\)</span> gate (<span class="arithmatex">\(T = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; e^{i\pi/4}\end{pmatrix}\)</span>) — that pushes quantum computation beyond classical simulability. Therefore:</p>
+<ul>
+<li><strong>Entanglement is necessary but not sufficient</strong> for quantum speedup.</li>
+<li>The <em>structure</em> of the entanglement — specifically, the involvement of non-Clifford operations — determines whether genuine quantum advantage is possible.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Key Reference</p>
+<p>Gottesman, D. "Stabilizer codes and quantum error correction." Caltech PhD thesis (1997). The Gottesman-Knill theorem is the foundation of the stabilizer formalism used in quantum error correction and underpins why Clifford gates dominate QEC circuits.</p>
+</div>
+<h3 id="33-entanglement-entropy">3.3 Entanglement Entropy<a class="headerlink" href="#33-entanglement-entropy" title="Permanent link">&para;</a></h3>
+<p>The degree of entanglement in a bipartite state <span class="arithmatex">\(\ket{\Psi}_{AB}\)</span> is quantified by the <strong>entanglement entropy</strong>:</p>
+<div class="arithmatex">\[S(\rho_A) = -\Tr(\rho_A \log_2 \rho_A)\]</div>
+<p>where <span class="arithmatex">\(\rho_A = \Tr_B(\ket{\Psi}\bra{\Psi})\)</span> is the reduced density matrix of subsystem <span class="arithmatex">\(A\)</span> (obtained by tracing out <span class="arithmatex">\(B\)</span>). For a maximally entangled two-qubit state (any Bell state), <span class="arithmatex">\(S = 1\)</span> ebit. For a product state, <span class="arithmatex">\(S = 0\)</span>.</p>
+<p>The entanglement entropy of intermediate states during a quantum computation determines how hard that computation is to simulate classically. Algorithms based on <strong>matrix product states</strong> (MPS/DMRG) can efficiently simulate quantum circuits where entanglement entropy grows at most logarithmically with system size — but fail for circuits with volume-law entanglement growth.</p>
+<hr />
+<h2 id="4-decoherence-entanglement-with-the-environment">4. Decoherence — Entanglement with the Environment<a class="headerlink" href="#4-decoherence-entanglement-with-the-environment" title="Permanent link">&para;</a></h2>
+<h3 id="41-what-decoherence-actually-is">4.1 What Decoherence Actually Is<a class="headerlink" href="#41-what-decoherence-actually-is" title="Permanent link">&para;</a></h3>
+<p>Decoherence is not "noise" in the classical sense — it is <strong>the entanglement of the qubit with its environment</strong>. When a qubit interacts with surrounding particles (phonons, photons, stray electromagnetic fields, substrate defects), the qubit becomes entangled with those uncontrolled environmental degrees of freedom:</p>
+<div class="arithmatex">\[\ket{\psi}_{\text{qubit}} \otimes \ket{E_0}_{\text{env}} \rightarrow \alpha\ket{0}\ket{E_0} + \beta\ket{1}\ket{E_1}\]</div>
+<p>where <span class="arithmatex">\(\ket{E_0}, \ket{E_1}\)</span> are different environment states. The qubit is now <strong>entangled with the environment</strong> — its information has leaked out. Since we cannot track the environment (it consists of <span class="arithmatex">\(10^{23}\)</span> or more particles), we must describe the qubit alone by tracing out the environment:</p>
+<div class="arithmatex">\[\rho_{\text{qubit}} = \Tr_{\text{env}}\left(\ket{\Psi}\bra{\Psi}\right) = |\alpha|^2\ket{0}\bra{0} + |\beta|^2\ket{1}\bra{1}\]</div>
+<p>The off-diagonal terms (<span class="arithmatex">\(\alpha\beta^*\ket{0}\bra{1}\)</span> and <span class="arithmatex">\(\alpha^*\beta\ket{1}\bra{0}\)</span>) — which encode the quantum phase information — have vanished. The qubit has become a <strong>classical probability distribution</strong>: <span class="arithmatex">\(|\alpha|^2\)</span> for 0, <span class="arithmatex">\(|\beta|^2\)</span> for 1. The quantum information is not destroyed (it is in the environment somewhere), but it is permanently inaccessible. This is the transition from quantum coherence to classical behavior.</p>
+<h3 id="42-coherence-times-t1-and-t2">4.2 Coherence Times T1 and T2<a class="headerlink" href="#42-coherence-times-t1-and-t2" title="Permanent link">&para;</a></h3>
+<p>Two timescales characterize decoherence in real hardware:</p>
+<p><strong>T1 (energy relaxation time):</strong> The time for the qubit to decay from <span class="arithmatex">\(\ket{1}\)</span> to <span class="arithmatex">\(\ket{0}\)</span> by releasing energy to the environment (spontaneous emission). After time <span class="arithmatex">\(t\)</span>, the probability of remaining in <span class="arithmatex">\(\ket{1}\)</span> is <span class="arithmatex">\(e^{-t/T_1}\)</span>.</p>
+<p><strong>T2 (dephasing time):</strong> The time for the relative phase between <span class="arithmatex">\(\ket{0}\)</span> and <span class="arithmatex">\(\ket{1}\)</span> to be randomized. T2 determines how long quantum interference effects persist. Always <span class="arithmatex">\(T_2 \leq 2T_1\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>T1</th>
+<th>T2</th>
+<th>2-qubit gate time</th>
+<th>Max gates/coherence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Superconducting</td>
+<td>100–300 μs</td>
+<td>100–300 μs</td>
+<td>20–100 ns</td>
+<td>~4,000</td>
+</tr>
+<tr>
+<td>Trapped ion</td>
+<td>seconds–minutes</td>
+<td>seconds</td>
+<td>50–200 μs</td>
+<td>~100,000</td>
+</tr>
+<tr>
+<td>Neutral atom</td>
+<td>seconds</td>
+<td>seconds</td>
+<td>0.5–5 μs</td>
+<td>~10,000</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Circuit Depth Limit</p>
+<p>IBM's Heron processor (2023) achieved <span class="arithmatex">\(T_2 \approx 200\)</span> μs with two-qubit gate times of approximately 50 ns.</p>
+<p>Maximum useful circuit depth <span class="arithmatex">\(\approx T_2 / t_{\text{gate}} = 200{,}000 \text{ ns} / 50 \text{ ns} = 4{,}000 \text{ gates}\)</span>.</p>
+<p>Shor's algorithm on a 2048-bit number requires <strong>billions</strong> of gate operations. At 4,000 gates per coherence window, this is impossible without quantum error correction. This calculation motivates the entire field of quantum error correction — not as a theoretical nicety but as a mathematical necessity.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Decoherence is the fundamental reason quantum computing has been "10 years away" for 30 years. It is also why the Google Willow result (December 2024) was historically significant: demonstrating that adding more qubits to a surface code <em>reduces</em> the logical error rate — rather than increasing it — confirms that the laws of physics permit the construction of reliable logical qubits from imperfect physical ones. The engineering challenge remains enormous, but the scientific proof of concept now exists.</p>
+</div>
+<hr />
+<h2 id="5-bells-theorem-and-the-chsh-inequality">5. Bell's Theorem and the CHSH Inequality<a class="headerlink" href="#5-bells-theorem-and-the-chsh-inequality" title="Permanent link">&para;</a></h2>
+<h3 id="51-the-epr-argument">5.1 The EPR Argument<a class="headerlink" href="#51-the-epr-argument" title="Permanent link">&para;</a></h3>
+<p>In 1935, Einstein, Podolsky, and Rosen (EPR) argued that quantum mechanics is incomplete. Their reasoning: if measuring Alice's qubit instantly determines Bob's (regardless of distance), then either (1) faster-than-light influence exists (violating special relativity), or (2) the qubits had predetermined hidden values all along, and measurement merely reveals them. Option (2) — <strong>local hidden variables</strong> — seemed more palatable to Einstein.</p>
+<h3 id="52-bells-theorem">5.2 Bell's Theorem<a class="headerlink" href="#52-bells-theorem" title="Permanent link">&para;</a></h3>
+<p>In 1964, John Bell proved that the hidden variable hypothesis leads to measurable predictions that <strong>differ</strong> from quantum mechanics. Any theory based on <strong>local hidden variables</strong> must satisfy the <strong>CHSH inequality</strong>:</p>
+<div class="arithmatex">\[S = \left|E(a,b) - E(a,b') + E(a',b) + E(a',b')\right| \leq 2\]</div>
+<p>where <span class="arithmatex">\(E(a,b)\)</span> is the correlation between measurement outcomes when Alice chooses detector setting <span class="arithmatex">\(a\)</span> and Bob chooses <span class="arithmatex">\(b\)</span>.</p>
+<p>Quantum mechanics predicts, for optimal detector settings and a maximally entangled state:</p>
+<div class="arithmatex">\[S_{\text{QM}} = 2\sqrt{2} \approx 2.828 &gt; 2\]</div>
+<p>This is <strong>Tsirelson's bound</strong> — the maximum quantum violation of the CHSH inequality.</p>
+<h3 id="53-experimental-verification">5.3 Experimental Verification<a class="headerlink" href="#53-experimental-verification" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Year</th>
+<th>Result</th>
+<th>Loopholes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clauser, Holt, Shimony, Horne</td>
+<td>1969</td>
+<td>Theory only</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Aspect, Grangier, Roger</td>
+<td>1982</td>
+<td><span class="arithmatex">\(S \approx 2.70\)</span></td>
+<td>Detection loophole</td>
+</tr>
+<tr>
+<td>Hensen et al. (Delft)</td>
+<td>2015</td>
+<td><span class="arithmatex">\(S = 2.42\)</span></td>
+<td>None (loophole-free)</td>
+</tr>
+<tr>
+<td>Giustina et al. (Vienna)</td>
+<td>2015</td>
+<td><span class="arithmatex">\(S = 2.41\)</span></td>
+<td>None (loophole-free)</td>
+</tr>
+<tr>
+<td>Shalm et al. (NIST)</td>
+<td>2015</td>
+<td><span class="arithmatex">\(S = 2.40\)</span></td>
+<td>None (loophole-free)</td>
+</tr>
+</tbody>
+</table>
+<p>The 2022 Nobel Prize in Physics was awarded to John Clauser, Alain Aspect, and Anton Zeilinger for this work. The verdict is unambiguous: <strong>local hidden variable theories are ruled out by experiment</strong>. Entanglement is real — not a bookkeeping artifact but a genuine physical phenomenon with measurable consequences.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>The Bell inequality violation does <strong>not</strong> allow faster-than-light communication. Alice's measurement outcome is random — she cannot control whether she gets 0 or 1. Bob sees random outcomes on his side too. Only when they compare results (via a classical channel, which is limited to light speed) do they discover the correlations. The entanglement creates correlations but cannot transmit information.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Entanglement is not an exotic laboratory curiosity — it is the computational resource that makes quantum speedup possible, the security guarantee that makes QKD provably secure (Chapter 5), and the engineering challenge that makes quantum computers so difficult to build (Chapters 7–8). Every quantum technology investment ultimately depends on the ability to create, maintain, and exploit entanglement faster than decoherence destroys it.</p>
+</div>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">Chapter Summary</p>
+<ol>
+<li>
+<p><strong>Superposition is a consequence of quantum mechanics' linearity</strong>: the Hadamard gate creates equal superposition from basis states; <span class="arithmatex">\(H^{\otimes n}\ket{0}^n\)</span> creates the uniform superposition over all <span class="arithmatex">\(2^n\)</span> basis states.</p>
+</li>
+<li>
+<p><strong>Entanglement is a property of multi-qubit states that cannot be factorized</strong>: Bell states are the canonical examples. Entanglement creates measurement correlations that have no classical analogue — and are confirmed by experiment.</p>
+</li>
+<li>
+<p><strong>Entanglement is necessary but not sufficient for quantum speedup</strong>: the Gottesman-Knill theorem shows that Clifford circuits (which create entanglement) remain classically simulable. Non-Clifford gates (specifically the T gate) are needed for genuine quantum advantage.</p>
+</li>
+<li>
+<p><strong>Decoherence is unwanted entanglement with the environment</strong>: once a qubit's phase information leaks into environmental degrees of freedom we cannot control, it is irreversibly lost. T1 and T2 timescales define the coherence window within which quantum algorithms must complete.</p>
+</li>
+<li>
+<p><strong>Bell's theorem and its experimental verification rule out local hidden variables</strong>: entanglement is a genuine physical phenomenon, not a bookkeeping artifact. The 2022 Nobel Prize confirmed what the mathematics had predicted since 1964.</p>
+</li>
+</ol>
+</div>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bell, J. S. "On the Einstein-Podolsky-Rosen paradox." <em>Physics</em> 1(3), 195–200 (1964).</li>
+<li>Clauser, J. F., Horne, M. A., Shimony, A. &amp; Holt, R. A. "Proposed experiment to test local hidden-variable theories." <em>Physical Review Letters</em> 23, 880 (1969).</li>
+<li>Aspect, A., Grangier, P. &amp; Roger, G. "Experimental realization of EPR-Bohm gedankenexperiment." <em>Physical Review Letters</em> 49, 91 (1982).</li>
+<li>Hensen, B. et al. "Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres." <em>Nature</em> 526, 682–686 (2015).</li>
+<li>Gottesman, D. "Stabilizer codes and quantum error correction." Caltech PhD thesis (1997).</li>
+<li>Nielsen, M. A. &amp; Chuang, I. L. <em>Quantum Computation and Quantum Information</em>. Cambridge (2000), Chapter 2.</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

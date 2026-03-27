@@ -1,0 +1,3109 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/07-noise/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../08-error-correction/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Chapter 7 Quiz: Why Noise-Free Quantum Computing Is So Difficult - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-7-quiz-why-noise-free-quantum-computing-is-so-difficult" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 7 Quiz: Why Noise-Free Quantum Computing Is So Difficult
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember-questions-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Remember (Questions 1–5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand-questions-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Understand (Questions 6–10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply-questions-1115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Apply (Questions 11–15)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze-questions-1620" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4: Analyze (Questions 16–20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate-questions-2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5: Evaluate (Questions 21–25)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create-questions-2630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6: Create (Questions 26–30)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember-questions-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1: Remember (Questions 1–5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand-questions-610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2: Understand (Questions 6–10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply-questions-1115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3: Apply (Questions 11–15)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze-questions-1620" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4: Analyze (Questions 16–20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate-questions-2125" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5: Evaluate (Questions 21–25)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create-questions-2630" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6: Create (Questions 26–30)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-7-quiz-why-noise-free-quantum-computing-is-so-difficult">Chapter 7 Quiz: Why Noise-Free Quantum Computing Is So Difficult<a class="headerlink" href="#chapter-7-quiz-why-noise-free-quantum-computing-is-so-difficult" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="level-1-remember-questions-15">Level 1: Remember (Questions 1–5)<a class="headerlink" href="#level-1-remember-questions-15" title="Permanent link">&para;</a></h2>
+<p><strong>Question 1.</strong> What are the three fundamental single-qubit error types, and which Pauli operators represent them?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The three fundamental error types are:</p>
+<ul>
+<li><strong>Bit-flip error</strong> — represented by the Pauli <span class="arithmatex">\(X\)</span> operator; maps <span class="arithmatex">\(\ket{0} \leftrightarrow \ket{1}\)</span>.</li>
+<li><strong>Phase-flip error</strong> — represented by the Pauli <span class="arithmatex">\(Z\)</span> operator; maps <span class="arithmatex">\(\ket{+} \leftrightarrow \ket{-}\)</span>, adding a <span class="arithmatex">\(-1\)</span> phase to <span class="arithmatex">\(\ket{1}\)</span>.</li>
+<li><strong>Bit-and-phase-flip error</strong> — represented by the Pauli <span class="arithmatex">\(Y = iXZ\)</span> operator; applies both a bit flip and a phase flip simultaneously.</li>
+</ul>
+<p>Together with the identity <span class="arithmatex">\(I\)</span> (no error), these four operators <span class="arithmatex">\(\{I, X, Y, Z\}\)</span> form the Pauli basis in which any single-qubit error can be decomposed.</p>
+</details>
+<hr />
+<p><strong>Question 2.</strong> Name four distinct physical noise sources specific to superconducting qubits that do not affect trapped-ion qubits.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Four noise sources specific to superconducting (not trapped-ion) qubits:</p>
+<ol>
+<li><strong>Dielectric loss</strong> — microwave photon absorption by two-level system (TLS) defects at material interfaces.</li>
+<li><strong>Quasiparticle poisoning</strong> — broken Cooper pairs tunneling through Josephson junctions.</li>
+<li><strong>Cosmic ray burst errors</strong> — high-energy particles creating quasiparticles that simultaneously depolarize many neighboring qubits.</li>
+<li><strong>ZZ coupling / crosstalk</strong> — always-on parasitic coupling between neighboring transmon qubits via shared bus or substrate.</li>
+</ol>
+<p>(Leakage to <span class="arithmatex">\(\ket{2}, \ket{3}\)</span> states is also specific to weakly-anharmonic transmon systems.)</p>
+</details>
+<hr />
+<p><strong>Question 3.</strong> What is the surface code fault-tolerance threshold, and what does it mean in practical terms?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The surface code fault-tolerance threshold is approximately <span class="arithmatex">\(p_{\text{th}} \approx 1\%\)</span> (physical error rate per gate).</p>
+<p>Practical meaning: if a quantum processor's physical gate error rate is below 1%, then by encoding logical qubits in the surface code and increasing the code distance <span class="arithmatex">\(d\)</span>, the logical error rate can be made arbitrarily small. Conversely, if physical error rates exceed 1%, adding more error correction layers <em>increases</em> logical errors rather than reducing them. Current superconducting processors at 0.1–0.5% two-qubit error rates are below this threshold.</p>
+</details>
+<hr />
+<p><strong>Question 4.</strong> How many physical qubits does the surface code at distance <span class="arithmatex">\(d = 7\)</span> require per logical qubit?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The surface code at distance <span class="arithmatex">\(d\)</span> requires approximately <span class="arithmatex">\(2d^2\)</span> physical qubits per logical qubit.</p>
+<p>At <span class="arithmatex">\(d = 7\)</span>:
+$<span class="arithmatex">\(2 \times 7^2 = 2 \times 49 = 98 \text{ physical qubits per logical qubit}\)</span>$</p>
+<p>(In practice, the exact count depends on boundary conditions and ancilla qubit arrangement, but ~98 is the standard figure cited in the literature.)</p>
+</details>
+<hr />
+<p><strong>Question 5.</strong> What is "motional heating" in trapped-ion qubits, and why does it harm two-qubit gate fidelity?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Motional heating</strong> is the gradual addition of phonons (quanta of vibrational energy) to the shared motional modes of ions in a trap, caused by electric field fluctuations from the trap electrodes (Johnson noise and surface noise from adsorbed molecules).</p>
+<p>It harms two-qubit gate fidelity because trapped-ion two-qubit gates (Mølmer–Sørensen, geometric phase) work by mediating interactions through shared motional modes. The gate assumes the ions are cooled near the motional ground state. Even a few added phonons change the coupling strength, introduce phase errors, and reduce the contrast of the entangling operation — directly lowering gate fidelity.</p>
+</details>
+<hr />
+<h2 id="level-2-understand-questions-610">Level 2: Understand (Questions 6–10)<a class="headerlink" href="#level-2-understand-questions-610" title="Permanent link">&para;</a></h2>
+<p><strong>Question 6.</strong> Explain in your own words why quantum errors are said to be "continuous" and why this initially seems to make quantum error correction impossible — and then explain why syndrome measurement resolves this apparent paradox.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Why errors are continuous:</strong> A physical qubit error is typically a small rotation on the Bloch sphere, such as <span class="arithmatex">\(R_x(\epsilon) = e^{-i\epsilon X/2}\)</span>. The error angle <span class="arithmatex">\(\epsilon\)</span> can take any value in a continuous range, producing an infinite family of distinct error operations. Unlike a classical bit flip (discrete: either happened or did not), a qubit can suffer a rotation of <span class="arithmatex">\(0.001°\)</span> or <span class="arithmatex">\(0.0001°\)</span> — an uncountably infinite set of possible errors.</p>
+<p><strong>Why this seems fatal:</strong> Classical error correction works because errors are discrete (a bit either flipped or did not). If quantum errors are continuous, it seems we would need to distinguish and correct infinitely many different error types — an impossible task.</p>
+<p><strong>How syndrome measurement resolves it:</strong> When we perform a syndrome measurement (measuring commuting stabilizer operators on a group of qubits), the measurement back-projects the continuously-errored state onto one of the four Pauli eigenspaces: <span class="arithmatex">\(\{I, X, Y, Z\}\)</span>. The measurement itself collapses the continuous error into a discrete Pauli. We then correct that discrete Pauli. By the discretization theorem, this correction <em>exactly</em> restores the original encoded state — not approximately, but exactly. The key is that the syndrome reveals which Pauli class the error belongs to without revealing any information about the encoded logical state.</p>
+</details>
+<hr />
+<p><strong>Question 7.</strong> Explain why cosmic ray events are particularly dangerous for quantum error correction, even if individual qubit error rates are well below threshold.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Cosmic ray events are dangerous because they violate a core assumption of most quantum error-correcting codes: that errors on different qubits are <em>independent</em>.</p>
+<p>When a cosmic ray muon or secondary particle strikes a silicon substrate, it deposits ~MeV of energy, creating thousands of quasiparticles. These quasiparticles rapidly diffuse across the chip and depolarize many qubits simultaneously in a correlated burst. In a distance-<span class="arithmatex">\(d\)</span> surface code that can correct up to <span class="arithmatex">\(\lfloor(d-1)/2\rfloor\)</span> errors, a cosmic ray might simultaneously flip dozens of qubits in a region — far exceeding the code's correction capacity in one event.</p>
+<p>Furthermore, the burst is spatially correlated — neighboring qubits are much more likely to fail together. The decoder (which assumes independent errors) will compute a completely wrong error syndrome interpretation, potentially applying incorrect corrections that introduce new logical errors. Mitigations include real-time cosmic ray detection and post-selection, or using codes with better burst-error properties.</p>
+</details>
+<hr />
+<p><strong>Question 8.</strong> Why does leakage to non-computational states <span class="arithmatex">\(\ket{2}\)</span> and <span class="arithmatex">\(\ket{3}\)</span> in superconducting qubits pose a special challenge that standard Pauli-based error correction cannot address directly?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Standard stabilizer codes (including the surface code) are designed to detect and correct errors <em>within</em> the computational subspace spanned by <span class="arithmatex">\(\{\ket{0}, \ket{1}\}\)</span>. The Pauli operators <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>, <span class="arithmatex">\(Z\)</span> all act within this subspace.</p>
+<p>When a transmon qubit leaks to <span class="arithmatex">\(\ket{2}\)</span> or <span class="arithmatex">\(\ket{3}\)</span> (non-computational states), it has <em>left the computational subspace entirely</em>. The stabilizer measurements, which are designed to detect Pauli errors, will not correctly identify leakage as a Pauli error — they may either fail to detect it, or worse, misidentify it as a Pauli error and attempt an incorrect correction.</p>
+<p>The leaked qubit also no longer participates correctly in subsequent stabilizer measurements, corrupting syndrome information for the entire code block. This is why leakage reduction units (LRUs) — active circuits that detect leakage and restore qubits to <span class="arithmatex">\(\ket{0}\)</span> — are essential components of fault-tolerant superconducting architectures, not optional accessories.</p>
+</details>
+<hr />
+<p><strong>Question 9.</strong> Describe the conceptual shift the threshold theorem created in quantum computing. Why was it transformative?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Before the threshold theorem (proven 1997–1998), the quantum computing field faced a seemingly insurmountable obstacle: any real qubit has nonzero noise, so running longer computations only accumulates more errors. Building a <em>useful</em> quantum computer seemed to require physically perfect qubits — an impossible standard.</p>
+<p>The threshold theorem transformed this in two ways:</p>
+<ol>
+<li>
+<p><strong>It replaced an impossible goal with an achievable one.</strong> Instead of "build perfect qubits," the requirement became "build qubits with error rate below <span class="arithmatex">\(p_{\text{th}}\)</span>." This is a finite, measurable engineering target — one that current hardware has demonstrably achieved.</p>
+</li>
+<li>
+<p><strong>It guaranteed a path to arbitrary accuracy.</strong> By concatenating error-correcting codes (or increasing surface code distance), logical error rates can be made exponentially small at the cost of a <em>polynomial</em> overhead in physical resources. Computational power can be scaled by adding more qubits following the same engineering recipe, rather than requiring ever-more-perfect individual qubits.</p>
+</li>
+</ol>
+<p>The theorem did not solve the engineering challenges, but it established that those challenges are <em>finite and scalable</em>, not infinite.</p>
+</details>
+<hr />
+<p><strong>Question 10.</strong> Explain why "number of physical qubits" is a misleading metric for quantum computational power, and what more informative metrics a technically literate buyer should demand.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Physical qubit count is misleading because fault-tolerant quantum computation requires most physical qubits to be devoted to <em>error correction</em>, not direct computation. With the surface code:
+- Distance <span class="arithmatex">\(d = 7\)</span>: ~98 physical qubits per logical qubit
+- Distance <span class="arithmatex">\(d = 17\)</span>: ~578 physical qubits per logical qubit</p>
+<p>A "1,000 physical qubit" processor supports only ~10 fault-tolerant logical qubits at <span class="arithmatex">\(d = 7\)</span>. The raw compute power is orders of magnitude less than the headline number suggests.</p>
+<p>A technically literate buyer should demand:
+1. <strong>Number of fault-tolerant logical qubits</strong> (at specified code distance)
+2. <strong>Physical gate error rate</strong> (especially two-qubit gate fidelity)
+3. <strong>QEC cycle time</strong> (how fast syndrome measurement + correction completes)
+4. <strong>Code distance achievable</strong> (determines logical error rate per cycle)
+5. <strong>Connectivity</strong> (nearest-neighbor limits gate compilation overhead)</p>
+<p>Without these five numbers, a qubit count is a marketing figure, not an engineering specification.</p>
+</details>
+<hr />
+<h2 id="level-3-apply-questions-1115">Level 3: Apply (Questions 11–15)<a class="headerlink" href="#level-3-apply-questions-1115" title="Permanent link">&para;</a></h2>
+<p><strong>Question 11.</strong> A trapped-ion system has <span class="arithmatex">\(T_2 = 8\)</span> seconds and a two-qubit gate time of <span class="arithmatex">\(t_g = 200\ \mu\text{s}\)</span>. What is the maximum circuit depth (in two-qubit gate layers) this system can support before decoherence dominates?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Using the circuit depth formula:</p>
+<div class="arithmatex">\[d_{\max} \approx \frac{T_2}{t_{\text{gate}}} = \frac{8\ \text{s}}{200 \times 10^{-6}\ \text{s}} = \frac{8}{2 \times 10^{-4}} = 40{,}000 \text{ gate layers}\]</div>
+<p>This system can support approximately <strong>40,000 sequential two-qubit gate layers</strong> before decoherence becomes dominant. Note that this 40,000-layer circuit would take <span class="arithmatex">\(40{,}000 \times 200\ \mu\text{s} = 8\)</span> seconds per execution — long compared to a superconducting system executing 40,000 layers in <span class="arithmatex">\(\sim 2\)</span> ms.</p>
+</details>
+<hr />
+<p><strong>Question 12.</strong> A neutral atom platform has <span class="arithmatex">\(T_2 = 3\)</span> seconds, a two-qubit gate time of <span class="arithmatex">\(t_g = 2\ \mu\text{s}\)</span>, and a two-qubit gate fidelity of 99.6% (error rate <span class="arithmatex">\(p_{2q} = 0.004\)</span>). At what circuit depth does the gate fidelity contribution alone reduce total circuit fidelity below 50%?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Using the circuit fidelity formula:</p>
+<div class="arithmatex">\[F_{\text{circuit}} = (1 - p_{2q})^n = (0.996)^n\]</div>
+<p>Setting <span class="arithmatex">\(F = 0.50\)</span>:</p>
+<div class="arithmatex">\[0.50 = (0.996)^n\]</div>
+<div class="arithmatex">\[n = \frac{\ln 0.50}{\ln 0.996} = \frac{-0.6931}{-0.004008} \approx 173 \text{ gates}\]</div>
+<p>The circuit fidelity due to gate errors alone drops below 50% after approximately <strong>173 two-qubit gates</strong>.</p>
+<p>By comparison, the coherence depth:</p>
+<div class="arithmatex">\[d_{\max} = \frac{3}{2 \times 10^{-6}} = 1{,}500{,}000 \text{ gate layers}\]</div>
+<p>The gate fidelity (not decoherence) is the binding constraint for this system at these parameters. Gate fidelity improvement, not longer coherence time, is the priority.</p>
+</details>
+<hr />
+<p><strong>Question 13.</strong> Using the surface code logical error rate formula <span class="arithmatex">\(p_L \approx A(p/p_{\text{th}})^{\lfloor(d+1)/2\rfloor}\)</span> with <span class="arithmatex">\(A = 0.1\)</span> and <span class="arithmatex">\(p_{\text{th}} = 1\%\)</span>, calculate the logical error rate per QEC cycle for a physical error rate of <span class="arithmatex">\(p = 0.5\%\)</span> at code distances <span class="arithmatex">\(d = 5\)</span>, <span class="arithmatex">\(d = 7\)</span>, and <span class="arithmatex">\(d = 9\)</span>. What does the trend tell you?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Error ratio:</strong> <span class="arithmatex">\(p/p_{\text{th}} = 0.5\%/1\% = 0.5\)</span></p>
+<p><strong>At <span class="arithmatex">\(d = 5\)</span>:</strong>
+$<span class="arithmatex">\(\text{Exponent} = \left\lfloor\frac{6}{2}\right\rfloor = 3\)</span>$
+$<span class="arithmatex">\(p_L = 0.1 \times (0.5)^3 = 0.1 \times 0.125 = 0.0125 = 1.25\%\)</span>$</p>
+<p><strong>At <span class="arithmatex">\(d = 7\)</span>:</strong>
+$<span class="arithmatex">\(\text{Exponent} = \left\lfloor\frac{8}{2}\right\rfloor = 4\)</span>$
+$<span class="arithmatex">\(p_L = 0.1 \times (0.5)^4 = 0.1 \times 0.0625 = 6.25 \times 10^{-3} = 0.625\%\)</span>$</p>
+<p><strong>At <span class="arithmatex">\(d = 9\)</span>:</strong>
+$<span class="arithmatex">\(\text{Exponent} = \left\lfloor\frac{10}{2}\right\rfloor = 5\)</span>$
+$<span class="arithmatex">\(p_L = 0.1 \times (0.5)^5 = 0.1 \times 0.03125 = 3.125 \times 10^{-3} = 0.3125\%\)</span>$</p>
+<p><strong>Trend:</strong> Each time <span class="arithmatex">\(d\)</span> increases by 2, the logical error rate decreases by a factor of <span class="arithmatex">\(0.5\)</span> (halves). This is because <span class="arithmatex">\(p/p_{\text{th}} = 0.5 &lt; 1\)</span>, so the exponent increase multiplies by another factor of <span class="arithmatex">\(0.5\)</span>. The suppression is modest here because <span class="arithmatex">\(p = 0.5\%\)</span> is only <span class="arithmatex">\(2\times\)</span> below threshold. Improving physical error rates to 0.1% would give <span class="arithmatex">\((0.1)^4 = 10^{-4}\)</span> at <span class="arithmatex">\(d=7\)</span> — a <span class="arithmatex">\(10{,}000\times\)</span> better suppression ratio.</p>
+</details>
+<hr />
+<p><strong>Question 14.</strong> A quantum computer uses the surface code with <span class="arithmatex">\(d = 17\)</span>. A proposed algorithm for RSA-2048 requires 4,000 logical qubits. Calculate the required number of physical qubits.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Physical qubits per logical qubit (surface code, <span class="arithmatex">\(d = 17\)</span>):</p>
+<div class="arithmatex">\[N_{\text{phys/log}} \approx 2d^2 = 2 \times 17^2 = 2 \times 289 = 578\]</div>
+<p>Total physical qubits required:</p>
+<div class="arithmatex">\[N_{\text{total}} = 4{,}000 \times 578 = 2{,}312{,}000 \approx 2.3 \text{ million physical qubits}\]</div>
+<p>For context, current leading processors have ~1,000–2,000 physical qubits. The gap to RSA-2048 is approximately three orders of magnitude in physical qubit count (even before considering magic state distillation overhead for non-Clifford gates, which may add another factor of 2–5).</p>
+</details>
+<hr />
+<p><strong>Question 15.</strong> IBM's gross code <span class="arithmatex">\([[144, 12, 12]]\)</span> encodes 12 logical qubits into 144 data qubits plus 144 ancilla qubits (288 physical total). How many physical qubits would a surface code require to encode the same 12 logical qubits at <span class="arithmatex">\(d = 12\)</span>, and what is the improvement ratio?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Surface code at <span class="arithmatex">\(d = 12\)</span>, per logical qubit:</strong></p>
+<div class="arithmatex">\[N_{\text{phys/log}}^{\text{SC}} \approx 2 \times 12^2 = 288\]</div>
+<p><strong>For 12 logical qubits (surface code):</strong></p>
+<div class="arithmatex">\[N_{\text{SC}} = 12 \times 288 = 3{,}456 \text{ physical qubits}\]</div>
+<p>(Note: each logical qubit in the surface code also needs ~288 ancilla qubits for syndrome extraction, so the true surface code count per logical qubit at <span class="arithmatex">\(d=12\)</span> is ~576 total; let's use 576 for fair comparison.)</p>
+<div class="arithmatex">\[N_{\text{SC, total}} = 12 \times 576 = 6{,}912 \text{ physical qubits}\]</div>
+<p><strong>Gross code:</strong> 288 physical qubits for 12 logical qubits.</p>
+<p><strong>Improvement ratio:</strong></p>
+<div class="arithmatex">\[\text{Ratio} = \frac{6{,}912}{288} = 24\]</div>
+<p>The gross code achieves <strong>24× better physical qubit efficiency</strong> than the surface code at equivalent distance and logical qubit count. This is the core argument for qLDPC codes in next-generation fault-tolerant architectures.</p>
+</details>
+<hr />
+<h2 id="level-4-analyze-questions-1620">Level 4: Analyze (Questions 16–20)<a class="headerlink" href="#level-4-analyze-questions-1620" title="Permanent link">&para;</a></h2>
+<p><strong>Question 16.</strong> The following table shows two hypothetical quantum processors. Analyze which is better suited for (a) a deep variational circuit requiring 10,000 gate layers, and (b) a shallow circuit requiring 100 gate layers repeated 1,000,000 times to estimate expectation values.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th><span class="arithmatex">\(T_2\)</span></th>
+<th>2Q gate time</th>
+<th>2Q gate fidelity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System A</td>
+<td>5 s</td>
+<td>500 μs</td>
+<td>99.95%</td>
+</tr>
+<tr>
+<td>System B</td>
+<td>300 μs</td>
+<td>30 ns</td>
+<td>99.6%</td>
+</tr>
+</tbody>
+</table>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Circuit depth capacities:</strong>
+- System A: <span class="arithmatex">\(d_{\max} = 5 / (500 \times 10^{-6}) = 10{,}000\)</span> gate layers
+- System B: <span class="arithmatex">\(d_{\max} = (300 \times 10^{-6}) / (30 \times 10^{-9}) = 10{,}000\)</span> gate layers</p>
+<p>Both systems have similar maximum depth! So circuit depth is not the differentiator here.</p>
+<p><strong>Fidelity after 10,000 gates:</strong>
+- System A: <span class="arithmatex">\((0.9995)^{10{,}000} = e^{10{,}000 \times \ln 0.9995} \approx e^{-5.0} \approx 0.007\)</span> (0.7%)
+- System B: <span class="arithmatex">\((0.996)^{10{,}000} = e^{10{,}000 \times \ln 0.996} \approx e^{-40.2} \approx 4 \times 10^{-18}\)</span> (essentially zero)</p>
+<p><strong>(a) Deep circuit (10,000 layers):</strong> System A is clearly better. System B's lower gate fidelity (99.6% vs. 99.95%) completely destroys fidelity in a deep circuit. The superior gate fidelity of System A dominates.</p>
+<p><strong>Time per circuit repetition:</strong>
+- System A: <span class="arithmatex">\(10{,}000 \times 500\ \mu\text{s} = 5\)</span> seconds per shot
+- System B: <span class="arithmatex">\(10{,}000 \times 30\ \text{ns} = 0.3\)</span> ms per shot</p>
+<p><strong>(b) Shallow circuit repeated <span class="arithmatex">\(10^6\)</span> times:</strong> System B is vastly better. Despite lower gate fidelity, the circuit is shallow (100 gates): System B fidelity = <span class="arithmatex">\((0.996)^{100} \approx 0.67\)</span>; System A fidelity = <span class="arithmatex">\((0.9995)^{100} \approx 0.95\)</span>. Both are usable. But System B completes <span class="arithmatex">\(10^6\)</span> repetitions in <span class="arithmatex">\(10^6 \times 100 \times 30\ \text{ns} = 3\)</span> seconds; System A needs <span class="arithmatex">\(10^6 \times 100 \times 500\ \mu\text{s} = 50{,}000\)</span> seconds (14 hours). System B wins decisively on throughput.</p>
+</details>
+<hr />
+<p><strong>Question 17.</strong> Analyze the following vendor claim: "Our 500-qubit quantum processor has achieved 99.5% two-qubit gate fidelity, making it ready for fault-tolerant computation." Identify at least three separate reasons this claim may be misleading or incomplete.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Three reasons the claim is misleading or incomplete:</p>
+<ol>
+<li>
+<p><strong>Physical vs. logical qubits confusion.</strong> "500 qubits" refers to physical qubits. With the surface code at <span class="arithmatex">\(d = 7\)</span>, this supports only <span class="arithmatex">\(500/98 \approx 5\)</span> logical qubits — far too few for any practically useful fault-tolerant algorithm.</p>
+</li>
+<li>
+<p><strong>"99.5% fidelity" may not be below threshold in context.</strong> While 99.5% (0.5% error rate) is below the nominal surface code threshold of ~1%, the threshold assumes certain noise models (local, independent errors). If the processor has significant correlated errors (crosstalk, cosmic rays), the effective threshold may be much lower, and 99.5% fidelity may not actually be below the operational threshold.</p>
+</li>
+<li>
+<p><strong>"Ready for fault-tolerant computation" ignores multiple required components.</strong> Fault-tolerant computation requires not just high gate fidelity but also: (a) high measurement fidelity for syndrome extraction; (b) fast classical decoding (must complete in &lt;1 μs per cycle); (c) leakage reduction units (for superconducting qubits); (d) multiple rounds of measurement for reliable syndrome extraction; (e) a complete compiler stack for logical gates. High gate fidelity alone is necessary but far from sufficient.</p>
+</li>
+</ol>
+<p><strong>Bonus:</strong> The claim also doesn't specify whether 99.5% is an <em>average</em> across all qubit pairs or a <em>worst-case</em> fidelity. A few bad qubits in a surface code can dramatically increase logical error rates.</p>
+</details>
+<hr />
+<p><strong>Question 18.</strong> The Gidney–Ekerå 2021 estimate required ~20 million physical qubits for RSA-2048 in 8 hours. The 2025 Gidney estimate reduced this to under 1 million physical qubits. Analyze what categories of improvement could account for this ~20× reduction in physical qubit overhead.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The ~20× reduction likely comes from multiple compounding improvements across three categories:</p>
+<p><strong>1. Algorithmic improvements (~3–5× contribution):</strong>
+- More efficient quantum arithmetic circuits for modular exponentiation (reduced gate count per Shor step)
+- Better window techniques for classical preprocessing
+- Improved quantum phase estimation algorithms requiring fewer repetitions
+- Better classical–quantum co-optimization</p>
+<p><strong>2. Error-correcting code efficiency (~5–10× contribution):</strong>
+- The 2021 estimate used surface code; the 2025 estimate used bivariate bicycle (gross) codes
+- Gross code: ~24 physical/logical vs. surface code: ~576 physical/logical at <span class="arithmatex">\(d = 12\)</span> → 24× overhead reduction
+- However, not the full 24× because not all qubits benefit equally (magic state factories may still use surface codes in part)</p>
+<p><strong>3. Improved logical gate compilation (~2–3× contribution):</strong>
+- More efficient lattice surgery protocols for logical Clifford gates
+- Better magic state distillation protocols (fewer T gates needed, or higher-rate distillation)
+- Better classical compilation reducing total circuit depth (fewer logical gate cycles needed)</p>
+<p>These improvements compound multiplicatively, readily accounting for 20× or more. This illustrates that resource estimation in quantum computing is highly sensitive to algorithmic and software optimization — not just hardware.</p>
+</details>
+<hr />
+<p><strong>Question 19.</strong> Compare and contrast the dominant decoherence mechanisms in superconducting qubits vs. neutral atom qubits. Which platform has a fundamentally different <em>type</em> of error (not just magnitude), and why does this matter for error correction?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Superconducting qubits — dominant mechanisms:</strong>
+- <span class="arithmatex">\(T_1\)</span> (energy relaxation): primarily dielectric loss from TLS defects at material interfaces → amplitude damping errors
+- <span class="arithmatex">\(T_2\)</span> (dephasing): ZZ crosstalk, charge noise, flux noise, magnetic field fluctuations → dephasing errors
+- Leakage: transitions to <span class="arithmatex">\(\ket{2}, \ket{3}\)</span> states → errors <em>outside</em> the computational subspace
+- Burst errors: cosmic rays → spatially correlated errors</p>
+<p><strong>Neutral atoms — dominant mechanisms:</strong>
+- Atom loss: atoms leave the trap entirely → <em>erasure</em> errors (qubit removed from register)
+- Rydberg state decay: limits gate time but is a standard amplitude damping error within the qubit subspace
+- Position fluctuations: gate-to-gate variation in interaction strength → coherent overrotation errors</p>
+<p><strong>Fundamentally different error type:</strong> Neutral atoms have a significant <em>erasure</em> error channel — the atom simply disappears. Erasure errors are actually <em>easier</em> to correct than Pauli errors because the code knows <em>which</em> qubit was lost (the trap detects absence). An erasure error at a known location is roughly twice as correctable as an unknown Pauli error: a distance-<span class="arithmatex">\(d\)</span> surface code can correct <span class="arithmatex">\(\lfloor(d-1)/2\rfloor\)</span> unknown Pauli errors but <span class="arithmatex">\(d-1\)</span> known erasures.</p>
+<p><strong>Why it matters for QEC:</strong> Neutral atom platforms may achieve lower overhead for fault-tolerant computation than superconducting qubits <em>not</em> because of lower raw error rates, but because their dominant error mode (erasure) is more correctable. Recent theoretical work (Wu et al., 2022) showed erasure-dominated noise models allow QEC thresholds significantly above 1%.</p>
+</details>
+<hr />
+<p><strong>Question 20.</strong> The threshold theorem states that logical error rates decrease exponentially as code distance increases. Yet the Gidney–Ekerå calculation still required millions of physical qubits for RSA-2048. Analyze why exponential suppression of errors does not translate to modest overhead.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The apparent paradox resolves by examining <em>what error rate is required</em> for RSA-2048.</p>
+<p><strong>The target logical error rate:</strong> Shor's algorithm on RSA-2048 requires approximately <span class="arithmatex">\(10^{10}\)</span>–<span class="arithmatex">\(10^{12}\)</span> logical gate operations. For the computation to succeed with high probability (say, 99%), the logical error rate per gate must be below roughly <span class="arithmatex">\(10^{-12}\)</span> to <span class="arithmatex">\(10^{-14}\)</span>.</p>
+<p><strong>What distance achieves this?</strong> Using <span class="arithmatex">\(p_L = 0.1 \times (0.1)^{\lfloor(d+1)/2\rfloor}\)</span> (at <span class="arithmatex">\(p = 0.1\%\)</span>, <span class="arithmatex">\(p_{\text{th}} = 1\%\)</span>):</p>
+<ul>
+<li><span class="arithmatex">\(d = 7\)</span>: <span class="arithmatex">\(p_L = 10^{-5}\)</span> — far too high</li>
+<li><span class="arithmatex">\(d = 17\)</span>: <span class="arithmatex">\(p_L = 0.1 \times (0.1)^9 = 10^{-10}\)</span> — still marginal</li>
+<li><span class="arithmatex">\(d = 21\)</span>: <span class="arithmatex">\(p_L = 0.1 \times (0.1)^{11} = 10^{-12}\)</span> — approaching sufficient</li>
+</ul>
+<p><strong>The overhead:</strong> Distance <span class="arithmatex">\(d = 21\)</span> requires <span class="arithmatex">\(\approx 2 \times 21^2 = 882\)</span> physical qubits per logical qubit. With 4,000 logical qubits: <span class="arithmatex">\(4{,}000 \times 882 \approx 3.5\)</span> million physical qubits — even before accounting for magic state factory overhead.</p>
+<p><strong>The key insight:</strong> Exponential suppression is <em>exponential in code distance</em>, not in qubit count. And distance grows only as the <em>square root</em> of qubit count: <span class="arithmatex">\(d \propto \sqrt{N_{\text{phys}}}\)</span>. So reducing logical error rate by <span class="arithmatex">\(10\times\)</span> requires <span class="arithmatex">\(10\times\)</span> more gate overhead (increase exponent by 1), which requires increasing <span class="arithmatex">\(d\)</span> by 2, which increases qubit count by <span class="arithmatex">\(\sim 2d^2/(2(d-2)^2) \approx (d/(d-2))^2\)</span> — sub-linearly, but still substantial. The overhead is manageable per qubit but large in absolute terms when 4,000 high-fidelity logical qubits are needed simultaneously.</p>
+</details>
+<hr />
+<h2 id="level-5-evaluate-questions-2125">Level 5: Evaluate (Questions 21–25)<a class="headerlink" href="#level-5-evaluate-questions-2125" title="Permanent link">&para;</a></h2>
+<p><strong>Question 21.</strong> Evaluate the following argument: "Since IBM has demonstrated 99.9% single-qubit gate fidelity, single-qubit errors are negligible for fault-tolerant quantum computing, and all research effort should focus exclusively on improving two-qubit gate fidelity."</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>The argument is partially correct but oversimplified.</strong> A more nuanced evaluation:</p>
+<p><strong>Where it is correct:</strong>
+- Two-qubit gate error rates (0.1–0.5%) are indeed 5–50× higher than single-qubit rates (~0.1%), so they dominate the error budget in typical circuits.
+- In fault-tolerant circuit compilations, CNOT gates are approximately 10× more frequent than single-qubit rotations (for many algorithms), compounding the two-qubit gate dominance.</p>
+<p><strong>Where it is wrong or incomplete:</strong>
+1. <strong>Measurement errors are often comparable to or worse than single-qubit gate errors.</strong> Syndrome extraction requires high-fidelity ancilla measurements; 99%+ measurement fidelity is typical but still contributes significantly to the logical error budget. Measurement errors require multiple rounds of syndrome measurement to resolve.
+2. <strong>Leakage during single-qubit gates is non-negligible.</strong> Even a 99.9% single-qubit gate can have leakage errors at the <span class="arithmatex">\(10^{-4}\)</span> level that are disproportionately harmful because they escape the QEC subspace.
+3. <strong>Idle errors accumulate.</strong> When two-qubit gates run on some qubits, neighboring qubits idle and experience dephasing. Reducing T1/T2 (which matters for idle qubits) improves the overall logical error rate even if gate fidelity is unchanged.
+4. <strong>The holistic error budget matters.</strong> At sufficiently low two-qubit error rates, single-qubit errors and measurement errors can become the new bottleneck. Balanced improvement across all error channels is ultimately necessary.</p>
+<p><strong>Verdict:</strong> Prioritizing two-qubit gate fidelity is <em>currently</em> correct, but the categorical statement that single-qubit errors are "negligible" and deserve zero research attention is wrong. Fault-tolerant operation requires all error channels to be below threshold.</p>
+</details>
+<hr />
+<p><strong>Question 22.</strong> Evaluate whether the following claim constitutes a realistic timeline for commercial advantage: "Our roadmap shows 10,000 physical qubits by 2027. This will be sufficient for commercially relevant fault-tolerant quantum computing."</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Assessment: The claim is almost certainly misleading, for quantifiable reasons.</strong></p>
+<p><strong>Physical qubit to logical qubit conversion:</strong>
+- Surface code at <span class="arithmatex">\(d = 7\)</span>: <span class="arithmatex">\(10{,}000 / 98 \approx 102\)</span> logical qubits
+- Surface code at <span class="arithmatex">\(d = 17\)</span>: <span class="arithmatex">\(10{,}000 / 578 \approx 17\)</span> logical qubits
+- Gross code at <span class="arithmatex">\(d = 12\)</span>: <span class="arithmatex">\(10{,}000 / 24 \approx 417\)</span> logical qubits</p>
+<p>Even under the optimistic gross code scenario with perfect implementation, 10,000 physical qubits yields ~417 logical qubits.</p>
+<p><strong>What is commercially relevant fault-tolerant QC?</strong> Current best estimates suggest:
+- Useful quantum chemistry (e.g., accurate FeMoco nitrogenase simulation): ~1,000–2,000 logical qubits
+- Grover's search over useful databases: &gt;1,000 logical qubits for advantage
+- RSA-2048 cryptography: ~4,000 logical qubits
+- Optimization problems at enterprise scale: 1,000+ logical qubits</p>
+<p><strong>Evaluation:</strong> 10,000 physical qubits is insufficient for any currently known commercially relevant fault-tolerant application, even with the most efficient QEC codes. The claim conflates physical and logical qubits and does not account for the magic state distillation overhead (which consumes a large fraction of physical qubits for T-gate factory purposes). A reviewer should push back and ask: "How many logical qubits at what distance, including magic state distillation overhead?"</p>
+<p>A <em>technically honest</em> version of this claim would be: "10,000 physical qubits represents approximately 100–400 fault-tolerant logical qubits depending on the error-correcting code — sufficient for early fault-tolerant demonstrations but not yet commercially relevant algorithms."</p>
+</details>
+<hr />
+<p><strong>Question 23.</strong> The Google Willow chip achieved <span class="arithmatex">\(\Lambda = 2.14\)</span> (the error suppression factor when increasing surface code distance by 2). Evaluate whether this result is significant, given that the theoretical maximum <span class="arithmatex">\(\Lambda\)</span> for a perfect surface code at these parameters would be <span class="arithmatex">\(1/p_{\text{th}}^{-1} \approx 10\)</span>. Is <span class="arithmatex">\(\Lambda = 2.14\)</span> a cause for celebration or concern?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Evaluation: <span class="arithmatex">\(\Lambda = 2.14\)</span> is genuinely significant, though far from the theoretical maximum — and this combination makes it both a cause for celebration and a clear indicator of how much further work remains.</strong></p>
+<p><strong>Why it is significant:</strong>
+- <span class="arithmatex">\(\Lambda &gt; 1\)</span> means increasing distance <em>reduces</em> logical error rate. This is the defining criterion for being "below threshold." Before Google Willow, no experiment had demonstrated <span class="arithmatex">\(\Lambda &gt; 1\)</span> reliably in hardware. This was the first experimental proof that the surface code's exponential error suppression actually works in practice.
+- The result was reproducible across distances <span class="arithmatex">\(d = 3, 5, 7\)</span> and consistent with theoretical models — indicating systematic, not accidental, behavior.</p>
+<p><strong>Why the gap from <span class="arithmatex">\(\Lambda \approx 10\)</span> matters:</strong>
+- Theoretical <span class="arithmatex">\(\Lambda\)</span> depends on how far below threshold the physical error rate is. At <span class="arithmatex">\(p/p_{\text{th}} = 0.2\)</span> (physical error rate 0.2%, threshold 1%), theory predicts <span class="arithmatex">\(\Lambda \sim 1/0.2 = 5\)</span> (roughly). The gap between <span class="arithmatex">\(\sim 5\)</span> and <span class="arithmatex">\(2.14\)</span> suggests the effective threshold in Willow's noise model is closer to <span class="arithmatex">\(p_{\text{th}} \approx 0.7\%\)</span> (not 1%), consistent with the report. This means the Willow processor is operating less comfortably below threshold than headline numbers suggest.
+- To achieve large-scale fault-tolerant computation efficiently, <span class="arithmatex">\(\Lambda\)</span> values of 5–10 are needed to suppress logical errors to <span class="arithmatex">\(&lt;10^{-12}\)</span> without requiring unreasonably large distances.</p>
+<p><strong>Overall verdict:</strong> <span class="arithmatex">\(\Lambda = 2.14\)</span> is a landmark experimental result demonstrating the surface code works as theoretically predicted. It is cause for celebration as a proof of principle. The gap from the theoretical maximum is cause for continued engineering effort on gate fidelity, leakage suppression, and decoder performance — not cause for alarm.</p>
+</details>
+<hr />
+<p><strong>Question 24.</strong> A company claims their trapped-ion system is "obviously better" than superconducting for fault-tolerant computing because <span class="arithmatex">\(T_2(\text{ion}) \gg T_2(\text{SC})\)</span>. Evaluate this claim rigorously.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Evaluation: The claim is a significant oversimplification. Coherence time alone does not determine fault-tolerant computing capability. At least four other factors complicate or contradict it:</strong></p>
+<p><strong>1. Gate time matters as much as coherence time.</strong>
+The figure of merit for circuit depth is <span class="arithmatex">\(T_2/t_{\text{gate}}\)</span>, not <span class="arithmatex">\(T_2\)</span> alone. Trapped ions: <span class="arithmatex">\(T_2 \sim 10\)</span> s, <span class="arithmatex">\(t_g \sim 100\ \mu\text{s}\)</span> → depth <span class="arithmatex">\(\sim 10^5\)</span>. Superconducting: <span class="arithmatex">\(T_2 \sim 200\ \mu\text{s}\)</span>, <span class="arithmatex">\(t_g \sim 50\ \text{ns}\)</span> → depth <span class="arithmatex">\(\sim 4{,}000\)</span>. Ions win on depth but by only ~25×, not orders of magnitude.</p>
+<p><strong>2. QEC cycle time determines throughput.</strong>
+A fault-tolerant algorithm requires thousands of QEC cycles, each consisting of syndrome extraction, classical decoding, and correction. Trapped-ion QEC cycles take milliseconds; superconducting cycles take ~1 μs. For a 10-second algorithm needing <span class="arithmatex">\(10^4\)</span> QEC cycles: trapped ions need <span class="arithmatex">\(10^4 \times 1\ \text{ms} = 10\ \text{s}\)</span>; superconducting needs <span class="arithmatex">\(10^4 \times 1\ \mu\text{s} = 10\ \text{ms}\)</span> — 1,000× faster.</p>
+<p><strong>3. Two-qubit gate fidelity is what actually determines the threshold margin.</strong>
+If a trapped-ion system achieves 99.9% two-qubit fidelity (not all do; Quantinuum's H2 achieves this, but with slow gates), it is only 3× below threshold — comparable to or only modestly better than superconducting. The threshold margin, not raw coherence, determines how easily fault-tolerant operation is achieved.</p>
+<p><strong>4. Qubit count scalability.</strong>
+Trapped-ion systems with ~50–100 qubits face significant engineering challenges in scaling to thousands of qubits (ion chain stability, addressing, trap complexity). Superconducting systems are manufactured using standard lithography and have scaled to 1,000+ qubits. At the physical qubit counts needed for fault-tolerant computation (~100,000+), scalability constraints may dominate.</p>
+<p><strong>Verdict:</strong> The claim ignores gate time, QEC cycle time, threshold margin, and scalability. A complete evaluation requires all four. Trapped ions currently lead on gate fidelity and <span class="arithmatex">\(T_2/t_{\text{gate}}\)</span>; superconducting leads on clock speed and scalability. Neither is "obviously better" for fault-tolerant computing.</p>
+</details>
+<hr />
+<p><strong>Question 25.</strong> Evaluate the significance of the threshold theorem's existence vs. its practical implications. Could a threshold theorem result that required <span class="arithmatex">\(p &lt; 10^{-10}\)</span> (instead of <span class="arithmatex">\(p &lt; 10^{-2}\)</span>) still be called a transformative result?</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Evaluation: The existence of the theorem is transformative regardless of the specific threshold value, but the <em>practical</em> value depends critically on whether the threshold is achievable.</strong></p>
+<p><strong>Why existence alone matters:</strong>
+The threshold theorem was conceptually transformative because it proved for the first time that <em>fault-tolerant quantum computation is possible in principle</em>, regardless of noise. Before 1997, no theoretical argument ruled out the possibility that any noise level, however small, would prevent useful computation. The theorem established that a finite noise ceiling exists below which computation is possible. This existential result changed the entire intellectual trajectory of the field.</p>
+<p><strong>Why the specific value matters enormously for practice:</strong>
+If <span class="arithmatex">\(p_{\text{th}} = 10^{-10}\)</span> (rather than <span class="arithmatex">\(10^{-2}\)</span>), achieving this physically would require:
+- Gate error rates 8 orders of magnitude below current best values
+- Temperature and isolation requirements possibly violating thermodynamic constraints
+- Timescales for achieving this experimentally measured in centuries</p>
+<p>A threshold at <span class="arithmatex">\(10^{-10}\)</span> would be a mathematical existence theorem with no engineering path to realization — analogous to knowing that nuclear fusion is possible in principle but being unable to achieve net energy gain. The theoretical result would be important but not <em>practically</em> transformative.</p>
+<p><strong>The surface code threshold at ~1% is transformative precisely because it is achievable.</strong> Current 0.1–0.5% error rates are measurably below threshold. The gap between theory and experiment was bridged within ~25 years. This tight coupling between theoretical threshold and experimental capability is what makes the threshold theorem not just intellectually important but economically and strategically significant.</p>
+<p><strong>Conclusion:</strong> A threshold at <span class="arithmatex">\(10^{-10}\)</span> would retain its existential philosophical importance but would not be practically transformative in any near-term engineering sense. The specific value of ~1% for the surface code is what elevates the theorem from theoretical curiosity to engineering roadmap.</p>
+</details>
+<hr />
+<h2 id="level-6-create-questions-2630">Level 6: Create (Questions 26–30)<a class="headerlink" href="#level-6-create-questions-2630" title="Permanent link">&para;</a></h2>
+<p><strong>Question 26.</strong> Design a noise benchmarking protocol for a quantum processor that a technically literate procurement team could use to independently validate vendor fidelity claims before signing a contract. Your protocol should be executable in under 30 minutes on any quantum cloud API.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Proposed Protocol: Independent Fidelity Validation Suite (IFVS)</strong></p>
+<p><strong>Component 1: Randomized Benchmarking (RB) for two-qubit gates (~10 minutes)</strong>
+- Run standard Clifford-based randomized benchmarking across all qubit pairs
+- Sequence lengths: 1, 2, 5, 10, 20, 50, 100 Clifford gates
+- 200 random sequences per length, 1,024 shots each
+- Extract exponential decay constant → average error per Clifford gate
+- Compare with vendor-reported values; discrepancy &gt;2× warrants rejection</p>
+<p><strong>Component 2: Interleaved RB for CNOT gates (~5 minutes)</strong>
+- Interleave CNOT between Clifford gates in RB sequences for the 10 worst-reported qubit pairs
+- Ratio of IRB to RB decay constants gives CNOT-specific error rate
+- This specifically targets the metric most relevant to circuit performance</p>
+<p><strong>Component 3: Crosstalk Detection (~5 minutes)</strong>
+- Run simultaneous RB on spatially separated qubit pairs (neighboring pairs active simultaneously)
+- Compare error rates to isolated RB; increase &gt;20% indicates significant crosstalk
+- Also run "dressed" T1/T2 measurements with neighboring qubits actively driven</p>
+<p><strong>Component 4: Measurement Fidelity Matrix (~5 minutes)</strong>
+- Prepare all computational basis states for a representative 10-qubit register
+- Measure 10,000 times each; extract confusion matrix
+- Verify diagonal elements (correct assignment probability) exceed 99%</p>
+<p><strong>Component 5: Leakage Detection (~5 minutes)</strong>
+- Run leakage randomized benchmarking on 10 representative qubits
+- Measure population in <span class="arithmatex">\(\ket{2}\)</span> state after known gate sequences
+- Leakage exceeding 0.1% per gate raises concerns for fault-tolerant use</p>
+<p><strong>Decision criteria:</strong> Accept if: (1) CNOT fidelity ≥ 99.5% across ≥90% of qubit pairs, (2) measurement fidelity ≥ 99% across all qubits, (3) crosstalk increase &lt;20%, (4) leakage &lt;0.1% per CNOT.</p>
+</details>
+<hr />
+<p><strong>Question 27.</strong> Construct a mathematical argument explaining why increasing physical qubit count without improving gate fidelity cannot arbitrarily extend the boundary of classically intractable problems solvable by a noisy quantum computer.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Argument:</strong></p>
+<p>Let <span class="arithmatex">\(n\)</span> be the number of physical qubits and <span class="arithmatex">\(p\)</span> the per-gate error rate. A circuit of depth <span class="arithmatex">\(D\)</span> (sequential layers) using all <span class="arithmatex">\(n\)</span> qubits has roughly <span class="arithmatex">\(nD/2\)</span> two-qubit gates (assuming each layer involves <span class="arithmatex">\(n/2\)</span> parallel CNOT gates).</p>
+<p><strong>Circuit fidelity:</strong></p>
+<div class="arithmatex">\[F \approx (1-p)^{nD/2} = e^{-(nD/2) p}\]</div>
+<p>For the output to be distinguishable from noise, we need <span class="arithmatex">\(F &gt; F_{\text{noise}} \approx 2^{-n}\)</span> (the fidelity achievable by random guessing). This requires:</p>
+<div class="arithmatex">\[e^{-nDp/2} &gt; 2^{-n}\]</div>
+<div class="arithmatex">\[-\frac{nDp}{2} &gt; -n\ln 2\]</div>
+<div class="arithmatex">\[D &lt; \frac{2\ln 2}{p}\]</div>
+<p><strong>Key result:</strong> The maximum useful circuit depth is <span class="arithmatex">\(D_{\max} = 2\ln 2 / p \approx 1.4/p\)</span>, independent of <span class="arithmatex">\(n\)</span>!</p>
+<p>Adding more qubits (increasing <span class="arithmatex">\(n\)</span>) does <em>not</em> increase the maximum useful depth — it only increases the <em>width</em> of circuits that can be run at that fixed depth. The boundary of classically intractable problems scales with both depth and width together. Problems requiring depth greater than <span class="arithmatex">\(1.4/p\)</span> cannot be solved regardless of how many qubits are available.</p>
+<p>Specifically: to solve a problem requiring <span class="arithmatex">\(D &gt; 1.4/p\)</span> operations, one must either (1) improve <span class="arithmatex">\(p\)</span> below <span class="arithmatex">\(1.4/D\)</span> or (2) use quantum error correction to achieve lower logical error rates. Simply adding more physical qubits at the same fidelity provides no additional help for those problems.</p>
+</details>
+<hr />
+<p><strong>Question 28.</strong> You are advising a financial institution contemplating a 5-year quantum computing strategy. Create a decision framework that maps specific quantum hardware milestones to specific organizational preparedness actions, incorporating what you know about the threshold theorem, qubit overhead, and coherence constraints.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Five-Year Quantum Readiness Decision Framework</strong></p>
+<p><strong>Stage 1: "Pre-threshold era" (current–2026)</strong>
+<em>Hardware milestone:</em> Physical error rates 0.1–0.5%; no demonstrated fault-tolerant algorithms at useful scale.</p>
+<p><em>Organizational actions:</em>
+- Inventory classical encryption dependencies; identify RSA-2048 and ECC-256 certificate lifecycles
+- Begin PQC (post-quantum cryptography) migration planning; deploy NIST-standardized algorithms (ML-KEM, ML-DSA) for new systems
+- Assign quantum technology literacy training to IT security and CTO teams
+- No quantum hardware investments justified for commercial computation yet</p>
+<p><strong>Stage 2: "Early fault-tolerant era" (2026–2028)</strong>
+<em>Hardware milestone:</em> 100–500 fault-tolerant logical qubits demonstrated; Λ &gt; 3; gross codes deployed on hardware.</p>
+<p><em>Organizational actions:</em>
+- Engage 2–3 quantum hardware vendors via research partnership (not procurement contracts)
+- Run pilot fault-tolerant simulations of small optimization subproblems
+- Accelerate PQC migration for all externally-facing systems; complete crypto inventory
+- Begin workforce development: hire 1–2 quantum algorithm specialists</p>
+<p><strong>Stage 3: "Intermediate fault-tolerant era" (2028–2031)</strong>
+<em>Hardware milestone:</em> 1,000–5,000 fault-tolerant logical qubits; demonstrated quantum advantage for specific optimization or chemistry problems.</p>
+<p><em>Organizational actions:</em>
+- Evaluate quantum cloud services for specific high-value use cases (portfolio optimization, drug interaction modeling)
+- Complete PQC migration across all internal systems; deprecate RSA/ECC entirely
+- Procurement criteria: require vendors to specify logical qubit count, distance, and error rates
+- Build hybrid classical-quantum pipeline for 1–2 target applications</p>
+<p><strong>Stage 4: "Cryptographically relevant era" (2031+)</strong>
+<em>Hardware milestone:</em> &gt;100,000 fault-tolerant logical qubits; Shor's algorithm viable on RSA-2048.</p>
+<p><em>Organizational actions:</em>
+- All encryption should already be PQC-migrated from Stage 2–3; this stage should present no new crisis
+- Evaluate quantum advantage in core business processes with demonstrated ROI
+- Long-lived data encrypted with hybrid classical+PQC schemes since Stage 2</p>
+<p><strong>Key principle:</strong> Cryptographic preparedness (PQC migration) should be driven by <em>data sensitivity lifetime</em>, not by quantum hardware progress. Data encrypted today that must remain secret in 2035+ must be protected now, regardless of quantum hardware timelines.</p>
+</details>
+<hr />
+<p><strong>Question 29.</strong> A startup claims to have a new qubit technology with <span class="arithmatex">\(T_2 = 1\)</span> ms, two-qubit gate time of 10 ns, and gate fidelity of 99.8%. Construct an analysis of whether this platform, at scale, would represent a meaningful improvement over current superconducting qubits for fault-tolerant computing, using quantitative comparisons.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Analysis of hypothetical startup platform vs. current superconducting (IBM Heron baseline)</strong></p>
+<p><strong>Baseline comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>IBM Heron (current)</th>
+<th>Startup (claimed)</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(T_2\)</span></td>
+<td>200 μs</td>
+<td>1,000 μs</td>
+<td>5×</td>
+</tr>
+<tr>
+<td>Gate time</td>
+<td>50 ns</td>
+<td>10 ns</td>
+<td>5× faster</td>
+</tr>
+<tr>
+<td>Gate fidelity</td>
+<td>99.7% (<span class="arithmatex">\(p = 0.003\)</span>)</td>
+<td>99.8% (<span class="arithmatex">\(p = 0.002\)</span>)</td>
+<td>1.5×</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T_2/t_g\)</span> ratio</td>
+<td>4,000</td>
+<td>100,000</td>
+<td>25×</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Circuit depth capacity:</strong> <span class="arithmatex">\(100{,}000\)</span> gate layers vs. <span class="arithmatex">\(4{,}000\)</span> — a 25× improvement. This is significant: deeper algorithms become accessible without error correction.</p>
+<p><strong>Fidelity cliff analysis at 500 gate circuits:</strong>
+- IBM Heron: <span class="arithmatex">\(F = (0.997)^{500} = e^{-500 \times 0.003} = e^{-1.5} \approx 0.22\)</span>
+- Startup: <span class="arithmatex">\(F = (0.998)^{500} = e^{-500 \times 0.002} = e^{-1.0} \approx 0.37\)</span></p>
+<p>Modest improvement for NISQ algorithms.</p>
+<p><strong>Fault-tolerant threshold analysis:</strong>
+- Startup error rate <span class="arithmatex">\(p = 0.002 = 0.2\%\)</span>; threshold <span class="arithmatex">\(p_{\text{th}} = 1\%\)</span>
+- Ratio: <span class="arithmatex">\(p/p_{\text{th}} = 0.2\)</span> — same as the IBM baseline at 0.2%
+- Logical error rate at <span class="arithmatex">\(d = 7\)</span>: <span class="arithmatex">\(p_L = 0.1 \times (0.2)^4 = 0.1 \times 1.6 \times 10^{-3} = 1.6 \times 10^{-4}\)</span></p>
+<p>Compare IBM Heron at <span class="arithmatex">\(p = 0.003\)</span>: <span class="arithmatex">\(p_L = 0.1 \times (0.3)^4 = 0.1 \times 8.1 \times 10^{-3} = 8.1 \times 10^{-4}\)</span></p>
+<p>Startup's logical error rate is <strong>5× better</strong> at <span class="arithmatex">\(d = 7\)</span>, which could translate to reaching lower distances for the same logical error rate — a real overhead advantage.</p>
+<p><strong>Critical missing information:</strong> Gate fidelity of 99.8% at 10 ns gates is a very bold claim. Current 10-ns gates typically achieve ~98% fidelity; 99.8% would require breakthrough coherence properties at fast timescales. Additionally: Does the 1 ms <span class="arithmatex">\(T_2\)</span> hold during simultaneous two-qubit operations (typically <span class="arithmatex">\(T_2\)</span> degrades under active driving)? What connectivity is achievable? What is the measurement fidelity and time?</p>
+<p><strong>Verdict:</strong> If the claims hold under independent verification, this would be a meaningful improvement — particularly the 25× better circuit depth capacity and 5× better logical error rate. But the combination of fast (10 ns) gates with high fidelity (99.8%) and long coherence (1 ms) simultaneously is extraordinary and requires extremely rigorous validation before investment decisions.</p>
+</details>
+<hr />
+<p><strong>Question 30.</strong> Propose a research experiment that would, if successful, settle the debate about whether neutral atom erasure errors genuinely provide a fault-tolerance advantage over superconducting Pauli errors in practice (not just in theory). Specify the experimental conditions, measurements, and success criteria.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Proposed Experiment: Comparative Fault-Tolerance Advantage of Erasure Errors in Neutral Atoms</strong></p>
+<p><strong>Background:</strong> Theory predicts that erasure errors (atom loss, detectable at known locations) are twice as correctable as Pauli errors (unknown location, unknown type). A distance-<span class="arithmatex">\(d\)</span> surface code corrects <span class="arithmatex">\(\lfloor(d-1)/2\rfloor\)</span> Pauli errors but up to <span class="arithmatex">\(d-1\)</span> erasures. If neutral atoms' dominant error is erasure, their effective fault-tolerance threshold should significantly exceed the standard ~1% Pauli threshold.</p>
+<p><strong>Experimental design:</strong></p>
+<p><em>Platform 1 — Neutral atoms (QuEra/Atom Computing):</em>
+- Implement a distance-5 and distance-7 surface code on a neutral atom array
+- Instrument to detect atom loss events (fluorescence imaging between cycles)
+- Use detected loss positions as explicit erasure location inputs to the decoder
+- Run 10,000 syndrome extraction cycles per code distance
+- Measure: Λ (logical error rate improvement from <span class="arithmatex">\(d=5\)</span> to <span class="arithmatex">\(d=7\)</span>) as a function of intentionally-induced loss rate</p>
+<p><em>Platform 2 — Superconducting qubits:</em>
+- Implement identical distance-5 and distance-7 surface codes
+- Inject known errors at controlled rates (Pauli injection via calibrated depolarizing noise)
+- Measure Λ as a function of injected Pauli error rate</p>
+<p><em>Controlled comparison:</em>
+- Match total error rates (neutral atom loss rate = superconducting Pauli error rate) at three levels: 0.2%, 0.5%, 1.0%
+- Measure Λ for both platforms at each error rate</p>
+<p><strong>Predicted results (if erasure advantage is real):</strong>
+- Neutral atoms at 0.5% loss rate: Λ(loss-decoded) &gt; Λ(Pauli-decoded at 0.5%)
+- Neutral atoms threshold: measured effective <span class="arithmatex">\(p_{\text{th,erasure}} &gt; 2\%\)</span> (theory prediction ~2×)
+- Specifically: neutral atoms show <span class="arithmatex">\(\Lambda &gt; 1\)</span> at error rates where superconducting shows <span class="arithmatex">\(\Lambda \approx 1\)</span> (near threshold)</p>
+<p><strong>Success criteria:</strong>
+1. Neutral atom Λ exceeds superconducting Λ by &gt;2× at equal total error rates (p &lt; threshold)
+2. Neutral atom effective threshold exceeds superconducting threshold by &gt;1.5× in matched conditions
+3. Erasure decoder provides &gt;1.5× improvement over Pauli decoder applied to neutral atom data</p>
+<p><strong>Controls needed:</strong>
+- Verify that non-erasure (Pauli) errors in neutral atoms are truly subdominant
+- Account for correlated errors (neighboring atoms lost together in some configurations)
+- Validate that the erasure detection itself (fluorescence imaging) does not disturb the quantum state or introduce additional errors</p>
+<p><strong>Impact:</strong> If successful, this would establish that neutral atoms' error <em>type</em> provides a genuine, quantifiable, and hardware-inherent fault-tolerance advantage — justifying different QEC code designs and potentially different physical qubit overhead calculations for this platform.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/03-gates-circuits/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../04-algorithms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quiz 3 - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-quiz-quantum-gates-and-circuits" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../01-classical-vs-quantum/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-noise/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use This Book
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../01-classical-vs-quantum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-classical-vs-quantum/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Quantum Gates and Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Quantum Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Quantum Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07-noise/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Engineering
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-noise/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Business
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MicroSims
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bloch Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gate Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grover Visualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Surface Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QEC Overhead
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mosca Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PQC Key Sizes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 — Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 — Understand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 — Apply
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 — Analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-5-evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 5 — Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-6-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 6 — Create
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-3-quiz-quantum-gates-and-circuits">Chapter 3 Quiz: Quantum Gates and Circuits<a class="headerlink" href="#chapter-3-quiz-quantum-gates-and-circuits" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of quantum gates, circuit construction, universality, and the no-cloning theorem.</p>
+<hr />
+<h2 id="level-1-remember">Level 1 — Remember<a class="headerlink" href="#level-1-remember" title="Permanent link">&para;</a></h2>
+<p><strong>Question 1.</strong> What is the matrix representation of the Pauli-X gate?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Pauli-X gate (also called the quantum NOT gate) is represented by the matrix:</p>
+<div class="arithmatex">\[X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
+<p>It flips <span class="arithmatex">\(|0\rangle\)</span> to <span class="arithmatex">\(|1\rangle\)</span> and <span class="arithmatex">\(|1\rangle\)</span> to <span class="arithmatex">\(|0\rangle\)</span>, acting as the quantum analog of a classical NOT gate.</p>
+</details>
+<hr />
+<p><strong>Question 2.</strong> What is the action of the Hadamard gate on the computational basis states <span class="arithmatex">\(|0\rangle\)</span> and <span class="arithmatex">\(|1\rangle\)</span>?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Hadamard gate maps:</p>
+<div class="arithmatex">\[H|0\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}} = |+\rangle, \qquad H|1\rangle = \frac{|0\rangle - |1\rangle}{\sqrt{2}} = |-\rangle\]</div>
+<p>It creates equal superpositions from computational basis states and is its own inverse: <span class="arithmatex">\(H^2 = I\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 3.</strong> State the no-cloning theorem.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The no-cloning theorem states that it is impossible to create an exact independent copy of an arbitrary unknown quantum state. Formally, there is no unitary operation <span class="arithmatex">\(U\)</span> such that <span class="arithmatex">\(U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle\)</span> for all quantum states <span class="arithmatex">\(|\psi\rangle\)</span>. This result was proven independently by Wootters &amp; Zurek and by Dieks in 1982.</p>
+</details>
+<hr />
+<p><strong>Question 4.</strong> What gate set is stated in the universality theorem for quantum computing?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The set <span class="arithmatex">\(\{CNOT, H, T\}\)</span> is universal for quantum computation. This means any unitary operation on any number of qubits can be approximated to arbitrary precision using only gates from this set. The <span class="arithmatex">\(T\)</span> gate (also called the <span class="arithmatex">\(\pi/8\)</span> gate) is particularly important because it introduces a non-Clifford operation that, combined with the Clifford gates <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(CNOT\)</span>, achieves universality.</p>
+</details>
+<hr />
+<p><strong>Question 5.</strong> How many classical bits does a projective measurement on a single qubit produce, and what happens to the qubit afterward?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>A projective measurement on a single qubit produces exactly 1 classical bit of information (outcome 0 or 1). After measurement, the qubit collapses to the corresponding basis state: if outcome 0 is obtained, the qubit is in state <span class="arithmatex">\(|0\rangle\)</span>; if outcome 1 is obtained, it is in state <span class="arithmatex">\(|1\rangle\)</span>. The pre-measurement superposition is irreversibly destroyed.</p>
+</details>
+<hr />
+<h2 id="level-2-understand">Level 2 — Understand<a class="headerlink" href="#level-2-understand" title="Permanent link">&para;</a></h2>
+<p><strong>Question 6.</strong> Explain why the CNOT gate is a two-qubit gate and describe its action on all four computational basis states.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The CNOT (Controlled-NOT) gate is a two-qubit gate because it operates on two qubits: a control qubit and a target qubit. The rule is that the target qubit is flipped if and only if the control qubit is <span class="arithmatex">\(|1\rangle\)</span>. Its action on the computational basis is:</p>
+<div class="arithmatex">\[|00\rangle \to |00\rangle, \quad |01\rangle \to |01\rangle, \quad |10\rangle \to |11\rangle, \quad |11\rangle \to |10\rangle\]</div>
+<p>This gate is entangling: when the control qubit is in a superposition <span class="arithmatex">\(|+\rangle\)</span>, the CNOT creates a Bell state from a product state, demonstrating that two-qubit entangling gates are qualitatively more powerful than single-qubit gates alone.</p>
+</details>
+<hr />
+<p><strong>Question 7.</strong> Explain the difference between the <span class="arithmatex">\(S\)</span> gate and the <span class="arithmatex">\(T\)</span> gate in terms of their phase rotations, and state their relationship to the <span class="arithmatex">\(Z\)</span> gate.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The <span class="arithmatex">\(S\)</span> gate (phase gate) applies a phase of <span class="arithmatex">\(i = e^{i\pi/2}\)</span> to the <span class="arithmatex">\(|1\rangle\)</span> component: <span class="arithmatex">\(S = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; i\end{pmatrix}\)</span>. The <span class="arithmatex">\(T\)</span> gate (the <span class="arithmatex">\(\pi/8\)</span> gate) applies a phase of <span class="arithmatex">\(e^{i\pi/4}\)</span>: <span class="arithmatex">\(T = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; e^{i\pi/4}\end{pmatrix}\)</span>. Their relationship to <span class="arithmatex">\(Z\)</span> is: <span class="arithmatex">\(S^2 = Z\)</span> and <span class="arithmatex">\(T^4 = Z\)</span>, so they are "fractional" powers of the <span class="arithmatex">\(Z\)</span> gate. The <span class="arithmatex">\(T\)</span> gate is critical for universality because <span class="arithmatex">\(T \notin\)</span> Clifford group, while <span class="arithmatex">\(S\)</span> and the other Pauli gates are all Clifford gates.</p>
+</details>
+<hr />
+<p><strong>Question 8.</strong> Explain why the choice of measurement basis matters in quantum mechanics, using the <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> and <span class="arithmatex">\(\{|+\rangle, |-\rangle\}\)</span> bases as examples.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The measurement basis determines which physical observable is being measured, and the probabilities of outcomes depend entirely on the overlap between the state and the basis vectors. For a qubit in state <span class="arithmatex">\(|+\rangle = (|0\rangle + |1\rangle)/\sqrt{2}\)</span>: measuring in the <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> basis yields 0 or 1 each with probability 1/2, collapsing the superposition. But measuring the same state in the <span class="arithmatex">\(\{|+\rangle, |-\rangle\}\)</span> basis yields outcome <span class="arithmatex">\(|+\rangle\)</span> with certainty, revealing no randomness. This shows that a state can be "definite" in one basis and "maximally uncertain" in another — measurement is not a passive readout but an active interaction that is basis-dependent.</p>
+</details>
+<hr />
+<p><strong>Question 9.</strong> Describe what the Toffoli gate does and explain why it is significant for classical reversible computation.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Toffoli gate (CCNOT) is a three-qubit gate with two control qubits and one target qubit. The target qubit is flipped if and only if both control qubits are in state <span class="arithmatex">\(|1\rangle\)</span>. It is significant for classical reversible computation because it is a universal reversible classical gate: any classical Boolean circuit can be simulated using Toffoli gates. Since the Toffoli gate is also a valid quantum gate (it is unitary), this shows that quantum computers can simulate any reversible classical computation. However, the Toffoli gate is not universal for quantum computation on its own — it cannot create superpositions.</p>
+</details>
+<hr />
+<p><strong>Question 10.</strong> Explain the concept of T-gate cost in fault-tolerant quantum computing and why it differs from the cost of Clifford gates.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>In fault-tolerant quantum computing using the surface code or similar stabilizer codes, Clifford gates (<span class="arithmatex">\(H\)</span>, <span class="arithmatex">\(S\)</span>, <span class="arithmatex">\(CNOT\)</span>) can be implemented transversally or via code deformations with relatively low overhead. The <span class="arithmatex">\(T\)</span> gate, however, is a non-Clifford gate and cannot be implemented transversally in most codes. Instead, it requires a technique called magic state distillation, where a resource state (a "magic state") is prepared and consumed in a gate teleportation protocol. Magic state distillation is expensive: producing one high-fidelity <span class="arithmatex">\(T\)</span> gate may require hundreds or thousands of physical qubits and many rounds of distillation. Consequently, the "T-count" (number of <span class="arithmatex">\(T\)</span> gates in a circuit) is the primary metric for estimating the fault-tolerant resource cost of a quantum algorithm.</p>
+</details>
+<hr />
+<h2 id="level-3-apply">Level 3 — Apply<a class="headerlink" href="#level-3-apply" title="Permanent link">&para;</a></h2>
+<p><strong>Question 11.</strong> Apply the Hadamard gate followed by the Pauli-Z gate to the state <span class="arithmatex">\(|0\rangle\)</span>. What is the resulting state? Show each step.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Starting with <span class="arithmatex">\(|0\rangle\)</span>:</p>
+<p><strong>Step 1 — Apply <span class="arithmatex">\(H\)</span>:</strong>
+$<span class="arithmatex">\(H|0\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}} = |+\rangle\)</span>$</p>
+<p><strong>Step 2 — Apply <span class="arithmatex">\(Z\)</span>:</strong>
+$<span class="arithmatex">\(Z|+\rangle = Z\frac{|0\rangle + |1\rangle}{\sqrt{2}} = \frac{Z|0\rangle + Z|1\rangle}{\sqrt{2}} = \frac{|0\rangle - |1\rangle}{\sqrt{2}} = |-\rangle\)</span>$</p>
+<p>The resulting state is <span class="arithmatex">\(|-\rangle\)</span>, noting that <span class="arithmatex">\(ZH|0\rangle = |-\rangle\)</span>. Observe that this equals <span class="arithmatex">\(HX|0\rangle = H|1\rangle = |-\rangle\)</span> as well, illustrating the conjugation relation <span class="arithmatex">\(HXH = Z\)</span> (equivalently <span class="arithmatex">\(HZH = X\)</span>).</p>
+</details>
+<hr />
+<p><strong>Question 12.</strong> Construct a quantum circuit that generates the Bell state <span class="arithmatex">\(|\Phi^+\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span> from the input <span class="arithmatex">\(|00\rangle\)</span>. Write out each gate and show the intermediate states.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Input:</strong> <span class="arithmatex">\(|00\rangle\)</span></p>
+<p><strong>Gate 1 — Apply <span class="arithmatex">\(H\)</span> to qubit 1:</strong>
+$<span class="arithmatex">\(H \otimes I \, |00\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}} \otimes |0\rangle = \frac{|00\rangle + |10\rangle}{\sqrt{2}}\)</span>$</p>
+<p><strong>Gate 2 — Apply <span class="arithmatex">\(CNOT\)</span> (qubit 1 control, qubit 2 target):</strong>
+$<span class="arithmatex">\(CNOT \, \frac{|00\rangle + |10\rangle}{\sqrt{2}} = \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\Phi^+\rangle\)</span>$</p>
+<p>The circuit is <span class="arithmatex">\(CNOT_{1\to2}(H \otimes I)|00\rangle\)</span>. This is the standard Bell state preparation circuit and is one of the most important two-qubit circuits in quantum information.</p>
+</details>
+<hr />
+<p><strong>Question 13.</strong> The SWAP gate exchanges two qubits. Show how to decompose SWAP into three CNOT gates. Verify your decomposition on the input <span class="arithmatex">\(|10\rangle\)</span>.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Decomposition:</strong> <span class="arithmatex">\(SWAP = CNOT_{1\to2} \cdot CNOT_{2\to1} \cdot CNOT_{1\to2}\)</span></p>
+<p><strong>Verification on <span class="arithmatex">\(|10\rangle\)</span> (qubit 1 = <span class="arithmatex">\(|1\rangle\)</span>, qubit 2 = <span class="arithmatex">\(|0\rangle\)</span>):</strong></p>
+<ul>
+<li>After <span class="arithmatex">\(CNOT_{1\to2}\)</span>: control is qubit 1 (<span class="arithmatex">\(|1\rangle\)</span>), so flip qubit 2: <span class="arithmatex">\(|10\rangle \to |11\rangle\)</span></li>
+<li>After <span class="arithmatex">\(CNOT_{2\to1}\)</span>: control is qubit 2 (<span class="arithmatex">\(|1\rangle\)</span>), so flip qubit 1: <span class="arithmatex">\(|11\rangle \to |01\rangle\)</span></li>
+<li>After <span class="arithmatex">\(CNOT_{1\to2}\)</span>: control is qubit 1 (<span class="arithmatex">\(|0\rangle\)</span>), so no flip: <span class="arithmatex">\(|01\rangle \to |01\rangle\)</span></li>
+</ul>
+<p>The output is <span class="arithmatex">\(|01\rangle\)</span>, which is the original <span class="arithmatex">\(|10\rangle\)</span> with the qubits swapped. The decomposition is correct.</p>
+</details>
+<hr />
+<p><strong>Question 14.</strong> Apply the no-cloning theorem to explain why the following operation is impossible: given an unknown qubit <span class="arithmatex">\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\)</span>, produce two qubits both in state <span class="arithmatex">\(|\psi\rangle\)</span> using a unitary operation.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Suppose a unitary cloning operation <span class="arithmatex">\(U\)</span> existed such that <span class="arithmatex">\(U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle\)</span> for all <span class="arithmatex">\(|\psi\rangle\)</span>. Apply it to two orthogonal states:</p>
+<ul>
+<li><span class="arithmatex">\(U|0\rangle|0\rangle = |00\rangle\)</span></li>
+<li><span class="arithmatex">\(U|1\rangle|0\rangle = |11\rangle\)</span></li>
+</ul>
+<p>By linearity of <span class="arithmatex">\(U\)</span>, applying it to <span class="arithmatex">\(|\psi\rangle|0\rangle = (\alpha|0\rangle + \beta|1\rangle)|0\rangle\)</span> gives <span class="arithmatex">\(\alpha|00\rangle + \beta|11\rangle\)</span>, which is an entangled state. But the required output <span class="arithmatex">\(|\psi\rangle|\psi\rangle = (\alpha|0\rangle + \beta|1\rangle)^{\otimes 2} = \alpha^2|00\rangle + \alpha\beta|01\rangle + \beta\alpha|10\rangle + \beta^2|11\rangle\)</span> is a product state (for generic <span class="arithmatex">\(\alpha, \beta\)</span>). These are not equal, so no such <span class="arithmatex">\(U\)</span> can exist. The impossibility follows from the interplay of linearity and the tensor product structure of quantum mechanics.</p>
+</details>
+<hr />
+<p><strong>Question 15.</strong> Given that the Solovay-Kitaev theorem guarantees approximation of any single-qubit gate to precision <span class="arithmatex">\(\varepsilon\)</span> using <span class="arithmatex">\(O(\log^c(1/\varepsilon))\)</span> gates from a universal set, estimate how many <span class="arithmatex">\(\{H, T, S\}\)</span> gates are needed to approximate an arbitrary rotation to precision <span class="arithmatex">\(10^{-3}\)</span>.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Solovay-Kitaev theorem states that approximation to precision <span class="arithmatex">\(\varepsilon\)</span> requires <span class="arithmatex">\(O(\log^c(1/\varepsilon))\)</span> gates, where <span class="arithmatex">\(c \approx 2\)</span> in the original proof and <span class="arithmatex">\(c \approx 1.44\)</span> in improved versions (Harrow, Recht, Chuang 2002). For <span class="arithmatex">\(\varepsilon = 10^{-3}\)</span>, <span class="arithmatex">\(\log_2(1/\varepsilon) = \log_2(1000) \approx 10\)</span>. Using <span class="arithmatex">\(c = 2\)</span>: approximately <span class="arithmatex">\(O(10^2) = O(100)\)</span> gates. With <span class="arithmatex">\(c = 1.44\)</span>: approximately <span class="arithmatex">\(O(10^{1.44}) \approx O(28)\)</span> gates. In practice, efficient numerical synthesis algorithms (like gridsynth) can approximate a single-qubit rotation to precision <span class="arithmatex">\(10^{-3}\)</span> using roughly 20–50 <span class="arithmatex">\(T\)</span> gates, consistent with these theoretical bounds.</p>
+</details>
+<hr />
+<h2 id="level-4-analyze">Level 4 — Analyze<a class="headerlink" href="#level-4-analyze" title="Permanent link">&para;</a></h2>
+<p><strong>Question 16.</strong> Analyze why the Clifford group alone is insufficient for universal quantum computation, and what role the <span class="arithmatex">\(T\)</span> gate plays in completing it.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Clifford group consists of all unitary operations generated by <span class="arithmatex">\(\{H, S, CNOT\}\)</span>. By the Gottesman-Knill theorem, any quantum circuit composed entirely of Clifford gates acting on computational basis states can be efficiently simulated on a classical computer in polynomial time. This immediately shows that Clifford circuits cannot achieve quantum speedup — they offer no computational advantage. The Clifford group maps the Pauli group to itself under conjugation, so its action on stabilizer states is classically tractable. The <span class="arithmatex">\(T\)</span> gate lies outside the Clifford group: it cannot be expressed as a product of Clifford gates. Adding even a single non-Clifford gate like <span class="arithmatex">\(T\)</span> breaks this classical simulability and, combined with Clifford gates, enables universal quantum computation. Therefore, the <span class="arithmatex">\(T\)</span> gate is the "magic ingredient" that transitions quantum circuits from efficiently classically simulable to computationally universal.</p>
+</details>
+<hr />
+<p><strong>Question 17.</strong> Analyze the consequences of the no-cloning theorem for quantum key distribution (QKD). How does the impossibility of cloning contribute to the security of QKD protocols?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>In QKD (such as BB84), security relies on the fact that an eavesdropper (Eve) cannot copy quantum states to measure them later without disturbing them. If cloning were possible, Eve could intercept each qubit, clone it, forward the original undisturbed to Bob, and measure her copy at leisure to learn the key — all without introducing errors detectable by Alice and Bob. The no-cloning theorem prevents this: Eve cannot produce an exact copy of an unknown qubit state. Any attempt to measure the qubit must disturb it (due to the measurement postulate), introducing detectable errors. Furthermore, Eve cannot clone to "defer" measurement, because perfect cloning is forbidden. This makes QKD protocols information-theoretically secure against any eavesdropping strategy that obeys quantum mechanics, not merely secure against computationally bounded adversaries.</p>
+</details>
+<hr />
+<p><strong>Question 18.</strong> Analyze the trade-off between circuit depth and T-gate count in the context of fault-tolerant computation. When might a designer choose a higher T-count circuit over a lower T-count one?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>In fault-tolerant quantum computing, T-count measures the total number of non-Clifford gates and determines the total number of magic states needed, driving the qubit overhead for magic state distillation factories. T-depth (the number of sequential T-gates) determines wall-clock time, since T-gates in parallel can be executed simultaneously. A circuit with low T-count but high T-depth may be slow even if it uses few magic states overall; a circuit with high T-count but low T-depth can exploit parallelism for speed at the cost of more distillation factories running simultaneously. A designer might accept a higher T-count if: (a) they have an abundance of physical qubits and want to minimize runtime, (b) the algorithm is time-critical and parallelizing T-gates reduces latency, or (c) the T-depth is the bottleneck and additional T-gates enable deeper parallelism. This is the classic space-time trade-off in fault-tolerant architecture.</p>
+</details>
+<hr />
+<p><strong>Question 19.</strong> Analyze the relationship between the rotation gates <span class="arithmatex">\(R_x(\theta)\)</span>, <span class="arithmatex">\(R_y(\theta)\)</span>, <span class="arithmatex">\(R_z(\theta)\)</span> and the Pauli matrices. What happens when <span class="arithmatex">\(\theta = \pi\)</span> in each case?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The rotation gates are defined as matrix exponentials of Pauli operators:</p>
+<div class="arithmatex">\[R_x(\theta) = e^{-i\theta X/2} = \cos(\theta/2)I - i\sin(\theta/2)X$$
+$$R_y(\theta) = e^{-i\theta Y/2} = \cos(\theta/2)I - i\sin(\theta/2)Y$$
+$$R_z(\theta) = e^{-i\theta Z/2} = \cos(\theta/2)I - i\sin(\theta/2)Z\]</div>
+<p>When <span class="arithmatex">\(\theta = \pi\)</span>: <span class="arithmatex">\(\cos(\pi/2) = 0\)</span> and <span class="arithmatex">\(\sin(\pi/2) = 1\)</span>, giving <span class="arithmatex">\(R_x(\pi) = -iX\)</span>, <span class="arithmatex">\(R_y(\pi) = -iY\)</span>, <span class="arithmatex">\(R_z(\pi) = -iZ\)</span>. These equal the Pauli gates up to a global phase of <span class="arithmatex">\(-i\)</span>, which is physically unobservable. Therefore, the Pauli gates are <span class="arithmatex">\(\pi\)</span>-rotations about their respective axes on the Bloch sphere, confirming the geometric interpretation of single-qubit gates as rotations.</p>
+</details>
+<hr />
+<p><strong>Question 20.</strong> Analyze why magic state distillation is required for fault-tolerant T-gate implementation, rather than simply encoding the T-gate transversally like the CNOT gate.</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Transversal gate implementation applies the same gate independently to each qubit in corresponding positions across the code blocks, ensuring that errors cannot propagate between qubits within a single block. For stabilizer codes like the surface code, Clifford gates (including <span class="arithmatex">\(CNOT\)</span>, <span class="arithmatex">\(H\)</span>, <span class="arithmatex">\(S\)</span>) can be applied transversally because they map the code space to itself and preserve the stabilizer structure. However, the Eastin-Knill theorem proves that no quantum error-correcting code can have a universal transversal gate set — there is a fundamental obstruction to implementing non-Clifford gates transversally. The <span class="arithmatex">\(T\)</span> gate, being non-Clifford, falls under this prohibition for the surface code. Magic state distillation circumvents the Eastin-Knill theorem by using only Clifford operations (which are transversal) to consume a pre-prepared non-stabilizer resource state (the magic state <span class="arithmatex">\(|T\rangle = T|+\rangle\)</span>), effectively implementing the <span class="arithmatex">\(T\)</span> gate without directly applying it transversally. The distillation process purifies many noisy magic states into fewer high-fidelity ones using Clifford measurements.</p>
+</details>
+<hr />
+<h2 id="level-5-evaluate">Level 5 — Evaluate<a class="headerlink" href="#level-5-evaluate" title="Permanent link">&para;</a></h2>
+<p><strong>Question 21.</strong> Evaluate the claim that "quantum gates are just rotations on the Bloch sphere." Is this a complete and accurate characterization? What does it miss?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The claim is accurate for single-qubit gates: every single-qubit unitary <span class="arithmatex">\(U \in SU(2)\)</span> can indeed be parameterized as a rotation on the Bloch sphere by the Euler angle decomposition <span class="arithmatex">\(U = R_z(\alpha)R_y(\beta)R_z(\gamma)\)</span>. For single-qubit gates, the Bloch sphere picture is complete and provides excellent geometric intuition. However, the claim becomes seriously incomplete for multi-qubit gates. The Bloch sphere description does not generalize to two or more qubits because multi-qubit states live in a <span class="arithmatex">\(2^n\)</span>-dimensional Hilbert space whose geometry is far richer than a sphere. Entangling gates like the CNOT cannot be understood as Bloch sphere rotations — they create correlations between qubits that have no single-qubit analog. Additionally, even for single qubits, global phase is invisible on the Bloch sphere but can matter in multi-qubit contexts. A complete characterization requires the full unitary group <span class="arithmatex">\(U(2^n)\)</span>, not <span class="arithmatex">\(SU(2)\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 22.</strong> Evaluate the pedagogical and practical usefulness of the universality theorem <span class="arithmatex">\(\{CNOT, H, T\}\)</span>. What are its limitations as a guide for real circuit design?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The universality theorem is pedagogically valuable because it establishes that a small, finite gate set suffices for universal quantum computation, analogous to NAND universality in classical computing. It provides a theoretical foundation for quantum algorithms and shows that hardware need not implement infinitely many gates. However, it has significant practical limitations. First, the Solovay-Kitaev approximation introduces overhead: approximating an arbitrary rotation to precision <span class="arithmatex">\(\varepsilon\)</span> requires <span class="arithmatex">\(O(\text{polylog}(1/\varepsilon))\)</span> gates, which can be costly. Second, real quantum computers use different native gate sets (e.g., <span class="arithmatex">\(\{R_z, \sqrt{X}, CNOT\}\)</span> on superconducting processors) that may not include <span class="arithmatex">\(H\)</span> or <span class="arithmatex">\(T\)</span> directly, requiring additional compilation. Third, the gate set says nothing about connectivity constraints, decoherence, or realistic noise models. Fourth, in fault-tolerant computation, the emphasis shifts to minimizing T-count specifically, since T-gates cost orders of magnitude more than Clifford gates — the symmetric treatment of <span class="arithmatex">\(\{CNOT, H, T\}\)</span> in the theorem obscures this asymmetry. Practical circuit optimization requires hardware-specific compilation, not just theoretical universality.</p>
+</details>
+<hr />
+<p><strong>Question 23.</strong> Evaluate the significance of the no-cloning theorem as a fundamental constraint of quantum mechanics. Is it a limitation or a feature?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The no-cloning theorem is genuinely both a limitation and a feature, and whether it is viewed as one or the other depends on context. As a limitation: it prevents the straightforward broadcasting of quantum information, complicates quantum networking (no quantum repeaters via simple amplification), and means that unlike classical bits, quantum states cannot be backed up trivially. Quantum error correction must work around this constraint using entanglement and syndrome measurements. As a feature: no-cloning is the foundational security guarantee for quantum key distribution — eavesdroppers cannot copy qubits without detection. It also ensures the consistency of quantum mechanics with special relativity: if cloning were possible, one could use entanglement for faster-than-light signaling. The theorem is therefore not an arbitrary restriction but a deep consistency requirement of quantum mechanics. It also drives the development of quantum teleportation as the correct framework for transmitting quantum information, which is arguably richer than naive copying. Overall, no-cloning is best viewed as a fundamental structural feature of quantum information that has both costs and profound benefits.</p>
+</details>
+<hr />
+<p><strong>Question 24.</strong> Evaluate the Solovay-Kitaev theorem's impact on the feasibility of fault-tolerant quantum computing. Does polylogarithmic overhead make arbitrary gate synthesis practical?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>The Solovay-Kitaev theorem guarantees that any single-qubit gate can be approximated to precision <span class="arithmatex">\(\varepsilon\)</span> using <span class="arithmatex">\(O(\log^c(1/\varepsilon))\)</span> gates, with <span class="arithmatex">\(c \approx 2\)</span>. This polylogarithmic scaling is theoretically efficient — far better than polynomial or exponential — and establishes that fault-tolerant universal computation is in principle achievable with a finite gate set. However, practical feasibility depends on the precision required. For quantum algorithms that require <span class="arithmatex">\(n\)</span> gates each approximated to precision <span class="arithmatex">\(\varepsilon/n\)</span> (to keep total error below <span class="arithmatex">\(\varepsilon\)</span>), the overhead per gate grows as <span class="arithmatex">\(O(\log^c(n/\varepsilon))\)</span>, adding a circuit overhead factor that scales with the algorithm size. For near-term algorithms with <span class="arithmatex">\(10^6\)</span> gates requiring <span class="arithmatex">\(10^{-10}\)</span> per-gate fidelity, this could add a factor of 30–50 in T-count. More recent advances (gridsynth, optimal synthesis algorithms) bring practical T-counts much closer to the theoretical minimum, making the overhead manageable. The theorem's real significance is existential: it proves the overhead is not catastrophic, enabling researchers to focus on reducing T-count through better synthesis rather than questioning fundamental feasibility.</p>
+</details>
+<hr />
+<p><strong>Question 25.</strong> Evaluate the importance of quantum circuit notation as a communication and analysis tool. What are its strengths and its limitations for describing large-scale fault-tolerant circuits?</p>
+<details class="success">
+<summary>Answer</summary>
+<p>Quantum circuit notation is an extremely effective language for small to medium circuits. Its strengths include visual clarity (left-to-right time ordering mirrors computation flow), explicit representation of entanglement and controlled operations, direct correspondence to matrix operations (rightmost gate = leftmost matrix factor), and universality across hardware platforms. It is the standard for algorithm description and pedagogical communication. However, for large-scale fault-tolerant circuits its limitations become severe. A full surface code implementation of, say, Shor's algorithm for RSA-2048 involves billions of physical gates — no circuit diagram is practical at this scale. The notation also does not natively represent: error correction rounds interspersed with logical operations, the distinction between physical and logical qubits, classical control flow from syndrome measurements, or the 3D spacetime structure of topological codes. Researchers instead use high-level resource estimation frameworks, quantum programming languages (Qiskit, Cirq, Q#), or lattice surgery instruction sets. Circuit diagrams remain invaluable for algorithm design and analysis at the logical level, but a complete description of fault-tolerant execution requires additional abstraction layers beyond the diagram.</p>
+</details>
+<hr />
+<h2 id="level-6-create">Level 6 — Create<a class="headerlink" href="#level-6-create" title="Permanent link">&para;</a></h2>
+<p><strong>Question 26.</strong> Design a quantum circuit that implements the three-qubit GHZ state <span class="arithmatex">\(|GHZ\rangle = \frac{|000\rangle + |111\rangle}{\sqrt{2}}\)</span> from <span class="arithmatex">\(|000\rangle\)</span>. Extend your design to verify entanglement by specifying what measurements you would perform and what results would confirm genuine tripartite entanglement.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Circuit construction:</strong></p>
+<ul>
+<li>Apply <span class="arithmatex">\(H\)</span> to qubit 1: <span class="arithmatex">\(|000\rangle \to \frac{|0\rangle + |1\rangle}{\sqrt{2}}|00\rangle\)</span></li>
+<li>Apply <span class="arithmatex">\(CNOT_{1\to2}\)</span>: <span class="arithmatex">\(\to \frac{|00\rangle + |11\rangle}{\sqrt{2}}|0\rangle\)</span></li>
+<li>Apply <span class="arithmatex">\(CNOT_{1\to3}\)</span>: <span class="arithmatex">\(\to \frac{|000\rangle + |111\rangle}{\sqrt{2}}\)</span></li>
+</ul>
+<p>Total: 1 Hadamard + 2 CNOT gates.</p>
+<p><strong>Entanglement verification strategy (Mermin inequality test):</strong></p>
+<p>To verify genuine tripartite entanglement, measure in three settings: (XXY), (XYX), (YXX), and (YYY), where X and Y denote single-qubit Pauli measurements on the respective qubits. For the GHZ state, the Mermin operator <span class="arithmatex">\(M = XXY + XYX + YXX - YYY\)</span> has expectation value <span class="arithmatex">\(\langle M \rangle = 4\)</span> (quantum), while any local hidden variable theory predicts <span class="arithmatex">\(|\langle M \rangle| \leq 2\)</span>. A measured value near 4 with high statistical confidence confirms genuine tripartite entanglement that cannot be explained by biseparable states. Alternatively, full quantum state tomography (measuring all combinations of <span class="arithmatex">\(\{X, Y, Z\}\)</span> per qubit) can reconstruct the density matrix and compute the three-tangle to verify entanglement.</p>
+</details>
+<hr />
+<p><strong>Question 27.</strong> Design a protocol using only <span class="arithmatex">\(\{H, CNOT, T, T^\dagger, S\}\)</span> gates to implement a controlled-Z (CZ) gate between two qubits. Justify each gate choice and analyze the T-count of your construction.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Key identity:</strong> <span class="arithmatex">\(CZ = (I \otimes H) \cdot CNOT \cdot (I \otimes H)\)</span></p>
+<p>This follows because <span class="arithmatex">\(H\)</span> conjugates <span class="arithmatex">\(X \to Z\)</span> and <span class="arithmatex">\(Z \to X\)</span>. Applying <span class="arithmatex">\(H\)</span> to the target qubit transforms CNOT (which flips target when control is <span class="arithmatex">\(|1\rangle\)</span>) into CZ (which applies a <span class="arithmatex">\(Z\)</span> phase to target when control is <span class="arithmatex">\(|1\rangle\)</span>).</p>
+<p><strong>Circuit:</strong>
+1. Apply <span class="arithmatex">\(H\)</span> to qubit 2 (target)
+2. Apply <span class="arithmatex">\(CNOT_{1\to2}\)</span>
+3. Apply <span class="arithmatex">\(H\)</span> to qubit 2</p>
+<p><strong>Gate analysis:</strong>
+- Gates used: 2 Hadamards (<span class="arithmatex">\(H\)</span>), 1 CNOT — all Clifford gates
+- T-count: <strong>0</strong>
+- This is a Clifford-only construction, which means CZ is itself a Clifford gate</p>
+<p><strong>Justification:</strong> CZ is related to CNOT by a local Clifford operation (Hadamard on the target), so no non-Clifford resources are needed. This is important in fault-tolerant computing: CZ gates are "free" in terms of magic state cost. The design illustrates how understanding gate equivalences under Clifford operations enables T-count optimization — a key skill in fault-tolerant circuit compilation.</p>
+</details>
+<hr />
+<p><strong>Question 28.</strong> Devise a scheme to use the Toffoli gate to implement a classical reversible full adder (computing sum and carry-out from three input bits). Specify the qubit assignments, the gate sequence, and explain how the reversibility is maintained while computing the classical function.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Inputs:</strong> qubits <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c_{in}\)</span> (the three classical bits); ancilla qubit <span class="arithmatex">\(s = |0\rangle\)</span> for sum; output qubit for carry-out initially in <span class="arithmatex">\(|0\rangle\)</span>.</p>
+<p><strong>Classical full adder:</strong> sum <span class="arithmatex">\(= a \oplus b \oplus c_{in}\)</span>, carry-out <span class="arithmatex">\(= (a \wedge b) \vee (b \wedge c_{in}) \vee (a \wedge c_{in})\)</span>.</p>
+<p><strong>Gate sequence:</strong>
+1. <span class="arithmatex">\(CNOT_{a \to s}\)</span>: <span class="arithmatex">\(s \leftarrow a\)</span>
+2. <span class="arithmatex">\(CNOT_{b \to s}\)</span>: <span class="arithmatex">\(s \leftarrow a \oplus b\)</span>
+3. <span class="arithmatex">\(CNOT_{c_{in} \to s}\)</span>: <span class="arithmatex">\(s \leftarrow a \oplus b \oplus c_{in}\)</span> (sum computed)
+4. <span class="arithmatex">\(Toffoli_{a,b \to carry}\)</span>: <span class="arithmatex">\(carry \leftarrow a \wedge b\)</span>
+5. <span class="arithmatex">\(Toffoli_{a,c_{in} \to carry}\)</span>: <span class="arithmatex">\(carry \leftarrow (a \wedge b) \oplus (a \wedge c_{in})\)</span>
+6. <span class="arithmatex">\(Toffoli_{b,c_{in} \to carry}\)</span>: <span class="arithmatex">\(carry \leftarrow (a \wedge b) \oplus (a \wedge c_{in}) \oplus (b \wedge c_{in})\)</span> (carry-out computed)</p>
+<p><strong>Reversibility:</strong> Every gate (CNOT and Toffoli) is its own inverse. The input values <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(c_{in}\)</span> remain unchanged and available in their original qubits. Running the circuit in reverse restores the ancillae to <span class="arithmatex">\(|0\rangle\)</span> and the carry to <span class="arithmatex">\(|0\rangle\)</span>, achieving classical uncomputation — critical in quantum algorithms to avoid garbage ancilla entanglement.</p>
+</details>
+<hr />
+<p><strong>Question 29.</strong> Create a minimal quantum circuit that tests whether two unknown single-qubit states <span class="arithmatex">\(|\phi\rangle\)</span> and <span class="arithmatex">\(|\psi\rangle\)</span> are identical (i.e., equal up to global phase), using only one ancilla qubit and measurements. Describe the SWAP test protocol, derive its success probability, and explain what the measurement outcome statistics reveal about the states.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Protocol — the SWAP test:</strong></p>
+<p><strong>Qubit assignments:</strong> ancilla <span class="arithmatex">\(|0\rangle\)</span>, register 1 holds <span class="arithmatex">\(|\phi\rangle\)</span>, register 2 holds <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p><strong>Circuit:</strong>
+1. <span class="arithmatex">\(H\)</span> on ancilla: <span class="arithmatex">\(|0\rangle \to |+\rangle\)</span>
+2. Controlled-SWAP (Fredkin gate) with ancilla as control, registers as targets
+3. <span class="arithmatex">\(H\)</span> on ancilla
+4. Measure ancilla in <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> basis</p>
+<p><strong>State evolution:</strong></p>
+<p>After step 1: <span class="arithmatex">\(|+\rangle|\phi\rangle|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)|\phi\rangle|\psi\rangle\)</span></p>
+<p>After CSWAP: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(|0\rangle|\phi\rangle|\psi\rangle + |1\rangle|\psi\rangle|\phi\rangle)\)</span></p>
+<p>After second <span class="arithmatex">\(H\)</span>: <span class="arithmatex">\(\frac{1}{2}|0\rangle(|\phi\rangle|\psi\rangle + |\psi\rangle|\phi\rangle) + \frac{1}{2}|1\rangle(|\phi\rangle|\psi\rangle - |\psi\rangle|\phi\rangle)\)</span></p>
+<p><strong>Measurement probabilities:</strong>
+$<span class="arithmatex">\(P(\text{outcome }0) = \frac{1}{2} + \frac{1}{2}|\langle\phi|\psi\rangle|^2, \qquad P(\text{outcome }1) = \frac{1}{2} - \frac{1}{2}|\langle\phi|\psi\rangle|^2\)</span>$</p>
+<p><strong>Interpretation:</strong> If <span class="arithmatex">\(|\phi\rangle = |\psi\rangle\)</span> (up to global phase), <span class="arithmatex">\(|\langle\phi|\psi\rangle|^2 = 1\)</span>, so outcome 0 occurs with certainty and outcome 1 never occurs. If <span class="arithmatex">\(|\phi\rangle \perp |\psi\rangle\)</span>, each outcome occurs with probability 1/2. The protocol cannot definitively confirm equality from a single shot but can detect inequality: a single outcome-1 result proves the states are not identical. Repeated trials allow estimation of the fidelity <span class="arithmatex">\(|\langle\phi|\psi\rangle|^2\)</span>.</p>
+</details>
+<hr />
+<p><strong>Question 30.</strong> Design a fault-tolerant strategy for reducing T-count in a hypothetical quantum algorithm that initially requires 10,000 T-gates to implement a unitary <span class="arithmatex">\(U\)</span>. Your strategy should incorporate: gate synthesis optimization, circuit identities, and the Clifford+T framework. Estimate the resource savings and identify the trade-offs.</p>
+<details class="success">
+<summary>Answer</summary>
+<p><strong>Step 1 — Identify and cancel T-gate pairs:</strong>
+Scan the circuit for consecutive <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(T^\dagger\)</span> gates on the same qubit: these cancel to identity. Also look for <span class="arithmatex">\(TT = S\)</span> and <span class="arithmatex">\(TTTT = Z\)</span> reductions. In typical unoptimized circuits, 10–20% cancellations are achievable, reducing from 10,000 to approximately 8,500 T-gates.</p>
+<p><strong>Step 2 — Commute and merge through Clifford layers:</strong>
+Use the identity that <span class="arithmatex">\(T\)</span> can be commuted past Clifford gates by conjugation: <span class="arithmatex">\(HTH = R_x(\pi/4)\)</span> up to phase. Rearrange the circuit to cluster T-gates, enabling further cancellations. This requires a Clifford+T optimizer (e.g., the T-par algorithm by Amy et al. 2014) and can reduce T-count by an additional 20–40%, bringing the estimate to approximately 5,500–6,800 T-gates.</p>
+<p><strong>Step 3 — Ancilla-assisted T-count reduction:</strong>
+Techniques such as the TODD optimizer and phase polynomial optimization can trade ancilla qubits for T-gate reductions. With <span class="arithmatex">\(k\)</span> ancilla qubits, the T-count of a <span class="arithmatex">\(k\)</span>-qubit subcircuit can sometimes be reduced by a factor of up to 2. Adding 50 ancilla qubits might reduce T-count by a further 15–25%, reaching approximately 4,500–5,800 T-gates.</p>
+<p><strong>Step 4 — Replace subcircuits with known low-T implementations:</strong>
+Look up or precompute optimal Clifford+T implementations of common subcircuits (adders, multipliers, rotations). For rotations, use gridsynth to achieve near-optimal T-count synthesis.</p>
+<p><strong>Summary of trade-offs:</strong>
+| Strategy | T-count savings | Cost |
+|---|---|---|
+| Pair cancellation | ~15% | Low (syntactic) |
+| Phase polynomial opt. | ~30% | Moderate compile time |
+| Ancilla-assisted | ~15% | Extra qubits required |
+| Subcircuit replacement | ~10% | Design time |
+| <strong>Combined estimate</strong> | <strong>~50–55%</strong> | Moderate overhead |</p>
+<p>Starting from 10,000 T-gates, the combined strategy could achieve approximately 4,500–5,000 T-gates — roughly halving the magic state distillation cost and proportionally reducing fault-tolerant runtime. The primary trade-off is compilation time and ancilla qubit overhead, both of which are generally acceptable given the enormous cost reduction in the distillation factories.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

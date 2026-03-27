@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grover's Algorithm — Amplitude Amplification</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 1.25rem;
+      color: #1a2540;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    #canvas-container {
+      background: #fff;
+      border: 1px solid #d0d8e8;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      overflow: hidden;
+      width: 800px;
+    }
+    #canvas-container canvas {
+      display: block;
+    }
+    .note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #555;
+      max-width: 800px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grover's Algorithm — Amplitude Amplification Visualization</h1>
+  <div id="canvas-container"></div>
+  <p class="note">
+    Use the sliders to choose the number of qubits (n) and the target state index.
+    Press <strong>Start</strong> to animate iterations, <strong>Step</strong> for one iteration at a time,
+    and <strong>Reset</strong> to start over.
+  </p>
+  <script src="grover-visualization.js"></script>
+</body>
+</html>
