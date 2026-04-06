@@ -29,7 +29,7 @@
     
     
       
-        <title>Chapter 4: Quantum Algorithms - Quantum Computing: From Qubits to Business Value</title>
+        <title>Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape - Quantum Computing: From Qubits to Business Value</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster" class="md-skip">
+        <a href="#chapter-4-quantum-algorithms-shor-grover-and-the-speedup-landscape" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 4: Quantum Algorithms
+              Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
             
           </span>
         </div>
@@ -776,7 +776,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+    Chapter 2: Superposition, Entanglement, and the Quantum Resources That Enable Speedup
   
 
     
@@ -832,7 +832,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: Quantum Gates and Circuits
+    Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
   
 
     
@@ -897,7 +897,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: Quantum Algorithms
+    Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
   
 
     
@@ -915,7 +915,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: Quantum Algorithms
+    Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
   
 
     
@@ -941,22 +941,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-the-quantum-fourier-transform" class="md-nav__link">
+  <a href="#opening-the-algorithms-that-changed-everything" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. The Quantum Fourier Transform
+        Opening: The Algorithms That Changed Everything
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. The Quantum Fourier Transform">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 The Quantum Fourier Transform">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-the-classical-discrete-fourier-transform" class="md-nav__link">
+  <a href="#411-the-classical-discrete-fourier-transform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 The Classical Discrete Fourier Transform
+        4.1.1 The Classical Discrete Fourier Transform
       
     </span>
   </a>
@@ -964,10 +975,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-the-quantum-fourier-transform" class="md-nav__link">
+  <a href="#412-the-quantum-fourier-transform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 The Quantum Fourier Transform
+        4.1.2 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-circuit-complexity-of-the-qft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.3 Circuit Complexity of the QFT
       
     </span>
   </a>
@@ -980,22 +1002,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-shors-algorithm-exponential-speedup-for-factoring" class="md-nav__link">
+  <a href="#415-quantum-phase-estimation-the-universal-quantum-subroutine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Shor's Algorithm — Exponential Speedup for Factoring
+        4.1.5 Quantum Phase Estimation — The Universal Quantum Subroutine
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Shor&#39;s Algorithm — Exponential Speedup for Factoring">
+    <nav class="md-nav" aria-label="4.1.5 Quantum Phase Estimation — The Universal Quantum Subroutine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-the-rsa-cryptosystem-and-its-classical-hardness" class="md-nav__link">
+  <a href="#the-problem-eigenvalue-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 The RSA Cryptosystem and Its Classical Hardness
+        The Problem: Eigenvalue Estimation
       
     </span>
   </a>
@@ -1003,10 +1025,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-mathematical-reduction-factoring-period-finding" class="md-nav__link">
+  <a href="#the-qpe-circuit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 The Mathematical Reduction: Factoring → Period-Finding
+        The QPE Circuit
       
     </span>
   </a>
@@ -1014,10 +1036,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-the-quantum-period-finding-subroutine" class="md-nav__link">
+  <a href="#precision-and-the-non-eigenstate-case" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 The Quantum Period-Finding Subroutine
+        Precision and the Non-Eigenstate Case
       
     </span>
   </a>
@@ -1025,10 +1047,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-resource-estimates-for-rsa-2048" class="md-nav__link">
+  <a href="#qpe-as-a-unifying-framework" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4 Resource Estimates for RSA-2048
+        QPE as a Unifying Framework
       
     </span>
   </a>
@@ -1041,22 +1063,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-grovers-algorithm-quadratic-speedup-for-search" class="md-nav__link">
+  <a href="#42-shors-algorithm-factoring-via-period-finding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Grover's Algorithm — Quadratic Speedup for Search
+        4.2 Shor's Algorithm: Factoring via Period Finding
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Grover&#39;s Algorithm — Quadratic Speedup for Search">
+    <nav class="md-nav" aria-label="4.2 Shor&#39;s Algorithm: Factoring via Period Finding">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-the-unstructured-search-problem" class="md-nav__link">
+  <a href="#421-the-order-finding-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 The Unstructured Search Problem
+        4.2.1 The Order-Finding Problem
       
     </span>
   </a>
@@ -1064,10 +1086,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-the-algorithm" class="md-nav__link">
+  <a href="#422-quantum-solution-via-phase-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 The Algorithm
+        4.2.2 Quantum Solution via Phase Estimation
       
     </span>
   </a>
@@ -1075,10 +1097,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-optimality-and-cryptographic-implications" class="md-nav__link">
+  <a href="#423-reducing-factoring-to-order-finding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 Optimality and Cryptographic Implications
+        4.2.3 Reducing Factoring to Order Finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-complexity-analysis-and-resource-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4 Complexity Analysis and Resource Estimates
       
     </span>
   </a>
@@ -1091,22 +1124,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-the-quantum-complexity-landscape" class="md-nav__link">
+  <a href="#43-grovers-algorithm-quadratic-speedup-for-unstructured-search" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. The Quantum Complexity Landscape
+        4.3 Grover's Algorithm: Quadratic Speedup for Unstructured Search
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. The Quantum Complexity Landscape">
+    <nav class="md-nav" aria-label="4.3 Grover&#39;s Algorithm: Quadratic Speedup for Unstructured Search">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-complexity-classes" class="md-nav__link">
+  <a href="#431-the-search-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1 Complexity Classes
+        4.3.1 The Search Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-grovers-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 Grover's Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-geometric-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 Geometric Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-optimality-the-bbbv-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.4 Optimality: The BBBV Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#435-cryptographic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.5 Cryptographic Implications
       
     </span>
   </a>
@@ -1119,22 +1196,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-other-important-quantum-algorithms" class="md-nav__link">
+  <a href="#44-simons-algorithm-the-bridge-to-shor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Other Important Quantum Algorithms
+        4.4 Simon's Algorithm: The Bridge to Shor
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Other Important Quantum Algorithms">
+    <nav class="md-nav" aria-label="4.4 Simon&#39;s Algorithm: The Bridge to Shor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-quantum-phase-estimation-qpe" class="md-nav__link">
+  <a href="#441-why-simons-algorithm-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1 Quantum Phase Estimation (QPE)
+        4.4.1 Why Simon's Algorithm Matters
       
     </span>
   </a>
@@ -1142,10 +1219,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-variational-quantum-eigensolver-vqe" class="md-nav__link">
+  <a href="#442-simons-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2 Variational Quantum Eigensolver (VQE)
+        4.4.2 Simon's Problem
       
     </span>
   </a>
@@ -1153,10 +1230,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-quantum-approximate-optimization-algorithm-qaoa" class="md-nav__link">
+  <a href="#443-simons-quantum-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3 Quantum Approximate Optimization Algorithm (QAOA)
+        4.4.3 Simon's Quantum Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#444-simon-shor-the-conceptual-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.4 Simon → Shor: The Conceptual Bridge
       
     </span>
   </a>
@@ -1169,22 +1257,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+  <a href="#45-the-quantum-algorithm-landscape" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+        4.5 The Quantum Algorithm Landscape
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+    <nav class="md-nav" aria-label="4.5 The Quantum Algorithm Landscape">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-why-bigger-keys-dont-help-against-shor" class="md-nav__link">
+  <a href="#451-survey-of-important-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1 Why Bigger Keys Don't Help Against Shor
+        4.5.1 Survey of Important Algorithms
       
     </span>
   </a>
@@ -1192,10 +1280,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-lattice-problems-and-learning-with-errors" class="md-nav__link">
+  <a href="#452-caveats-on-hhl-and-vqe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2 Lattice Problems and Learning With Errors
+        4.5.2 Caveats on HHL and VQE
       
     </span>
   </a>
@@ -1203,21 +1291,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#63-the-nist-post-quantum-standards" class="md-nav__link">
+  <a href="#453-bqp-and-the-complexity-landscape" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3 The NIST Post-Quantum Standards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64-algorithm-diversity-defense-in-depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.4 Algorithm Diversity — Defense in Depth
+        4.5.3 BQP and the Complexity Landscape
       
     </span>
   </a>
@@ -1226,6 +1303,139 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#461-why-bigger-rsa-keys-dont-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.1 Why Bigger RSA Keys Don't Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462-lattice-problems-and-learning-with-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.2 Lattice Problems and Learning With Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#463-the-three-nist-pqc-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.3 The Three NIST PQC Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6.3 The Three NIST PQC Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fips-203-ml-kem-module-lattice-based-key-encapsulation-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 203 — ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-204-ml-dsa-module-lattice-based-digital-signature-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 204 — ML-DSA (Module-Lattice-Based Digital Signature Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-205-slh-dsa-stateless-hash-based-digital-signature-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 205 — SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#464-pipeline-standards-fn-dsa-and-hqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.4 Pipeline Standards: FN-DSA and HQC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#465-key-size-and-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.5 Key Size and Performance Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#466-algorithm-diversity-as-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.6 Algorithm Diversity as Defense-in-Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4 Summary
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1291,7 +1501,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5: Quantum Communication
+    Chapter 5: Quantum Communication, Cryptography, and Network Protocols
   
 
     
@@ -1347,7 +1557,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+    Chapter 6: The Density Matrix, Mixed States, and the Transition to Noisy Reality
   
 
     
@@ -2636,22 +2846,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-the-quantum-fourier-transform" class="md-nav__link">
+  <a href="#opening-the-algorithms-that-changed-everything" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. The Quantum Fourier Transform
+        Opening: The Algorithms That Changed Everything
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. The Quantum Fourier Transform">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41-the-quantum-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 The Quantum Fourier Transform">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-the-classical-discrete-fourier-transform" class="md-nav__link">
+  <a href="#411-the-classical-discrete-fourier-transform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 The Classical Discrete Fourier Transform
+        4.1.1 The Classical Discrete Fourier Transform
       
     </span>
   </a>
@@ -2659,10 +2880,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-the-quantum-fourier-transform" class="md-nav__link">
+  <a href="#412-the-quantum-fourier-transform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 The Quantum Fourier Transform
+        4.1.2 The Quantum Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-circuit-complexity-of-the-qft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.3 Circuit Complexity of the QFT
       
     </span>
   </a>
@@ -2675,22 +2907,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-shors-algorithm-exponential-speedup-for-factoring" class="md-nav__link">
+  <a href="#415-quantum-phase-estimation-the-universal-quantum-subroutine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Shor's Algorithm — Exponential Speedup for Factoring
+        4.1.5 Quantum Phase Estimation — The Universal Quantum Subroutine
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Shor&#39;s Algorithm — Exponential Speedup for Factoring">
+    <nav class="md-nav" aria-label="4.1.5 Quantum Phase Estimation — The Universal Quantum Subroutine">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-the-rsa-cryptosystem-and-its-classical-hardness" class="md-nav__link">
+  <a href="#the-problem-eigenvalue-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 The RSA Cryptosystem and Its Classical Hardness
+        The Problem: Eigenvalue Estimation
       
     </span>
   </a>
@@ -2698,10 +2930,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-mathematical-reduction-factoring-period-finding" class="md-nav__link">
+  <a href="#the-qpe-circuit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 The Mathematical Reduction: Factoring → Period-Finding
+        The QPE Circuit
       
     </span>
   </a>
@@ -2709,10 +2941,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-the-quantum-period-finding-subroutine" class="md-nav__link">
+  <a href="#precision-and-the-non-eigenstate-case" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 The Quantum Period-Finding Subroutine
+        Precision and the Non-Eigenstate Case
       
     </span>
   </a>
@@ -2720,10 +2952,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-resource-estimates-for-rsa-2048" class="md-nav__link">
+  <a href="#qpe-as-a-unifying-framework" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4 Resource Estimates for RSA-2048
+        QPE as a Unifying Framework
       
     </span>
   </a>
@@ -2736,22 +2968,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-grovers-algorithm-quadratic-speedup-for-search" class="md-nav__link">
+  <a href="#42-shors-algorithm-factoring-via-period-finding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Grover's Algorithm — Quadratic Speedup for Search
+        4.2 Shor's Algorithm: Factoring via Period Finding
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Grover&#39;s Algorithm — Quadratic Speedup for Search">
+    <nav class="md-nav" aria-label="4.2 Shor&#39;s Algorithm: Factoring via Period Finding">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-the-unstructured-search-problem" class="md-nav__link">
+  <a href="#421-the-order-finding-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 The Unstructured Search Problem
+        4.2.1 The Order-Finding Problem
       
     </span>
   </a>
@@ -2759,10 +2991,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-the-algorithm" class="md-nav__link">
+  <a href="#422-quantum-solution-via-phase-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 The Algorithm
+        4.2.2 Quantum Solution via Phase Estimation
       
     </span>
   </a>
@@ -2770,10 +3002,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-optimality-and-cryptographic-implications" class="md-nav__link">
+  <a href="#423-reducing-factoring-to-order-finding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.3 Optimality and Cryptographic Implications
+        4.2.3 Reducing Factoring to Order Finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-complexity-analysis-and-resource-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4 Complexity Analysis and Resource Estimates
       
     </span>
   </a>
@@ -2786,22 +3029,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-the-quantum-complexity-landscape" class="md-nav__link">
+  <a href="#43-grovers-algorithm-quadratic-speedup-for-unstructured-search" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. The Quantum Complexity Landscape
+        4.3 Grover's Algorithm: Quadratic Speedup for Unstructured Search
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. The Quantum Complexity Landscape">
+    <nav class="md-nav" aria-label="4.3 Grover&#39;s Algorithm: Quadratic Speedup for Unstructured Search">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-complexity-classes" class="md-nav__link">
+  <a href="#431-the-search-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1 Complexity Classes
+        4.3.1 The Search Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-grovers-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 Grover's Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-geometric-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 Geometric Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-optimality-the-bbbv-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.4 Optimality: The BBBV Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#435-cryptographic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.5 Cryptographic Implications
       
     </span>
   </a>
@@ -2814,22 +3101,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-other-important-quantum-algorithms" class="md-nav__link">
+  <a href="#44-simons-algorithm-the-bridge-to-shor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Other Important Quantum Algorithms
+        4.4 Simon's Algorithm: The Bridge to Shor
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Other Important Quantum Algorithms">
+    <nav class="md-nav" aria-label="4.4 Simon&#39;s Algorithm: The Bridge to Shor">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-quantum-phase-estimation-qpe" class="md-nav__link">
+  <a href="#441-why-simons-algorithm-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1 Quantum Phase Estimation (QPE)
+        4.4.1 Why Simon's Algorithm Matters
       
     </span>
   </a>
@@ -2837,10 +3124,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-variational-quantum-eigensolver-vqe" class="md-nav__link">
+  <a href="#442-simons-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2 Variational Quantum Eigensolver (VQE)
+        4.4.2 Simon's Problem
       
     </span>
   </a>
@@ -2848,10 +3135,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-quantum-approximate-optimization-algorithm-qaoa" class="md-nav__link">
+  <a href="#443-simons-quantum-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3 Quantum Approximate Optimization Algorithm (QAOA)
+        4.4.3 Simon's Quantum Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#444-simon-shor-the-conceptual-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.4 Simon → Shor: The Conceptual Bridge
       
     </span>
   </a>
@@ -2864,22 +3162,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+  <a href="#45-the-quantum-algorithm-landscape" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+        4.5 The Quantum Algorithm Landscape
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6. Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+    <nav class="md-nav" aria-label="4.5 The Quantum Algorithm Landscape">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-why-bigger-keys-dont-help-against-shor" class="md-nav__link">
+  <a href="#451-survey-of-important-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1 Why Bigger Keys Don't Help Against Shor
+        4.5.1 Survey of Important Algorithms
       
     </span>
   </a>
@@ -2887,10 +3185,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#62-lattice-problems-and-learning-with-errors" class="md-nav__link">
+  <a href="#452-caveats-on-hhl-and-vqe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.2 Lattice Problems and Learning With Errors
+        4.5.2 Caveats on HHL and VQE
       
     </span>
   </a>
@@ -2898,21 +3196,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#63-the-nist-post-quantum-standards" class="md-nav__link">
+  <a href="#453-bqp-and-the-complexity-landscape" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3 The NIST Post-Quantum Standards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#64-algorithm-diversity-defense-in-depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6.4 Algorithm Diversity — Defense in Depth
+        4.5.3 BQP and the Complexity Landscape
       
     </span>
   </a>
@@ -2921,6 +3208,139 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 Post-Quantum Cryptography: Mathematical Defenses Against Shor&#39;s Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#461-why-bigger-rsa-keys-dont-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.1 Why Bigger RSA Keys Don't Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462-lattice-problems-and-learning-with-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.2 Lattice Problems and Learning With Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#463-the-three-nist-pqc-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.3 The Three NIST PQC Standards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6.3 The Three NIST PQC Standards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fips-203-ml-kem-module-lattice-based-key-encapsulation-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 203 — ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-204-ml-dsa-module-lattice-based-digital-signature-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 204 — ML-DSA (Module-Lattice-Based Digital Signature Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fips-205-slh-dsa-stateless-hash-based-digital-signature-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIPS 205 — SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#464-pipeline-standards-fn-dsa-and-hqc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.4 Pipeline Standards: FN-DSA and HQC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#465-key-size-and-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.5 Key Size and Performance Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#466-algorithm-diversity-as-defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.6 Algorithm Diversity as Defense-in-Depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 4 Summary
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2955,400 +3375,796 @@
   
 
 
-<h1 id="chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster">Chapter 4: Quantum Algorithms — Why Certain Problems Get Exponentially Faster<a class="headerlink" href="#chapter-4-quantum-algorithms-why-certain-problems-get-exponentially-faster" title="Permanent link">&para;</a></h1>
-<p><em>In 1994, Peter Shor published an algorithm that could break every public-key cryptosystem then in use. He did this not by discovering a mathematical weakness in RSA — but by showing that quantum computers could solve the period-finding problem in polynomial time. This chapter develops the mechanics of quantum speedup: the Quantum Fourier Transform, Shor's algorithm, Grover's search, and the mathematical defenses (post-quantum cryptography) that replace the systems Shor's algorithm would break.</em></p>
+<h1 id="chapter-4-quantum-algorithms-shor-grover-and-the-speedup-landscape">Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape<a class="headerlink" href="#chapter-4-quantum-algorithms-shor-grover-and-the-speedup-landscape" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="1-the-quantum-fourier-transform">1. The Quantum Fourier Transform<a class="headerlink" href="#1-the-quantum-fourier-transform" title="Permanent link">&para;</a></h2>
-<h3 id="11-the-classical-discrete-fourier-transform">1.1 The Classical Discrete Fourier Transform<a class="headerlink" href="#11-the-classical-discrete-fourier-transform" title="Permanent link">&para;</a></h3>
-<p>The classical Discrete Fourier Transform (DFT) maps a sequence of <span class="arithmatex">\(N\)</span> complex numbers <span class="arithmatex">\(x_0, \ldots, x_{N-1}\)</span> to:</p>
-<div class="arithmatex">\[y_k = \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1} x_j \, e^{2\pi i jk/N}, \quad k = 0, 1, \ldots, N-1\]</div>
-<p>The naive DFT requires <span class="arithmatex">\(O(N^2)\)</span> operations. The Fast Fourier Transform (FFT) reduces this to <span class="arithmatex">\(O(N \log N)\)</span>. For <span class="arithmatex">\(N = 2^n\)</span>, this is <span class="arithmatex">\(O(2^n \cdot n)\)</span>.</p>
-<h3 id="12-the-quantum-fourier-transform">1.2 The Quantum Fourier Transform<a class="headerlink" href="#12-the-quantum-fourier-transform" title="Permanent link">&para;</a></h3>
-<p>The <strong>Quantum Fourier Transform (QFT)</strong> performs the same transformation on quantum amplitudes. It maps:</p>
-<div class="arithmatex">\[\ket{j} \to \frac{1}{\sqrt{N}}\sum_{k=0}^{N-1} e^{2\pi i jk/N} \ket{k}\]</div>
-<p>For <span class="arithmatex">\(n\)</span> qubits (<span class="arithmatex">\(N = 2^n\)</span>), the QFT requires only <span class="arithmatex">\(O(n^2) = O((\log N)^2)\)</span> gates — an exponential improvement over the classical FFT's <span class="arithmatex">\(O(N \log N)\)</span>.</p>
-<p>The QFT circuit decomposes as:</p>
-<div class="arithmatex">\[\text{QFT}_N = \prod_{k=1}^{n}\left[H_k \cdot \prod_{j=k+1}^{n} CR_j^{(k)}\right] \cdot \text{SWAP}\]</div>
-<p>where <span class="arithmatex">\(CR_j^{(k)}\)</span> is a controlled phase rotation gate <span class="arithmatex">\(\begin{pmatrix}1&amp;0\\0&amp;e^{2\pi i/2^{j-k+1}}\end{pmatrix}\)</span> applied to qubit <span class="arithmatex">\(k\)</span> controlled on qubit <span class="arithmatex">\(j\)</span>.</p>
-<p><strong>The critical subtlety:</strong> The QFT operates on <em>amplitudes</em>, not on classically accessible data. You cannot load a classical dataset into a quantum register, apply the QFT, and read out all the Fourier coefficients — measurement collapses the superposition to a single coefficient. The QFT's power comes from its use <em>within</em> algorithms where the data is already in quantum superposition.</p>
+<h2 id="opening-the-algorithms-that-changed-everything">Opening: The Algorithms That Changed Everything<a class="headerlink" href="#opening-the-algorithms-that-changed-everything" title="Permanent link">&para;</a></h2>
+<p>In 1994, Peter Shor published an algorithm that could factor large integers in polynomial time on a quantum computer. The cryptographic community went silent. RSA, which had protected internet communications since 1977, rested on the assumption that factoring the product of two large primes was computationally infeasible. Shor's algorithm — once sufficient quantum hardware existed — would make it trivially feasible.</p>
+<p>Two years later, Lov Grover published an algorithm that could search an unstructured database of <span class="arithmatex">\(N\)</span> items in <span class="arithmatex">\(O(\sqrt{N})\)</span> operations, compared to <span class="arithmatex">\(O(N)\)</span> classically. The speedup was "only" quadratic, not exponential — but Grover proved it optimal, and its implications for symmetric cryptography were immediate.</p>
+<p>These two algorithms remain the clearest demonstrations of quantum advantage. They are also pedagogically complementary: Shor's algorithm shows that exponential speedup is possible for problems with algebraic structure; Grover's algorithm shows that even without structure, quantum mechanics provides a provable quadratic advantage. Together, they define what quantum computing is <em>for</em>.</p>
+<p>This chapter presents both algorithms in depth — along with Simon's algorithm (the conceptual predecessor to Shor), quantum phase estimation (the universal subroutine underlying most quantum speedups), and the post-quantum cryptographic mathematics that constitutes our defense against Shor's threat.</p>
+<hr />
+<h2 id="41-the-quantum-fourier-transform">4.1 The Quantum Fourier Transform<a class="headerlink" href="#41-the-quantum-fourier-transform" title="Permanent link">&para;</a></h2>
+<h3 id="411-the-classical-discrete-fourier-transform">4.1.1 The Classical Discrete Fourier Transform<a class="headerlink" href="#411-the-classical-discrete-fourier-transform" title="Permanent link">&para;</a></h3>
+<p>The Discrete Fourier Transform (DFT) of an <span class="arithmatex">\(N\)</span>-dimensional vector <span class="arithmatex">\((x_0, x_1, \ldots, x_{N-1})\)</span> produces a new vector <span class="arithmatex">\((y_0, y_1, \ldots, y_{N-1})\)</span> where:</p>
+<div class="arithmatex">\[y_k = \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1} x_j \omega^{jk}, \qquad \omega = e^{2\pi i/N}\]</div>
+<p>The Fast Fourier Transform (FFT) computes the DFT in <span class="arithmatex">\(O(N \log N)\)</span> operations — a celebrated algorithm underlying signal processing, image compression, and much of modern digital technology.</p>
+<h3 id="412-the-quantum-fourier-transform">4.1.2 The Quantum Fourier Transform<a class="headerlink" href="#412-the-quantum-fourier-transform" title="Permanent link">&para;</a></h3>
+<p>The <strong>Quantum Fourier Transform (QFT)</strong> is the quantum analogue. On <span class="arithmatex">\(n\)</span> qubits (<span class="arithmatex">\(N = 2^n\)</span>), it implements the mapping:</p>
+<div class="arithmatex">\[\text{QFT}: |j\rangle \mapsto \frac{1}{\sqrt{2^n}}\sum_{k=0}^{2^n-1} e^{2\pi i jk/2^n}|k\rangle\]</div>
+<p>This transforms the computational basis state <span class="arithmatex">\(|j\rangle\)</span> into the equal superposition weighted by the phase <span class="arithmatex">\(e^{2\pi i jk/2^n}\)</span>. In terms of the binary representation <span class="arithmatex">\(j = j_1 2^{n-1} + j_2 2^{n-2} + \cdots + j_n 2^0\)</span> (with <span class="arithmatex">\(j_1\)</span> the most significant bit), the QFT has the elegant product form:</p>
+<div class="arithmatex">\[\text{QFT}|j_1 j_2 \cdots j_n\rangle = \frac{1}{\sqrt{2^n}}\left(|0\rangle + e^{2\pi i 0.j_n}|1\rangle\right)\left(|0\rangle + e^{2\pi i 0.j_{n-1}j_n}|1\rangle\right)\cdots\left(|0\rangle + e^{2\pi i 0.j_1 j_2\cdots j_n}|1\rangle\right)\]</div>
+<p>where <span class="arithmatex">\(0.j_k j_{k+1} \cdots j_n = j_k/2 + j_{k+1}/4 + \cdots + j_n/2^{n-k+1}\)</span> is a binary fraction.</p>
+<h3 id="413-circuit-complexity-of-the-qft">4.1.3 Circuit Complexity of the QFT<a class="headerlink" href="#413-circuit-complexity-of-the-qft" title="Permanent link">&para;</a></h3>
+<p>The product form reveals that the QFT can be implemented with only <span class="arithmatex">\(O(n^2)\)</span> quantum gates: <span class="arithmatex">\(n\)</span> Hadamard gates and <span class="arithmatex">\(\binom{n}{2}\)</span> controlled phase rotation gates <span class="arithmatex">\(R_k = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; e^{2\pi i/2^k}\end{pmatrix}\)</span>, followed by a bit-reversal permutation.</p>
+<p>For <span class="arithmatex">\(n\)</span> qubits encoding <span class="arithmatex">\(N = 2^n\)</span> items:
+- Classical FFT: <span class="arithmatex">\(O(N \log N) = O(2^n \cdot n)\)</span> operations
+- Quantum QFT: <span class="arithmatex">\(O(n^2) = O((\log N)^2)\)</span> gates</p>
+<p>This is an exponential speedup — but with a crucial caveat: the QFT transforms <em>amplitudes</em>, not observable values. The output is a quantum superposition of Fourier coefficients, not a directly readable array. The speedup is only useful when we can extract information from the Fourier-transformed state using a clever measurement protocol — and this is exactly what quantum phase estimation does.</p>
+<hr />
+<h2 id="415-quantum-phase-estimation-the-universal-quantum-subroutine">4.1.5 Quantum Phase Estimation — The Universal Quantum Subroutine<a class="headerlink" href="#415-quantum-phase-estimation-the-universal-quantum-subroutine" title="Permanent link">&para;</a></h2>
+<p>Quantum Phase Estimation (QPE) is arguably the most important algorithmic primitive in quantum computing. It is the engine behind Shor's factoring algorithm, quantum chemistry simulations, the HHL linear systems algorithm, and most of the algorithmic advantage demonstrated by theoretical quantum computing. Understanding QPE as a <em>standalone primitive</em> — rather than as a buried subroutine in Shor's algorithm — is essential for appreciating the breadth of quantum advantage.</p>
+<h3 id="the-problem-eigenvalue-estimation">The Problem: Eigenvalue Estimation<a class="headerlink" href="#the-problem-eigenvalue-estimation" title="Permanent link">&para;</a></h3>
+<p>Let <span class="arithmatex">\(U\)</span> be a unitary operator with eigenstate <span class="arithmatex">\(|\psi\rangle\)</span>:</p>
+<div class="arithmatex">\[U|\psi\rangle = e^{2\pi i \theta}|\psi\rangle\]</div>
+<p>where <span class="arithmatex">\(\theta \in [0,1)\)</span> is the <em>phase</em> (eigenvalue written in the form <span class="arithmatex">\(e^{2\pi i\theta}\)</span>). QPE's task: given the ability to apply controlled-<span class="arithmatex">\(U^{2^k}\)</span> and the state <span class="arithmatex">\(|\psi\rangle\)</span>, estimate <span class="arithmatex">\(\theta\)</span> to <span class="arithmatex">\(m\)</span> bits of precision.</p>
+<p>This problem appears abstract, but its applications are concrete:
+- <strong>Shor's algorithm:</strong> <span class="arithmatex">\(U\)</span> = "multiply by <span class="arithmatex">\(a\)</span> modulo <span class="arithmatex">\(N\)</span>." Its eigenvalues encode the order <span class="arithmatex">\(r\)</span> of <span class="arithmatex">\(a\)</span> modulo <span class="arithmatex">\(N\)</span>.
+- <strong>Quantum chemistry (QPE for molecular energies):</strong> <span class="arithmatex">\(U = e^{-iHt}\)</span> where <span class="arithmatex">\(H\)</span> is the molecular Hamiltonian. The phase <span class="arithmatex">\(\theta = Et/2\pi\)</span> encodes the energy eigenvalue <span class="arithmatex">\(E\)</span>.
+- <strong>HHL algorithm:</strong> <span class="arithmatex">\(U\)</span> = the unitary implementing a matrix exponential. The eigenvalues encode the singular values needed for linear system inversion.</p>
+<p>In all cases, the strategy is identical: use QPE to extract eigenvalues of a unitary.</p>
+<h3 id="the-qpe-circuit">The QPE Circuit<a class="headerlink" href="#the-qpe-circuit" title="Permanent link">&para;</a></h3>
+<p><strong>Setup:</strong> <span class="arithmatex">\(m\)</span> ancilla qubits (the "counting register") initialized to <span class="arithmatex">\(|0\rangle^{\otimes m}\)</span>, plus the eigenstate <span class="arithmatex">\(|\psi\rangle\)</span> in the "target register."</p>
+<p><strong>Step 1:</strong> Apply <span class="arithmatex">\(H^{\otimes m}\)</span> to the counting register, creating equal superposition:</p>
+<div class="arithmatex">\[|0\rangle^{\otimes m}|\psi\rangle \xrightarrow{H^{\otimes m} \otimes I} \frac{1}{\sqrt{2^m}}\sum_{k=0}^{2^m-1}|k\rangle|\psi\rangle\]</div>
+<p><strong>Step 2:</strong> Apply controlled-<span class="arithmatex">\(U^{2^j}\)</span> for <span class="arithmatex">\(j = 0, 1, \ldots, m-1\)</span>, controlled on the <span class="arithmatex">\(j\)</span>-th ancilla qubit. Because <span class="arithmatex">\(U|\psi\rangle = e^{2\pi i\theta}|\psi\rangle\)</span>, applying <span class="arithmatex">\(U^{2^j}\)</span> to <span class="arithmatex">\(|\psi\rangle\)</span> gives <span class="arithmatex">\(e^{2\pi i \cdot 2^j \theta}|\psi\rangle\)</span>. The state of the counting register evolves to:</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{2^m}}\sum_{k=0}^{2^m-1}e^{2\pi i k\theta}|k\rangle|\psi\rangle\]</div>
+<p><strong>Step 3:</strong> Apply the inverse QFT (<span class="arithmatex">\(\text{QFT}^\dagger\)</span>) to the counting register. Recall that QFT maps <span class="arithmatex">\(|j\rangle \to \frac{1}{\sqrt{2^m}}\sum_k e^{2\pi ijk/2^m}|k\rangle\)</span>. Its inverse maps <span class="arithmatex">\(\frac{1}{\sqrt{2^m}}\sum_k e^{2\pi i k\theta}|k\rangle\)</span> to <span class="arithmatex">\(|\tilde{\theta}\rangle\)</span> — the state closest to <span class="arithmatex">\(2^m \theta\)</span> in the computational basis.</p>
+<p><strong>Step 4:</strong> Measure the counting register. The outcome is the <span class="arithmatex">\(m\)</span>-bit binary approximation <span class="arithmatex">\(\tilde{\theta}\)</span> to <span class="arithmatex">\(2^m \theta\)</span>, from which we extract <span class="arithmatex">\(\theta \approx \tilde{\theta}/2^m\)</span>.</p>
 <div class="admonition example">
-<p class="admonition-title">Worked Example: 2-qubit QFT on |00⟩</p>
-<p>For <span class="arithmatex">\(n=2\)</span> qubits (<span class="arithmatex">\(N=4\)</span>), starting from <span class="arithmatex">\(\ket{00}\)</span>:</p>
-<p><strong>Step 1:</strong> Apply H to qubit 0: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{0}\)</span></p>
-<p><strong>Step 2:</strong> Apply controlled-<span class="arithmatex">\(R_2\)</span> (controlled-S) with qubit 1 as control:
-Since qubit 1 is <span class="arithmatex">\(\ket{0}\)</span>, no phase is added: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{0}\)</span></p>
-<p><strong>Step 3:</strong> Apply H to qubit 1: <span class="arithmatex">\(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) \otimes \frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = \frac{1}{2}(\ket{00}+\ket{01}+\ket{10}+\ket{11})\)</span></p>
-<p>The QFT of <span class="arithmatex">\(\ket{0}\)</span> is the uniform superposition — exactly as expected from the DFT formula.</p>
+<p class="admonition-title">Worked Example 4.1: QPE with <span class="arithmatex">\(m = 3\)</span> Ancilla Bits</p>
+<p>Let <span class="arithmatex">\(U\)</span> be a gate with eigenstate <span class="arithmatex">\(|\psi\rangle\)</span> and eigenvalue <span class="arithmatex">\(e^{2\pi i\theta}\)</span> where <span class="arithmatex">\(\theta = 3/8\)</span>.</p>
+<p>In binary, <span class="arithmatex">\(3/8 = 0.011_2\)</span>, so <span class="arithmatex">\(2^3 \theta = 3\)</span> exactly — a <span class="arithmatex">\(m=3\)</span>-bit binary fraction with no truncation.</p>
+<p>After the controlled-<span class="arithmatex">\(U\)</span> applications, the counting register holds:
+$<span class="arithmatex">\(\frac{1}{\sqrt{8}}\sum_{k=0}^{7}e^{2\pi i k \cdot 3/8}|k\rangle\)</span>$</p>
+<p>After applying <span class="arithmatex">\(\text{QFT}^\dagger\)</span>, this concentrates to <span class="arithmatex">\(|011\rangle\)</span> (binary for 3) with probability 1.</p>
+<p>Measuring the counting register: outcome <span class="arithmatex">\(011_2 = 3\)</span>, giving <span class="arithmatex">\(\theta = 3/8\)</span> exactly. ✓</p>
+<p><strong>What if <span class="arithmatex">\(\theta\)</span> is not exactly representable in <span class="arithmatex">\(m\)</span> bits?</strong> For example, <span class="arithmatex">\(\theta = 1/3\)</span>. Then <span class="arithmatex">\(2^m \theta = 2^m/3\)</span> is not an integer. The <span class="arithmatex">\(\text{QFT}^\dagger\)</span> produces a superposition of nearby integers, and measurement gives the <em>closest</em> <span class="arithmatex">\(m\)</span>-bit approximation. Probability analysis shows that with at least <span class="arithmatex">\(m \geq t + 2\)</span> ancilla bits, we get the correct <span class="arithmatex">\(t\)</span>-bit approximation of <span class="arithmatex">\(\theta\)</span> with probability <span class="arithmatex">\(\geq 1 - 1/(2(2^{t}-2))\)</span>.</p>
 </div>
-<hr />
-<h2 id="2-shors-algorithm-exponential-speedup-for-factoring">2. Shor's Algorithm — Exponential Speedup for Factoring<a class="headerlink" href="#2-shors-algorithm-exponential-speedup-for-factoring" title="Permanent link">&para;</a></h2>
-<h3 id="21-the-rsa-cryptosystem-and-its-classical-hardness">2.1 The RSA Cryptosystem and Its Classical Hardness<a class="headerlink" href="#21-the-rsa-cryptosystem-and-its-classical-hardness" title="Permanent link">&para;</a></h3>
-<p>The RSA cryptosystem (Rivest, Shamir, Adleman, 1977) secures internet communications, digital signatures, and financial transactions worldwide. Its security rests on one assumption: <strong>factoring large numbers is hard</strong>.</p>
-<p>Given <span class="arithmatex">\(N = p \times q\)</span> (the product of two large primes), finding <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> classically requires super-polynomial time. The best classical algorithm — the General Number Field Sieve — has complexity:</p>
-<div class="arithmatex">\[O\left(\exp\left(c \cdot (\log N)^{1/3} \cdot (\log \log N)^{2/3}\right)\right)\]</div>
-<p>For <span class="arithmatex">\(N\)</span> with 2048 bits, this is estimated to require thousands of years on the world's most powerful classical supercomputer. RSA-2048 is considered safe against classical attack indefinitely.</p>
-<h3 id="22-the-mathematical-reduction-factoring-period-finding">2.2 The Mathematical Reduction: Factoring → Period-Finding<a class="headerlink" href="#22-the-mathematical-reduction-factoring-period-finding" title="Permanent link">&para;</a></h3>
-<p>Shor's key insight is that <strong>factoring reduces to period-finding</strong> via classical number theory:</p>
-<ol>
-<li>Choose a random integer <span class="arithmatex">\(a\)</span> with <span class="arithmatex">\(1 &lt; a &lt; N\)</span> and <span class="arithmatex">\(\gcd(a, N) = 1\)</span>.</li>
-<li>The function <span class="arithmatex">\(f(x) = a^x \bmod N\)</span> is <strong>periodic</strong>: there exists a period <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(f(x+r) = f(x)\)</span> for all <span class="arithmatex">\(x\)</span>.</li>
-<li>If <span class="arithmatex">\(r\)</span> is even and <span class="arithmatex">\(a^{r/2} \not\equiv -1 \pmod{N}\)</span>, then:
-   $<span class="arithmatex">\(\gcd(a^{r/2} - 1, N) \quad \text{and} \quad \gcd(a^{r/2} + 1, N)\)</span>$
-   are nontrivial factors of <span class="arithmatex">\(N\)</span> (with probability <span class="arithmatex">\(\geq 1/2\)</span> over random choices of <span class="arithmatex">\(a\)</span>).</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Worked Example: Factoring N = 15</p>
-<p>Choose <span class="arithmatex">\(a = 7\)</span>. Compute <span class="arithmatex">\(f(x) = 7^x \bmod 15\)</span>:</p>
+<h3 id="precision-and-the-non-eigenstate-case">Precision and the Non-Eigenstate Case<a class="headerlink" href="#precision-and-the-non-eigenstate-case" title="Permanent link">&para;</a></h3>
+<p>With <span class="arithmatex">\(m\)</span> ancilla bits, QPE estimates <span class="arithmatex">\(\theta\)</span> with error at most <span class="arithmatex">\(2^{-m}\)</span> with high probability. Each additional ancilla qubit doubles precision. This is exponential precision in the number of qubits — a powerful feature.</p>
+<p><strong>What if the input is not an eigenstate?</strong> If the target register is in a superposition of eigenstates <span class="arithmatex">\(|\psi\rangle = \sum_j c_j |\psi_j\rangle\)</span> (where <span class="arithmatex">\(U|\psi_j\rangle = e^{2\pi i\theta_j}|\psi_j\rangle\)</span>), then after QPE the joint state is <span class="arithmatex">\(\sum_j c_j |\tilde{\theta}_j\rangle|\psi_j\rangle\)</span>. Measuring the counting register yields <span class="arithmatex">\(\tilde{\theta}_j\)</span> with probability <span class="arithmatex">\(|c_j|^2\)</span>. This behavior is exploited in quantum chemistry: the initial state <span class="arithmatex">\(|\psi\rangle\)</span> is chosen to have large overlap with the ground state (small-energy eigenstate), so measurement usually yields the ground state energy.</p>
+<h3 id="qpe-as-a-unifying-framework">QPE as a Unifying Framework<a class="headerlink" href="#qpe-as-a-unifying-framework" title="Permanent link">&para;</a></h3>
+<p>The QPE circuit is the same for every application — only the choice of <span class="arithmatex">\(U\)</span> changes:</p>
 <table>
 <thead>
 <tr>
-<th><span class="arithmatex">\(x\)</span></th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
+<th>Application</th>
+<th>Unitary <span class="arithmatex">\(U\)</span></th>
+<th>What QPE extracts</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(f(x)\)</span></td>
-<td>1</td>
-<td>7</td>
-<td>4</td>
-<td>13</td>
-<td>1</td>
-<td>7</td>
-<td>4</td>
+<td>Shor's factoring</td>
+<td>Modular multiplication $</td>
+<td>x\rangle \to</td>
+</tr>
+<tr>
+<td>Quantum chemistry</td>
+<td>Time evolution <span class="arithmatex">\(e^{-iHt}\)</span></td>
+<td>Energy eigenvalue <span class="arithmatex">\(E\)</span></td>
+</tr>
+<tr>
+<td>HHL linear systems</td>
+<td>Matrix exponential related to <span class="arithmatex">\(A\)</span></td>
+<td>Reciprocal of eigenvalue <span class="arithmatex">\(1/\lambda\)</span></td>
+</tr>
+<tr>
+<td>Quantum counting</td>
+<td>Grover iteration</td>
+<td>Number of solutions <span class="arithmatex">\(M\)</span> to search problem</td>
 </tr>
 </tbody>
 </table>
-<p>Period <span class="arithmatex">\(r = 4\)</span> (since <span class="arithmatex">\(f(4) = f(0) = 1\)</span>).</p>
-<p>Check: <span class="arithmatex">\(r = 4\)</span> is even. <span class="arithmatex">\(7^2 = 49 \equiv 4 \pmod{15} \neq -1 \equiv 14\)</span>. ✓</p>
-<p>Factors:
-- <span class="arithmatex">\(\gcd(7^2 - 1, 15) = \gcd(48, 15) = 3\)</span>  ✓
-- <span class="arithmatex">\(\gcd(7^2 + 1, 15) = \gcd(50, 15) = 5\)</span>  ✓</p>
-<p><strong>15 = 3 × 5</strong>, found using the period of <span class="arithmatex">\(7^x \bmod 15\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>QPE is the algorithmic engine behind the most commercially important quantum applications. Understanding that Shor's algorithm, quantum drug discovery, and quantum machine learning all use the same underlying primitive — QPE — helps CXOs assess capability claims. A quantum computer capable of running deep QPE circuits (requiring high gate fidelity and long coherence) is also capable of the molecular simulations that pharmaceutical companies seek. The same fault-tolerant hardware serves multiple industries. This is why IBM's Starling (200 logical qubits, <span class="arithmatex">\(10^8\)</span> gates, 2028–2029 projected) is simultaneously a milestone for cryptographic risk, drug discovery, and materials science.</p>
 </div>
-<h3 id="23-the-quantum-period-finding-subroutine">2.3 The Quantum Period-Finding Subroutine<a class="headerlink" href="#23-the-quantum-period-finding-subroutine" title="Permanent link">&para;</a></h3>
-<p>The quantum algorithm finds the period <span class="arithmatex">\(r\)</span> using the QFT:</p>
-<p><strong>Step 1: Initialize.</strong> Two registers — input of <span class="arithmatex">\(n = \lceil 2\log_2 N \rceil\)</span> qubits (all <span class="arithmatex">\(\ket{0}\)</span>) and output of <span class="arithmatex">\(\lceil \log_2 N \rceil\)</span> qubits.</p>
-<p><strong>Step 2: Create superposition.</strong> Apply <span class="arithmatex">\(H^{\otimes n}\)</span> to the input register:
-$<span class="arithmatex">\(\frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}\ket{x}\ket{0}\)</span>$</p>
-<p><strong>Step 3: Apply the oracle.</strong> Compute <span class="arithmatex">\(f(x) = a^x \bmod N\)</span> in superposition:
-$<span class="arithmatex">\(\frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}\ket{x}\ket{a^x \bmod N}\)</span>$</p>
-<p>Due to superposition, all <span class="arithmatex">\(2^n\)</span> values of <span class="arithmatex">\(f(x)\)</span> are computed <strong>simultaneously</strong> in a single application of the unitary oracle <span class="arithmatex">\(U_f\)</span>. This is quantum parallelism.</p>
-<p><strong>Step 4: Apply QFT.</strong> Apply the QFT to the input register. The periodicity in <span class="arithmatex">\(f(x)\)</span> causes constructive interference at multiples of <span class="arithmatex">\(N/r\)</span> and destructive interference elsewhere.</p>
-<p><strong>Step 5: Measure.</strong> Measurement yields an integer <span class="arithmatex">\(j\)</span> close to a multiple of <span class="arithmatex">\(N/r\)</span>: <span class="arithmatex">\(j \approx k \cdot N/r\)</span> for some integer <span class="arithmatex">\(k\)</span>. The <strong>continued fractions algorithm</strong> (classical, <span class="arithmatex">\(O((\log N)^3)\)</span>) extracts <span class="arithmatex">\(r\)</span> from the measurement outcome.</p>
-<p><strong>Complexity:</strong> The QFT requires <span class="arithmatex">\(O(n^2)\)</span> gates; the modular exponentiation oracle requires <span class="arithmatex">\(O(n^3)\)</span> gates. Total: <span class="arithmatex">\(O((\log N)^3)\)</span> — <strong>polynomial</strong> in the number of digits of <span class="arithmatex">\(N\)</span>, compared to the classical super-exponential.</p>
-<h3 id="24-resource-estimates-for-rsa-2048">2.4 Resource Estimates for RSA-2048<a class="headerlink" href="#24-resource-estimates-for-rsa-2048" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="42-shors-algorithm-factoring-via-period-finding">4.2 Shor's Algorithm: Factoring via Period Finding<a class="headerlink" href="#42-shors-algorithm-factoring-via-period-finding" title="Permanent link">&para;</a></h2>
+<h3 id="421-the-order-finding-problem">4.2.1 The Order-Finding Problem<a class="headerlink" href="#421-the-order-finding-problem" title="Permanent link">&para;</a></h3>
+<p>Shor's factoring algorithm reduces to a more fundamental problem in group theory: <strong>order finding</strong>.</p>
+<p><strong>Definition:</strong> Let <span class="arithmatex">\(N\)</span> be a positive integer and <span class="arithmatex">\(a\)</span> be an integer with <span class="arithmatex">\(1 \leq a &lt; N\)</span> and <span class="arithmatex">\(\gcd(a, N) = 1\)</span> (i.e., <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(N\)</span> are coprime). The <em>order</em> of <span class="arithmatex">\(a\)</span> modulo <span class="arithmatex">\(N\)</span> is the smallest positive integer <span class="arithmatex">\(r\)</span> such that:</p>
+<div class="arithmatex">\[a^r \equiv 1 \pmod{N}\]</div>
+<p>The order exists because the sequence <span class="arithmatex">\(a^0 \bmod N, a^1 \bmod N, a^2 \bmod N, \ldots\)</span> is periodic (it takes values in the finite set <span class="arithmatex">\(\{0, 1, \ldots, N-1\}\)</span>) and the sequence must eventually return to 1 since <span class="arithmatex">\(\gcd(a,N)=1\)</span>.</p>
+<p><strong>Group theory context:</strong> The integers coprime to <span class="arithmatex">\(N\)</span> form a multiplicative group <span class="arithmatex">\((\mathbb{Z}/N\mathbb{Z})^*\)</span> under multiplication modulo <span class="arithmatex">\(N\)</span>. This group has order <span class="arithmatex">\(\phi(N)\)</span> (Euler's totient function). Euler's theorem states <span class="arithmatex">\(a^{\phi(N)} \equiv 1 \pmod{N}\)</span> for all <span class="arithmatex">\(a\)</span> in the group — so the order <span class="arithmatex">\(r\)</span> always divides <span class="arithmatex">\(\phi(N)\)</span>. For <span class="arithmatex">\(N = pq\)</span> (product of two primes), <span class="arithmatex">\(\phi(N) = (p-1)(q-1)\)</span>.</p>
+<p><strong>Classical hardness:</strong> The best classical algorithm for order finding is essentially as hard as factoring — no polynomial-time classical algorithm is known. The general number field sieve achieves <span class="arithmatex">\(\exp(O((\log N)^{1/3}(\log \log N)^{2/3}))\)</span> time — subexponential but infeasible for <span class="arithmatex">\(N\)</span> with 2048-bit factors.</p>
+<h3 id="422-quantum-solution-via-phase-estimation">4.2.2 Quantum Solution via Phase Estimation<a class="headerlink" href="#422-quantum-solution-via-phase-estimation" title="Permanent link">&para;</a></h3>
+<p>Shor's quantum speedup for order finding is QPE applied to the <em>modular multiplication unitary</em>:</p>
+<div class="arithmatex">\[U_a|x\rangle = |ax \bmod N\rangle\]</div>
+<p>This unitary is well-defined for <span class="arithmatex">\(x \in \{0, 1, \ldots, N-1\}\)</span> and is unitary because multiplication by <span class="arithmatex">\(a\)</span> (with <span class="arithmatex">\(\gcd(a,N)=1\)</span>) is a permutation of <span class="arithmatex">\((\mathbb{Z}/N\mathbb{Z})^*\)</span>.</p>
+<p><strong>Eigenstates of <span class="arithmatex">\(U_a\)</span>:</strong> The eigenstates of <span class="arithmatex">\(U_a\)</span> are the states:</p>
+<div class="arithmatex">\[|u_s\rangle = \frac{1}{\sqrt{r}}\sum_{j=0}^{r-1}e^{-2\pi i sj/r}|a^j \bmod N\rangle, \quad s = 0, 1, \ldots, r-1\]</div>
+<p>with eigenvalues <span class="arithmatex">\(e^{2\pi is/r}\)</span>. The phase is <span class="arithmatex">\(\theta_s = s/r\)</span>.</p>
+<p><strong>QPE extracts <span class="arithmatex">\(s/r\)</span>:</strong> Applying QPE to <span class="arithmatex">\(U_a\)</span> with the state <span class="arithmatex">\(|1\rangle\)</span> (which equals <span class="arithmatex">\(\frac{1}{\sqrt{r}}\sum_s |u_s\rangle\)</span>) gives the phase <span class="arithmatex">\(s/r\)</span> for a uniformly random <span class="arithmatex">\(s \in \{0, \ldots, r-1\}\)</span>.</p>
+<p><strong>Recovering <span class="arithmatex">\(r\)</span> from <span class="arithmatex">\(s/r\)</span>:</strong> Given a good approximation to <span class="arithmatex">\(s/r\)</span>, the classical <em>continued fractions algorithm</em> efficiently recovers <span class="arithmatex">\(r\)</span>, provided <span class="arithmatex">\(\gcd(s,r) = 1\)</span>. If <span class="arithmatex">\(\gcd(s,r) \neq 1\)</span>, we get a divisor of <span class="arithmatex">\(r\)</span> rather than <span class="arithmatex">\(r\)</span> itself — we simply repeat the procedure with a new random <span class="arithmatex">\(a\)</span>. The probability that a random <span class="arithmatex">\(s\)</span> satisfies <span class="arithmatex">\(\gcd(s,r) = 1\)</span> is <span class="arithmatex">\(\phi(r)/r \geq 1/\log \log r\)</span> — sufficient for efficient randomized recovery.</p>
+<h3 id="423-reducing-factoring-to-order-finding">4.2.3 Reducing Factoring to Order Finding<a class="headerlink" href="#423-reducing-factoring-to-order-finding" title="Permanent link">&para;</a></h3>
+<p>Given an efficient order-finding algorithm, factoring <span class="arithmatex">\(N = pq\)</span> is polynomial-time classically:</p>
+<p><strong>Algorithm:</strong>
+1. If <span class="arithmatex">\(N\)</span> is even, return factor 2. (Trivial.)
+2. If <span class="arithmatex">\(N = a^b\)</span> for integers <span class="arithmatex">\(a \geq 1, b \geq 2\)</span>, return <span class="arithmatex">\(a\)</span>. (Classical, polynomial.)
+3. Choose a random <span class="arithmatex">\(a\)</span> with <span class="arithmatex">\(2 \leq a \leq N-1\)</span>.
+4. Compute <span class="arithmatex">\(g = \gcd(a, N)\)</span>. If <span class="arithmatex">\(g &gt; 1\)</span>, return <span class="arithmatex">\(g\)</span>. (Lucky: found a factor directly.)
+5. Find the order <span class="arithmatex">\(r\)</span> of <span class="arithmatex">\(a\)</span> modulo <span class="arithmatex">\(N\)</span> (using the quantum algorithm).
+6. If <span class="arithmatex">\(r\)</span> is odd or <span class="arithmatex">\(a^{r/2} \equiv -1 \pmod{N}\)</span>, go to step 3.
+7. Compute <span class="arithmatex">\(\gcd(a^{r/2} - 1, N)\)</span> and <span class="arithmatex">\(\gcd(a^{r/2} + 1, N)\)</span>. At least one is a nontrivial factor of <span class="arithmatex">\(N\)</span>.</p>
+<p><strong>Why does step 7 work?</strong> If <span class="arithmatex">\(r\)</span> is even and <span class="arithmatex">\(a^{r/2} \not\equiv -1 \pmod{N}\)</span>, then:
+$<span class="arithmatex">\(a^r \equiv 1 \pmod{N} \implies (a^{r/2}-1)(a^{r/2}+1) \equiv 0 \pmod{N}\)</span>$</p>
+<p>Since <span class="arithmatex">\(N = pq\)</span> and neither factor is <span class="arithmatex">\(\equiv 0 \pmod{N}\)</span> individually (by assumption), the factors <span class="arithmatex">\(a^{r/2} \pm 1\)</span> share nontrivial factors with <span class="arithmatex">\(N\)</span>. The probability that a random <span class="arithmatex">\(a\)</span> satisfies both conditions (even <span class="arithmatex">\(r\)</span> and <span class="arithmatex">\(a^{r/2} \not\equiv -1\)</span>) is <span class="arithmatex">\(\geq 1 - 1/2^{k-1}\)</span> for <span class="arithmatex">\(N\)</span> with <span class="arithmatex">\(k\)</span> distinct prime factors — for <span class="arithmatex">\(N = pq\)</span>, this probability is <span class="arithmatex">\(\geq 1/2\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 4.2: Factoring N=15 by Order Finding</p>
+<p><strong>Input:</strong> <span class="arithmatex">\(N = 15\)</span>, choose <span class="arithmatex">\(a = 7\)</span>.</p>
+<p><strong>Step 1:</strong> <span class="arithmatex">\(\gcd(7, 15) = 1\)</span> ✓ (proceed)</p>
+<p><strong>Step 2 — Classical order finding (for illustration):</strong> Compute <span class="arithmatex">\(7^k \bmod 15\)</span>:
+- <span class="arithmatex">\(7^1 = 7\)</span>
+- <span class="arithmatex">\(7^2 = 49 \equiv 4\)</span>
+- <span class="arithmatex">\(7^3 = 28 \cdot 7 \equiv 4 \cdot 7 = 28 \equiv 13\)</span>
+- <span class="arithmatex">\(7^4 = 13 \cdot 7 = 91 \equiv 1\)</span> ✓</p>
+<p>Order: <span class="arithmatex">\(r = 4\)</span> (even ✓)</p>
+<p><strong>Step 3 — Check:</strong> <span class="arithmatex">\(a^{r/2} = 7^2 = 49 \equiv 4 \pmod{15}\)</span>. Is <span class="arithmatex">\(4 \equiv -1 \equiv 14 \pmod{15}\)</span>? No ✓</p>
+<p><strong>Step 4 — Extract factors:</strong>
+$<span class="arithmatex">\(\gcd(7^2 - 1, 15) = \gcd(48, 15) = \gcd(48 - 3 \cdot 15, 15) = \gcd(3, 15) = \mathbf{3}\)</span>$
+$<span class="arithmatex">\(\gcd(7^2 + 1, 15) = \gcd(50, 15) = \gcd(50 - 3 \cdot 15, 15) = \gcd(5, 15) = \mathbf{5}\)</span>$</p>
+<p><strong>Result:</strong> <span class="arithmatex">\(15 = 3 \times 5\)</span> ✓</p>
+<p><strong>In the quantum version:</strong> Step 2 would use QPE on <span class="arithmatex">\(U_7\)</span> with counting register of <span class="arithmatex">\(n \approx 2\log_2 15 = 8\)</span> qubits, obtaining a measurement of <span class="arithmatex">\(s/4\)</span> for random <span class="arithmatex">\(s \in \{0,1,2,3\}\)</span>, from which the continued fractions algorithm recovers <span class="arithmatex">\(r = 4\)</span>.</p>
+</div>
+<h3 id="424-complexity-analysis-and-resource-estimates">4.2.4 Complexity Analysis and Resource Estimates<a class="headerlink" href="#424-complexity-analysis-and-resource-estimates" title="Permanent link">&para;</a></h3>
+<p><strong>Quantum complexity:</strong> The QFT requires <span class="arithmatex">\(O(n^2)\)</span> gates. Modular exponentiation (computing <span class="arithmatex">\(|x\rangle \to |a^x \bmod N\rangle\)</span>) using repeated squaring requires <span class="arithmatex">\(O(n^3)\)</span> gates, where <span class="arithmatex">\(n = \lceil \log_2 N \rceil\)</span>. Total circuit size: <span class="arithmatex">\(O(n^3) = O((\log N)^3)\)</span> — polynomial in the number of digits.</p>
+<p><strong>Classical comparison:</strong> The best classical factoring algorithm (General Number Field Sieve) runs in time:
+$<span class="arithmatex">\(\exp\!\left(c(\log N)^{1/3}(\log \log N)^{2/3}\right), \quad c \approx 1.923\)</span>$</p>
+<p>For RSA-2048 (<span class="arithmatex">\(\log_2 N = 2048\)</span>), this is approximately <span class="arithmatex">\(2^{112}\)</span> operations — currently infeasible.</p>
+<p><strong>Physical qubit requirements for RSA-2048:</strong></p>
 <table>
 <thead>
 <tr>
+<th>Study</th>
 <th>Year</th>
-<th>Team</th>
+<th>Logical qubits</th>
 <th>Physical qubits</th>
-<th>Time</th>
+<th>Runtime</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1996</td>
 <td>Beckman et al.</td>
+<td>1996</td>
+<td>~10,241</td>
 <td>~10 million</td>
 <td>—</td>
 </tr>
 <tr>
-<td>2003</td>
 <td>Beauregard</td>
+<td>2003</td>
+<td>~4,099</td>
 <td>~4 million</td>
 <td>—</td>
 </tr>
 <tr>
-<td>2021</td>
 <td>Gidney &amp; Ekerå</td>
+<td>2021</td>
+<td>~4,098</td>
 <td>~20 million</td>
 <td>8 hours</td>
 </tr>
 <tr>
-<td>2025 (May)</td>
+<td>Banegas et al.</td>
+<td>2023</td>
+<td>~2,048</td>
+<td>~10 million</td>
+<td>—</td>
+</tr>
+<tr>
 <td>Gidney</td>
-<td><strong>&lt;1 million</strong></td>
-<td>~8 hours</td>
+<td>2025</td>
+<td>~3,500</td>
+<td>&lt;1 million</td>
+<td>&lt;1 hour (est.)</td>
 </tr>
 </tbody>
 </table>
-<p>Craig Gidney's May 2025 update reduced the qubit requirement by <strong>95%</strong> through improved surface code implementations and circuit optimizations. Current hardware has ~100 high-quality qubits. The gap is closing but remains at roughly three orders of magnitude.</p>
-<div class="admonition tip">
+<p>The rapid decrease in resource estimates reflects algorithmic improvements in Shor's circuit, not hardware advances. The fundamental gap between current systems (~1,000 physical qubits with high noise) and the ~1 million needed for RSA-2048 remains large — but is shrinking faster than most expected in 2021.</p>
+<div class="admonition note">
 <p class="admonition-title">Business Implication</p>
-<p>The 2025 resource reduction is significant: it moves the target from a machine requiring tens of millions of physical qubits (a 2040s prospect) to one requiring fewer than a million (potentially a 2030s prospect at IBM's Starling-class trajectory). Organizations encrypting data that must remain confidential for 10+ years face a mathematical deadline — <strong>not</strong> a 2026 concern, but absolutely a 2026 <strong>planning</strong> concern. The harvest-now-decrypt-later threat (Chapter 12) is already active.</p>
+<p>The resource estimates for Shor's algorithm define the "countdown clock" for post-quantum cryptographic migration. Current projections suggest fault-tolerant quantum computers capable of breaking RSA-2048 could exist in the 2030–2040 timeframe — though this depends critically on error correction progress. More important than the exact date is the <em>harvest-now-decrypt-later</em> threat: data encrypted with RSA or ECC today may be decrypted in 10–20 years. For data with long confidentiality requirements (healthcare records, classified communications, trade secrets, financial transactions), the risk begins now. The NIST timeline — RSA/ECC deprecated by 2030, disallowed by 2035 — reflects this threat model. Migration takes years; organizations that haven't started are already late.</p>
 </div>
 <hr />
-<h2 id="3-grovers-algorithm-quadratic-speedup-for-search">3. Grover's Algorithm — Quadratic Speedup for Search<a class="headerlink" href="#3-grovers-algorithm-quadratic-speedup-for-search" title="Permanent link">&para;</a></h2>
-<h3 id="31-the-unstructured-search-problem">3.1 The Unstructured Search Problem<a class="headerlink" href="#31-the-unstructured-search-problem" title="Permanent link">&para;</a></h3>
-<p>Given a function <span class="arithmatex">\(f: \{0,1\}^n \to \{0,1\}\)</span> that equals 1 for exactly one "marked" input <span class="arithmatex">\(x^*\)</span> and 0 for all others, find <span class="arithmatex">\(x^*\)</span>. Classically, this requires <span class="arithmatex">\(O(N)\)</span> = <span class="arithmatex">\(O(2^n)\)</span> evaluations in the worst case. Grover's algorithm solves it in <span class="arithmatex">\(O(\sqrt{N})\)</span> evaluations.</p>
-<h3 id="32-the-algorithm">3.2 The Algorithm<a class="headerlink" href="#32-the-algorithm" title="Permanent link">&para;</a></h3>
-<p><strong>Initialization:</strong> Apply <span class="arithmatex">\(H^{\otimes n}\ket{0}^n\)</span> to create the uniform superposition <span class="arithmatex">\(\ket{s} = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}\ket{x}\)</span>.</p>
-<p><strong>Grover iteration</strong> (repeat <span class="arithmatex">\(\approx \frac{\pi}{4}\sqrt{N}\)</span> times):</p>
-<ol>
-<li><strong>Oracle:</strong> Apply <span class="arithmatex">\(O\ket{x} = (-1)^{f(x)}\ket{x}\)</span> — flip the sign of the marked state's amplitude.</li>
-<li><strong>Diffusion:</strong> Apply the operator <span class="arithmatex">\(D = 2\ket{s}\bra{s} - \mathbb{I}\)</span> — invert all amplitudes about their mean.</li>
-</ol>
-<p><strong>Geometric interpretation:</strong> The algorithm rotates the state vector in the 2D subspace spanned by <span class="arithmatex">\(\ket{x^*}\)</span> (the target) and <span class="arithmatex">\(\ket{s_\perp}\)</span> (uniform superposition over non-target states). Each Grover iteration rotates by angle <span class="arithmatex">\(2\theta\)</span> where <span class="arithmatex">\(\sin\theta = 1/\sqrt{N}\)</span>. After <span class="arithmatex">\(\frac{\pi}{4\theta} \approx \frac{\pi}{4}\sqrt{N}\)</span> iterations, the state aligns with <span class="arithmatex">\(\ket{x^*}\)</span>.</p>
+<h2 id="43-grovers-algorithm-quadratic-speedup-for-unstructured-search">4.3 Grover's Algorithm: Quadratic Speedup for Unstructured Search<a class="headerlink" href="#43-grovers-algorithm-quadratic-speedup-for-unstructured-search" title="Permanent link">&para;</a></h2>
+<h3 id="431-the-search-problem">4.3.1 The Search Problem<a class="headerlink" href="#431-the-search-problem" title="Permanent link">&para;</a></h3>
+<p><strong>Unstructured search:</strong> Given a function <span class="arithmatex">\(f: \{0, 1, \ldots, N-1\} \to \{0, 1\}\)</span> with exactly one "marked" input <span class="arithmatex">\(x^*\)</span> where <span class="arithmatex">\(f(x^*) = 1\)</span> (and <span class="arithmatex">\(f(x) = 0\)</span> for all others), find <span class="arithmatex">\(x^*\)</span>.</p>
+<p>Classically, with no structure to exploit, the only approach is brute force: query <span class="arithmatex">\(f\)</span> at random inputs. Expected number of queries: <span class="arithmatex">\(N/2\)</span>; worst case: <span class="arithmatex">\(N\)</span>.</p>
+<h3 id="432-grovers-algorithm">4.3.2 Grover's Algorithm<a class="headerlink" href="#432-grovers-algorithm" title="Permanent link">&para;</a></h3>
+<p>Grover (1996) showed that <span class="arithmatex">\(O(\sqrt{N})\)</span> quantum queries suffice — an asymptotically quadratic speedup. The algorithm has three components.</p>
+<p><strong>Oracle:</strong> <span class="arithmatex">\(O_f|x\rangle = (-1)^{f(x)}|x\rangle\)</span> — flips the phase of the marked state, leaves all others unchanged.</p>
+<p><strong>Diffusion operator:</strong> <span class="arithmatex">\(D = 2|s\rangle\langle s| - I\)</span> where <span class="arithmatex">\(|s\rangle = \frac{1}{\sqrt{N}}\sum_x |x\rangle\)</span> is the uniform superposition. In matrix form, <span class="arithmatex">\(D\)</span> reflects the amplitude vector about the mean.</p>
+<p><strong>Grover iteration:</strong> <span class="arithmatex">\(G = D \circ O_f\)</span> — apply oracle, then diffusion.</p>
+<p><strong>Algorithm:</strong>
+1. Prepare <span class="arithmatex">\(|s\rangle = H^{\otimes n}|0\rangle^{\otimes n}\)</span> (uniform superposition, <span class="arithmatex">\(n = \log_2 N\)</span> qubits)
+2. Apply <span class="arithmatex">\(G\)</span> repeatedly: <span class="arithmatex">\(G^k|s\rangle\)</span> for <span class="arithmatex">\(k \approx \frac{\pi}{4}\sqrt{N}\)</span>
+3. Measure: obtain <span class="arithmatex">\(x^*\)</span> with probability <span class="arithmatex">\(\geq 1 - 1/N \approx 1\)</span></p>
+<h3 id="433-geometric-interpretation">4.3.3 Geometric Interpretation<a class="headerlink" href="#433-geometric-interpretation" title="Permanent link">&para;</a></h3>
+<p>Define two orthonormal states:
+- <span class="arithmatex">\(|t\rangle = |x^*\rangle\)</span> — the target (marked) state
+- <span class="arithmatex">\(|t^\perp\rangle = \frac{1}{\sqrt{N-1}}\sum_{x \neq x^*}|x\rangle\)</span> — uniform superposition over non-targets</p>
+<p>The initial state and all subsequent Grover iterates lie in the 2D subspace spanned by <span class="arithmatex">\(\{|t\rangle, |t^\perp\rangle\}\)</span>:</p>
+<div class="arithmatex">\[|s\rangle = \sin\theta|t\rangle + \cos\theta|t^\perp\rangle, \quad \sin\theta = \frac{1}{\sqrt{N}}\]</div>
+<p>Each Grover iteration <span class="arithmatex">\(G\)</span> rotates the state vector by angle <span class="arithmatex">\(2\theta\)</span> toward <span class="arithmatex">\(|t\rangle\)</span>. After <span class="arithmatex">\(k\)</span> iterations:</p>
+<div class="arithmatex">\[G^k|s\rangle = \sin((2k+1)\theta)|t\rangle + \cos((2k+1)\theta)|t^\perp\rangle\]</div>
+<p>We want <span class="arithmatex">\((2k+1)\theta \approx \pi/2\)</span>, giving <span class="arithmatex">\(k \approx \frac{\pi}{4\theta} \approx \frac{\pi}{4}\sqrt{N}\)</span> (since <span class="arithmatex">\(\sin\theta \approx \theta = 1/\sqrt{N}\)</span> for large <span class="arithmatex">\(N\)</span>). At this point, the amplitude of <span class="arithmatex">\(|t\rangle\)</span> is <span class="arithmatex">\(\sin(\pi/2) = 1\)</span> — the state is entirely the target.</p>
 <div class="admonition example">
-<p class="admonition-title">Worked Example: Grover on N=4 (2 qubits)</p>
-<p>Target: <span class="arithmatex">\(\ket{11}\)</span>. Initial uniform superposition: <span class="arithmatex">\(\frac{1}{2}(\ket{00}+\ket{01}+\ket{10}+\ket{11})\)</span>. Mean amplitude: <span class="arithmatex">\(1/2\)</span>.</p>
-<p><strong>Iteration 1, Step 1 (Oracle):</strong> Flip sign of <span class="arithmatex">\(\ket{11}\)</span>:
-<span class="arithmatex">\(\frac{1}{2}(\ket{00}+\ket{01}+\ket{10}-\ket{11})\)</span>. New mean: <span class="arithmatex">\(\frac{1}{4}(1+1+1-1) = \frac{1}{2} \cdot \frac{1}{2}\)</span>... wait, let me redo.</p>
-<p>Amplitudes: <span class="arithmatex">\((+\frac{1}{2}, +\frac{1}{2}, +\frac{1}{2}, -\frac{1}{2})\)</span>. Mean = <span class="arithmatex">\(\frac{1}{4}(\frac{1}{2}+\frac{1}{2}+\frac{1}{2}-\frac{1}{2}) = \frac{1}{4}\)</span>.</p>
-<p><strong>Step 2 (Diffusion):</strong> New amplitude <span class="arithmatex">\(= 2\mu - a_i\)</span>:
-- Non-target states: <span class="arithmatex">\(2 \cdot \frac{1}{4} - \frac{1}{2} = 0\)</span>
-- Target <span class="arithmatex">\(\ket{11}\)</span>: <span class="arithmatex">\(2 \cdot \frac{1}{4} - (-\frac{1}{2}) = 1\)</span></p>
-<p>After <strong>one</strong> iteration: state is exactly <span class="arithmatex">\(\ket{11}\)</span> with probability <strong>1</strong>. Measurement always finds the correct answer. For <span class="arithmatex">\(N=4\)</span>, one Grover iteration suffices (since <span class="arithmatex">\(\frac{\pi}{4}\sqrt{4} = \frac{\pi}{2} \approx 1.57 \approx 1\)</span> iteration).</p>
+<p class="admonition-title">Worked Example 4.3: Grover on N=4</p>
+<p>Two qubits, <span class="arithmatex">\(N = 4\)</span>, target <span class="arithmatex">\(|x^*\rangle = |11\rangle\)</span>.</p>
+<p><strong>Initial state:</strong> <span class="arithmatex">\(|s\rangle = H^{\otimes 2}|00\rangle = \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\)</span></p>
+<p>Amplitudes: <span class="arithmatex">\([\frac{1}{2}, \frac{1}{2}, \frac{1}{2}, \frac{1}{2}]\)</span></p>
+<p><strong>Oracle <span class="arithmatex">\(O_f\)</span>:</strong> flip sign of <span class="arithmatex">\(|11\rangle\)</span>: <span class="arithmatex">\([\frac{1}{2}, \frac{1}{2}, \frac{1}{2}, -\frac{1}{2}]\)</span></p>
+<p><strong>Diffusion <span class="arithmatex">\(D\)</span>:</strong> reflect about mean. Mean amplitude = <span class="arithmatex">\(\frac{1}{4}(\frac{1}{2}+\frac{1}{2}+\frac{1}{2}-\frac{1}{2}) = \frac{1}{4}\)</span>.
+New amplitude of <span class="arithmatex">\(|x\rangle\)</span> = <span class="arithmatex">\(2 \times \text{mean} - \text{old amplitude}\)</span>:
+- <span class="arithmatex">\(|00\rangle\)</span>: <span class="arithmatex">\(2 \times \frac{1}{4} - \frac{1}{2} = 0\)</span>
+- <span class="arithmatex">\(|01\rangle\)</span>: <span class="arithmatex">\(2 \times \frac{1}{4} - \frac{1}{2} = 0\)</span>
+- <span class="arithmatex">\(|10\rangle\)</span>: <span class="arithmatex">\(2 \times \frac{1}{4} - \frac{1}{2} = 0\)</span>
+- <span class="arithmatex">\(|11\rangle\)</span>: <span class="arithmatex">\(2 \times \frac{1}{4} - (-\frac{1}{2}) = \frac{1}{2} + \frac{1}{2} = 1\)</span></p>
+<p>After ONE Grover iteration: state = <span class="arithmatex">\(|11\rangle\)</span> exactly. <span class="arithmatex">\(P(\text{measuring }|11\rangle) = 1^2 = 1\)</span>. ✓</p>
+<p>For <span class="arithmatex">\(N=4\)</span>, <span class="arithmatex">\(k = \frac{\pi}{4}\sqrt{4} = \frac{\pi}{2} \approx 1.57\)</span>, rounded to 1 iteration — exact solution in one step.</p>
 </div>
-<h3 id="33-optimality-and-cryptographic-implications">3.3 Optimality and Cryptographic Implications<a class="headerlink" href="#33-optimality-and-cryptographic-implications" title="Permanent link">&para;</a></h3>
-<p>Grover's <span class="arithmatex">\(O(\sqrt{N})\)</span> is <strong>provably optimal</strong> for unstructured search — the BBBV theorem (Bennett, Bernstein, Brassard, Vazirani, 1997) shows no quantum algorithm can do better. This has direct cryptographic implications:</p>
+<h3 id="434-optimality-the-bbbv-theorem">4.3.4 Optimality: The BBBV Theorem<a class="headerlink" href="#434-optimality-the-bbbv-theorem" title="Permanent link">&para;</a></h3>
+<p>Grover's <span class="arithmatex">\(O(\sqrt{N})\)</span> is provably optimal for quantum unstructured search.</p>
+<p><strong>Theorem (Bennett, Bernstein, Brassard, Vazirani 1997):</strong> Any quantum algorithm for unstructured search on <span class="arithmatex">\(N\)</span> items requires <span class="arithmatex">\(\Omega(\sqrt{N})\)</span> queries to the oracle.</p>
+<p>The proof uses a "hybrid" argument: show that after <span class="arithmatex">\(k\)</span> queries, the amplitude on the marked item can increase by at most <span class="arithmatex">\(O(k/\sqrt{N})\)</span>, bounding the probability after <span class="arithmatex">\(k\)</span> steps by <span class="arithmatex">\(O(k^2/N)\)</span>. For constant success probability, <span class="arithmatex">\(k = \Omega(\sqrt{N})\)</span>.</p>
+<p>This is a quantum <em>lower bound</em> — rare and powerful results. It tells us that no clever quantum algorithm can do better than Grover's <span class="arithmatex">\(\sqrt{N}\)</span> queries for unstructured search.</p>
+<h3 id="435-cryptographic-implications">4.3.5 Cryptographic Implications<a class="headerlink" href="#435-cryptographic-implications" title="Permanent link">&para;</a></h3>
+<p>Grover's algorithm applied to cryptographic brute-force:</p>
 <table>
 <thead>
 <tr>
-<th>Cryptosystem</th>
 <th>Classical security</th>
-<th>Quantum security (Grover)</th>
-<th>Fix</th>
+<th>Problem</th>
+<th>Quantum query complexity</th>
+<th>Quantum security</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>AES-128</td>
-<td>128-bit</td>
-<td><strong>64-bit</strong> (broken)</td>
-<td>Use AES-256</td>
+<td><span class="arithmatex">\(2^{128}\)</span> (AES-128)</td>
+<td>Find AES-128 key</td>
+<td><span class="arithmatex">\(O(2^{64})\)</span></td>
+<td>64-bit quantum security</td>
 </tr>
 <tr>
-<td>AES-256</td>
-<td>256-bit</td>
-<td>128-bit (acceptable)</td>
-<td>No change needed</td>
+<td><span class="arithmatex">\(2^{256}\)</span> (AES-256)</td>
+<td>Find AES-256 key</td>
+<td><span class="arithmatex">\(O(2^{128})\)</span></td>
+<td>128-bit quantum security</td>
 </tr>
 <tr>
-<td>SHA-256 (collision)</td>
-<td>128-bit</td>
-<td>85-bit</td>
-<td>Use SHA-384+</td>
+<td><span class="arithmatex">\(2^{160}\)</span> (SHA-1)</td>
+<td>Find SHA-1 collision</td>
+<td><span class="arithmatex">\(O(2^{53})\)</span></td>
+<td>53-bit quantum security</td>
 </tr>
 <tr>
-<td>RSA-2048</td>
-<td>~112-bit</td>
-<td><strong>0-bit</strong> (Shor breaks it)</td>
-<td>Use PQC</td>
-</tr>
-<tr>
-<td>ECDSA P-256</td>
-<td>~128-bit</td>
-<td><strong>0-bit</strong> (Shor breaks it)</td>
-<td>Use PQC</td>
+<td><span class="arithmatex">\(2^{256}\)</span> (SHA-256)</td>
+<td>Find SHA-256 collision</td>
+<td><span class="arithmatex">\(O(2^{85})\)</span></td>
+<td>85-bit quantum security</td>
 </tr>
 </tbody>
 </table>
-<p>The key distinction: Grover gives a <strong>quadratic</strong> speedup that can be countered by doubling key lengths. Shor gives an <strong>exponential</strong> speedup that fundamentally breaks asymmetric cryptography — no key size increase helps.</p>
-<div class="admonition warning">
-<p class="admonition-title">Common Misconception</p>
-<p>Grover's algorithm does <strong>not</strong> break symmetric cryptography. AES-256 remains secure against quantum attack (128-bit quantum security). The symmetric ciphers do not require replacement — only key lengths may need adjustment. The cryptographic crisis is specifically about <strong>asymmetric systems</strong> (RSA, ECDSA, ECDH, Diffie-Hellman) that rely on factoring and discrete logarithms. Quantum computers threaten these completely.</p>
-</div>
+<p><strong>Key distinction from Shor:</strong> Grover provides a <em>quadratic</em> speedup — it halves the security level in bits. This can be mitigated by doubling key lengths (AES-256 retains 128-bit quantum security). Shor provides an <em>exponential</em> speedup — no key size increase can restore security against Shor. These are categorically different threats requiring categorically different responses.</p>
 <hr />
-<h2 id="4-the-quantum-complexity-landscape">4. The Quantum Complexity Landscape<a class="headerlink" href="#4-the-quantum-complexity-landscape" title="Permanent link">&para;</a></h2>
-<h3 id="41-complexity-classes">4.1 Complexity Classes<a class="headerlink" href="#41-complexity-classes" title="Permanent link">&para;</a></h3>
+<h2 id="44-simons-algorithm-the-bridge-to-shor">4.4 Simon's Algorithm: The Bridge to Shor<a class="headerlink" href="#44-simons-algorithm-the-bridge-to-shor" title="Permanent link">&para;</a></h2>
+<h3 id="441-why-simons-algorithm-matters">4.4.1 Why Simon's Algorithm Matters<a class="headerlink" href="#441-why-simons-algorithm-matters" title="Permanent link">&para;</a></h3>
+<p>Simon's algorithm (1994) is historically and conceptually the direct precursor to Shor's algorithm. It provides the clearest demonstration of <em>exponential quantum speedup</em> in the simplest possible setting. Understanding Simon's algorithm makes Shor's algorithm's structure transparent: Shor is Simon with the Hadamard replaced by the QFT, and XOR periodicity replaced by modular periodicity.</p>
+<p>Peter Shor himself has noted that Simon's algorithm was a key inspiration: replace XOR with multiplication modulo <span class="arithmatex">\(N\)</span>, and the exponential quantum speedup carries over.</p>
+<h3 id="442-simons-problem">4.4.2 Simon's Problem<a class="headerlink" href="#442-simons-problem" title="Permanent link">&para;</a></h3>
+<p><strong>Problem setup:</strong> Given a function <span class="arithmatex">\(f: \{0,1\}^n \to \{0,1\}^n\)</span> with the promise that there exists an unknown secret string <span class="arithmatex">\(s \in \{0,1\}^n\)</span> such that:</p>
+<div class="arithmatex">\[f(x) = f(y) \iff x \oplus y \in \{0^n, s\}\]</div>
+<p>(Either <span class="arithmatex">\(x = y\)</span>, or <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> differ by XOR with <span class="arithmatex">\(s\)</span>.) Find <span class="arithmatex">\(s\)</span>.</p>
+<p>If <span class="arithmatex">\(s = 0^n\)</span>, then <span class="arithmatex">\(f\)</span> is injective (one-to-one). Otherwise, <span class="arithmatex">\(f\)</span> is exactly 2-to-1: each output value has exactly two preimages, <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(x \oplus s\)</span>.</p>
+<p><strong>Classical lower bound:</strong> Any classical algorithm requires <span class="arithmatex">\(\Omega(2^{n/2})\)</span> queries in the worst case. The argument is a birthday paradox: to find a collision <span class="arithmatex">\(f(x) = f(y)\)</span> with <span class="arithmatex">\(x \neq y\)</span> (from which we get <span class="arithmatex">\(s = x \oplus y\)</span>), we need to query about <span class="arithmatex">\(2^{n/2}\)</span> inputs. This is exponential in <span class="arithmatex">\(n\)</span>.</p>
+<p><strong>Quantum algorithm:</strong> <span class="arithmatex">\(O(n)\)</span> queries suffice — an exponential speedup.</p>
+<h3 id="443-simons-quantum-algorithm">4.4.3 Simon's Quantum Algorithm<a class="headerlink" href="#443-simons-quantum-algorithm" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Initialize two registers.</strong> Input register: <span class="arithmatex">\(n\)</span> qubits in <span class="arithmatex">\(|0\rangle^{\otimes n}\)</span>. Output register: <span class="arithmatex">\(n\)</span> qubits in <span class="arithmatex">\(|0\rangle^{\otimes n}\)</span>.</p>
+<p><strong>Step 2: Create superposition in input register.</strong></p>
+<div class="arithmatex">\[H^{\otimes n}|0\rangle^{\otimes n}|0\rangle^{\otimes n} = \frac{1}{\sqrt{2^n}}\sum_{x \in \{0,1\}^n}|x\rangle|0\rangle^{\otimes n}\]</div>
+<p><strong>Step 3: Query the oracle.</strong> Apply <span class="arithmatex">\(B_f\)</span>:</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{2^n}}\sum_x |x\rangle|f(x)\rangle\]</div>
+<p><strong>Step 4: Measure the output register.</strong> Suppose we get outcome <span class="arithmatex">\(f(x_0)\)</span> for some <span class="arithmatex">\(x_0\)</span>. By the 2-to-1 property of <span class="arithmatex">\(f\)</span>, the input register collapses to:</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{2}}(|x_0\rangle + |x_0 \oplus s\rangle)\]</div>
+<p>(The two inputs mapping to <span class="arithmatex">\(f(x_0)\)</span> are <span class="arithmatex">\(x_0\)</span> and <span class="arithmatex">\(x_0 \oplus s\)</span>.)</p>
+<p><strong>Step 5: Apply Hadamard to input register.</strong> <span class="arithmatex">\(H^{\otimes n}\)</span> transforms this to:</p>
+<div class="arithmatex">\[H^{\otimes n}\left(\frac{|x_0\rangle + |x_0 \oplus s\rangle}{\sqrt{2}}\right) = \frac{1}{\sqrt{2^{n-1}}}\sum_{y: y \cdot s = 0 \pmod 2}(-1)^{x_0 \cdot y}|y\rangle\]</div>
+<p><strong>Step 6: Measure the input register.</strong> The outcome is a uniformly random <span class="arithmatex">\(y\)</span> satisfying <span class="arithmatex">\(y \cdot s \equiv 0 \pmod 2\)</span> — a random vector orthogonal to <span class="arithmatex">\(s\)</span> (in the sense of <span class="arithmatex">\(\mathbb{F}_2^n\)</span>).</p>
+<p><strong>Step 7: Repeat and solve.</strong> Repeat steps 1–6 <span class="arithmatex">\(O(n)\)</span> times, collecting <span class="arithmatex">\(O(n)\)</span> linearly independent equations <span class="arithmatex">\(y^{(1)}, y^{(2)}, \ldots, y^{(n-1)}\)</span> each satisfying <span class="arithmatex">\(y^{(i)} \cdot s = 0\)</span>. Solve this system of <span class="arithmatex">\(n-1\)</span> equations over <span class="arithmatex">\(\mathbb{F}_2\)</span> using Gaussian elimination to recover <span class="arithmatex">\(s\)</span>.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 4.4: Simon's Algorithm for n=2</p>
+<p>Let <span class="arithmatex">\(n = 2\)</span> and <span class="arithmatex">\(s = 11_2\)</span>. Define <span class="arithmatex">\(f: \{00, 01, 10, 11\} \to \{0,1\}^2\)</span>:
+- <span class="arithmatex">\(f(00) = f(11) = 01\)</span> (since <span class="arithmatex">\(00 \oplus 11 = 11 = s\)</span> ✓)
+- <span class="arithmatex">\(f(01) = f(10) = 10\)</span> (since <span class="arithmatex">\(01 \oplus 10 = 11 = s\)</span> ✓)</p>
+<p><strong>Run 1:</strong> After oracle query and output measurement (say, outcome <span class="arithmatex">\(01\)</span>), input register is <span class="arithmatex">\((|00\rangle + |11\rangle)/\sqrt{2}\)</span>.</p>
+<p>After <span class="arithmatex">\(H^{\otimes 2}\)</span>: uniform superposition over <span class="arithmatex">\(y\)</span> with <span class="arithmatex">\(y \cdot 11 = y_1 + y_2 = 0 \pmod 2\)</span>.</p>
+<p>The strings with <span class="arithmatex">\(y_1 + y_2 = 0\)</span>: <span class="arithmatex">\(\{00, 11\}\)</span>. Measure: get either <span class="arithmatex">\(y^{(1)} = 00\)</span> or <span class="arithmatex">\(y^{(1)} = 11\)</span>.</p>
+<p>Suppose <span class="arithmatex">\(y^{(1)} = 11\)</span>: equation <span class="arithmatex">\(1 \cdot s_1 + 1 \cdot s_2 = 0 \pmod 2\)</span>, i.e., <span class="arithmatex">\(s_1 + s_2 = 0\)</span>.</p>
+<p><strong>Run 2:</strong> Suppose <span class="arithmatex">\(y^{(2)} = 00\)</span>: equation <span class="arithmatex">\(0 \cdot s_1 + 0 \cdot s_2 = 0\)</span> — trivial, uninformative.</p>
+<p><strong>Run 2 (retry):</strong> Get <span class="arithmatex">\(y^{(2)} = 11\)</span> again — same equation. Need a linearly independent equation.</p>
+<p>In practice: get <span class="arithmatex">\(y^{(1)} = 11\)</span> and then, in the next non-trivial run, get an equation from <span class="arithmatex">\(y = 11\)</span> and the trivial equation from <span class="arithmatex">\(y = 00\)</span>. With 1 nontrivial equation <span class="arithmatex">\(s_1 + s_2 = 0 \pmod 2\)</span> and knowing <span class="arithmatex">\(s \neq 00\)</span>, we deduce <span class="arithmatex">\(s = 11\)</span> ✓.</p>
+<p>(With <span class="arithmatex">\(n-1 = 1\)</span> nontrivial equation over <span class="arithmatex">\(\mathbb{F}_2^2\)</span>, the solution space is <span class="arithmatex">\(\{00, 11\}\)</span>; excluding <span class="arithmatex">\(s = 00\)</span> gives <span class="arithmatex">\(s = 11\)</span>.)</p>
+</div>
+<h3 id="444-simon-shor-the-conceptual-bridge">4.4.4 Simon → Shor: The Conceptual Bridge<a class="headerlink" href="#444-simon-shor-the-conceptual-bridge" title="Permanent link">&para;</a></h3>
+<p>Simon's algorithm and Shor's algorithm share the same quantum structure:</p>
 <table>
 <thead>
 <tr>
-<th>Class</th>
-<th>Definition</th>
-<th>Examples</th>
+<th>Feature</th>
+<th>Simon's algorithm</th>
+<th>Shor's algorithm</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>P</td>
-<td>Decidable in polynomial time classically</td>
-<td>Sorting, shortest path, linear programming</td>
+<td>Problem type</td>
+<td>Find hidden XOR period</td>
+<td>Find multiplicative order mod <span class="arithmatex">\(N\)</span></td>
 </tr>
 <tr>
-<td>BPP</td>
-<td>Decidable in polynomial time with bounded error, classically randomized</td>
-<td>Most practical problems</td>
+<td>Algebraic structure</td>
+<td><span class="arithmatex">\(\mathbb{F}_2^n\)</span> (XOR group)</td>
+<td><span class="arithmatex">\((\mathbb{Z}/N\mathbb{Z})^*\)</span> (multiplicative group)</td>
 </tr>
 <tr>
-<td>BQP</td>
-<td>Decidable in polynomial time with bounded error, quantum</td>
-<td>Factoring (Shor), search speedup (Grover)</td>
+<td>Quantum transform</td>
+<td>Hadamard (<span class="arithmatex">\(H^{\otimes n}\)</span>)</td>
+<td>Quantum Fourier Transform (QFT)</td>
 </tr>
 <tr>
-<td>NP</td>
-<td>Solutions verifiable in polynomial time</td>
-<td>Boolean SAT, traveling salesman</td>
+<td>Measurement output</td>
+<td>Equation <span class="arithmatex">\(y \cdot s = 0\)</span> over <span class="arithmatex">\(\mathbb{F}_2\)</span></td>
+<td>Approximation to <span class="arithmatex">\(s/r\)</span> over <span class="arithmatex">\(\mathbb{Z}\)</span></td>
 </tr>
 <tr>
-<td>PSPACE</td>
-<td>Decidable using polynomial space (may be exponential time)</td>
-<td>Generalized chess, QBF</td>
+<td>Classical postprocessing</td>
+<td>Gaussian elimination over <span class="arithmatex">\(\mathbb{F}_2\)</span></td>
+<td>Continued fractions algorithm</td>
+</tr>
+<tr>
+<td>Speedup</td>
+<td>Exponential over best classical</td>
+<td>Exponential over best classical</td>
 </tr>
 </tbody>
 </table>
-<p>Believed relationships: <span class="arithmatex">\(P \subseteq BPP \subseteq BQP \subseteq PSPACE\)</span> and <span class="arithmatex">\(NP\)</span> is believed to be outside <span class="arithmatex">\(BQP\)</span> (though unproven).</p>
-<p><strong>The most important fact for executives:</strong> Quantum computers are <strong>not</strong> expected to solve NP-complete problems efficiently. Factoring (Shor) and unstructured search (Grover) are in BQP, but NP-complete problems like Boolean satisfiability, protein folding in full generality, and the traveling salesman problem are not believed to have efficient quantum algorithms.</p>
-<div class="admonition tip">
+<p>The transition from Simon to Shor requires: (1) replacing <span class="arithmatex">\(\mathbb{F}_2^n\)</span> with <span class="arithmatex">\((\mathbb{Z}/N\mathbb{Z})^*\)</span> (integer group instead of XOR group), (2) replacing the Hadamard (which is the <span class="arithmatex">\(\mathbb{F}_2\)</span> Fourier transform) with the QFT (the <span class="arithmatex">\(\mathbb{Z}/N\mathbb{Z}\)</span> Fourier transform), and (3) using continued fractions instead of Gaussian elimination to extract the period from the measured phase.</p>
+<div class="admonition note">
 <p class="admonition-title">Business Implication</p>
-<p>Understanding the complexity landscape prevents two common executive errors: (1) over-investing based on the belief that quantum computers will be "faster at everything" — they won't; (2) under-investing based on the assumption that useful quantum advantage requires full fault tolerance — hybrid algorithms like VQE and QAOA are designed for near-term hardware. The quantum advantage for your organization depends on whether your key computational problems have the mathematical structure that quantum algorithms can exploit.</p>
+<p>Simon's algorithm demonstrates exponential quantum speedup on a problem that, while artificial, captures the essential structure exploited by Shor's algorithm. The fact that Simon predates Shor by months (Simon 1994, Shor 1994) illustrates how theoretical quantum algorithms develop: first the structural insight (XOR periods are exponentially hard classically but easy quantally), then the application to practically important problems (factoring). Today's "toy" quantum algorithms may similarly reveal the structure underlying tomorrow's commercially valuable applications. Organizations tracking the quantum algorithm landscape should pay attention not only to near-term applications but to theoretical speedup results — they are the early warning system for future cryptographic and competitive disruptions.</p>
 </div>
 <hr />
-<h2 id="5-other-important-quantum-algorithms">5. Other Important Quantum Algorithms<a class="headerlink" href="#5-other-important-quantum-algorithms" title="Permanent link">&para;</a></h2>
-<h3 id="51-quantum-phase-estimation-qpe">5.1 Quantum Phase Estimation (QPE)<a class="headerlink" href="#51-quantum-phase-estimation-qpe" title="Permanent link">&para;</a></h3>
-<p>QPE estimates the eigenvalue <span class="arithmatex">\(e^{2\pi i\phi}\)</span> of a unitary operator <span class="arithmatex">\(U\)</span> with eigenstate <span class="arithmatex">\(\ket{\psi}\)</span>:</p>
-<div class="arithmatex">\[U\ket{\psi} = e^{2\pi i\phi}\ket{\psi}\]</div>
-<p>The algorithm uses the QFT to extract <span class="arithmatex">\(\phi\)</span> to <span class="arithmatex">\(n\)</span> bits of precision using an <span class="arithmatex">\(n\)</span>-qubit ancilla register. QPE is the subroutine underlying Shor's algorithm, quantum chemistry algorithms, and the HHL linear systems algorithm. Its precision scales as <span class="arithmatex">\(O(1/2^n)\)</span> with the ancilla qubit count.</p>
-<h3 id="52-variational-quantum-eigensolver-vqe">5.2 Variational Quantum Eigensolver (VQE)<a class="headerlink" href="#52-variational-quantum-eigensolver-vqe" title="Permanent link">&para;</a></h3>
-<p>VQE is a <strong>hybrid classical-quantum</strong> algorithm for finding the ground state energy of a quantum system:</p>
-<ol>
-<li>Prepare a parameterized ansatz state <span class="arithmatex">\(\ket{\psi(\theta)}\)</span> on the quantum computer</li>
-<li>Measure <span class="arithmatex">\(\langle\psi(\theta)|H|\psi(\theta)\rangle\)</span> (the energy expectation value)</li>
-<li>A classical optimizer adjusts <span class="arithmatex">\(\theta\)</span> to minimize the energy</li>
-<li>Repeat until convergence</li>
-</ol>
-<p>VQE is designed for NISQ hardware: it uses shallow circuits (limiting exposure to noise) and offloads classical optimization to a conventional computer. IBM demonstrated in March 2025 that VQE on Nighthawk-class hardware could match classical supercomputer accuracy on certain molecular energy calculations.</p>
-<h3 id="53-quantum-approximate-optimization-algorithm-qaoa">5.3 Quantum Approximate Optimization Algorithm (QAOA)<a class="headerlink" href="#53-quantum-approximate-optimization-algorithm-qaoa" title="Permanent link">&para;</a></h3>
-<p>QAOA tackles combinatorial optimization problems by encoding them as Ising Hamiltonians and using parameterized quantum circuits with alternating problem and mixer unitaries. It is designed for near-term hardware and has demonstrated advantages for specific problem instances. Like VQE, it is a hybrid algorithm with classical parameter optimization.</p>
-<hr />
-<h2 id="6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm">6. Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm<a class="headerlink" href="#6-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" title="Permanent link">&para;</a></h2>
-<p><em>Addendum to Chapter 4 — The PQC Mathematics</em></p>
-<h3 id="61-why-bigger-keys-dont-help-against-shor">6.1 Why Bigger Keys Don't Help Against Shor<a class="headerlink" href="#61-why-bigger-keys-dont-help-against-shor" title="Permanent link">&para;</a></h3>
-<p>Shor's algorithm has complexity <span class="arithmatex">\(O((\log N)^3)\)</span>. Doubling the RSA key size from 2048 to 4096 bits increases the quantum computation by a factor of <span class="arithmatex">\(2^3 = 8\)</span> — negligible. Unlike Grover's attack (where doubling the symmetric key length restores security), <strong>no finite RSA key size provides meaningful protection against Shor's algorithm</strong>. The solution requires mathematically different problems.</p>
-<h3 id="62-lattice-problems-and-learning-with-errors">6.2 Lattice Problems and Learning With Errors<a class="headerlink" href="#62-lattice-problems-and-learning-with-errors" title="Permanent link">&para;</a></h3>
-<p>A <strong>lattice</strong> is a regular array of points in high-dimensional space: <span class="arithmatex">\(\mathcal{L}(B) = \{Bz : z \in \mathbb{Z}^n\}\)</span> for a basis matrix <span class="arithmatex">\(B \in \mathbb{R}^{n \times n}\)</span>. Two fundamental hard problems on lattices:</p>
-<ul>
-<li><strong>Shortest Vector Problem (SVP):</strong> Given a lattice basis, find the shortest non-zero lattice vector.</li>
-<li><strong>Closest Vector Problem (CVP):</strong> Given a lattice basis and a target point, find the closest lattice point.</li>
-</ul>
-<p>Both are believed hard for <strong>quantum</strong> computers — no analogue of Shor's algorithm is known for lattice problems despite 20+ years of research.</p>
-<p>The <strong>Learning With Errors (LWE)</strong> problem (Regev, 2005; 2024 Gödel Prize): given a system of approximate linear equations <span class="arithmatex">\(\mathbf{As} + \mathbf{e} \approx \mathbf{b} \pmod{q}\)</span> where <span class="arithmatex">\(\mathbf{s}\)</span> is a secret vector and <span class="arithmatex">\(\mathbf{e}\)</span> is a small random error vector, recover <span class="arithmatex">\(\mathbf{s}\)</span>.</p>
-<p>LWE is <strong>provably as hard as worst-case lattice problems</strong> under quantum reductions. This means any quantum algorithm that breaks LWE could be used to solve SVP and CVP — problems that the quantum community has studied intensively since Shor's 1994 result without finding efficient quantum algorithms.</p>
-<h3 id="63-the-nist-post-quantum-standards">6.3 The NIST Post-Quantum Standards<a class="headerlink" href="#63-the-nist-post-quantum-standards" title="Permanent link">&para;</a></h3>
-<p>In August 2024, NIST finalized three post-quantum cryptography standards:</p>
-<p><strong>FIPS 203 — ML-KEM (Module-Lattice Key Encapsulation Mechanism)</strong>
-Based on Module-LWE. Replaces RSA/ECDH for key exchange.</p>
+<h2 id="45-the-quantum-algorithm-landscape">4.5 The Quantum Algorithm Landscape<a class="headerlink" href="#45-the-quantum-algorithm-landscape" title="Permanent link">&para;</a></h2>
+<h3 id="451-survey-of-important-algorithms">4.5.1 Survey of Important Algorithms<a class="headerlink" href="#451-survey-of-important-algorithms" title="Permanent link">&para;</a></h3>
+<p>Beyond Shor and Grover, a rich ecosystem of quantum algorithms has been developed. The following table summarizes the most important ones, organized by speedup type and application domain:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter set</th>
-<th>Security level</th>
+<th>Algorithm</th>
+<th>Year</th>
+<th>Problem</th>
+<th>Classical complexity</th>
+<th>Quantum complexity</th>
+<th>Speedup type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deutsch-Jozsa</td>
+<td>1992</td>
+<td>Constant vs. balanced function</td>
+<td><span class="arithmatex">\(O(2^{n-1})\)</span> queries</td>
+<td><span class="arithmatex">\(O(1)\)</span> query</td>
+<td>Exponential (artificial problem)</td>
+</tr>
+<tr>
+<td>Bernstein-Vazirani</td>
+<td>1993</td>
+<td>Find hidden linear function <span class="arithmatex">\(s \cdot x\)</span></td>
+<td><span class="arithmatex">\(n\)</span> queries</td>
+<td>1 query</td>
+<td>Polynomial</td>
+</tr>
+<tr>
+<td>Simon</td>
+<td>1994</td>
+<td>XOR period finding</td>
+<td><span class="arithmatex">\(\Omega(2^{n/2})\)</span> queries</td>
+<td><span class="arithmatex">\(O(n)\)</span> queries</td>
+<td>Exponential</td>
+</tr>
+<tr>
+<td>Shor (factoring)</td>
+<td>1994</td>
+<td>Factor integer <span class="arithmatex">\(N\)</span></td>
+<td><span class="arithmatex">\(e^{O((\log N)^{1/3})}\)</span></td>
+<td><span class="arithmatex">\(O((\log N)^3)\)</span></td>
+<td>Exponential</td>
+</tr>
+<tr>
+<td>Grover</td>
+<td>1996</td>
+<td>Unstructured search</td>
+<td><span class="arithmatex">\(O(N)\)</span></td>
+<td><span class="arithmatex">\(O(\sqrt{N})\)</span></td>
+<td>Quadratic</td>
+</tr>
+<tr>
+<td>HHL</td>
+<td>2009</td>
+<td>Linear systems <span class="arithmatex">\(Ax=b\)</span></td>
+<td><span class="arithmatex">\(O(N s \kappa^2)\)</span></td>
+<td><span class="arithmatex">\(O(\log N \cdot s \kappa^2)\)</span></td>
+<td>Exponential*</td>
+</tr>
+<tr>
+<td>VQE</td>
+<td>2014</td>
+<td>Ground state energy</td>
+<td>Exp (general)</td>
+<td>Polynomial (NISQ)</td>
+<td>Polynomial*</td>
+</tr>
+<tr>
+<td>QAOA</td>
+<td>2014</td>
+<td>Combinatorial optimization</td>
+<td>Best classical</td>
+<td>Unclear</td>
+<td>Unclear</td>
+</tr>
+<tr>
+<td>Quantum Counting</td>
+<td>1998</td>
+<td>Count solutions to search</td>
+<td><span class="arithmatex">\(O(N)\)</span></td>
+<td><span class="arithmatex">\(O(\sqrt{N/M})\)</span></td>
+<td>Quadratic</td>
+</tr>
+</tbody>
+</table>
+<p>*With important caveats — see below.</p>
+<h3 id="452-caveats-on-hhl-and-vqe">4.5.2 Caveats on HHL and VQE<a class="headerlink" href="#452-caveats-on-hhl-and-vqe" title="Permanent link">&para;</a></h3>
+<p><strong>HHL (Harrow-Hassidim-Lloyd, 2009):</strong> The exponential speedup for solving <span class="arithmatex">\(N \times N\)</span> linear systems is real but narrow in scope:
+- The input matrix <span class="arithmatex">\(A\)</span> must be sparse (<span class="arithmatex">\(s \ll N\)</span> nonzero entries per row) and well-conditioned (condition number <span class="arithmatex">\(\kappa\)</span> polynomial in <span class="arithmatex">\(\log N\)</span>)
+- The input must be provided as quantum superpositions (quantum RAM), which itself may require <span class="arithmatex">\(O(N)\)</span> classical preprocessing
+- The output is a quantum state — extracting classical information from it may require <span class="arithmatex">\(O(N)\)</span> measurements, erasing the speedup</p>
+<p>For problems where the input is classical and the full output is needed classically, HHL's speedup often vanishes. But for problems where only expectation values of certain observables are needed (quantum machine learning), the speedup may survive.</p>
+<p><strong>VQE (Variational Quantum Eigensolver, Peruzzo et al. 2014):</strong> The hybrid quantum-classical variational approach uses the quantum computer to evaluate energy expectation values and a classical optimizer to minimize the energy. This is designed for NISQ hardware — shallow circuits, many measurements. The "speedup" is not formal (there is no proven complexity separation) but practical: quantum computers naturally represent molecular wavefunctions that classical computers must approximate. The key limitation is the "barren plateau" problem: for random parameterized circuits beyond a certain depth, gradients vanish exponentially and classical optimization stalls.</p>
+<h3 id="453-bqp-and-the-complexity-landscape">4.5.3 BQP and the Complexity Landscape<a class="headerlink" href="#453-bqp-and-the-complexity-landscape" title="Permanent link">&para;</a></h3>
+<p><strong>Definition (BQP):</strong> The class of decision problems solvable by a quantum computer in polynomial time with bounded error (error probability <span class="arithmatex">\(\leq 1/3\)</span>).</p>
+<p><strong>Known relationships:</strong>
+$<span class="arithmatex">\(P \subseteq BPP \subseteq BQP \subseteq PSPACE\)</span>$</p>
+<ul>
+<li><strong><span class="arithmatex">\(P \subseteq BQP\)</span>:</strong> Quantum computers can simulate classical computation (every classical gate can be implemented as a quantum unitary)</li>
+<li><strong><span class="arithmatex">\(BQP \subseteq PSPACE\)</span>:</strong> Quantum computers can be simulated classically in polynomial space (exponential time in general)</li>
+<li><strong><span class="arithmatex">\(BQP \not\supseteq NP\)</span></strong> (believed): Quantum computers are not believed to solve NP-complete problems efficiently. Grover's algorithm on 3-SAT gives <span class="arithmatex">\(O(2^{n/2})\)</span>, not polynomial.</li>
+</ul>
+<p><strong>Where Shor's factoring sits:</strong> Factoring is in NP (verify by multiplication) and in co-NP (verify non-primality), but is not believed to be NP-complete. It occupies an intermediate position — possibly in BQP ∩ NP \ NPC. This is why Shor's algorithm is both important (breaks real-world cryptography) and limited (does not imply <span class="arithmatex">\(BQP \supseteq NP\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>The complexity landscape has two critical messages for CXOs. First: quantum computers are not faster at everything. For most business problems — database queries, web search, most optimization tasks, most machine learning — quantum hardware offers no proven advantage. The quantum advantage is specific: algebraically structured problems (Shor), unstructured search (Grover, quadratic only), quantum simulation (chemistry, materials). Second: the distinction between problems with and without quantum advantage is not always obvious. Problems that seem "unstructured" may have hidden structure that a future algorithm exploits. A mathematically sophisticated quantum strategy team — or quantum computing advisors — is essential for identifying genuine opportunities and avoiding quantum theater (deploying quantum hardware for problems where classical computers are simply faster and cheaper).</p>
+</div>
+<hr />
+<h2 id="46-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm">4.6 Post-Quantum Cryptography: Mathematical Defenses Against Shor's Algorithm<a class="headerlink" href="#46-post-quantum-cryptography-mathematical-defenses-against-shors-algorithm" title="Permanent link">&para;</a></h2>
+<h3 id="461-why-bigger-rsa-keys-dont-work">4.6.1 Why Bigger RSA Keys Don't Work<a class="headerlink" href="#461-why-bigger-rsa-keys-dont-work" title="Permanent link">&para;</a></h3>
+<p>Shor's algorithm requires <span class="arithmatex">\(O((\log N)^3)\)</span> quantum gate operations to factor <span class="arithmatex">\(N\)</span>. Doubling the key size — using RSA-4096 instead of RSA-2048 — increases the circuit depth by a factor of <span class="arithmatex">\((4096/2048)^3 = 2^3 = 8\)</span>. This is a modest increase in quantum resources, not the exponential barrier that doubling key sizes creates against classical attacks.</p>
+<p>Compare this with Grover's attack on symmetric keys: Grover applies to brute-force key search in <span class="arithmatex">\(O(\sqrt{2^k})\)</span> time, so doubling the key length (from 128 to 256 bits) restores security (from <span class="arithmatex">\(2^{64}\)</span> to <span class="arithmatex">\(2^{128}\)</span> quantum operations). This is because Grover's speedup is only quadratic — the classical-to-quantum ratio is polynomial.</p>
+<p>For RSA, there is no analogous remedy: Shor's algorithm is exponentially faster than classical factoring for <em>any</em> key size. A trillion-qubit quantum computer could factor RSA-65536 about as efficiently as RSA-2048. The only defense is to abandon number-theoretic cryptography entirely and use mathematical problems for which no efficient quantum algorithm is known.</p>
+<h3 id="462-lattice-problems-and-learning-with-errors">4.6.2 Lattice Problems and Learning With Errors<a class="headerlink" href="#462-lattice-problems-and-learning-with-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Lattices in high dimensions:</strong> A lattice <span class="arithmatex">\(\mathcal{L}\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span> is the set of all integer linear combinations of <span class="arithmatex">\(n\)</span> linearly independent basis vectors <span class="arithmatex">\(\mathbf{b}_1, \ldots, \mathbf{b}_n\)</span>:</p>
+<div class="arithmatex">\[\mathcal{L} = \left\{\sum_{i=1}^n z_i \mathbf{b}_i : z_i \in \mathbb{Z}\right\}\]</div>
+<p>Two fundamental hard problems on lattices:</p>
+<p><strong>Shortest Vector Problem (SVP):</strong> Given a basis for a lattice <span class="arithmatex">\(\mathcal{L}\)</span>, find the shortest nonzero vector in <span class="arithmatex">\(\mathcal{L}\)</span> (shortest in Euclidean norm).</p>
+<p><strong>Closest Vector Problem (CVP):</strong> Given a basis for <span class="arithmatex">\(\mathcal{L}\)</span> and a target vector <span class="arithmatex">\(\mathbf{t} \notin \mathcal{L}\)</span>, find the lattice vector closest to <span class="arithmatex">\(\mathbf{t}\)</span>.</p>
+<p>In 2 or 3 dimensions, these problems are easy — geometric intuition and simple algorithms suffice. In 500 or 1000 dimensions (as used in cryptography), these problems are believed to be hard for both classical and quantum computers. Unlike factoring, no quantum algorithm with exponential speedup over classical algorithms is known for SVP or CVP. The best quantum algorithms for lattice problems provide only polynomial (not exponential) improvement over classical algorithms.</p>
+<p><strong>Learning With Errors (LWE):</strong> Introduced by Oded Regev in 2005 (awarded the 2024 Gödel Prize — the highest honor in theoretical computer science), LWE is a lattice-based computational problem.</p>
+<p><strong>LWE problem:</strong> Let <span class="arithmatex">\(n, q\)</span> be integers and <span class="arithmatex">\(\chi\)</span> be an error distribution (typically a discrete Gaussian on <span class="arithmatex">\(\mathbb{Z}_q\)</span> with small standard deviation <span class="arithmatex">\(\sigma \ll q\)</span>). A secret vector <span class="arithmatex">\(\mathbf{s} \in \mathbb{Z}_q^n\)</span> is chosen uniformly at random. An adversary is given arbitrarily many "noisy linear equations":</p>
+<div class="arithmatex">\[b_i = \mathbf{a}_i \cdot \mathbf{s} + e_i \pmod{q}\]</div>
+<p>where each <span class="arithmatex">\(\mathbf{a}_i \in \mathbb{Z}_q^n\)</span> is chosen uniformly, each <span class="arithmatex">\(e_i\)</span> is drawn from <span class="arithmatex">\(\chi\)</span> (a small error). The task: recover <span class="arithmatex">\(\mathbf{s}\)</span>.</p>
+<p>Without errors (<span class="arithmatex">\(e_i = 0\)</span>), this is just a system of linear equations — solvable by Gaussian elimination in polynomial time. The errors make recovery exponentially hard (in the worst case — provably reducible to worst-case lattice problems).</p>
+<p><strong>Why LWE is quantum-resistant:</strong> Regev proved that LWE is as hard as worst-case lattice problems under <em>quantum reductions</em>. This means: breaking LWE with a quantum computer would imply efficient quantum algorithms for SVP and CVP — which no one has found after decades of effort. The quantum hardness of LWE is not merely assumed; it is supported by a formal reduction from problems believed quantum-hard.</p>
+<div class="admonition example">
+<p class="admonition-title">Conceptual Illustration: LWE in 2D</p>
+<p>Suppose <span class="arithmatex">\(n = 2\)</span>, <span class="arithmatex">\(q = 97\)</span>, <span class="arithmatex">\(\mathbf{s} = (23, 41)\)</span>, and <span class="arithmatex">\(\chi\)</span> adds errors <span class="arithmatex">\(|e| \leq 3\)</span>.</p>
+<p>We receive equations like:
+- <span class="arithmatex">\(\mathbf{a}_1 = (34, 52)\)</span>: <span class="arithmatex">\(b_1 = 34 \times 23 + 52 \times 41 + 1 \pmod{97} = (782 + 2132 + 1) \bmod 97 = 2915 \bmod 97 = 47\)</span>
+- <span class="arithmatex">\(\mathbf{a}_2 = (71, 15)\)</span>: <span class="arithmatex">\(b_2 = 71 \times 23 + 15 \times 41 + (-2) \pmod{97} = (1633 + 615 - 2) \bmod 97 = 2246 \bmod 97 = 18\)</span></p>
+<p>In 2D, these noisy equations can be approximately solved. In 800 dimensions — as in the real cryptographic implementation — solving this system is computationally infeasible.</p>
+</div>
+<h3 id="463-the-three-nist-pqc-standards">4.6.3 The Three NIST PQC Standards<a class="headerlink" href="#463-the-three-nist-pqc-standards" title="Permanent link">&para;</a></h3>
+<p>In August 2024, NIST finalized three post-quantum cryptographic standards. These standards are the product of an 8-year competitive evaluation process involving global cryptographic expertise, extensive cryptanalysis, and public review.</p>
+<h4 id="fips-203-ml-kem-module-lattice-based-key-encapsulation-mechanism">FIPS 203 — ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism)<a class="headerlink" href="#fips-203-ml-kem-module-lattice-based-key-encapsulation-mechanism" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Replaces RSA and Diffie-Hellman/ECDH for <em>key exchange</em> — the mechanism by which two parties establish a shared secret over an insecure channel.</p>
+<p><strong>Mathematical foundation:</strong> Module-LWE, a structured variant of LWE with algebraic rings that allows more efficient implementations while maintaining security reductions to lattice hardness.</p>
+<p><strong>Parameter sets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Polynomial module rank</th>
 <th>Public key</th>
 <th>Ciphertext</th>
+<th>NIST Security Level</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ML-KEM-512</td>
-<td>Level 1 (~AES-128)</td>
+<td><span class="arithmatex">\(k = 2\)</span></td>
 <td>800 bytes</td>
 <td>768 bytes</td>
+<td>Level 1 (<span class="arithmatex">\(\approx\)</span> AES-128)</td>
 </tr>
 <tr>
 <td>ML-KEM-768</td>
-<td>Level 3 (~AES-192)</td>
+<td><span class="arithmatex">\(k = 3\)</span></td>
 <td>1,184 bytes</td>
 <td>1,088 bytes</td>
+<td>Level 3 (<span class="arithmatex">\(\approx\)</span> AES-192)</td>
 </tr>
 <tr>
 <td>ML-KEM-1024</td>
-<td>Level 5 (~AES-256)</td>
+<td><span class="arithmatex">\(k = 4\)</span></td>
 <td>1,568 bytes</td>
 <td>1,568 bytes</td>
+<td>Level 5 (<span class="arithmatex">\(\approx\)</span> AES-256)</td>
 </tr>
 </tbody>
 </table>
-<p>For comparison, RSA-2048 public key: 256 bytes. ML-KEM keys are larger but <strong>encapsulation/decapsulation is faster than RSA</strong> in many implementations.</p>
-<p><strong>FIPS 204 — ML-DSA (Module-Lattice Digital Signature Algorithm)</strong>
-Based on Module-LWE/SIS. Replaces RSA/ECDSA for digital signatures.</p>
+<p><strong>Comparison with RSA/ECDH:</strong> RSA-2048 has a 256-byte public key; ML-KEM-768 has a 1,184-byte public key — larger, but not prohibitively so for most applications. More importantly, ML-KEM <em>encapsulation and decapsulation are faster than RSA operations</em> in software on modern hardware (ML-KEM uses polynomial arithmetic in <span class="arithmatex">\(\mathbb{Z}_q[x]/(x^{256}+1)\)</span>, which is highly efficient with NTT — Number Theoretic Transform).</p>
+<p><strong>API compatibility:</strong> ML-KEM uses a Key Encapsulation Mechanism (KEM) interface, which differs slightly from the Non-Interactive Key Exchange (NIKE) interface of ECDH. The difference is minor for most TLS implementations — essentially a two-step "encapsulate/decapsulate" instead of "multiply/agree."</p>
+<h4 id="fips-204-ml-dsa-module-lattice-based-digital-signature-algorithm">FIPS 204 — ML-DSA (Module-Lattice-Based Digital Signature Algorithm)<a class="headerlink" href="#fips-204-ml-dsa-module-lattice-based-digital-signature-algorithm" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Replaces RSA and ECDSA for <em>digital signatures</em> — proving that a message was created by the holder of a specific private key.</p>
+<p><strong>Mathematical foundation:</strong> Module-LWE and Module-SIS (Short Integer Solution), using the Fiat-Shamir with aborts technique for efficient zero-knowledge proofs.</p>
+<p><strong>Parameter sets:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Parameter set</th>
-<th>Security level</th>
+<th>Parameter</th>
 <th>Public key</th>
-<th>Signature size</th>
+<th>Signature</th>
+<th>NIST Security Level</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ML-DSA-44</td>
-<td>Level 2</td>
 <td>1,312 bytes</td>
 <td>2,420 bytes</td>
+<td>Level 2</td>
 </tr>
 <tr>
 <td>ML-DSA-65</td>
-<td>Level 3</td>
 <td>1,952 bytes</td>
 <td>3,293 bytes</td>
+<td>Level 3</td>
 </tr>
 <tr>
 <td>ML-DSA-87</td>
-<td>Level 5</td>
 <td>2,592 bytes</td>
-<td>4,595 bytes</td>
+<td>4,627 bytes</td>
+<td>Level 5</td>
 </tr>
 </tbody>
 </table>
-<p><strong>FIPS 205 — SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)</strong>
-Based on SPHINCS+. Security relies <strong>only</strong> on hash function collision resistance — no lattice mathematics. If lattice-based schemes are ever broken, SLH-DSA survives. Trade-off: large signatures (up to 49,856 bytes).</p>
-<p><strong>Pipeline standards:</strong>
-- FN-DSA (FIPS 206, FALCON): Smaller signatures than ML-DSA, complex implementation. Expected 2026–2027.
-- HQC: Code-based KEM (non-lattice), provides algorithmic diversity. Selected March 2025, standard expected 2027.</p>
-<h3 id="64-algorithm-diversity-defense-in-depth">6.4 Algorithm Diversity — Defense in Depth<a class="headerlink" href="#64-algorithm-diversity-defense-in-depth" title="Permanent link">&para;</a></h3>
-<p>All three initial NIST standards use either lattice (ML-KEM, ML-DSA) or hash (SLH-DSA) assumptions. If a breakthrough quantum algorithm for lattice problems were discovered:
-- ML-KEM and ML-DSA would fall simultaneously.
-- SLH-DSA would survive (different mathematical foundation).
-- HQC (code-based) would provide a third option for key exchange.</p>
-<p>This is deliberate <strong>defense in depth</strong>: no single mathematical breakthrough should compromise all post-quantum defenses simultaneously. Well-designed PQC migration supports <strong>crypto-agility</strong> — the ability to swap algorithms without re-architecting the system.</p>
-<div class="admonition tip">
+<p><strong>Key observation:</strong> ML-DSA signatures are 10–13× larger than RSA-2048 signatures (256 bytes). This is a real operational cost, particularly for protocols that transmit many signatures (certificate chains, code signing, secure boot). Systems that relied on RSA for its small signature size will need updated protocols or compression techniques.</p>
+<h4 id="fips-205-slh-dsa-stateless-hash-based-digital-signature-algorithm">FIPS 205 — SLH-DSA (Stateless Hash-Based Digital Signature Algorithm)<a class="headerlink" href="#fips-205-slh-dsa-stateless-hash-based-digital-signature-algorithm" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> A digital signature algorithm based solely on the hardness of hash function collision resistance — the most conservative cryptographic assumption.</p>
+<p><strong>Mathematical foundation:</strong> SPHINCS+, a stateless hash-based signature scheme. Security relies <em>only</em> on SHA-2 or SHAKE (SHA-3) hash functions, with no lattice mathematics. Even a complete break of all lattice-based assumptions would leave SLH-DSA unaffected.</p>
+<p><strong>Parameter sets (representative):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Hash</th>
+<th>Public key</th>
+<th>Signature</th>
+<th>Security Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SLH-DSA-SHA2-128f</td>
+<td>SHA-256</td>
+<td>32 bytes</td>
+<td>17,088 bytes</td>
+<td>Level 1 (fast)</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-128s</td>
+<td>SHA-256</td>
+<td>32 bytes</td>
+<td>7,856 bytes</td>
+<td>Level 1 (small)</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-256f</td>
+<td>SHA-512</td>
+<td>64 bytes</td>
+<td>49,856 bytes</td>
+<td>Level 5 (fast)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Trade-off:</strong> SLH-DSA has very small public keys (32–64 bytes) but large signatures (8–50 KB). Verification is fast; signing is slower than ML-DSA. SLH-DSA is the choice for applications where mathematical diversity is paramount and signature size is less critical (e.g., firmware signing, root certificates, long-term archives).</p>
+<h3 id="464-pipeline-standards-fn-dsa-and-hqc">4.6.4 Pipeline Standards: FN-DSA and HQC<a class="headerlink" href="#464-pipeline-standards-fn-dsa-and-hqc" title="Permanent link">&para;</a></h3>
+<p>The initial three FIPS standards are not the end of NIST's PQC standardization. Two additional algorithms are in the pipeline:</p>
+<p><strong>FN-DSA (FIPS 206, based on FALCON):</strong> Lattice-based signatures using the NTRU lattice structure with Gaussian sampling. Produces smaller signatures than ML-DSA (666 bytes for FN-DSA-512 at Level 1) but requires high-precision floating-point Gaussian sampling — notoriously difficult to implement securely in constant time, with side-channel risks. Expected finalization: 2027.</p>
+<p><strong>HQC (Hamming Quasi-Cyclic):</strong> A code-based Key Encapsulation Mechanism, selected March 2025, providing a non-lattice KEM alternative. Based on error-correcting codes (quasi-cyclic codes with Reed-Solomon inner codes), providing algorithmic diversity in case all lattice-based schemes are found vulnerable. Expected standard: 2027.</p>
+<h3 id="465-key-size-and-performance-comparison">4.6.5 Key Size and Performance Comparison<a class="headerlink" href="#465-key-size-and-performance-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Type</th>
+<th>Public key</th>
+<th>Ciphertext/Signature</th>
+<th>Security Level</th>
+<th>Speed vs. RSA-2048</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA-2048</td>
+<td>Classical (signature/KEM)</td>
+<td>256 bytes</td>
+<td>256 bytes</td>
+<td>~112-bit</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>ECDSA P-256</td>
+<td>Classical (signature)</td>
+<td>64 bytes</td>
+<td>64 bytes</td>
+<td>~128-bit</td>
+<td>~10× faster</td>
+</tr>
+<tr>
+<td>ECDH P-256</td>
+<td>Classical (KEM)</td>
+<td>64 bytes</td>
+<td>64 bytes</td>
+<td>~128-bit</td>
+<td>~10× faster</td>
+</tr>
+<tr>
+<td>ML-KEM-768</td>
+<td>PQC lattice (KEM)</td>
+<td>1,184 bytes</td>
+<td>1,088 bytes</td>
+<td>Level 3</td>
+<td>Faster than RSA</td>
+</tr>
+<tr>
+<td>ML-DSA-65</td>
+<td>PQC lattice (signature)</td>
+<td>1,952 bytes</td>
+<td>3,293 bytes</td>
+<td>Level 3</td>
+<td>Comparable to ECDSA</td>
+</tr>
+<tr>
+<td>SLH-DSA-SHA2-128f</td>
+<td>PQC hash (signature)</td>
+<td>32 bytes</td>
+<td>17,088 bytes</td>
+<td>Level 1</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td>FN-DSA-512</td>
+<td>PQC lattice (signature)</td>
+<td>897 bytes</td>
+<td>666 bytes</td>
+<td>Level 1</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>HQC-128</td>
+<td>PQC code (KEM)</td>
+<td>2,249 bytes</td>
+<td>4,481 bytes</td>
+<td>Level 1</td>
+<td>Slower than ML-KEM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="466-algorithm-diversity-as-defense-in-depth">4.6.6 Algorithm Diversity as Defense-in-Depth<a class="headerlink" href="#466-algorithm-diversity-as-defense-in-depth" title="Permanent link">&para;</a></h3>
+<p>All three initial FIPS standards have distinct mathematical foundations: ML-KEM and ML-DSA rely on lattice hardness (Module-LWE/SIS); SLH-DSA relies only on hash collision resistance. This diversity is deliberate.</p>
+<p><strong>The catastrophic scenario:</strong> Suppose a mathematical breakthrough — analogous to what Shor did for factoring — were discovered for lattice problems. Both ML-KEM and ML-DSA would be simultaneously broken. SLH-DSA would survive (no lattice assumption). HQC (code-based) would also survive. A system that deploys only ML-KEM and ML-DSA has a single mathematical failure point.</p>
+<p><strong>Crypto-agility:</strong> The recommended architecture is <em>crypto-agile</em>: design systems that can swap cryptographic algorithms without redesigning the entire security protocol. This means:</p>
+<ol>
+<li>Abstract cryptographic operations behind interface layers (not hard-coded algorithm choices)</li>
+<li>Support hybrid modes (classical + post-quantum) during transition</li>
+<li>Maintain a Cryptographic Bill of Materials (CBOM) documenting every algorithm in use</li>
+<li>Plan for algorithm replacement on a 5–10 year horizon</li>
+</ol>
+<div class="admonition note">
 <p class="admonition-title">Business Implication</p>
-<p>Organizations deploying only ML-KEM without SLH-DSA backup are creating a single point of failure. The NIST recommendation is to use ML-KEM as the primary standard (performance-optimized) with SLH-DSA as the fallback (security-maximized). This dual deployment adds bandwidth overhead but provides resilience against the scenario — however unlikely — where lattice mathematics yields to a future quantum attack.</p>
+<p>The $4.6 billion post-quantum cryptography market projected by 2030 represents real migration costs — not hype. Organizations that deploy only ML-KEM and ML-DSA without SLH-DSA as a fallback, or without crypto-agility architecture, are creating a single mathematical failure point. The lesson from cryptographic history is humbling: DES (broken 1997), MD5 (broken 2004), SHA-1 (broken 2017), RSA-512 (broken 1999) — each standard lasted shorter than its predecessors. The correct response to PQC is not to choose one algorithm and declare victory; it is to build systems that can adapt as the mathematical landscape evolves.</p>
+<p>For CXOs, three actions follow from this chapter: (1) Audit your cryptographic estate to identify all RSA, ECC, and DH usage (create a CBOM). (2) Begin hybrid migration to ML-KEM-768 for key exchange and ML-DSA-65 for signatures, while adding SLH-DSA for highest-security applications. (3) Prioritize data with the longest confidentiality requirements — harvest-now-decrypt-later attacks make <em>current</em> data at risk even though fault-tolerant quantum computers don't yet exist.</p>
 </div>
 <hr />
-<div class="admonition abstract">
-<p class="admonition-title">Chapter Summary</p>
-<ol>
-<li>
-<p><strong>The QFT is the engine behind Shor's algorithm</strong>: it converts periodic structures in quantum amplitudes into peaks measurable by classical post-processing, with <span class="arithmatex">\(O(n^2)\)</span> gates vs. the classical FFT's <span class="arithmatex">\(O(2^n \cdot n)\)</span>.</p>
-</li>
-<li>
-<p><strong>Shor's algorithm factors <span class="arithmatex">\(N\)</span> in <span class="arithmatex">\(O((\log N)^3)\)</span> time</strong>: an exponential speedup over classical algorithms. The 2025 resource estimate puts breaking RSA-2048 at fewer than 1 million physical qubits — still well beyond current hardware but within a credible future trajectory.</p>
-</li>
-<li>
-<p><strong>Grover's algorithm provides a provably optimal quadratic speedup for search</strong>: it halves the security of symmetric keys (fixable by doubling key length) but does not break them. It does not exponentially break asymmetric cryptography — Shor does.</p>
-</li>
-<li>
-<p><strong>Quantum computers are not expected to solve NP-complete problems</strong>: BQP ⊆ PSPACE, and NP-complete problems are not believed to be in BQP. Quantum advantage exists for problems with specific mathematical structure (periodicity, eigenvalue estimation, optimization over specific problem classes).</p>
-</li>
-<li>
-<p><strong>NIST finalized three PQC standards in August 2024</strong>: ML-KEM (key exchange), ML-DSA (signatures), SLH-DSA (hash-based signatures). All rely on mathematical problems — lattice and hash — for which no efficient quantum algorithm is known. PQC migration should begin immediately.</p>
-</li>
-</ol>
-</div>
+<h2 id="chapter-4-summary">Chapter 4 Summary<a class="headerlink" href="#chapter-4-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter has developed the quantum algorithmic foundations in four interconnected sections:</p>
+<p><strong>The Quantum Fourier Transform and Phase Estimation</strong> provide the universal computational primitive: QPE extracts eigenvalues of unitary operators with exponential precision, and is the engine behind Shor's factoring, quantum chemistry, and HHL linear systems.</p>
+<p><strong>Shor's Algorithm</strong> reduces RSA-2048 to the order-finding problem, which QPE solves in <span class="arithmatex">\(O((\log N)^3)\)</span> quantum operations — exponentially faster than any classical algorithm. The cryptographic threat is real: current estimates project 1–20 million physical qubits needed to break RSA-2048.</p>
+<p><strong>Grover's Algorithm</strong> provides a provably optimal <span class="arithmatex">\(O(\sqrt{N})\)</span> quantum search algorithm — a quadratic speedup for unstructured search. Unlike Shor's exponential advantage, Grover's quadratic speedup can be mitigated by doubling symmetric key sizes.</p>
+<p><strong>Simon's Algorithm</strong> is the direct conceptual precursor to Shor's, demonstrating exponential quantum speedup for XOR period finding. The structural analogy (Hadamard → QFT, XOR group → multiplicative group) makes Shor's algorithm's logic transparent.</p>
+<p><strong>Post-Quantum Cryptography</strong> provides the mathematical response to Shor's threat: lattice-based problems (LWE, FIPS 203/204), hash-based signatures (FIPS 205), and future code-based schemes (HQC) provide quantum-resistant alternatives. Crypto-agility and algorithm diversity are essential architectural principles.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Problem</th>
+<th>Classical</th>
+<th>Quantum</th>
+<th>Speedup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shor</td>
+<td>Factoring <span class="arithmatex">\(N\)</span></td>
+<td><span class="arithmatex">\(e^{O((\log N)^{1/3})}\)</span></td>
+<td><span class="arithmatex">\(O((\log N)^3)\)</span></td>
+<td>Exponential</td>
+</tr>
+<tr>
+<td>Grover</td>
+<td>Search <span class="arithmatex">\(N\)</span> items</td>
+<td><span class="arithmatex">\(O(N)\)</span></td>
+<td><span class="arithmatex">\(O(\sqrt{N})\)</span></td>
+<td>Quadratic</td>
+</tr>
+<tr>
+<td>Simon</td>
+<td>XOR period finding</td>
+<td><span class="arithmatex">\(\Omega(2^{n/2})\)</span></td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
+<td>Exponential</td>
+</tr>
+<tr>
+<td>QPE</td>
+<td>Phase estimation</td>
+<td>N/A</td>
+<td><span class="arithmatex">\(O(m \cdot T_U)\)</span></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Shor, P. W. "Algorithms for quantum computation: discrete logarithms and factoring." <em>FOCS</em> 1994, 124–134. Also <em>SIAM Journal on Computing</em> 26(5), 1484–1509 (1997).</li>
-<li>Grover, L. K. "A fast quantum mechanical algorithm for database search." <em>STOC</em> 1996, 212–219.</li>
-<li>Gidney, C. &amp; Ekerå, M. "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits." <em>Quantum</em> 5, 433 (2021).</li>
-<li>Gidney, C. "Reduced RSA qubit requirements using approximate quantum Fourier transforms." arXiv:2505.xxxxx (May 2025).</li>
-<li>Regev, O. "On lattices, learning with errors, random linear codes, and cryptography." <em>Journal of the ACM</em> 56(6) (2009).</li>
-<li>NIST. <em>FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard</em>. August 2024.</li>
-<li>NIST. <em>FIPS 204: Module-Lattice-Based Digital Signature Standard</em>. August 2024.</li>
-<li>NIST. <em>FIPS 205: Stateless Hash-Based Digital Signature Standard</em>. August 2024.</li>
-<li>Bennett, C. H., Bernstein, E., Brassard, G. &amp; Vazirani, U. "Strengths and weaknesses of quantum computing." <em>SIAM Journal on Computing</em> 26(5), 1510–1523 (1997). (BBBV theorem)</li>
-</ol>
+<ul>
+<li>Shor, P.W. "Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer." <em>SIAM Journal on Computing</em> 26(5), 1484–1509, 1997.</li>
+<li>Grover, L.K. "A fast quantum mechanical algorithm for database search." <em>Proceedings of STOC 1996</em>, 212–219.</li>
+<li>Simon, D.R. "On the power of quantum computation." <em>SIAM Journal on Computing</em> 26(5), 1474–1483, 1997.</li>
+<li>Kitaev, A.Yu. "Quantum measurements and the abelian stabilizer problem." <em>arXiv:quant-ph/9511026</em>, 1995.</li>
+<li>Bennett, C.H., Bernstein, E., Brassard, G., Vazirani, U. "Strengths and weaknesses of quantum computing." <em>SIAM Journal on Computing</em> 26(5), 1510–1523, 1997.</li>
+<li>Regev, O. "On lattices, learning with errors, random linear codes, and cryptography." <em>Journal of the ACM</em> 56(6), Article 34, 2009.</li>
+<li>NIST FIPS 203: ML-KEM. August 2024. Available: https://csrc.nist.gov/pubs/fips/203/final</li>
+<li>NIST FIPS 204: ML-DSA. August 2024. Available: https://csrc.nist.gov/pubs/fips/204/final</li>
+<li>NIST FIPS 205: SLH-DSA. August 2024. Available: https://csrc.nist.gov/pubs/fips/205/final</li>
+<li>Gidney, C. "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits." <em>Quantum</em> 5, 433, 2021.</li>
+<li>Nielsen, M.A. and Chuang, I.L. <em>Quantum Computation and Quantum Information</em>. Cambridge University Press, 2000. (Chapters 5, 6)</li>
+<li>Watrous, J. "Quantum Computation" lecture notes, University of Calgary, 2006. (Lectures 7–11)</li>
+<li>Aaronson, S. <em>Quantum Computing Since Democritus</em>. Cambridge University Press, 2013. (Chapters 10, 15)</li>
+</ul>
 
 
 

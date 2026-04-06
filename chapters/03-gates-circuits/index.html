@@ -29,7 +29,7 @@
     
     
       
-        <title>Chapter 3: Quantum Gates and Circuits - Quantum Computing: From Qubits to Business Value</title>
+        <title>Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation - Quantum Computing: From Qubits to Business Value</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 3: Quantum Gates and Circuits
+              Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
             
           </span>
         </div>
@@ -776,7 +776,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+    Chapter 2: Superposition, Entanglement, and the Quantum Resources That Enable Speedup
   
 
     
@@ -841,7 +841,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: Quantum Gates and Circuits
+    Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
   
 
     
@@ -859,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: Quantum Gates and Circuits
+    Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
   
 
     
@@ -885,22 +885,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-single-qubit-gates" class="md-nav__link">
+  <a href="#opening-from-postulates-to-programs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Single-Qubit Gates
+        Opening: From Postulates to Programs
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Single-Qubit Gates">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-single-qubit-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Single-Qubit Gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Single-Qubit Gates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-the-pauli-gates" class="md-nav__link">
+  <a href="#311-the-pauli-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 The Pauli Gates
+        3.1.1 The Pauli Gates
       
     </span>
   </a>
@@ -908,10 +919,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-phase-gates-s-and-t" class="md-nav__link">
+  <a href="#312-the-hadamard-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 Phase Gates: S and T
+        3.1.2 The Hadamard Gate
       
     </span>
   </a>
@@ -919,10 +930,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-the-hadamard-gate" class="md-nav__link">
+  <a href="#313-phase-gates-s-and-t" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3 The Hadamard Gate
+        3.1.3 Phase Gates: S and T
       
     </span>
   </a>
@@ -930,10 +941,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-rotation-gates" class="md-nav__link">
+  <a href="#314-rotation-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.4 Rotation Gates
+        3.1.4 Rotation Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-summary-table-single-qubit-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.5 Summary Table: Single-Qubit Gates
       
     </span>
   </a>
@@ -946,22 +968,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-multi-qubit-gates-and-entanglement-creation" class="md-nav__link">
+  <a href="#32-multi-qubit-gates-and-entanglement-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Multi-Qubit Gates and Entanglement Creation
+        3.2 Multi-Qubit Gates and Entanglement Creation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Multi-Qubit Gates and Entanglement Creation">
+    <nav class="md-nav" aria-label="3.2 Multi-Qubit Gates and Entanglement Creation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-the-cnot-gate" class="md-nav__link">
+  <a href="#321-the-cnot-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 The CNOT Gate
+        3.2.1 The CNOT Gate
       
     </span>
   </a>
@@ -969,10 +991,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-toffoli-gate-ccnot" class="md-nav__link">
+  <a href="#322-creating-entanglement-with-cnot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 The Toffoli Gate (CCNOT)
+        3.2.2 Creating Entanglement with CNOT
       
     </span>
   </a>
@@ -980,10 +1002,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-the-swap-gate" class="md-nav__link">
+  <a href="#323-tensor-products-and-multi-qubit-gate-extension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 The SWAP Gate
+        3.2.3 Tensor Products and Multi-Qubit Gate Extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-the-toffoli-gate-ccnot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.4 The Toffoli Gate (CCNOT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-the-swap-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.5 The SWAP Gate
       
     </span>
   </a>
@@ -996,22 +1040,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-universality-any-quantum-computation-from-a-small-gate-set" class="md-nav__link">
+  <a href="#33-universality-any-quantum-computation-from-a-small-gate-set" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Universality — Any Quantum Computation from a Small Gate Set
+        3.3 Universality — Any Quantum Computation from a Small Gate Set
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Universality — Any Quantum Computation from a Small Gate Set">
+    <nav class="md-nav" aria-label="3.3 Universality — Any Quantum Computation from a Small Gate Set">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-the-universality-theorem" class="md-nav__link">
+  <a href="#331-the-universality-theorem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 The Universality Theorem
+        3.3.1 The Universality Theorem
       
     </span>
   </a>
@@ -1019,10 +1063,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-gate-counts-and-circuit-complexity" class="md-nav__link">
+  <a href="#332-comparing-classical-and-quantum-universality" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 Gate Counts and Circuit Complexity
+        3.3.2 Comparing Classical and Quantum Universality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-gate-synthesis-and-t-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 Gate Synthesis and T-Count
       
     </span>
   </a>
@@ -1035,22 +1090,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-the-no-cloning-theorem-and-its-consequences" class="md-nav__link">
+  <a href="#34-the-no-cloning-theorem-and-its-consequences" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. The No-Cloning Theorem and Its Consequences
+        3.4 The No-Cloning Theorem and Its Consequences
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. The No-Cloning Theorem and Its Consequences">
+    <nav class="md-nav" aria-label="3.4 The No-Cloning Theorem and Its Consequences">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-statement-and-proof" class="md-nav__link">
+  <a href="#341-statement-and-proof" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1 Statement and Proof
+        3.4.1 Statement and Proof
       
     </span>
   </a>
@@ -1058,10 +1113,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-four-consequences" class="md-nav__link">
+  <a href="#342-consequences-for-quantum-computing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.2 Four Consequences
+        3.4.2 Consequences for Quantum Computing
       
     </span>
   </a>
@@ -1074,22 +1129,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-measurement-the-irreversible-collapse" class="md-nav__link">
+  <a href="#35-measurement-the-irreversible-collapse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Measurement — The Irreversible Collapse
+        3.5 Measurement — The Irreversible Collapse
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Measurement — The Irreversible Collapse">
+    <nav class="md-nav" aria-label="3.5 Measurement — The Irreversible Collapse">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-projective-measurement" class="md-nav__link">
+  <a href="#351-measurement-as-projection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1 Projective Measurement
+        3.5.1 Measurement as Projection
       
     </span>
   </a>
@@ -1097,10 +1152,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-measurement-in-other-bases" class="md-nav__link">
+  <a href="#352-measurement-in-other-bases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2 Measurement in Other Bases
+        3.5.2 Measurement in Other Bases
       
     </span>
   </a>
@@ -1108,10 +1163,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-the-role-of-measurement-in-algorithm-design" class="md-nav__link">
+  <a href="#353-multiple-shots-and-statistical-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3 The Role of Measurement in Algorithm Design
+        3.5.3 Multiple Shots and Statistical Estimation
       
     </span>
   </a>
@@ -1124,10 +1179,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-quantum-circuit-notation" class="md-nav__link">
+  <a href="#36-quantum-circuit-complexity-and-the-circuit-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Quantum Circuit Notation
+        3.6 Quantum Circuit Complexity and the Circuit Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Quantum Circuit Complexity and the Circuit Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-the-circuit-model-of-quantum-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1 The Circuit Model of Quantum Computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-common-circuit-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.2 Common Circuit Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-quantum-circuit-compilation-and-hardware-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Quantum Circuit Compilation and Hardware Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Quantum Circuit Compilation and Hardware Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-from-logical-circuits-to-physical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.1 From Logical Circuits to Physical Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#372-hardware-connectivity-and-swap-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2 Hardware Connectivity and SWAP Overhead
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 3 Summary
       
     </span>
   </a>
@@ -1196,7 +1329,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: Quantum Algorithms
+    Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
   
 
     
@@ -1252,7 +1385,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5: Quantum Communication
+    Chapter 5: Quantum Communication, Cryptography, and Network Protocols
   
 
     
@@ -1308,7 +1441,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+    Chapter 6: The Density Matrix, Mixed States, and the Transition to Noisy Reality
   
 
     
@@ -2597,22 +2730,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-single-qubit-gates" class="md-nav__link">
+  <a href="#opening-from-postulates-to-programs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Single-Qubit Gates
+        Opening: From Postulates to Programs
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Single-Qubit Gates">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-single-qubit-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Single-Qubit Gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Single-Qubit Gates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-the-pauli-gates" class="md-nav__link">
+  <a href="#311-the-pauli-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 The Pauli Gates
+        3.1.1 The Pauli Gates
       
     </span>
   </a>
@@ -2620,10 +2764,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-phase-gates-s-and-t" class="md-nav__link">
+  <a href="#312-the-hadamard-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 Phase Gates: S and T
+        3.1.2 The Hadamard Gate
       
     </span>
   </a>
@@ -2631,10 +2775,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-the-hadamard-gate" class="md-nav__link">
+  <a href="#313-phase-gates-s-and-t" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.3 The Hadamard Gate
+        3.1.3 Phase Gates: S and T
       
     </span>
   </a>
@@ -2642,10 +2786,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#14-rotation-gates" class="md-nav__link">
+  <a href="#314-rotation-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.4 Rotation Gates
+        3.1.4 Rotation Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#315-summary-table-single-qubit-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.5 Summary Table: Single-Qubit Gates
       
     </span>
   </a>
@@ -2658,22 +2813,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-multi-qubit-gates-and-entanglement-creation" class="md-nav__link">
+  <a href="#32-multi-qubit-gates-and-entanglement-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Multi-Qubit Gates and Entanglement Creation
+        3.2 Multi-Qubit Gates and Entanglement Creation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Multi-Qubit Gates and Entanglement Creation">
+    <nav class="md-nav" aria-label="3.2 Multi-Qubit Gates and Entanglement Creation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-the-cnot-gate" class="md-nav__link">
+  <a href="#321-the-cnot-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 The CNOT Gate
+        3.2.1 The CNOT Gate
       
     </span>
   </a>
@@ -2681,10 +2836,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-toffoli-gate-ccnot" class="md-nav__link">
+  <a href="#322-creating-entanglement-with-cnot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 The Toffoli Gate (CCNOT)
+        3.2.2 Creating Entanglement with CNOT
       
     </span>
   </a>
@@ -2692,10 +2847,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-the-swap-gate" class="md-nav__link">
+  <a href="#323-tensor-products-and-multi-qubit-gate-extension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 The SWAP Gate
+        3.2.3 Tensor Products and Multi-Qubit Gate Extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-the-toffoli-gate-ccnot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.4 The Toffoli Gate (CCNOT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#325-the-swap-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.5 The SWAP Gate
       
     </span>
   </a>
@@ -2708,22 +2885,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-universality-any-quantum-computation-from-a-small-gate-set" class="md-nav__link">
+  <a href="#33-universality-any-quantum-computation-from-a-small-gate-set" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Universality — Any Quantum Computation from a Small Gate Set
+        3.3 Universality — Any Quantum Computation from a Small Gate Set
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Universality — Any Quantum Computation from a Small Gate Set">
+    <nav class="md-nav" aria-label="3.3 Universality — Any Quantum Computation from a Small Gate Set">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-the-universality-theorem" class="md-nav__link">
+  <a href="#331-the-universality-theorem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 The Universality Theorem
+        3.3.1 The Universality Theorem
       
     </span>
   </a>
@@ -2731,10 +2908,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-gate-counts-and-circuit-complexity" class="md-nav__link">
+  <a href="#332-comparing-classical-and-quantum-universality" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 Gate Counts and Circuit Complexity
+        3.3.2 Comparing Classical and Quantum Universality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-gate-synthesis-and-t-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3 Gate Synthesis and T-Count
       
     </span>
   </a>
@@ -2747,22 +2935,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-the-no-cloning-theorem-and-its-consequences" class="md-nav__link">
+  <a href="#34-the-no-cloning-theorem-and-its-consequences" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. The No-Cloning Theorem and Its Consequences
+        3.4 The No-Cloning Theorem and Its Consequences
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. The No-Cloning Theorem and Its Consequences">
+    <nav class="md-nav" aria-label="3.4 The No-Cloning Theorem and Its Consequences">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-statement-and-proof" class="md-nav__link">
+  <a href="#341-statement-and-proof" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1 Statement and Proof
+        3.4.1 Statement and Proof
       
     </span>
   </a>
@@ -2770,10 +2958,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-four-consequences" class="md-nav__link">
+  <a href="#342-consequences-for-quantum-computing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.2 Four Consequences
+        3.4.2 Consequences for Quantum Computing
       
     </span>
   </a>
@@ -2786,22 +2974,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-measurement-the-irreversible-collapse" class="md-nav__link">
+  <a href="#35-measurement-the-irreversible-collapse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Measurement — The Irreversible Collapse
+        3.5 Measurement — The Irreversible Collapse
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Measurement — The Irreversible Collapse">
+    <nav class="md-nav" aria-label="3.5 Measurement — The Irreversible Collapse">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-projective-measurement" class="md-nav__link">
+  <a href="#351-measurement-as-projection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1 Projective Measurement
+        3.5.1 Measurement as Projection
       
     </span>
   </a>
@@ -2809,10 +2997,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#52-measurement-in-other-bases" class="md-nav__link">
+  <a href="#352-measurement-in-other-bases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.2 Measurement in Other Bases
+        3.5.2 Measurement in Other Bases
       
     </span>
   </a>
@@ -2820,10 +3008,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#53-the-role-of-measurement-in-algorithm-design" class="md-nav__link">
+  <a href="#353-multiple-shots-and-statistical-estimation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.3 The Role of Measurement in Algorithm Design
+        3.5.3 Multiple Shots and Statistical Estimation
       
     </span>
   </a>
@@ -2836,10 +3024,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-quantum-circuit-notation" class="md-nav__link">
+  <a href="#36-quantum-circuit-complexity-and-the-circuit-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Quantum Circuit Notation
+        3.6 Quantum Circuit Complexity and the Circuit Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Quantum Circuit Complexity and the Circuit Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361-the-circuit-model-of-quantum-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1 The Circuit Model of Quantum Computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362-common-circuit-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.2 Common Circuit Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-quantum-circuit-compilation-and-hardware-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Quantum Circuit Compilation and Hardware Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Quantum Circuit Compilation and Hardware Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-from-logical-circuits-to-physical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.1 From Logical Circuits to Physical Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#372-hardware-connectivity-and-swap-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2 Hardware Connectivity and SWAP Overhead
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 3 Summary
       
     </span>
   </a>
@@ -2878,232 +3144,345 @@
 
 
 <h1 id="chapter-3-quantum-gates-and-circuits-the-grammar-of-quantum-computation">Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation<a class="headerlink" href="#chapter-3-quantum-gates-and-circuits-the-grammar-of-quantum-computation" title="Permanent link">&para;</a></h1>
-<p><em>Classical computing has a grammar: AND, OR, NOT, combined into circuits. Quantum computing has a richer grammar — one built on rotation, interference, and entanglement. This chapter develops that grammar from the mathematical structure upward, establishing the tools used throughout the remainder of this book.</em></p>
 <hr />
-<h2 id="1-single-qubit-gates">1. Single-Qubit Gates<a class="headerlink" href="#1-single-qubit-gates" title="Permanent link">&para;</a></h2>
-<h3 id="11-the-pauli-gates">1.1 The Pauli Gates<a class="headerlink" href="#11-the-pauli-gates" title="Permanent link">&para;</a></h3>
-<p>The three <strong>Pauli matrices</strong> are the fundamental single-qubit operators:</p>
-<div class="arithmatex">\[X = \begin{pmatrix}0 &amp; 1\\1 &amp; 0\end{pmatrix}, \quad Y = \begin{pmatrix}0 &amp; -i\\i &amp; 0\end{pmatrix}, \quad Z = \begin{pmatrix}1 &amp; 0\\0 &amp; -1\end{pmatrix}\]</div>
-<p>Together with the identity <span class="arithmatex">\(\mathbb{I} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\)</span>, the Pauli matrices form a basis for all <span class="arithmatex">\(2\times 2\)</span> Hermitian matrices. Every single-qubit error can be decomposed into Pauli operators — which is why they are central to quantum error correction.</p>
-<p><strong>Physical interpretations:</strong>
-- <span class="arithmatex">\(X\)</span>: <strong>bit-flip</strong> — swaps <span class="arithmatex">\(\ket{0} \leftrightarrow \ket{1}\)</span>. The quantum NOT gate. <span class="arithmatex">\(X^2 = \mathbb{I}\)</span>.
-- <span class="arithmatex">\(Z\)</span>: <strong>phase-flip</strong> — leaves <span class="arithmatex">\(\ket{0}\)</span> unchanged, maps <span class="arithmatex">\(\ket{1} \to -\ket{1}\)</span>. Invisible to a computational basis measurement but crucial for interference. <span class="arithmatex">\(Z^2 = \mathbb{I}\)</span>.
-- <span class="arithmatex">\(Y = iXZ\)</span>: <strong>combined bit-and-phase flip</strong>. <span class="arithmatex">\(Y^2 = \mathbb{I}\)</span>.</p>
-<p>All three Pauli gates satisfy <span class="arithmatex">\(P^2 = \mathbb{I}\)</span> (self-inverse) and <span class="arithmatex">\(\Tr(P) = 0\)</span>. On the Bloch sphere, each Pauli gate is a <span class="arithmatex">\(\pi\)</span>-rotation around the corresponding axis.</p>
-<h3 id="12-phase-gates-s-and-t">1.2 Phase Gates: S and T<a class="headerlink" href="#12-phase-gates-s-and-t" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[S = \begin{pmatrix}1 &amp; 0\\0 &amp; i\end{pmatrix} = \begin{pmatrix}1 &amp; 0\\0 &amp; e^{i\pi/2}\end{pmatrix}, \qquad T = \begin{pmatrix}1 &amp; 0\\0 &amp; e^{i\pi/4}\end{pmatrix}\]</div>
-<ul>
-<li><strong>S gate</strong> (phase gate): A quarter-turn rotation around the <span class="arithmatex">\(Z\)</span>-axis. <span class="arithmatex">\(S^2 = Z\)</span>, <span class="arithmatex">\(S^4 = \mathbb{I}\)</span>.</li>
-<li><strong>T gate</strong> (π/8 gate): An eighth-turn rotation around the <span class="arithmatex">\(Z\)</span>-axis. <strong>The T gate is the key to quantum universality.</strong> <span class="arithmatex">\(T^2 = S\)</span>, <span class="arithmatex">\(T^4 = Z\)</span>, <span class="arithmatex">\(T^8 = \mathbb{I}\)</span>.</li>
-</ul>
-<p>The T gate is the single most important gate in fault-tolerant quantum computing. It is the only non-Clifford gate in the standard universal gate set, and it is disproportionately expensive to implement fault-tolerantly — requiring a procedure called <strong>magic state distillation</strong> that consumes many physical qubits. The T-gate count of an algorithm is the primary metric for its fault-tolerant implementation cost.</p>
-<h3 id="13-the-hadamard-gate">1.3 The Hadamard Gate<a class="headerlink" href="#13-the-hadamard-gate" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 &amp; 1\\1 &amp; -1\end{pmatrix}\]</div>
-<p>The Hadamard gate:
-- Creates superposition: <span class="arithmatex">\(H\ket{0} = \ket{+}\)</span>, <span class="arithmatex">\(H\ket{1} = \ket{-}\)</span>
-- Transforms between computational and Hadamard bases: <span class="arithmatex">\(H X H = Z\)</span>, <span class="arithmatex">\(H Z H = X\)</span>
-- Is self-inverse: <span class="arithmatex">\(H^2 = \mathbb{I}\)</span>
-- Corresponds to a rotation by <span class="arithmatex">\(\pi\)</span> around the axis halfway between <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Z\)</span> on the Bloch sphere</p>
-<h3 id="14-rotation-gates">1.4 Rotation Gates<a class="headerlink" href="#14-rotation-gates" title="Permanent link">&para;</a></h3>
-<p>Any single-qubit unitary can be expressed as a rotation of the Bloch sphere. The rotation gates around the three Pauli axes are:</p>
-<div class="arithmatex">\[R_x(\theta) = e^{-i\theta X/2} = \begin{pmatrix}\cos\frac{\theta}{2} &amp; -i\sin\frac{\theta}{2}\\-i\sin\frac{\theta}{2} &amp; \cos\frac{\theta}{2}\end{pmatrix}\]</div>
-<div class="arithmatex">\[R_y(\theta) = e^{-i\theta Y/2} = \begin{pmatrix}\cos\frac{\theta}{2} &amp; -\sin\frac{\theta}{2}\\\sin\frac{\theta}{2} &amp; \cos\frac{\theta}{2}\end{pmatrix}\]</div>
-<div class="arithmatex">\[R_z(\theta) = e^{-i\theta Z/2} = \begin{pmatrix}e^{-i\theta/2} &amp; 0\\0 &amp; e^{i\theta/2}\end{pmatrix}\]</div>
-<p><strong>ZYZ decomposition:</strong> Any single-qubit unitary can be written as <span class="arithmatex">\(U = e^{i\alpha} R_z(\beta) R_y(\gamma) R_z(\delta)\)</span> for some angles <span class="arithmatex">\(\alpha, \beta, \gamma, \delta\)</span>. This means three rotation gates (plus a global phase) can implement any single-qubit operation.</p>
+<h2 id="opening-from-postulates-to-programs">Opening: From Postulates to Programs<a class="headerlink" href="#opening-from-postulates-to-programs" title="Permanent link">&para;</a></h2>
+<p>The postulates of quantum mechanics tell us <em>what</em> is possible — superposition, entanglement, unitary evolution, measurement. Quantum gates and circuits tell us <em>how</em> to compute — how to assemble unitary operations into programs that exploit quantum resources to solve problems faster than any classical approach.</p>
+<p>A quantum circuit is a sequence of quantum gates applied to an initial state, followed by measurement. Just as classical Boolean circuits are built from NAND gates arranged in acyclic graphs, quantum circuits are built from elementary unitary gates arranged in a directed sequence. The analogy runs deep: there exist universal gate sets for quantum computation, just as NAND is universal classically. But the quantum setting is richer, more constrained (gates must be unitary, hence reversible), and ultimately more powerful for certain problems.</p>
+<p>This chapter develops the complete grammar of quantum computation: the vocabulary of elementary gates, the syntax of circuit composition, the universality theorems that guarantee expressiveness, and the fundamental constraints — no-cloning, measurement irreversibility — that shape quantum algorithm design.</p>
+<hr />
+<h2 id="31-single-qubit-gates">3.1 Single-Qubit Gates<a class="headerlink" href="#31-single-qubit-gates" title="Permanent link">&para;</a></h2>
+<h3 id="311-the-pauli-gates">3.1.1 The Pauli Gates<a class="headerlink" href="#311-the-pauli-gates" title="Permanent link">&para;</a></h3>
+<p>The three <strong>Pauli gates</strong> are the fundamental single-qubit operations, corresponding to rotations by <span class="arithmatex">\(\pi\)</span> around the <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> axes of the Bloch sphere.</p>
+<p><strong>Pauli-X (bit-flip / quantum NOT):</strong>
+$<span class="arithmatex">\(X = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}, \quad X|0\rangle = |1\rangle, \quad X|1\rangle = |0\rangle\)</span>$</p>
+<p><span class="arithmatex">\(X\)</span> is the quantum NOT gate. It maps <span class="arithmatex">\(|0\rangle \leftrightarrow |1\rangle\)</span> and is its own inverse (<span class="arithmatex">\(X^2 = I\)</span>). On the Bloch sphere, <span class="arithmatex">\(X\)</span> is a <span class="arithmatex">\(\pi\)</span>-rotation around the <span class="arithmatex">\(x\)</span>-axis, mapping the north pole (<span class="arithmatex">\(|0\rangle\)</span>) to the south pole (<span class="arithmatex">\(|1\rangle\)</span>).</p>
+<p><strong>Pauli-Z (phase-flip):</strong>
+$<span class="arithmatex">\(Z = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}, \quad Z|0\rangle = |0\rangle, \quad Z|1\rangle = -|1\rangle\)</span>$</p>
+<p><span class="arithmatex">\(Z\)</span> leaves <span class="arithmatex">\(|0\rangle\)</span> unchanged and introduces a phase of <span class="arithmatex">\(-1\)</span> on <span class="arithmatex">\(|1\rangle\)</span>. This has no classical analogue — it affects the relative phase between amplitudes without changing measurement probabilities in the computational basis. Its effect is visible in the Hadamard basis: <span class="arithmatex">\(Z|{+}\rangle = |{-}\rangle\)</span>.</p>
+<p><strong>Pauli-Y (combined bit and phase flip):</strong>
+$<span class="arithmatex">\(Y = \begin{pmatrix}0 &amp; -i \\ i &amp; 0\end{pmatrix}, \quad Y|0\rangle = i|1\rangle, \quad Y|1\rangle = -i|0\rangle\)</span>$</p>
+<p><span class="arithmatex">\(Y = iXZ\)</span>. The imaginary unit <span class="arithmatex">\(i\)</span> makes <span class="arithmatex">\(Y\)</span> the "combined" Pauli: it both flips the bit and flips the phase, with an extra factor of <span class="arithmatex">\(i\)</span>.</p>
+<p><strong>Key property:</strong> <span class="arithmatex">\(X^2 = Y^2 = Z^2 = I\)</span>. The Paulis are their own inverses. They also satisfy <span class="arithmatex">\(XY = iZ\)</span>, <span class="arithmatex">\(YZ = iX\)</span>, <span class="arithmatex">\(ZX = iY\)</span> (cyclic). Together, <span class="arithmatex">\(\{I, X, Y, Z\}\)</span> form the Pauli group under multiplication and are the fundamental basis for describing single-qubit errors.</p>
+<h3 id="312-the-hadamard-gate">3.1.2 The Hadamard Gate<a class="headerlink" href="#312-the-hadamard-gate" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 &amp; 1 \\ 1 &amp; -1\end{pmatrix}\]</div>
+<p><span class="arithmatex">\(H\)</span> transforms between the computational basis and the Hadamard (Fourier) basis:
+$<span class="arithmatex">\(H|0\rangle = |{+}\rangle = \frac{|0\rangle+|1\rangle}{\sqrt{2}}, \qquad H|1\rangle = |{-}\rangle = \frac{|0\rangle-|1\rangle}{\sqrt{2}}\)</span>$
+$<span class="arithmatex">\(H|{+}\rangle = |0\rangle, \qquad H|{-}\rangle = |1\rangle\)</span>$</p>
+<p><span class="arithmatex">\(H\)</span> is its own inverse (<span class="arithmatex">\(H^2 = I\)</span>). On the Bloch sphere, <span class="arithmatex">\(H\)</span> is a <span class="arithmatex">\(\pi\)</span>-rotation around the axis <span class="arithmatex">\((\hat{x}+\hat{z})/\sqrt{2}\)</span>, swapping the roles of the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(z\)</span> axes. Combined with the Pauli gates, <span class="arithmatex">\(H\)</span> allows measurement in any basis.</p>
+<h3 id="313-phase-gates-s-and-t">3.1.3 Phase Gates: S and T<a class="headerlink" href="#313-phase-gates-s-and-t" title="Permanent link">&para;</a></h3>
+<p><strong>S gate (phase gate):</strong>
+$<span class="arithmatex">\(S = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; i\end{pmatrix}, \quad S|0\rangle = |0\rangle, \quad S|1\rangle = i|1\rangle\)</span>$</p>
+<p><span class="arithmatex">\(S\)</span> applies a phase of <span class="arithmatex">\(i = e^{i\pi/2}\)</span> to <span class="arithmatex">\(|1\rangle\)</span> — a quarter-turn rotation around the <span class="arithmatex">\(z\)</span>-axis. Note <span class="arithmatex">\(S^2 = Z\)</span>.</p>
+<p><strong>T gate (pi/8 gate):</strong>
+$<span class="arithmatex">\(T = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; e^{i\pi/4}\end{pmatrix}, \quad T|0\rangle = |0\rangle, \quad T|1\rangle = e^{i\pi/4}|1\rangle\)</span>$</p>
+<p><span class="arithmatex">\(T\)</span> applies a phase of <span class="arithmatex">\(e^{i\pi/4}\)</span> to <span class="arithmatex">\(|1\rangle\)</span> — an eighth-turn around the <span class="arithmatex">\(z\)</span>-axis. Note <span class="arithmatex">\(T^2 = S\)</span>, <span class="arithmatex">\(T^4 = Z\)</span>, <span class="arithmatex">\(T^8 = I\)</span>.</p>
+<p><strong>Why T matters:</strong> The <span class="arithmatex">\(T\)</span> gate is the gate that, when added to the Clifford set <span class="arithmatex">\(\{H, S, CNOT\}\)</span>, makes the gate set universal for quantum computation. Clifford circuits (those using only <span class="arithmatex">\(H\)</span>, <span class="arithmatex">\(S\)</span>, <span class="arithmatex">\(CNOT\)</span>) are efficiently classically simulable (Gottesman-Knill theorem, Chapter 2). Adding <span class="arithmatex">\(T\)</span> breaks this classical simulability. The <span class="arithmatex">\(T\)</span>-count of a quantum circuit — the number of <span class="arithmatex">\(T\)</span> gates — is a proxy for its quantum computational power.</p>
+<h3 id="314-rotation-gates">3.1.4 Rotation Gates<a class="headerlink" href="#314-rotation-gates" title="Permanent link">&para;</a></h3>
+<p>The most general single-qubit gate can be decomposed into rotations around the coordinate axes of the Bloch sphere:</p>
+<div class="arithmatex">\[R_x(\theta) = e^{-i\theta X/2} = \cos\frac{\theta}{2}I - i\sin\frac{\theta}{2}X = \begin{pmatrix}\cos\frac{\theta}{2} &amp; -i\sin\frac{\theta}{2} \\ -i\sin\frac{\theta}{2} &amp; \cos\frac{\theta}{2}\end{pmatrix}\]</div>
+<div class="arithmatex">\[R_y(\theta) = e^{-i\theta Y/2} = \begin{pmatrix}\cos\frac{\theta}{2} &amp; -\sin\frac{\theta}{2} \\ \sin\frac{\theta}{2} &amp; \cos\frac{\theta}{2}\end{pmatrix}\]</div>
+<div class="arithmatex">\[R_z(\theta) = e^{-i\theta Z/2} = \begin{pmatrix}e^{-i\theta/2} &amp; 0 \\ 0 &amp; e^{i\theta/2}\end{pmatrix}\]</div>
+<p><strong>ZYZ decomposition:</strong> Any single-qubit unitary <span class="arithmatex">\(U\)</span> can be written as:
+$<span class="arithmatex">\(U = e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)\)</span>$
+for some angles <span class="arithmatex">\(\alpha, \beta, \gamma, \delta\)</span>. This means three rotation gates suffice to implement any single-qubit operation — the quantum single-qubit analogue of classical universality.</p>
 <div class="admonition example">
-<p class="admonition-title">Worked Example: Applying Ry(π/3) to |0⟩</p>
-<div class="arithmatex">\[R_y(\pi/3)\ket{0} = \begin{pmatrix}\cos(\pi/6) &amp; -\sin(\pi/6)\\\sin(\pi/6) &amp; \cos(\pi/6)\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix} = \begin{pmatrix}\sqrt{3}/2\\1/2\end{pmatrix}\]</div>
-<p>This gives the state <span class="arithmatex">\(\frac{\sqrt{3}}{2}\ket{0} + \frac{1}{2}\ket{1}\)</span> with measurement probabilities <span class="arithmatex">\(P(0) = 3/4\)</span> and <span class="arithmatex">\(P(1) = 1/4\)</span>. The state is located at <span class="arithmatex">\(\theta = \pi/3\)</span> (60° from north pole) on the Bloch sphere's <span class="arithmatex">\(xz\)</span>-plane.</p>
+<p class="admonition-title">Worked Example 3.1: Rotation Gate Application</p>
+<p>Apply <span class="arithmatex">\(R_y(\pi/3)\)</span> to <span class="arithmatex">\(|0\rangle\)</span> and find the measurement probabilities.</p>
+<div class="arithmatex">\[R_y(\pi/3)|0\rangle = \begin{pmatrix}\cos(\pi/6) \\ \sin(\pi/6)\end{pmatrix} = \begin{pmatrix}\sqrt{3}/2 \\ 1/2\end{pmatrix} = \frac{\sqrt{3}}{2}|0\rangle + \frac{1}{2}|1\rangle\]</div>
+<p>Measurement probabilities:
+- <span class="arithmatex">\(P(0) = |\sqrt{3}/2|^2 = 3/4 = 75\%\)</span>
+- <span class="arithmatex">\(P(1) = |1/2|^2 = 1/4 = 25\%\)</span></p>
+<p>Bloch sphere location: <span class="arithmatex">\(\theta = \pi/3\)</span> (60° from north pole), <span class="arithmatex">\(\phi = 0\)</span> (in the <span class="arithmatex">\(xz\)</span>-plane).</p>
+<p>Verify normalization: <span class="arithmatex">\(3/4 + 1/4 = 1\)</span> ✓</p>
 </div>
+<h3 id="315-summary-table-single-qubit-gates">3.1.5 Summary Table: Single-Qubit Gates<a class="headerlink" href="#315-summary-table-single-qubit-gates" title="Permanent link">&para;</a></h3>
+<p>| Gate | Matrix | Action on <span class="arithmatex">\(|0\rangle\)</span> | Action on <span class="arithmatex">\(|1\rangle\)</span> | Bloch sphere interpretation |
+|------|--------|---------------------|---------------------|---------------------------|
+| <span class="arithmatex">\(X\)</span> | <span class="arithmatex">\(\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\)</span> | <span class="arithmatex">\(|1\rangle\)</span> | <span class="arithmatex">\(|0\rangle\)</span> | <span class="arithmatex">\(\pi\)</span>-rotation around <span class="arithmatex">\(\hat{x}\)</span> |
+| <span class="arithmatex">\(Y\)</span> | <span class="arithmatex">\(\begin{pmatrix}0&amp;-i\\i&amp;0\end{pmatrix}\)</span> | <span class="arithmatex">\(i|1\rangle\)</span> | <span class="arithmatex">\(-i|0\rangle\)</span> | <span class="arithmatex">\(\pi\)</span>-rotation around <span class="arithmatex">\(\hat{y}\)</span> |
+| <span class="arithmatex">\(Z\)</span> | <span class="arithmatex">\(\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\)</span> | <span class="arithmatex">\(|0\rangle\)</span> | <span class="arithmatex">\(-|1\rangle\)</span> | <span class="arithmatex">\(\pi\)</span>-rotation around <span class="arithmatex">\(\hat{z}\)</span> |
+| <span class="arithmatex">\(H\)</span> | <span class="arithmatex">\(\frac{1}{\sqrt{2}}\begin{pmatrix}1&amp;1\\1&amp;-1\end{pmatrix}\)</span> | <span class="arithmatex">\(|{+}\rangle\)</span> | <span class="arithmatex">\(|{-}\rangle\)</span> | <span class="arithmatex">\(\pi\)</span>-rotation around <span class="arithmatex">\((\hat{x}+\hat{z})/\sqrt{2}\)</span> |
+| <span class="arithmatex">\(S\)</span> | <span class="arithmatex">\(\begin{pmatrix}1&amp;0\\0&amp;i\end{pmatrix}\)</span> | <span class="arithmatex">\(|0\rangle\)</span> | <span class="arithmatex">\(i|1\rangle\)</span> | <span class="arithmatex">\(\pi/2\)</span>-rotation around <span class="arithmatex">\(\hat{z}\)</span> |
+| <span class="arithmatex">\(T\)</span> | <span class="arithmatex">\(\begin{pmatrix}1&amp;0\\0&amp;e^{i\pi/4}\end{pmatrix}\)</span> | <span class="arithmatex">\(|0\rangle\)</span> | <span class="arithmatex">\(e^{i\pi/4}|1\rangle\)</span> | <span class="arithmatex">\(\pi/4\)</span>-rotation around <span class="arithmatex">\(\hat{z}\)</span> |</p>
 <hr />
-<h2 id="2-multi-qubit-gates-and-entanglement-creation">2. Multi-Qubit Gates and Entanglement Creation<a class="headerlink" href="#2-multi-qubit-gates-and-entanglement-creation" title="Permanent link">&para;</a></h2>
-<h3 id="21-the-cnot-gate">2.1 The CNOT Gate<a class="headerlink" href="#21-the-cnot-gate" title="Permanent link">&para;</a></h3>
-<p>The <strong>Controlled-NOT (CNOT)</strong> gate is the fundamental two-qubit entangling gate:</p>
+<h2 id="32-multi-qubit-gates-and-entanglement-creation">3.2 Multi-Qubit Gates and Entanglement Creation<a class="headerlink" href="#32-multi-qubit-gates-and-entanglement-creation" title="Permanent link">&para;</a></h2>
+<h3 id="321-the-cnot-gate">3.2.1 The CNOT Gate<a class="headerlink" href="#321-the-cnot-gate" title="Permanent link">&para;</a></h3>
+<p>The <strong>Controlled-NOT (CNOT) gate</strong> is the fundamental two-qubit entangling gate. It has two qubits: a <strong>control</strong> qubit <span class="arithmatex">\(c\)</span> and a <strong>target</strong> qubit <span class="arithmatex">\(t\)</span>. The gate flips the target if and only if the control is <span class="arithmatex">\(|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\text{CNOT}|c, t\rangle = |c, t \oplus c\rangle\]</div>
+<p>In matrix form (basis ordering <span class="arithmatex">\(|00\rangle, |01\rangle, |10\rangle, |11\rangle\)</span>):</p>
 <div class="arithmatex">\[\text{CNOT} = \begin{pmatrix}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;0&amp;1\\0&amp;0&amp;1&amp;0\end{pmatrix}\]</div>
-<p>in the basis <span class="arithmatex">\(\{\ket{00}, \ket{01}, \ket{10}, \ket{11}\}\)</span>. Its action: <span class="arithmatex">\(\ket{c, t} \to \ket{c, t \oplus c}\)</span> — if the <strong>control qubit</strong> <span class="arithmatex">\(c = 1\)</span>, the <strong>target qubit</strong> <span class="arithmatex">\(t\)</span> is flipped; if <span class="arithmatex">\(c = 0\)</span>, nothing happens.</p>
 <table>
 <thead>
 <tr>
-<th>Input</th>
-<th>Output</th>
+<th>Control <span class="arithmatex">\(c\)</span></th>
+<th>Target <span class="arithmatex">\(t\)</span></th>
+<th>Output <span class="arithmatex">\(c'\)</span></th>
+<th>Output <span class="arithmatex">\(t'\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(\ket{00}\)</span></td>
-<td><span class="arithmatex">\(\ket{00}\)</span></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\ket{01}\)</span></td>
-<td><span class="arithmatex">\(\ket{01}\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\ket{10}\)</span></td>
-<td><span class="arithmatex">\(\ket{11}\)</span></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td><strong>1</strong></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\ket{11}\)</span></td>
-<td><span class="arithmatex">\(\ket{10}\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
 </tr>
 </tbody>
 </table>
-<p>CNOT is the quantum analogue of classical XOR (reversible version) and is self-inverse: <span class="arithmatex">\(\text{CNOT}^2 = \mathbb{I}\)</span>.</p>
-<p><strong>Entanglement creation with CNOT:</strong></p>
-<div class="arithmatex">\[\text{CNOT} \cdot (H \otimes \mathbb{I})\ket{00} = \text{CNOT} \cdot \frac{\ket{0}+\ket{1}}{\sqrt{2}}\ket{0} = \text{CNOT} \cdot \frac{\ket{00}+\ket{10}}{\sqrt{2}} = \frac{\ket{00}+\ket{11}}{\sqrt{2}} = \ket{\Phi^+}\]</div>
-<p>Two gates (H then CNOT) create a maximally entangled Bell state from a product state.</p>
-<h3 id="22-the-toffoli-gate-ccnot">2.2 The Toffoli Gate (CCNOT)<a class="headerlink" href="#22-the-toffoli-gate-ccnot" title="Permanent link">&para;</a></h3>
-<p>The <strong>Toffoli gate</strong> acts on three qubits:</p>
-<div class="arithmatex">\[\ket{a, b, c} \to \ket{a, b, c \oplus (a \wedge b)}\]</div>
-<p>The target qubit <span class="arithmatex">\(c\)</span> is flipped if and only if <strong>both</strong> control qubits <span class="arithmatex">\(a = b = 1\)</span>. Its <span class="arithmatex">\(8 \times 8\)</span> matrix flips only the <span class="arithmatex">\(\ket{110} \leftrightarrow \ket{111}\)</span> transition.</p>
-<p>The Toffoli gate has <strong>double significance</strong>:</p>
+<p>CNOT is its own inverse: <span class="arithmatex">\(\text{CNOT}^2 = I\)</span>.</p>
+<p><strong>CNOT as quantum XOR:</strong> CNOT computes <span class="arithmatex">\(t' = t \oplus c\)</span> — the XOR of the two bits — while preserving the control. Unlike classical XOR (which discards an input), CNOT preserves both inputs and is reversible.</p>
+<h3 id="322-creating-entanglement-with-cnot">3.2.2 Creating Entanglement with CNOT<a class="headerlink" href="#322-creating-entanglement-with-cnot" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 3.2: Bell State Preparation</p>
+<p><strong>Goal:</strong> Prepare <span class="arithmatex">\(|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}\)</span> from <span class="arithmatex">\(|00\rangle\)</span>.</p>
+<p><strong>Step 1:</strong> Apply <span class="arithmatex">\(H\)</span> to qubit 1 (control):
+$<span class="arithmatex">\(|00\rangle \xrightarrow{H \otimes I} \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) \otimes |0\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |10\rangle)\)</span>$</p>
+<p><strong>Step 2:</strong> Apply CNOT (control: qubit 1, target: qubit 2):
+$<span class="arithmatex">\(\frac{1}{\sqrt{2}}(|00\rangle + |10\rangle) \xrightarrow{\text{CNOT}} \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) = |\Phi^+\rangle\)</span>$</p>
+<p>Two gates. One entangled pair. This H+CNOT sequence is the minimal entanglement circuit and appears as a subroutine in virtually every quantum algorithm and protocol.</p>
+<p><strong>All four Bell states from <span class="arithmatex">\(|00\rangle\)</span>:</strong>
+- <span class="arithmatex">\(|\Phi^+\rangle\)</span>: apply <span class="arithmatex">\(H\)</span> to qubit 1, then CNOT
+- <span class="arithmatex">\(|\Phi^-\rangle\)</span>: apply <span class="arithmatex">\(H\)</span> to qubit 1, then CNOT, then <span class="arithmatex">\(Z\)</span> to qubit 1
+- <span class="arithmatex">\(|\Psi^+\rangle\)</span>: apply <span class="arithmatex">\(H\)</span> to qubit 1, then CNOT, then <span class="arithmatex">\(X\)</span> to qubit 1
+- <span class="arithmatex">\(|\Psi^-\rangle\)</span>: apply <span class="arithmatex">\(H\)</span> to qubit 1, then CNOT, then <span class="arithmatex">\(X\)</span> to qubit 1, then <span class="arithmatex">\(Z\)</span> to qubit 1</p>
+</div>
+<h3 id="323-tensor-products-and-multi-qubit-gate-extension">3.2.3 Tensor Products and Multi-Qubit Gate Extension<a class="headerlink" href="#323-tensor-products-and-multi-qubit-gate-extension" title="Permanent link">&para;</a></h3>
+<p>A single-qubit gate <span class="arithmatex">\(U\)</span> acting on qubit <span class="arithmatex">\(k\)</span> of an <span class="arithmatex">\(n\)</span>-qubit system is implemented as:</p>
+<div class="arithmatex">\[I^{\otimes(k-1)} \otimes U \otimes I^{\otimes(n-k)}\]</div>
+<p>This is a <span class="arithmatex">\(2^n \times 2^n\)</span> matrix that applies <span class="arithmatex">\(U\)</span> to qubit <span class="arithmatex">\(k\)</span> and leaves all others unchanged.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 3.3: Applying H to One Qubit of a Two-Qubit System</p>
+<p>Apply <span class="arithmatex">\(H\)</span> to the first qubit of the state <span class="arithmatex">\(|{+}0\rangle = (|00\rangle + |10\rangle)/\sqrt{2}\)</span>:</p>
+<div class="arithmatex">\[H \otimes I = \frac{1}{\sqrt{2}}\begin{pmatrix}1&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;1\\1&amp;0&amp;-1&amp;0\\0&amp;1&amp;0&amp;-1\end{pmatrix}\]</div>
+<p>Applied to <span class="arithmatex">\((|00\rangle + |10\rangle)/\sqrt{2}\)</span>, with coefficient vector <span class="arithmatex">\(\frac{1}{\sqrt{2}}[1,0,1,0]^T\)</span>:</p>
+<div class="arithmatex">\[= \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1+1\\0+0\\1-1\\0+0\end{pmatrix} = \frac{1}{2}\begin{pmatrix}2\\0\\0\\0\end{pmatrix} = |00\rangle\]</div>
+<p>Applying <span class="arithmatex">\(H\)</span> again to the first qubit of <span class="arithmatex">\(|\Phi^+\rangle = (|00\rangle + |11\rangle)/\sqrt{2}\)</span>:</p>
+<p>Coefficient vector: <span class="arithmatex">\(\frac{1}{\sqrt{2}}[1,0,0,1]^T\)</span>.</p>
+<div class="arithmatex">\[(H \otimes I) \frac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\0\\1\end{pmatrix} = \frac{1}{2\sqrt{2}}\begin{pmatrix}1+1\\0+1\\1-1\\0+1\end{pmatrix} = \frac{1}{2\sqrt{2}}\begin{pmatrix}2\\1\\0\\1\end{pmatrix}\]</div>
+<p>This is $(|00\rangle + |01\rangle + |11\rangle)/(2/\sqrt{2}) = (|00\rangle + |01\rangle + |11\rangle)\cdot\frac{1}{\sqrt{2}\cdot\sqrt{2}} $... Let us write this properly:</p>
+<div class="arithmatex">\[(H \otimes I)|\Phi^+\rangle = \frac{1}{\sqrt{2}}\left(\frac{|0\rangle+|1\rangle}{\sqrt{2}}\right)|0\rangle + \frac{1}{\sqrt{2}}\left(\frac{|0\rangle-|1\rangle}{\sqrt{2}}\right)|1\rangle = \frac{|00\rangle+|10\rangle+|01\rangle-|11\rangle}{2}\]</div>
+<p>This is the state needed partway through the Bell measurement in teleportation.</p>
+</div>
+<h3 id="324-the-toffoli-gate-ccnot">3.2.4 The Toffoli Gate (CCNOT)<a class="headerlink" href="#324-the-toffoli-gate-ccnot" title="Permanent link">&para;</a></h3>
+<p>The <strong>Toffoli gate</strong> (Doubly-Controlled-NOT) takes three qubits and flips the target only when both controls are <span class="arithmatex">\(|1\rangle\)</span>:</p>
+<div class="arithmatex">\[\text{Toffoli}|a,b,c\rangle = |a, b, c \oplus (a \wedge b)\rangle\]</div>
+<p>Its <span class="arithmatex">\(8 \times 8\)</span> matrix is the identity with the lower-right <span class="arithmatex">\(2 \times 2\)</span> block replaced by <span class="arithmatex">\(X\)</span> (the rows/columns corresponding to <span class="arithmatex">\(|110\rangle\)</span> and <span class="arithmatex">\(|111\rangle\)</span> are swapped).</p>
+<p>The Toffoli gate has two distinct claims to importance:</p>
 <ol>
 <li>
-<p><strong>Universal for classical reversible computation</strong>: Any Boolean circuit can be implemented using Toffoli gates and ancilla bits. Toffoli implements AND reversibly: set <span class="arithmatex">\(c = 0\)</span>, then <span class="arithmatex">\(c' = a \wedge b\)</span> while preserving <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>.</p>
+<p><strong>Universal for classical reversible computation:</strong> Any classical Boolean circuit can be implemented using Toffoli gates and ancilla bits. This was established in Chapter 1 (Section 1.2). The Toffoli gate is the bridge between classical and quantum computation.</p>
 </li>
 <li>
-<p><strong>Near-universal for quantum computation</strong>: Combined with Hadamard gates, the Toffoli gate forms a universal gate set for quantum computation (though not the most efficient one — T gates give better circuit depth).</p>
+<p><strong>Quantum universality (with H):</strong> The set <span class="arithmatex">\(\{H, \text{Toffoli}\}\)</span> is universal for quantum computation — though not efficiently. To achieve efficient universality, the <span class="arithmatex">\(T\)</span> gate is needed instead of (or in addition to) Toffoli.</p>
 </li>
 </ol>
-<h3 id="23-the-swap-gate">2.3 The SWAP Gate<a class="headerlink" href="#23-the-swap-gate" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[\text{SWAP}\ket{a,b} = \ket{b,a}\]</div>
-<p>SWAP exchanges the states of two qubits. It decomposes into three CNOT gates:</p>
+<p>Note that the Toffoli gate itself requires the <span class="arithmatex">\(T\)</span> gate for its quantum implementation: Toffoli = 6 CNOT gates + several single-qubit gates including <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(T^\dagger\)</span>. The <span class="arithmatex">\(T\)</span>-count of the Toffoli is 7.</p>
+<h3 id="325-the-swap-gate">3.2.5 The SWAP Gate<a class="headerlink" href="#325-the-swap-gate" title="Permanent link">&para;</a></h3>
+<p>The <strong>SWAP gate</strong> exchanges the states of two qubits:</p>
+<div class="arithmatex">\[\text{SWAP}|a,b\rangle = |b,a\rangle\]</div>
+<div class="arithmatex">\[\text{SWAP} = \begin{pmatrix}1&amp;0&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;0&amp;1\end{pmatrix}\]</div>
+<p>SWAP decomposes into three CNOT gates:</p>
 <div class="arithmatex">\[\text{SWAP} = \text{CNOT}_{12} \cdot \text{CNOT}_{21} \cdot \text{CNOT}_{12}\]</div>
-<p>This decomposition is important because many physical qubit architectures only support CNOT between neighboring qubits. Moving quantum information between distant qubits requires SWAP operations, consuming qubit budget and introducing errors.</p>
-<div class="admonition tip">
-<p class="admonition-title">Business Implication</p>
-<p>The SWAP overhead in superconducting qubit architectures (where only nearest-neighbor gates are available) is a major source of circuit depth inflation. This is why trapped-ion systems (with all-to-all connectivity, eliminating the need for SWAPs) have an advantage for algorithms requiring many long-range interactions. Understanding connectivity topology is essential when evaluating vendor hardware for specific applications.</p>
-</div>
+<p>This decomposition matters practically: quantum processors typically support CNOT between specific qubit pairs (determined by the hardware connectivity graph). SWAP gates are used to move quantum information between non-adjacent qubits, at the cost of three CNOT operations each. Minimizing SWAP count is a key objective in quantum circuit compilation.</p>
 <hr />
-<h2 id="3-universality-any-quantum-computation-from-a-small-gate-set">3. Universality — Any Quantum Computation from a Small Gate Set<a class="headerlink" href="#3-universality-any-quantum-computation-from-a-small-gate-set" title="Permanent link">&para;</a></h2>
-<h3 id="31-the-universality-theorem">3.1 The Universality Theorem<a class="headerlink" href="#31-the-universality-theorem" title="Permanent link">&para;</a></h3>
-<p><strong>Theorem (Solovay-Kitaev):</strong> The gate set <span class="arithmatex">\(\{\text{CNOT}, H, T\}\)</span> is <strong>universal for quantum computation</strong> — any <span class="arithmatex">\(n\)</span>-qubit unitary operator can be approximated to within precision <span class="arithmatex">\(\varepsilon\)</span> using <span class="arithmatex">\(O(n^2 \cdot \text{poly}(\log(1/\varepsilon)))\)</span> gates from this set.</p>
-<p>The intuition: any single-qubit rotation can be approximated arbitrarily well using sequences of H and T gates (since they generate a dense subgroup of SU(2)). Any multi-qubit unitary can then be decomposed into single-qubit rotations plus CNOT gates.</p>
-<p><strong>The universality hierarchy:</strong></p>
+<h2 id="33-universality-any-quantum-computation-from-a-small-gate-set">3.3 Universality — Any Quantum Computation from a Small Gate Set<a class="headerlink" href="#33-universality-any-quantum-computation-from-a-small-gate-set" title="Permanent link">&para;</a></h2>
+<h3 id="331-the-universality-theorem">3.3.1 The Universality Theorem<a class="headerlink" href="#331-the-universality-theorem" title="Permanent link">&para;</a></h3>
+<p><strong>Theorem (Solovay-Kitaev):</strong> The gate set <span class="arithmatex">\(\{H, T, \text{CNOT}\}\)</span> is universal for quantum computation. Any <span class="arithmatex">\(n\)</span>-qubit unitary operation can be approximated to precision <span class="arithmatex">\(\varepsilon\)</span> using:</p>
+<div class="arithmatex">\[O\!\left(n^2 \cdot \text{poly}\!\left(\log\frac{1}{\varepsilon}\right)\right) \text{ gates from } \{H, T, \text{CNOT}\}\]</div>
+<p>The Solovay-Kitaev theorem guarantees not just that any unitary is approximable (which follows from basic topology), but that the approximation is <em>efficient</em> in <span class="arithmatex">\(\log(1/\varepsilon)\)</span> — requiring only polynomially many gates to achieve exponential precision.</p>
+<h3 id="332-comparing-classical-and-quantum-universality">3.3.2 Comparing Classical and Quantum Universality<a class="headerlink" href="#332-comparing-classical-and-quantum-universality" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Gate Set</th>
-<th>Universal For</th>
+<th>Level</th>
+<th>Universal set</th>
+<th>What it computes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>NAND</td>
-<td>Classical computation</td>
+<td>Classical (Boolean)</td>
+<td><span class="arithmatex">\(\{\)</span>NAND<span class="arithmatex">\(\}\)</span></td>
+<td>All Boolean functions</td>
 </tr>
 <tr>
-<td>Toffoli</td>
-<td>Reversible classical computation</td>
+<td>Classical (reversible)</td>
+<td><span class="arithmatex">\(\{\)</span>Toffoli<span class="arithmatex">\(\}\)</span></td>
+<td>All reversible Boolean functions</td>
 </tr>
 <tr>
-<td>{\text{CNOT}, H} (Clifford gates)</td>
-<td>Efficiently simulable quantum circuits</td>
+<td>Quantum (Clifford)</td>
+<td><span class="arithmatex">\(\{H, S, \text{CNOT}\}\)</span></td>
+<td>Clifford circuits (classically simulable)</td>
 </tr>
 <tr>
-<td>{\text{CNOT}, H, T}</td>
-<td>All quantum computation</td>
+<td>Quantum (universal)</td>
+<td><span class="arithmatex">\(\{H, T, \text{CNOT}\}\)</span></td>
+<td>All quantum unitary operations</td>
 </tr>
 </tbody>
 </table>
-<p>Each level adds capability: Toffoli adds reversibility, H adds superposition, T adds non-Clifford phase rotation that places the computation beyond classical simulation.</p>
-<h3 id="32-gate-counts-and-circuit-complexity">3.2 Gate Counts and Circuit Complexity<a class="headerlink" href="#32-gate-counts-and-circuit-complexity" title="Permanent link">&para;</a></h3>
-<p>In the fault-tolerant regime, different gates have very different <strong>implementation costs</strong>:</p>
-<ul>
-<li><strong>Clifford gates</strong> (H, S, CNOT, Pauli): Implemented directly from physical gates, relatively cheap.</li>
-<li><strong>T gate</strong>: Requires <strong>magic state distillation</strong> — a costly subroutine consuming ~15 physical qubits per T gate (with surface code at current error rates). T-gate count is the primary driver of fault-tolerant circuit cost.</li>
-</ul>
-<p>The resource estimate for Shor's algorithm on RSA-2048 (Gidney &amp; Ekerå 2021) involved carefully minimizing the T-gate count: the number of T gates dominates the qubit and time requirements by orders of magnitude.</p>
+<p>Each level adds capability: Toffoli adds reversibility; <span class="arithmatex">\(H\)</span> adds superposition; <span class="arithmatex">\(T\)</span> adds non-Clifford phase rotation that escapes classical simulation. The hierarchy is strict: no Clifford circuit can approximate the <span class="arithmatex">\(T\)</span> gate.</p>
+<h3 id="333-gate-synthesis-and-t-count">3.3.3 Gate Synthesis and T-Count<a class="headerlink" href="#333-gate-synthesis-and-t-count" title="Permanent link">&para;</a></h3>
+<p>In fault-tolerant quantum computing, the cost of <span class="arithmatex">\(T\)</span> gates is asymmetric: Clifford gates can be implemented transversally (without using costly magic state distillation), while <span class="arithmatex">\(T\)</span> gates require "magic state distillation" — a costly procedure consuming many physical qubits per logical <span class="arithmatex">\(T\)</span> gate. This asymmetry means that minimizing <span class="arithmatex">\(T\)</span>-count is the central optimization objective in fault-tolerant circuit design.</p>
+<p>For example, the Toffoli gate requires 7 <span class="arithmatex">\(T\)</span> gates in its standard decomposition. A 100-gate quantum circuit with 30 Toffoli gates uses 210 <span class="arithmatex">\(T\)</span> gates — each potentially requiring hundreds of additional physical qubits for distillation. <span class="arithmatex">\(T\)</span>-count reduction algorithms (such as those of Amy et al.) are an active research area.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>The universality theorem establishes that quantum computers are general-purpose — they can, in principle, approximate any unitary transformation. But the practical cost varies enormously by gate type. Clifford gates are cheap; <span class="arithmatex">\(T\)</span> gates are expensive. A quantum algorithm's practical resource cost depends far more on its <span class="arithmatex">\(T\)</span>-count than on its total gate count. When evaluating quantum algorithm implementations, ask for the <span class="arithmatex">\(T\)</span>-count (or equivalently, the number of non-Clifford gates), not just the total gate count.</p>
+</div>
 <hr />
-<h2 id="4-the-no-cloning-theorem-and-its-consequences">4. The No-Cloning Theorem and Its Consequences<a class="headerlink" href="#4-the-no-cloning-theorem-and-its-consequences" title="Permanent link">&para;</a></h2>
-<h3 id="41-statement-and-proof">4.1 Statement and Proof<a class="headerlink" href="#41-statement-and-proof" title="Permanent link">&para;</a></h3>
-<p><strong>Theorem (Wootters &amp; Zurek, Dieks, 1982):</strong> There exists no unitary operation that clones arbitrary quantum states.</p>
-<p><strong>Proof:</strong> Suppose a unitary <span class="arithmatex">\(U\)</span> could clone: <span class="arithmatex">\(U\ket{\psi}\ket{0} = \ket{\psi}\ket{\psi}\)</span> for all <span class="arithmatex">\(\ket{\psi}\)</span>. Apply this to two states <span class="arithmatex">\(\ket{\psi}\)</span> and <span class="arithmatex">\(\ket{\phi}\)</span>:</p>
-<div class="arithmatex">\[U\ket{\psi}\ket{0} = \ket{\psi}\ket{\psi}, \qquad U\ket{\phi}\ket{0} = \ket{\phi}\ket{\phi}\]</div>
-<p>Taking inner products of both sides and using unitarity (<span class="arithmatex">\(U\)</span> preserves inner products):</p>
-<div class="arithmatex">\[\bra{\psi}\braket{0}{0}\ket{\phi} = \bra{\psi}\bra{\psi}\ket{\phi}\ket{\phi}\]</div>
-<div class="arithmatex">\[\braket{\psi}{\phi} = \left(\braket{\psi}{\phi}\right)^2\]</div>
-<p>This equation <span class="arithmatex">\(z = z^2\)</span> holds only for <span class="arithmatex">\(z = 0\)</span> or <span class="arithmatex">\(z = 1\)</span> — i.e., <span class="arithmatex">\(\braket{\psi}{\phi} = 0\)</span> (orthogonal states) or <span class="arithmatex">\(\ket{\psi} = \ket{\phi}\)</span> (identical states). For arbitrary non-orthogonal, non-identical states, no such <span class="arithmatex">\(U\)</span> can exist. <strong>∎</strong></p>
-<h3 id="42-four-consequences">4.2 Four Consequences<a class="headerlink" href="#42-four-consequences" title="Permanent link">&para;</a></h3>
-<p><strong>1. No quantum fan-out.</strong> Classical circuits freely branch one wire into many copies. Quantum circuits cannot. Every computation must be designed to use each qubit exactly once in its quantum form. This requires careful management of <strong>ancilla qubits</strong> (temporary scratch space).</p>
-<p><strong>2. Quantum error correction requires a new approach.</strong> Classical error correction simply copies bits three times and takes a majority vote. No-cloning forbids copying quantum states. Instead, quantum error correction encodes one logical qubit into an <strong>entangled state</strong> of many physical qubits and uses <strong>syndrome measurements</strong> (measuring stabilizer operators that reveal error information without collapsing the encoded state). This is fundamentally more complex than classical error correction — and is why Chapters 7–8 are needed.</p>
-<p><strong>3. Quantum cryptography is provably secure.</strong> No eavesdropper can intercept a quantum communication and copy it without disturbing it. The security of BB84 (Chapter 5) rests on no-cloning.</p>
-<p><strong>4. Quantum teleportation does not violate no-cloning.</strong> Teleportation transmits a quantum state from Alice to Bob by destroying it at Alice's location and recreating it at Bob's — the original is always destroyed, so no copy exists at any point.</p>
+<h2 id="34-the-no-cloning-theorem-and-its-consequences">3.4 The No-Cloning Theorem and Its Consequences<a class="headerlink" href="#34-the-no-cloning-theorem-and-its-consequences" title="Permanent link">&para;</a></h2>
+<h3 id="341-statement-and-proof">3.4.1 Statement and Proof<a class="headerlink" href="#341-statement-and-proof" title="Permanent link">&para;</a></h3>
+<p><strong>Theorem (Wootters and Zurek 1982; Dieks 1982):</strong> There is no unitary operator <span class="arithmatex">\(U\)</span> such that <span class="arithmatex">\(U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle\)</span> for all quantum states <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p><strong>Proof:</strong> Suppose such <span class="arithmatex">\(U\)</span> exists. For two arbitrary states <span class="arithmatex">\(|\psi\rangle\)</span> and <span class="arithmatex">\(|\phi\rangle\)</span>:</p>
+<div class="arithmatex">\[U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle \quad \text{and} \quad U|\phi\rangle|0\rangle = |\phi\rangle|\phi\rangle\]</div>
+<p>Taking the inner product of both sides (using <span class="arithmatex">\(U^\dagger U = I\)</span>):</p>
+<div class="arithmatex">\[\langle\phi|\langle 0|U^\dagger U|\psi\rangle|0\rangle = \langle\phi|\phi|\psi\rangle|\psi\rangle\]</div>
+<div class="arithmatex">\[\langle\phi|\psi\rangle \cdot 1 = \langle\phi|\psi\rangle \cdot \langle\phi|\psi\rangle\]</div>
+<div class="arithmatex">\[\langle\phi|\psi\rangle = \langle\phi|\psi\rangle^2\]</div>
+<p>This is satisfied only for <span class="arithmatex">\(\langle\phi|\psi\rangle = 0\)</span> (orthogonal) or <span class="arithmatex">\(\langle\phi|\psi\rangle = 1\)</span> (identical). For all non-orthogonal, non-identical states — which includes all continuous families of states — no such <span class="arithmatex">\(U\)</span> exists. <span class="arithmatex">\(\square\)</span></p>
+<h3 id="342-consequences-for-quantum-computing">3.4.2 Consequences for Quantum Computing<a class="headerlink" href="#342-consequences-for-quantum-computing" title="Permanent link">&para;</a></h3>
+<p>The no-cloning theorem has four major consequences:</p>
+<p><strong>1. Quantum error correction requires entanglement, not copying:</strong> Classical error correction works by redundancy — copy the bit three times, majority-vote to correct errors. Quantum systems cannot be copied. Instead, QEC encodes one logical qubit into an entangled state of many physical qubits, and extracts error information through syndrome measurements that do not disturb the encoded state. The 3-qubit bit-flip code, for example, encodes <span class="arithmatex">\(\alpha|0\rangle + \beta|1\rangle\)</span> as <span class="arithmatex">\(\alpha|000\rangle + \beta|111\rangle\)</span> — not three copies of the qubit, but a specific entangled state with redundancy in the error-correcting sense.</p>
+<p><strong>2. Eavesdropping on quantum channels is detectable:</strong> In QKD (Chapter 5), Alice sends qubits to Bob. An eavesdropper Eve cannot copy the qubits (no-cloning) without measuring them, and measurement introduces detectable errors. The BB84 security proof relies directly on the no-cloning theorem: there is no measurement Eve can perform that extracts information about the qubit without disturbing it in a way that Alice and Bob can detect.</p>
+<p><strong>3. Quantum fan-out is impossible for superpositions:</strong> Classical circuits routinely copy a signal to multiple destinations. Quantum circuits cannot. The CNOT gate implements fan-out for classical bit values (<span class="arithmatex">\(|x\rangle|0\rangle \to |x\rangle|x\rangle\)</span> for <span class="arithmatex">\(x \in \{0,1\}\)</span>) but creates entanglement rather than copies when applied to superpositions.</p>
+<p><strong>4. Quantum teleportation is not cloning:</strong> Teleportation (Chapter 5) transmits a quantum state from Alice to Bob — but destroys the original at Alice's end. The no-cloning theorem is preserved: at no point do two copies of the state <span class="arithmatex">\(|\psi\rangle\)</span> exist simultaneously.</p>
 <div class="admonition warning">
 <p class="admonition-title">Common Misconception</p>
-<p>No-cloning means quantum computers cannot simply "try all answers simultaneously and pick the best one." The amplitudes for all possible answers exist in superposition — but you cannot read them all out simultaneously. Measurement collapses the superposition to a single outcome. Quantum algorithms must use interference to concentrate amplitude on the correct answer <em>before</em> measurement.</p>
+<p>The no-cloning theorem does not prevent quantum computers from using repetition for error correction. The key distinction: quantum error correction does not copy the quantum <em>state</em>. It encodes the state into a larger entangled system in a way that errors can be detected and corrected through measurement of auxiliary degrees of freedom. "Repetition" in QEC means redundancy in the Hilbert space, not copying of amplitudes.</p>
 </div>
 <hr />
-<h2 id="5-measurement-the-irreversible-collapse">5. Measurement — The Irreversible Collapse<a class="headerlink" href="#5-measurement-the-irreversible-collapse" title="Permanent link">&para;</a></h2>
-<h3 id="51-projective-measurement">5.1 Projective Measurement<a class="headerlink" href="#51-projective-measurement" title="Permanent link">&para;</a></h3>
-<p>Measurement in the computational basis is described by projection operators:</p>
-<div class="arithmatex">\[P_0 = \ket{0}\bra{0} = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}, \qquad P_1 = \ket{1}\bra{1} = \begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\]</div>
-<p>For state <span class="arithmatex">\(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\)</span>:
-- Outcome 0 with probability <span class="arithmatex">\(\|P_0\ket{\psi}\|^2 = |\alpha|^2\)</span>, post-measurement state: <span class="arithmatex">\(\ket{0}\)</span>
-- Outcome 1 with probability <span class="arithmatex">\(\|P_1\ket{\psi}\|^2 = |\beta|^2\)</span>, post-measurement state: <span class="arithmatex">\(\ket{1}\)</span></p>
-<p>Measurement is <strong>irreversible</strong> and <strong>non-unitary</strong> — it is the only non-unitary operation in quantum computing. After measurement, the qubit is in a definite classical state. The superposition is permanently destroyed.</p>
-<h3 id="52-measurement-in-other-bases">5.2 Measurement in Other Bases<a class="headerlink" href="#52-measurement-in-other-bases" title="Permanent link">&para;</a></h3>
-<p>Measuring in the Hadamard basis <span class="arithmatex">\(\{\ket{+}, \ket{-}\}\)</span> is equivalent to applying <span class="arithmatex">\(H\)</span> then measuring in the computational basis. This basis flexibility is exploited in BB84 QKD (Chapter 5) and Shor's algorithm (Chapter 4).</p>
+<h2 id="35-measurement-the-irreversible-collapse">3.5 Measurement — The Irreversible Collapse<a class="headerlink" href="#35-measurement-the-irreversible-collapse" title="Permanent link">&para;</a></h2>
+<h3 id="351-measurement-as-projection">3.5.1 Measurement as Projection<a class="headerlink" href="#351-measurement-as-projection" title="Permanent link">&para;</a></h3>
+<p>Measurement in the computational basis is described by two projection operators:</p>
+<div class="arithmatex">\[P_0 = |0\rangle\langle 0| = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix}, \qquad P_1 = |1\rangle\langle 1| = \begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix}\]</div>
+<p>Applied to <span class="arithmatex">\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\)</span>:</p>
+<ul>
+<li>Outcome 0 with probability <span class="arithmatex">\(\langle\psi|P_0|\psi\rangle = |\alpha|^2\)</span>; post-measurement state <span class="arithmatex">\(P_0|\psi\rangle/\sqrt{|\alpha|^2} = |0\rangle\)</span></li>
+<li>Outcome 1 with probability <span class="arithmatex">\(\langle\psi|P_1|\psi\rangle = |\beta|^2\)</span>; post-measurement state <span class="arithmatex">\(|1\rangle\)</span></li>
+</ul>
+<p>Measurement is <strong>irreversible</strong> — it cannot be undone. It is the <em>only</em> non-unitary process in quantum computation. All quantum evolution between measurements is deterministic and reversible (unitary). All randomness in quantum computation arises from measurement.</p>
+<h3 id="352-measurement-in-other-bases">3.5.2 Measurement in Other Bases<a class="headerlink" href="#352-measurement-in-other-bases" title="Permanent link">&para;</a></h3>
+<p>Measurement need not be in the computational basis <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span>. To measure in the Hadamard basis <span class="arithmatex">\(\{|{+}\rangle, |{-}\rangle\}\)</span>:</p>
+<ol>
+<li>Apply <span class="arithmatex">\(H\)</span> to the qubit (rotate the basis)</li>
+<li>Measure in the computational basis</li>
+</ol>
+<p>More generally, to measure in the eigenbasis of a Hermitian observable <span class="arithmatex">\(M = \sum_m m|m\rangle\langle m|\)</span>, diagonalize <span class="arithmatex">\(M\)</span> and apply the appropriate unitary rotation before measuring in the computational basis.</p>
+<p><strong>Why this matters for algorithms:</strong> Shor's algorithm effectively measures in the Fourier basis (by applying the inverse QFT before measuring). BB84 QKD requires Alice to prepare states in two different bases and Bob to measure in two different bases. Understanding basis choice in measurement is essential for algorithm design.</p>
+<h3 id="353-multiple-shots-and-statistical-estimation">3.5.3 Multiple Shots and Statistical Estimation<a class="headerlink" href="#353-multiple-shots-and-statistical-estimation" title="Permanent link">&para;</a></h3>
+<p>Since a single measurement collapses the quantum state, algorithms frequently require many repetitions ("shots") to build statistical estimates. For a quantum state <span class="arithmatex">\(|\psi\rangle = \sum_x \alpha_x|x\rangle\)</span>, running the circuit <span class="arithmatex">\(k\)</span> times and measuring yields a histogram approximating the probability distribution <span class="arithmatex">\(\{|\alpha_x|^2\}\)</span>.</p>
+<p>The key algorithmic challenge: design the circuit so that the probability distribution concentrates on the correct answer. Then even a small number of shots (often just 1–10) yields the correct answer with high probability. Algorithms that require exponentially many shots to extract useful information — regardless of the circuit's quantum properties — do not provide quantum advantage.</p>
+<p><strong>Expectation value estimation:</strong> For variational algorithms like VQE, the goal is to estimate <span class="arithmatex">\(\langle\psi|H|\psi\rangle\)</span> for a Hamiltonian <span class="arithmatex">\(H = \sum_k c_k P_k\)</span> (sum of Pauli strings). Each Pauli term requires a separate measurement basis. For molecular Hamiltonians with <span class="arithmatex">\(O(M^4)\)</span> terms (<span class="arithmatex">\(M\)</span> = number of orbitals), this requires <span class="arithmatex">\(O(M^4)\)</span> independent measurement circuits — a significant overhead that limits VQE's practical advantage.</p>
 <div class="admonition example">
-<p class="admonition-title">Worked Example: Measuring |+⟩ in Different Bases</p>
-<p>The state <span class="arithmatex">\(\ket{+} = (\ket{0} + \ket{1})/\sqrt{2}\)</span>.</p>
-<p><strong>Computational basis measurement:</strong> Outcome 0 with probability 1/2, outcome 1 with probability 1/2 — completely random.</p>
-<p><strong>Hadamard basis measurement:</strong> Apply H first: <span class="arithmatex">\(H\ket{+} = H \cdot H\ket{0} = \ket{0}\)</span>. Measure: outcome 0 with probability <strong>1</strong> — deterministic!</p>
-<p>The choice of measurement basis determines what information is extractable. Shor's algorithm measures in the <strong>Fourier basis</strong> (Chapter 4) to extract period information. The wrong measurement basis yields noise.</p>
+<p class="admonition-title">Worked Example 3.4: Measurement in the Hadamard Basis</p>
+<p>Measure <span class="arithmatex">\(|\psi\rangle = \frac{1}{\sqrt{3}}|0\rangle + \sqrt{\frac{2}{3}}|1\rangle\)</span> in the Hadamard basis <span class="arithmatex">\(\{|{+}\rangle, |{-}\rangle\}\)</span>.</p>
+<p><strong>Step 1:</strong> Apply <span class="arithmatex">\(H\)</span>:
+$<span class="arithmatex">\(H|\psi\rangle = \frac{1}{\sqrt{3}} \cdot \frac{|0\rangle+|1\rangle}{\sqrt{2}} + \sqrt{\frac{2}{3}} \cdot \frac{|0\rangle-|1\rangle}{\sqrt{2}}\)</span>$</p>
+<div class="arithmatex">\[= \frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{3}} + \sqrt{\frac{2}{3}}\right)|0\rangle + \frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{3}} - \sqrt{\frac{2}{3}}\right)|1\rangle\]</div>
+<p><strong>Step 2:</strong> Compute coefficients:
+$<span class="arithmatex">\(\frac{1}{\sqrt{3}} + \sqrt{\frac{2}{3}} = \frac{1+\sqrt{2}}{\sqrt{3}}, \qquad \frac{1}{\sqrt{3}} - \sqrt{\frac{2}{3}} = \frac{1-\sqrt{2}}{\sqrt{3}}\)</span>$</p>
+<p><strong>Step 3:</strong> Measure in computational basis. Probability of outcome 0 (= <span class="arithmatex">\(|{+}\rangle\)</span> in Hadamard):
+$<span class="arithmatex">\(P({+}) = \frac{1}{2} \cdot \frac{(1+\sqrt{2})^2}{3} = \frac{3+2\sqrt{2}}{6} \approx 0.971\)</span>$</p>
+<p>Probability of outcome 1 (= <span class="arithmatex">\(|{-}\rangle\)</span>): <span class="arithmatex">\(\frac{3-2\sqrt{2}}{6} \approx 0.029\)</span>.</p>
+<p>This state has large overlap with <span class="arithmatex">\(|{+}\rangle\)</span> — it is nearly aligned with the positive <span class="arithmatex">\(x\)</span>-axis on the Bloch sphere.</p>
 </div>
-<h3 id="53-the-role-of-measurement-in-algorithm-design">5.3 The Role of Measurement in Algorithm Design<a class="headerlink" href="#53-the-role-of-measurement-in-algorithm-design" title="Permanent link">&para;</a></h3>
-<p>Since measurement collapses the quantum state, algorithms cannot "peek" at intermediate results. All useful information must be encoded in the <strong>probability distribution of the final measurement</strong>. This requires:</p>
-<ol>
-<li>Running the algorithm multiple times (<strong>shots</strong>) to build statistical confidence.</li>
-<li>Designing the circuit so correct answers have high probability and wrong answers have low probability.</li>
-<li>Using <strong>amplitude amplification</strong> (Grover's algorithm, Chapter 4) to boost the probability of correct answers.</li>
-</ol>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">Business Implication</p>
-<p>The probabilistic nature of quantum measurement means quantum computers are inherently statistical machines. For a given algorithm, hundreds or thousands of shots may be needed to achieve high confidence. Runtime estimates for quantum algorithms must account for the number of shots required, not just the circuit depth — this matters enormously when comparing quantum vs. classical performance on practical problems.</p>
+<p>The irreversibility of measurement has direct consequences for quantum algorithm design and benchmarking. Unlike classical computation — where intermediate results can be read at any time without disturbing the computation — quantum algorithms must complete all unitary operations before any measurement. This "black box" nature means quantum hardware vendors cannot easily "debug" computations by peeking at intermediate states. Benchmarking quantum circuits requires running them many times (shots) to build statistical pictures of their output distributions, which takes time and introduces uncertainty. Claims of quantum advantage must specify not just circuit depth but the number of shots required and the statistical confidence of the result.</p>
 </div>
 <hr />
-<h2 id="6-quantum-circuit-notation">6. Quantum Circuit Notation<a class="headerlink" href="#6-quantum-circuit-notation" title="Permanent link">&para;</a></h2>
-<p>Quantum circuits read <strong>left to right</strong>, with time flowing in that direction. Qubits are represented as horizontal wires. Gates are boxes on the wires. The CNOT gate is drawn with a filled circle (control) connected by a vertical line to a ⊕ symbol (target).</p>
-<p>A complete Bell state preparation circuit for <span class="arithmatex">\(\ket{\Phi^+}\)</span>:</p>
-<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>q0: ─┤H├─●─
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>          │
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>q1: ───────┤⊕├─
-</span></code></pre></div>
-<p>This notation — following <strong>Qiskit's little-endian convention</strong> (q0 is the least significant qubit) — is used throughout this book.</p>
-<div class="admonition info">
-<p class="admonition-title">Key Reference</p>
-<p>Barenco, A. et al. "Elementary gates for quantum computation." <em>Physical Review A</em> 52, 3457 (1995). The foundational paper establishing that CNOT + single-qubit rotations suffice for universal quantum computation, with efficient decompositions of multi-qubit gates.</p>
+<h2 id="36-quantum-circuit-complexity-and-the-circuit-model">3.6 Quantum Circuit Complexity and the Circuit Model<a class="headerlink" href="#36-quantum-circuit-complexity-and-the-circuit-model" title="Permanent link">&para;</a></h2>
+<h3 id="361-the-circuit-model-of-quantum-computation">3.6.1 The Circuit Model of Quantum Computation<a class="headerlink" href="#361-the-circuit-model-of-quantum-computation" title="Permanent link">&para;</a></h3>
+<p>A <strong>quantum circuit</strong> is a directed acyclic graph (DAG) where:
+- Nodes are quantum gates (each applied to a specified set of qubits)
+- Wires represent qubits (time flows left to right)
+- The final layer consists of measurement operations</p>
+<p>Circuits are characterized by:
+- <strong>Width:</strong> Number of qubits <span class="arithmatex">\(n\)</span>
+- <strong>Depth:</strong> Length of the longest path (critical path) through the circuit — determines runtime assuming parallel gate execution
+- <strong>Size:</strong> Total number of gates
+- <strong>T-count:</strong> Number of <span class="arithmatex">\(T\)</span> gates (proxy for non-Clifford complexity)</p>
+<p><strong>Circuit depth vs. gate count:</strong> Many gates in a quantum circuit can be applied in parallel (to different qubits simultaneously). Circuit depth measures the sequential bottleneck — the minimum number of time steps needed if all parallelizable gates are executed simultaneously.</p>
+<h3 id="362-common-circuit-patterns">3.6.2 Common Circuit Patterns<a class="headerlink" href="#362-common-circuit-patterns" title="Permanent link">&para;</a></h3>
+<p><strong>The H-CNOT entanglement pattern:</strong> <span class="arithmatex">\(H\)</span> on qubit 1, followed by <span class="arithmatex">\(\text{CNOT}_{12}\)</span>. Creates Bell state from <span class="arithmatex">\(|00\rangle\)</span>. Universal building block for entanglement distribution.</p>
+<p><strong>The quantum phase kickback:</strong> Applying a controlled-<span class="arithmatex">\(U\)</span> with the control qubit in <span class="arithmatex">\(|{+}\rangle\)</span> and the target in an eigenstate <span class="arithmatex">\(|\psi\rangle\)</span> of <span class="arithmatex">\(U\)</span> produces phase kickback — the eigenphase <span class="arithmatex">\(e^{i\phi}\)</span> is "kicked back" to the control qubit:</p>
+<div class="arithmatex">\[\text{C-}U\left(\frac{|0\rangle+|1\rangle}{\sqrt{2}}\right)|\psi\rangle = \frac{|0\rangle + e^{i\phi}|1\rangle}{\sqrt{2}}|\psi\rangle\]</div>
+<p>This is the mechanism behind Quantum Phase Estimation (Chapter 4).</p>
+<p><strong>The Grover iteration:</strong> Oracle <span class="arithmatex">\(O_f\)</span> followed by diffusion <span class="arithmatex">\(D = 2|s\rangle\langle s| - I\)</span>. Applied <span class="arithmatex">\(O(\sqrt{N})\)</span> times to amplify the target amplitude. The diffusion operator decomposes as <span class="arithmatex">\(H^{\otimes n} (2|0\rangle\langle 0| - I) H^{\otimes n}\)</span> — Hadamard, phase flip on <span class="arithmatex">\(|0\rangle\)</span>, Hadamard.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 3.5: Phase Kickback in Detail</p>
+<p>Let <span class="arithmatex">\(U = Z\)</span> (Pauli-Z), which has eigenstates <span class="arithmatex">\(|0\rangle\)</span> (eigenvalue <span class="arithmatex">\(+1\)</span>) and <span class="arithmatex">\(|1\rangle\)</span> (eigenvalue <span class="arithmatex">\(-1\)</span>).</p>
+<p>Apply Controlled-<span class="arithmatex">\(Z\)</span> with control in <span class="arithmatex">\(|{+}\rangle\)</span> and target in <span class="arithmatex">\(|1\rangle\)</span> (eigenstate with eigenvalue <span class="arithmatex">\(-1\)</span>, so <span class="arithmatex">\(e^{i\phi} = -1\)</span>):</p>
+<div class="arithmatex">\[\text{CZ}\left(\frac{|0\rangle+|1\rangle}{\sqrt{2}}\right)|1\rangle = \frac{|0\rangle|1\rangle + |1\rangle Z|1\rangle}{\sqrt{2}} = \frac{|0\rangle|1\rangle - |1\rangle|1\rangle}{\sqrt{2}} = \frac{|0\rangle-|1\rangle}{\sqrt{2}} \otimes |1\rangle = |{-}\rangle|1\rangle\]</div>
+<p>The control qubit has changed from <span class="arithmatex">\(|{+}\rangle\)</span> to <span class="arithmatex">\(|{-}\rangle\)</span> — the phase <span class="arithmatex">\(-1\)</span> has been kicked back from the target to the control, while the target remains <span class="arithmatex">\(|1\rangle\)</span> unchanged.</p>
+<p>This is phase kickback in action. In the Deutsch-Jozsa algorithm and Grover's algorithm, the target qubit is prepared in <span class="arithmatex">\(|{-}\rangle = (|0\rangle - |1\rangle)/\sqrt{2}\)</span> precisely to enable this phase kickback mechanism.</p>
 </div>
 <hr />
-<div class="admonition abstract">
-<p class="admonition-title">Chapter Summary</p>
+<h2 id="37-quantum-circuit-compilation-and-hardware-constraints">3.7 Quantum Circuit Compilation and Hardware Constraints<a class="headerlink" href="#37-quantum-circuit-compilation-and-hardware-constraints" title="Permanent link">&para;</a></h2>
+<h3 id="371-from-logical-circuits-to-physical-implementation">3.7.1 From Logical Circuits to Physical Implementation<a class="headerlink" href="#371-from-logical-circuits-to-physical-implementation" title="Permanent link">&para;</a></h3>
+<p>A logical quantum circuit — expressed in terms of <span class="arithmatex">\(\{H, T, \text{CNOT}\}\)</span> — must be <em>compiled</em> to the physical gate set and qubit connectivity of a specific quantum processor. This compilation involves:</p>
 <ol>
 <li>
-<p><strong>Single-qubit gates are 2×2 unitary matrices</strong>: Pauli gates (<span class="arithmatex">\(X, Y, Z\)</span>) provide bit-flips and phase-flips; <span class="arithmatex">\(H\)</span> creates superposition; <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(T\)</span> provide phase rotations; rotation gates <span class="arithmatex">\(R_x, R_y, R_z\)</span> parameterize arbitrary single-qubit operations.</p>
+<p><strong>Gate decomposition:</strong> Translating abstract gates into native gates supported by the hardware (e.g., IBM's native gate set: <span class="arithmatex">\(\{X, \sqrt{X}, R_z(\theta), \text{CNOT}\}\)</span>; IonQ's: <span class="arithmatex">\(\{R_z(\theta), R_{xx}(\theta)\}\)</span>)</p>
 </li>
 <li>
-<p><strong>The T gate is the key to universality</strong>: <span class="arithmatex">\(\{CNOT, H, T\}\)</span> is universal for quantum computation. Clifford gates (H, S, CNOT) alone are efficiently simulable classically (Gottesman-Knill). The T gate is also the most expensive gate in fault-tolerant implementations.</p>
+<p><strong>Qubit routing:</strong> Mapping logical qubits to physical qubits, accounting for hardware connectivity constraints (not all qubit pairs support direct two-qubit gates). Non-adjacent operations require SWAP chains.</p>
 </li>
 <li>
-<p><strong>Multi-qubit gates create entanglement</strong>: CNOT is the fundamental entangling gate; H + CNOT creates Bell states. Toffoli is universal for reversible classical computation. SWAP decomposes into three CNOTs.</p>
+<p><strong>Optimization:</strong> Reducing circuit depth and gate count through algebraic simplification (e.g., <span class="arithmatex">\(HXH = Z\)</span>, cancellation of adjacent inverse gates)</p>
 </li>
 <li>
-<p><strong>The no-cloning theorem forbids copying quantum states</strong>: this prevents fan-out, requires a new approach to error correction, guarantees QKD security, and explains why teleportation destroys the original.</p>
-</li>
-<li>
-<p><strong>Measurement is irreversible</strong>: it collapses superposition to a definite classical outcome. Quantum algorithms must engineer interference patterns before measurement — the correct answer must have high amplitude, not just high probability of being reached.</p>
+<p><strong>Error mitigation:</strong> Adding calibrated corrections (dynamical decoupling, zero-noise extrapolation) to reduce the effect of hardware noise</p>
 </li>
 </ol>
+<p>Circuit compilation is a nontrivial optimization problem — even finding the minimum-depth implementation of a given unitary is QMA-hard in general. In practice, heuristic compilers (IBM Qiskit's transpiler, Quantinuum's TKET, Google's Cirq) are used.</p>
+<h3 id="372-hardware-connectivity-and-swap-overhead">3.7.2 Hardware Connectivity and SWAP Overhead<a class="headerlink" href="#372-hardware-connectivity-and-swap-overhead" title="Permanent link">&para;</a></h3>
+<p>Real quantum processors have limited qubit connectivity. IBM's Eagle and Heron processors use a heavy-hex lattice (each qubit connects to at most 3 others). IonQ's trapped-ion systems provide all-to-all connectivity (any qubit can interact with any other directly). Neutral atom arrays (QuEra, Atom Computing) offer reconfigurable connectivity through physical atom movement.</p>
+<p>The connectivity constraint has major circuit depth implications: a CNOT between non-adjacent qubits in a heavy-hex lattice may require 3–5 SWAP operations (<span class="arithmatex">\(\times 3\)</span> CNOT each), adding 9–15 extra CNOT gates and significant depth. For algorithms with many long-range interactions (like Shor's modular exponentiation), connectivity is a significant overhead on superconducting hardware.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>Quantum volume — IBM's composite metric combining qubit count, connectivity, gate fidelity, and circuit depth — captures much of what qubit count alone misses. A 127-qubit IBM Eagle with Quantum Volume 64 is less capable for many algorithms than a 20-qubit IonQ system with all-to-all connectivity and higher gate fidelities. When evaluating quantum hardware for specific workloads, hardware-specific circuit compilation (not just algorithm complexity) determines whether a given circuit is executable within coherence time. Working with hardware vendors to co-optimize algorithms for their specific connectivity graph is a competitive differentiator for early quantum adopters.</p>
 </div>
+<hr />
+<h2 id="chapter-3-summary">Chapter 3 Summary<a class="headerlink" href="#chapter-3-summary" title="Permanent link">&para;</a></h2>
+<p>This chapter has developed the complete grammar of quantum computation:</p>
+<p><strong>Single-qubit gates</strong> — Paulis (<span class="arithmatex">\(X, Y, Z\)</span>), Hadamard (<span class="arithmatex">\(H\)</span>), phase gates (<span class="arithmatex">\(S, T\)</span>), rotations (<span class="arithmatex">\(R_x, R_y, R_z\)</span>) — form the vocabulary. Any single-qubit unitary decomposes into <span class="arithmatex">\(ZYZ\)</span> rotations.</p>
+<p><strong>Multi-qubit gates</strong> — CNOT (entanglement creation), Toffoli (classical and quantum universality), SWAP (qubit routing) — form the connectives. CNOT+H creates Bell states in two gates.</p>
+<p><strong>Universality</strong> — The Solovay-Kitaev theorem guarantees that <span class="arithmatex">\(\{H, T, \text{CNOT}\}\)</span> efficiently approximates any quantum unitary. The <span class="arithmatex">\(T\)</span> gate is the "quantum resource" that distinguishes universal quantum circuits from Clifford circuits.</p>
+<p><strong>No-cloning</strong> — Quantum states cannot be copied. This shapes QEC (entanglement-based error correction), QKD security (eavesdropping is detectable), and quantum algorithm structure (no "peeking" at intermediate states).</p>
+<p><strong>Measurement</strong> — The irreversible collapse to a classical outcome is the only source of randomness in quantum computation. Algorithm design concentrates probability on correct outcomes through interference.</p>
+<p><strong>Circuit compilation</strong> — Translating logical circuits to physical hardware involves gate decomposition, qubit routing, and optimization — a nontrivial engineering challenge that significantly impacts real-world performance.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Wootters, W. K. &amp; Zurek, W. H. "A single quantum cannot be cloned." <em>Nature</em> 299, 802–803 (1982).</li>
-<li>Dieks, D. "Communication by EPR devices." <em>Physics Letters A</em> 92(6), 271–272 (1982).</li>
-<li>Barenco, A. et al. "Elementary gates for quantum computation." <em>Physical Review A</em> 52, 3457 (1995).</li>
-<li>Solovay, R. &amp; Kitaev, A. "Approximate synthesis of quantum circuits." Unpublished (1995); see Kitaev, A., Shen, A. &amp; Vyalyi, M. <em>Classical and Quantum Computation</em>. AMS (2002).</li>
-<li>Nielsen, M. A. &amp; Chuang, I. L. <em>Quantum Computation and Quantum Information</em>. Cambridge (2000), Chapter 4.</li>
-</ol>
+<ul>
+<li>Solovay, R. and Kitaev, A. "Solovay-Kitaev theorem." <em>Quantum Information and Computation</em> 4(1), 2004. (Original manuscripts 1995–1997)</li>
+<li>Wootters, W.K. and Zurek, W.H. "A single quantum cannot be cloned." <em>Nature</em> 299, 802–803, 1982.</li>
+<li>Dieks, D. "Communication by EPR devices." <em>Physics Letters A</em> 92(6), 271–272, 1982.</li>
+<li>Gottesman, D. "Theory of fault-tolerant quantum computation." <em>Physical Review A</em> 57(1), 127, 1998.</li>
+<li>Nielsen, M.A. and Chuang, I.L. <em>Quantum Computation and Quantum Information</em>. Cambridge University Press, 2000. (Chapters 4, 8)</li>
+<li>Amy, M. et al. "A meet-in-the-middle algorithm for fast synthesis of depth-optimal quantum circuits." <em>IEEE Transactions on Computer-Aided Design</em> 32(6), 818–830, 2013.</li>
+<li>IBM Qiskit Documentation. https://docs.quantum.ibm.com. (Circuit composition, transpilation, native gates)</li>
+<li>Watrous, J. "Quantum Computation" lecture notes, University of Calgary, 2006. (Lectures 6–7)</li>
+</ul>
 
 
 

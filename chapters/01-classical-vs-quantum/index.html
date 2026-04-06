@@ -29,7 +29,7 @@
     
     
       
-        <title>Chapter 1: Classical Bits vs. Quantum Bits - Quantum Computing: From Qubits to Business Value</title>
+        <title>Chapter 1: Classical Computation and the Laws of Physics — Why Reversibility Matters - Quantum Computing: From Qubits to Business Value</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 1: Classical Bits vs. Quantum Bits
+              Chapter 1: Classical Computation and the Laws of Physics — Why Reversibility Matters
             
           </span>
         </div>
@@ -776,7 +776,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 2: Superposition, Entanglement, and Bell's Theorem
+    Chapter 2: Superposition, Entanglement, and the Quantum Resources That Enable Speedup
   
 
     
@@ -832,7 +832,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: Quantum Gates and Circuits
+    Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
   
 
     
@@ -888,7 +888,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: Quantum Algorithms
+    Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
   
 
     
@@ -944,7 +944,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5: Quantum Communication
+    Chapter 5: Quantum Communication, Cryptography, and Network Protocols
   
 
     
@@ -1000,7 +1000,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6: Density Matrices, Mixed States, and the Transition to Noisy Reality
+    Chapter 6: The Density Matrix, Mixed States, and the Transition to Noisy Reality
   
 
     
@@ -2289,22 +2289,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-classical-bits-and-the-logic-of-irreversibility" class="md-nav__link">
+  <a href="#opening-the-hidden-cost-of-erasing-a-bit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Classical Bits and the Logic of Irreversibility
+        Opening: The Hidden Cost of Erasing a Bit
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Classical Bits and the Logic of Irreversibility">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-classical-bits-and-boolean-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Classical Bits and Boolean Logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Classical Bits and Boolean Logic">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-what-is-a-bit" class="md-nav__link">
+  <a href="#111-the-classical-bit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 What Is a Bit?
+        1.1.1 The Classical Bit
       
     </span>
   </a>
@@ -2312,21 +2323,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-landauers-principle-computation-has-a-physical-cost" class="md-nav__link">
+  <a href="#112-boolean-gates-and-their-irreversibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2 Landauer's Principle — Computation Has a Physical Cost
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-reversible-classical-gates-the-toffoli-gate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 Reversible Classical Gates — The Toffoli Gate
+        1.1.2 Boolean Gates and Their Irreversibility
       
     </span>
   </a>
@@ -2339,22 +2339,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-the-qubit-quantum-generalization-of-the-bit" class="md-nav__link">
+  <a href="#12-reversible-classical-computation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. The Qubit — Quantum Generalization of the Bit
+        1.2 Reversible Classical Computation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. The Qubit — Quantum Generalization of the Bit">
+    <nav class="md-nav" aria-label="1.2 Reversible Classical Computation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-the-mathematical-description" class="md-nav__link">
+  <a href="#121-the-toffoli-gate-reversible-universality" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 The Mathematical Description
+        1.2.1 The Toffoli Gate: Reversible Universality
       
     </span>
   </a>
@@ -2362,10 +2362,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-the-bloch-sphere-visualizing-qubit-states" class="md-nav__link">
+  <a href="#122-fanout-via-cnot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 The Bloch Sphere — Visualizing Qubit States
+        1.2.2 FANOUT via CNOT
       
     </span>
   </a>
@@ -2373,10 +2373,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-why-not-just-use-a-classical-probability-distribution" class="md-nav__link">
+  <a href="#123-general-reversibility-and-the-oracle-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3 Why Not Just Use a Classical Probability Distribution?
+        1.2.3 General Reversibility and the Oracle Model
       
     </span>
   </a>
@@ -2389,22 +2389,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-quantum-operations-are-unitary" class="md-nav__link">
+  <a href="#13-enter-the-qubit-the-quantum-generalization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Quantum Operations Are Unitary
+        1.3 Enter the Qubit: The Quantum Generalization
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Quantum Operations Are Unitary">
+    <nav class="md-nav" aria-label="1.3 Enter the Qubit: The Quantum Generalization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-unitary-evolution" class="md-nav__link">
+  <a href="#131-from-probability-to-amplitude-the-quantum-leap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Unitary Evolution
+        1.3.1 From Probability to Amplitude: The Quantum Leap
       
     </span>
   </a>
@@ -2412,10 +2412,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-contrast-with-classical-gates" class="md-nav__link">
+  <a href="#132-the-qubit-state-space" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2 Contrast with Classical Gates
+        1.3.2 The Qubit State Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-the-bloch-sphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.3 The Bloch Sphere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-physical-implementations-of-the-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.4 Physical Implementations of the Qubit
       
     </span>
   </a>
@@ -2428,22 +2450,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-the-n-qubit-state-space-where-exponential-power-lives" class="md-nav__link">
+  <a href="#135-dirac-notation-the-language-of-quantum-computing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. The n-Qubit State Space — Where Exponential Power Lives
+        1.3.5 Dirac Notation: The Language of Quantum Computing
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. The n-Qubit State Space — Where Exponential Power Lives">
+    <nav class="md-nav" aria-label="1.3.5 Dirac Notation: The Language of Quantum Computing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-tensor-products-and-the-hilbert-space" class="md-nav__link">
+  <a href="#kets-bras-and-inner-products" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.1 Tensor Products and the Hilbert Space
+        Kets, Bras, and Inner Products
       
     </span>
   </a>
@@ -2451,10 +2473,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-quantum-parallelism-and-its-limits" class="md-nav__link">
+  <a href="#key-properties" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.2 Quantum Parallelism — and Its Limits
+        Key Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outer-products-and-projectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outer Products and Projectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensor-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor Products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dirac-notation-translation-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dirac Notation Translation Table
       
     </span>
   </a>
@@ -2467,10 +2522,160 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-physical-implementations-of-qubits" class="md-nav__link">
+  <a href="#14-quantum-operations-are-unitary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Physical Implementations of Qubits
+        1.4 Quantum Operations Are Unitary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Quantum Operations Are Unitary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-unitary-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4.1 Unitary Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-the-fundamental-single-qubit-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4.2 The Fundamental Single-Qubit Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-contrast-with-classical-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4.3 Contrast with Classical Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-the-n-qubit-state-space-where-exponential-power-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 The n-Qubit State Space: Where Exponential Power Lives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 The n-Qubit State Space: Where Exponential Power Lives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-the-tensor-product-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5.1 The Tensor Product Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-the-general-n-qubit-state-and-quantum-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5.2 The General n-Qubit State and Quantum Parallelism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-the-measurement-bottleneck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5.3 The Measurement Bottleneck
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-the-road-ahead-from-single-qubits-to-quantum-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 The Road Ahead: From Single Qubits to Quantum Advantage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 The Road Ahead: From Single Qubits to Quantum Advantage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-what-we-have-established" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6.1 What We Have Established
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-historical-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6.2 Historical Note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-what-comes-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6.3 What Comes Next
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapter 1 Summary
       
     </span>
   </a>
@@ -2482,6 +2687,117 @@
     <span class="md-ellipsis">
       
         References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-the-no-cloning-theorem-a-fundamental-quantum-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 The No-Cloning Theorem: A Fundamental Quantum Constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-quantum-vs-classical-a-side-by-side-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8 Quantum vs. Classical: A Side-by-Side Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 Quantum vs. Classical: A Side-by-Side Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-the-computational-models-compared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.1 The Computational Models Compared
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-where-quantum-computers-excel-and-where-they-dont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.2 Where Quantum Computers Excel (and Where They Don't)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-complexity-classes-and-the-quantum-computational-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9 Complexity Classes and the Quantum Computational Landscape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9 Complexity Classes and the Quantum Computational Landscape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#191-defining-bqp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9.1 Defining BQP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#192-where-does-factoring-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9.2 Where Does Factoring Live?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-chapter-synthesis-a-roadmap-to-quantum-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10 Chapter Synthesis: A Roadmap to Quantum Advantage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-terms-introduced-in-chapter-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Terms Introduced in Chapter 1
       
     </span>
   </a>
@@ -2509,81 +2825,57 @@
 
 
 <h1 id="chapter-1-classical-computation-and-the-laws-of-physics-why-reversibility-matters">Chapter 1: Classical Computation and the Laws of Physics — Why Reversibility Matters<a class="headerlink" href="#chapter-1-classical-computation-and-the-laws-of-physics-why-reversibility-matters" title="Permanent link">&para;</a></h1>
-<p><em>What does it cost to erase a bit of information? This deceptively simple question connects the abstract logic of computation to the laws of thermodynamics, and its answer illuminates why quantum computing is not merely a faster version of classical computing — but a fundamentally different physical process.</em></p>
 <hr />
-<h2 id="1-classical-bits-and-the-logic-of-irreversibility">1. Classical Bits and the Logic of Irreversibility<a class="headerlink" href="#1-classical-bits-and-the-logic-of-irreversibility" title="Permanent link">&para;</a></h2>
-<h3 id="11-what-is-a-bit">1.1 What Is a Bit?<a class="headerlink" href="#11-what-is-a-bit" title="Permanent link">&para;</a></h3>
-<p>A <strong>bit</strong> is the simplest possible physical system: it exists in one of exactly two distinguishable states, conventionally labeled 0 and 1. Every classical computation — from a pocket calculator to the world's most powerful supercomputer — reduces to sequences of operations on bit strings. The bit's power lies in its discreteness: a voltage above 0.8V is a 1; below 0.2V is a 0. Small perturbations don't change the answer. This robustness is classical computing's great strength.</p>
-<p>Classical computation is built from <strong>logic gates</strong> — functions that take one or more bits as input and produce one or more bits as output. The fundamental gates are:</p>
+<h2 id="opening-the-hidden-cost-of-erasing-a-bit">Opening: The Hidden Cost of Erasing a Bit<a class="headerlink" href="#opening-the-hidden-cost-of-erasing-a-bit" title="Permanent link">&para;</a></h2>
+<p>What does it cost to erase a bit of information?</p>
+<p>This question sounds almost philosophical — as if we are asking what it costs to forget something. But it has a precise, measurable, physical answer. In 1961, physicist Rolf Landauer at IBM showed that erasing one bit of information in a physical system at temperature <span class="arithmatex">\(T\)</span> must dissipate at least</p>
+<div class="arithmatex">\[E_{\min} = k_B T \ln 2\]</div>
+<p>of energy as heat, where <span class="arithmatex">\(k_B \approx 1.38 \times 10^{-23}\)</span> J/K is Boltzmann's constant. At room temperature (<span class="arithmatex">\(T = 293\)</span> K), this amounts to approximately <span class="arithmatex">\(2.8 \times 10^{-21}\)</span> joules — a tiny but nonzero quantity.</p>
+<p>Landauer's principle is not an engineering limitation to be overcome by clever design. It is a consequence of the second law of thermodynamics: erasing a bit increases the entropy of the universe, and that entropy increase must manifest as heat. You cannot erase a bit for free, no matter how efficient your computer.</p>
+<div class="admonition example">
+<p class="admonition-title">Landauer's Limit vs. Modern Processors</p>
+<p>A modern processor running at 3 GHz performs roughly <span class="arithmatex">\(10^{10}\)</span> logic operations per second. If every operation were an irreversible erasure (which classical logic gates frequently are), the theoretical minimum heat dissipation would be:</p>
+<div class="arithmatex">\[P_{\min} = 10^{10} \times k_B T \ln 2 \approx 10^{10} \times 2.8 \times 10^{-21} \approx 2.8 \times 10^{-11} \text{ W}\]</div>
+<p>Yet a modern CPU actually dissipates roughly 100 watts — approximately <span class="arithmatex">\(10^{12}\)</span> times the Landauer limit. Modern processors are thermodynamically wasteful by an enormous factor. This gap represents headroom for efficiency improvement, but it also tells us something deep: the <em>physical</em> act of erasing information is fundamentally different from the <em>logical</em> act, and the two cannot be entirely decoupled.</p>
+</div>
+<p>Why does this matter for quantum computing? Because quantum mechanics imposes a different rule: all quantum operations must be <em>reversible</em>. The Schrödinger equation, which governs the time evolution of any quantum system, generates only unitary transformations — and unitary transformations are always reversible. A quantum computer cannot erase information. This is not a design choice; it is a law of physics.</p>
+<p>Understanding why reversibility is fundamental — and what it implies for computation — is the starting point for everything that follows.</p>
+<hr />
+<h2 id="11-classical-bits-and-boolean-logic">1.1 Classical Bits and Boolean Logic<a class="headerlink" href="#11-classical-bits-and-boolean-logic" title="Permanent link">&para;</a></h2>
+<h3 id="111-the-classical-bit">1.1.1 The Classical Bit<a class="headerlink" href="#111-the-classical-bit" title="Permanent link">&para;</a></h3>
+<p>A bit is the simplest possible physical information carrier: a two-state system that can be in state 0 or state 1. Physically, a bit might be a transistor (conducting or not), a magnetic domain (north or south), a capacitor charge (above or below a threshold), or a voltage level. What matters is not the physical substrate but the logical abstraction: two distinguishable, stable states.</p>
+<p>Classical computation operates on strings of bits using <em>Boolean logic gates</em> — deterministic, instantaneous transformations that take one or more bits as input and produce one or more bits as output.</p>
+<h3 id="112-boolean-gates-and-their-irreversibility">1.1.2 Boolean Gates and Their Irreversibility<a class="headerlink" href="#112-boolean-gates-and-their-irreversibility" title="Permanent link">&para;</a></h3>
+<p>The fundamental single-qubit gate is the <strong>NOT gate</strong> (logical negation):</p>
 <table>
 <thead>
 <tr>
-<th>Gate</th>
-<th>Inputs</th>
+<th>Input</th>
 <th>Output</th>
-<th>Reversible?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>NOT</td>
+<td>0</td>
 <td>1</td>
-<td>1</td>
-<td>✓ Yes</td>
 </tr>
 <tr>
-<td>AND</td>
-<td>2</td>
 <td>1</td>
-<td>✗ No</td>
-</tr>
-<tr>
-<td>OR</td>
-<td>2</td>
-<td>1</td>
-<td>✗ No</td>
-</tr>
-<tr>
-<td>XOR</td>
-<td>2</td>
-<td>1</td>
-<td>✓ Yes</td>
-</tr>
-<tr>
-<td>NAND</td>
-<td>2</td>
-<td>1</td>
-<td>✗ No</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
-<p>The column "Reversible?" encodes something profound. An AND gate that outputs 0 could have received inputs (0,0), (0,1), or (1,0) — there is no way to reconstruct the input from the output alone. Information has been <strong>destroyed</strong>. An AND gate mapping 3 possible input pairs to a single output state is a many-to-one function, and many-to-one functions are irreversible by definition.</p>
-<h3 id="12-landauers-principle-computation-has-a-physical-cost">1.2 Landauer's Principle — Computation Has a Physical Cost<a class="headerlink" href="#12-landauers-principle-computation-has-a-physical-cost" title="Permanent link">&para;</a></h3>
-<p>In 1961, IBM physicist Rolf Landauer proved that <strong>the erasure of one bit of information requires the dissipation of at least <span class="arithmatex">\(k_B T \ln 2\)</span> joules of energy as heat</strong>, where <span class="arithmatex">\(k_B = 1.38 \times 10^{-23}\)</span> J/K is Boltzmann's constant and <span class="arithmatex">\(T\)</span> is the absolute temperature of the environment.</p>
-<p>At room temperature (<span class="arithmatex">\(T = 300\)</span> K):</p>
-<div class="arithmatex">\[E_{\min} = k_B T \ln 2 = (1.38 \times 10^{-23})(300)(0.693) \approx 2.87 \times 10^{-21} \text{ J}\]</div>
-<p>This seems negligible — but consider a modern processor performing <span class="arithmatex">\(10^{10}\)</span> irreversible bit operations per second. Landauer's minimum dissipation would be:</p>
-<div class="arithmatex">\[P_{\min} = 10^{10} \times 2.87 \times 10^{-21} \approx 2.87 \times 10^{-11} \text{ W}\]</div>
-<p>An actual modern CPU dissipates roughly 100 watts — more than <span class="arithmatex">\(10^{12}\)</span> times the Landauer minimum. Current computers are extraordinarily wasteful by fundamental physics standards. Every AND gate, every NAND gate, every irreversible operation burns energy not because of poor engineering but because <strong>information destruction requires thermodynamic work</strong>. This is Landauer's profound insight: information is physical.</p>
-<div class="admonition tip">
-<p class="admonition-title">Business Implication</p>
-<p>As classical transistors approach atomic scales, Landauer's limit becomes increasingly relevant. Reversible computing — including quantum computing — is not just theoretically interesting; it represents the thermodynamic future of computation. Organizations building data centers should understand that energy efficiency will increasingly drive hardware architecture decisions, including the eventual adoption of quantum co-processors.</p>
-</div>
-<h3 id="13-reversible-classical-gates-the-toffoli-gate">1.3 Reversible Classical Gates — The Toffoli Gate<a class="headerlink" href="#13-reversible-classical-gates-the-toffoli-gate" title="Permanent link">&para;</a></h3>
-<p>Landauer's principle implies a challenge: can we compute without destroying information? The answer is yes. In 1980, Edward Fredkin and Tommaso Toffoli showed that <strong>any classical Boolean function can be implemented using only reversible gates</strong> with ancilla (helper) bits to store outputs that would otherwise be discarded.</p>
-<p>The <strong>Toffoli gate</strong> (Controlled-Controlled-NOT, or CCNOT) is the workhorse of reversible classical computation. It acts on three bits <span class="arithmatex">\((a, b, c)\)</span>:</p>
-<div class="arithmatex">\[|a, b, c\rangle \rightarrow |a, b, c \oplus (a \wedge b)\rangle\]</div>
-<p>where <span class="arithmatex">\(\oplus\)</span> denotes XOR and <span class="arithmatex">\(\wedge\)</span> denotes AND. The Toffoli gate flips the third bit <span class="arithmatex">\(c\)</span> if and only if both <span class="arithmatex">\(a = 1\)</span> <strong>and</strong> <span class="arithmatex">\(b = 1\)</span>; otherwise, all three bits pass through unchanged.</p>
-<div class="admonition example">
-<p class="admonition-title">Worked Example: Toffoli Gate as AND</p>
-<p>To implement an AND gate reversibly, set <span class="arithmatex">\(c = 0\)</span>:</p>
+<p>NOT is <em>reversible</em>: given the output, we can always recover the input. If we see output 1, we know the input was 0. No information is lost.</p>
+<p>The fundamental two-input gates are AND, OR, XOR, and NAND:</p>
 <table>
 <thead>
 <tr>
 <th><span class="arithmatex">\(a\)</span></th>
 <th><span class="arithmatex">\(b\)</span></th>
-<th><span class="arithmatex">\(c=0\)</span></th>
-<th>Output <span class="arithmatex">\(c'\)</span></th>
+<th>AND</th>
+<th>OR</th>
+<th>XOR</th>
+<th>NAND</th>
 </tr>
 </thead>
 <tbody>
@@ -2592,283 +2884,811 @@
 <td>0</td>
 <td>0</td>
 <td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>AND and OR are <em>irreversible</em>. Consider AND with output 0: the input could have been (0,0), (0,1), or (1,0). Given only the output, we cannot recover the input. Information has been destroyed — specifically, one bit of information on average. This is exactly the situation Landauer analyzed: the destruction of information corresponds to an increase in thermodynamic entropy.</p>
+<p>XOR is reversible (like NOT), because XOR with itself gives back the original: <span class="arithmatex">\((a \oplus b) \oplus b = a\)</span>.</p>
+<p>NAND is universal: <em>any</em> Boolean function can be built from NAND gates alone. This is the classical universality theorem, and it means that NAND gates are the sufficient primitive for all of classical digital computation.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>Every AND gate, OR gate, and NAND gate in every classical processor is, at the thermodynamic level, destroying information — and paying a minimum thermodynamic cost to do so. At today's scale, this cost is negligible. But as transistors approach atomic sizes and clock speeds push into terahertz ranges, the thermodynamic floor will become increasingly relevant. Reversible computing is not merely a theoretical curiosity — it is potentially the long-term path to computation without heat dissipation limits.</p>
+</div>
+<hr />
+<h2 id="12-reversible-classical-computation">1.2 Reversible Classical Computation<a class="headerlink" href="#12-reversible-classical-computation" title="Permanent link">&para;</a></h2>
+<h3 id="121-the-toffoli-gate-reversible-universality">1.2.1 The Toffoli Gate: Reversible Universality<a class="headerlink" href="#121-the-toffoli-gate-reversible-universality" title="Permanent link">&para;</a></h3>
+<p>In 1973, Charles Bennett showed that any irreversible classical computation can be performed reversibly, with only a modest overhead in space. The key ingredient is the <strong>Toffoli gate</strong> (CCNOT — doubly-controlled NOT), introduced by Tommaso Toffoli in 1980:</p>
+<div class="arithmatex">\[|a, b, c\rangle \xrightarrow{\text{Toffoli}} |a, b, c \oplus (a \wedge b)\rangle\]</div>
+<p>The Toffoli gate takes three input bits and produces three output bits. The first two bits (<span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>) pass through unchanged. The third bit (<span class="arithmatex">\(c\)</span>) is flipped if and only if both <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are 1.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(a\)</span></th>
+<th><span class="arithmatex">\(b\)</span></th>
+<th><span class="arithmatex">\(c\)</span></th>
+<th><span class="arithmatex">\(a'\)</span></th>
+<th><span class="arithmatex">\(b'\)</span></th>
+<th><span class="arithmatex">\(c'\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
 </tr>
 <tr>
 <td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>1</td>
 <td>0</td>
 <td>0</td>
+<td>1</td>
 <td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
 </tr>
 <tr>
 <td>1</td>
 <td>1</td>
 <td>0</td>
+<td>1</td>
+<td>1</td>
 <td><strong>1</strong></td>
 </tr>
-</tbody>
-</table>
-<p>The output <span class="arithmatex">\(c' = a \wedge b\)</span> is the AND result, while <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are preserved unchanged — making the operation fully reversible.</p>
-</div>
-<p>The Toffoli gate is <strong>universal for classical reversible computation</strong>: any Boolean circuit can be built from Toffoli gates and constant ancilla inputs. It is also the bridge to quantum computing: the Toffoli gate appears directly in quantum circuits and, combined with Hadamard gates, contributes to universal quantum computation.</p>
-<hr />
-<h2 id="2-the-qubit-quantum-generalization-of-the-bit">2. The Qubit — Quantum Generalization of the Bit<a class="headerlink" href="#2-the-qubit-quantum-generalization-of-the-bit" title="Permanent link">&para;</a></h2>
-<h3 id="21-the-mathematical-description">2.1 The Mathematical Description<a class="headerlink" href="#21-the-mathematical-description" title="Permanent link">&para;</a></h3>
-<p>A <strong>qubit</strong> is the quantum mechanical generalization of the classical bit. While a classical bit occupies exactly one of two states (0 or 1), a qubit can exist in a <strong>superposition</strong> — a continuous range of states described by a vector in a two-dimensional complex Hilbert space.</p>
-<p>The general state of a qubit is:</p>
-<div class="arithmatex">\[\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\]</div>
-<p>where <span class="arithmatex">\(\alpha, \beta \in \mathbb{C}\)</span> are complex numbers called <strong>probability amplitudes</strong>, subject to the normalization constraint:</p>
-<div class="arithmatex">\[|\alpha|^2 + |\beta|^2 = 1\]</div>
-<p>This equation says the total probability of all measurement outcomes must equal 1. When we <strong>measure</strong> the qubit in the computational basis:
-- The outcome <span class="arithmatex">\(|0\rangle\)</span> occurs with probability <span class="arithmatex">\(|\alpha|^2\)</span>
-- The outcome <span class="arithmatex">\(|1\rangle\)</span> occurs with probability <span class="arithmatex">\(|\beta|^2\)</span></p>
-<div class="admonition warning">
-<p class="admonition-title">Common Misconception</p>
-<p>A qubit is <strong>not</strong> "both 0 and 1 at the same time." The state <span class="arithmatex">\(\alpha\ket{0} + \beta\ket{1}\)</span> describes a single quantum system whose <em>outcome upon measurement</em> is probabilistically determined. Before measurement, the qubit has no definite value — but this does not mean it has two values simultaneously. The amplitudes <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are mathematical objects that encode the qubit's complete physical description. The moment of measurement is when classical reality emerges.</p>
-</div>
-<h3 id="22-the-bloch-sphere-visualizing-qubit-states">2.2 The Bloch Sphere — Visualizing Qubit States<a class="headerlink" href="#22-the-bloch-sphere-visualizing-qubit-states" title="Permanent link">&para;</a></h3>
-<p>Every single-qubit pure state can be written in the form:</p>
-<div class="arithmatex">\[\ket{\psi} = \cos\frac{\theta}{2}\ket{0} + e^{i\phi}\sin\frac{\theta}{2}\ket{1}\]</div>
-<p>where <span class="arithmatex">\(\theta \in [0, \pi]\)</span> is the polar angle and <span class="arithmatex">\(\phi \in [0, 2\pi)\)</span> is the azimuthal angle. This parameterization maps every qubit state to a unique point on the surface of a unit sphere — the <strong>Bloch sphere</strong>.</p>
-<p>Key states on the Bloch sphere:
-- <strong>North pole</strong> (<span class="arithmatex">\(\theta = 0\)</span>): <span class="arithmatex">\(\ket{0}\)</span> — the computational basis state 0
-- <strong>South pole</strong> (<span class="arithmatex">\(\theta = \pi\)</span>): <span class="arithmatex">\(\ket{1}\)</span> — the computational basis state 1
-- <strong><span class="arithmatex">\(+x\)</span> axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = 0\)</span>): <span class="arithmatex">\(\ket{+} = (\ket{0} + \ket{1})/\sqrt{2}\)</span> — equal superposition
-- <strong><span class="arithmatex">\(-x\)</span> axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = \pi\)</span>): <span class="arithmatex">\(\ket{-} = (\ket{0} - \ket{1})/\sqrt{2}\)</span> — equal superposition with phase flip
-- <strong><span class="arithmatex">\(+y\)</span> axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = \pi/2\)</span>): <span class="arithmatex">\(\ket{+i} = (\ket{0} + i\ket{1})/\sqrt{2}\)</span></p>
-<p>The Bloch sphere is invaluable because it makes abstract qubit operations geometric: quantum gates become <strong>rotations</strong> of the Bloch vector. A measurement collapses the Bloch vector onto the <span class="arithmatex">\(z\)</span>-axis.</p>
-<div class="admonition example">
-<p class="admonition-title">Worked Example: Locating a State on the Bloch Sphere</p>
-<p>Consider the qubit state <span class="arithmatex">\(\ket{\psi} = \frac{1}{\sqrt{3}}\ket{0} + \sqrt{\frac{2}{3}}\ket{1}\)</span>.</p>
-<ul>
-<li>Measurement probabilities: <span class="arithmatex">\(P(0) = 1/3\)</span>, <span class="arithmatex">\(P(1) = 2/3\)</span></li>
-<li>Both amplitudes are real and positive, so <span class="arithmatex">\(\phi = 0\)</span> (on the <span class="arithmatex">\(xz\)</span>-plane)</li>
-<li>From <span class="arithmatex">\(\cos(\theta/2) = 1/\sqrt{3}\)</span>: <span class="arithmatex">\(\theta/2 = \arccos(1/\sqrt{3}) \approx 54.7°\)</span>, so <span class="arithmatex">\(\theta \approx 109.5°\)</span></li>
-<li>This places the state in the southern hemisphere, tilted toward <span class="arithmatex">\(\ket{1}\)</span></li>
-</ul>
-<p>The state can be visualized as a vector pointing from the center of the Bloch sphere toward this point on its surface.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Key Reference</p>
-<p>The Bloch sphere representation was developed by Felix Bloch in his 1946 paper on nuclear induction (Physical Review 70, 460). Its use in quantum computing is presented in Nielsen &amp; Chuang, <em>Quantum Computation and Quantum Information</em> (Cambridge, 2000), Chapter 1.</p>
-</div>
-<h3 id="23-why-not-just-use-a-classical-probability-distribution">2.3 Why Not Just Use a Classical Probability Distribution?<a class="headerlink" href="#23-why-not-just-use-a-classical-probability-distribution" title="Permanent link">&para;</a></h3>
-<p>A natural question: isn't a qubit just a classical probability distribution over {0, 1}? No — and the difference is fundamental. A classical probabilistic bit can be described by a single real number <span class="arithmatex">\(p \in [0,1]\)</span> (the probability of being 0). A qubit requires <strong>two complex amplitudes</strong>, or equivalently, three real numbers (the Bloch sphere coordinates <span class="arithmatex">\(x, y, z\)</span>). The extra parameter — the <strong>phase</strong> <span class="arithmatex">\(\phi\)</span> — has no classical analogue.</p>
-<p>This phase is what makes quantum interference possible. Two probability amplitudes can <strong>cancel</strong> (destructive interference) or <strong>reinforce</strong> (constructive interference) in ways that probabilities cannot. A probability of 1/2 plus another probability of 1/2 always gives something between 0 and 1. But an amplitude of <span class="arithmatex">\(1/\sqrt{2}\)</span> and <span class="arithmatex">\(-1/\sqrt{2}\)</span> can sum to exactly zero — the target outcome is rendered impossible. This interference is the engine behind every quantum algorithm.</p>
-<hr />
-<h2 id="3-quantum-operations-are-unitary">3. Quantum Operations Are Unitary<a class="headerlink" href="#3-quantum-operations-are-unitary" title="Permanent link">&para;</a></h2>
-<h3 id="31-unitary-evolution">3.1 Unitary Evolution<a class="headerlink" href="#31-unitary-evolution" title="Permanent link">&para;</a></h3>
-<p>Quantum mechanics dictates that the time evolution of a closed quantum system is governed by a <strong>unitary operator</strong> <span class="arithmatex">\(U\)</span>. A unitary operator satisfies:</p>
-<div class="arithmatex">\[U^\dagger U = U U^\dagger = \mathbb{I}\]</div>
-<p>where <span class="arithmatex">\(U^\dagger\)</span> (the conjugate transpose or Hermitian adjoint) serves as <span class="arithmatex">\(U\)</span>'s inverse. Three consequences flow immediately from this definition:</p>
-<ol>
-<li>
-<p><strong>Norm preservation:</strong> <span class="arithmatex">\(\|U\ket{\psi}\|^2 = \bra{\psi}U^\dagger U\ket{\psi} = \braket{\psi}{\psi} = 1\)</span>. Total probability is always conserved — no state can spontaneously gain or lose probability through unitary evolution.</p>
-</li>
-<li>
-<p><strong>Reversibility:</strong> Since <span class="arithmatex">\(U^{-1} = U^\dagger\)</span>, every quantum gate has an explicit inverse. Running a quantum computation backward undoes it perfectly. No information is ever lost — it may become inaccessible, but it is not destroyed.</p>
-</li>
-<li>
-<p><strong>Determinism:</strong> Given the initial state and the unitary, the final state is exactly determined. The only source of randomness in quantum mechanics is <strong>measurement</strong> — not unitary evolution.</p>
-</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Worked Example: The Pauli-X Gate</p>
-<p>The Pauli-X gate (quantum NOT) is represented by the matrix:</p>
-<div class="arithmatex">\[X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
-<p>Apply it to <span class="arithmatex">\(\ket{\psi} = \alpha\ket{0} + \beta\ket{1}\)</span>:</p>
-<div class="arithmatex">\[X\ket{\psi} = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}\begin{pmatrix}\alpha \\ \beta\end{pmatrix} = \begin{pmatrix}\beta \\ \alpha\end{pmatrix} = \beta\ket{0} + \alpha\ket{1}\]</div>
-<p>The amplitudes are swapped: <span class="arithmatex">\(\ket{0} \leftrightarrow \ket{1}\)</span>. Note that <span class="arithmatex">\(X^2 = \mathbb{I}\)</span> — applying X twice returns to the original state. X is its own inverse.</p>
-</div>
-<h3 id="32-contrast-with-classical-gates">3.2 Contrast with Classical Gates<a class="headerlink" href="#32-contrast-with-classical-gates" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Classical Gate (AND)</th>
-<th>Quantum Gate (X, CNOT)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Map type</td>
-<td>Many-to-one (irreversible)</td>
-<td>One-to-one (bijection)</td>
-</tr>
-<tr>
-<td>Information</td>
-<td>Destroyed</td>
-<td>Preserved</td>
-</tr>
-<tr>
-<td>Inverse</td>
-<td>Does not exist</td>
-<td>Always exists (<span class="arithmatex">\(U^\dagger\)</span>)</td>
-</tr>
-<tr>
-<td>State space</td>
-<td>Discrete <span class="arithmatex">\(\{0, 1\}^n\)</span></td>
-<td>Continuous complex Hilbert space</td>
-</tr>
-<tr>
-<td>Fan-out</td>
-<td>Allowed</td>
-<td>Forbidden (no-cloning theorem)</td>
-</tr>
-</tbody>
-</table>
-<p>The prohibition on fan-out deserves emphasis: classical circuits freely copy bits — send one wire to two places. Quantum mechanics forbids this. The <strong>no-cloning theorem</strong> (proved in Chapter 3) shows that no unitary operation can copy an arbitrary unknown quantum state. This constraint fundamentally reshapes how quantum circuits are designed.</p>
-<hr />
-<h2 id="4-the-n-qubit-state-space-where-exponential-power-lives">4. The n-Qubit State Space — Where Exponential Power Lives<a class="headerlink" href="#4-the-n-qubit-state-space-where-exponential-power-lives" title="Permanent link">&para;</a></h2>
-<h3 id="41-tensor-products-and-the-hilbert-space">4.1 Tensor Products and the Hilbert Space<a class="headerlink" href="#41-tensor-products-and-the-hilbert-space" title="Permanent link">&para;</a></h3>
-<p>The state of <span class="arithmatex">\(n\)</span> qubits lives in the tensor product space:</p>
-<div class="arithmatex">\[\mathcal{H} = (\mathbb{C}^2)^{\otimes n}\]</div>
-<p>This is a <span class="arithmatex">\(2^n\)</span>-dimensional complex vector space. A general <span class="arithmatex">\(n\)</span>-qubit state is:</p>
-<div class="arithmatex">\[\ket{\psi} = \sum_{i=0}^{2^n - 1} \alpha_i \ket{i}, \quad \sum_{i=0}^{2^n-1} |\alpha_i|^2 = 1\]</div>
-<p>where <span class="arithmatex">\(i\)</span> runs over all <span class="arithmatex">\(n\)</span>-bit binary strings. The number of complex amplitudes is <span class="arithmatex">\(2^n\)</span>:</p>
-<table>
-<thead>
-<tr>
-<th>Qubits</th>
-<th>States</th>
-<th>Classical description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>1</td>
-<td>2</td>
-<td>1 bit</td>
-</tr>
-<tr>
-<td>2</td>
-<td>4</td>
-<td>2 bits</td>
-</tr>
-<tr>
-<td>10</td>
-<td>1,024</td>
-<td>10 bits</td>
-</tr>
-<tr>
-<td>50</td>
-<td><span class="arithmatex">\(10^{15}\)</span></td>
-<td>50 bits</td>
-</tr>
-<tr>
-<td>100</td>
-<td><span class="arithmatex">\(10^{30}\)</span></td>
-<td>100 bits</td>
-</tr>
-<tr>
-<td>300</td>
-<td><span class="arithmatex">\(10^{90}\)</span></td>
-<td>Exceeds atoms in universe</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><strong>0</strong></td>
 </tr>
 </tbody>
 </table>
-<h3 id="42-quantum-parallelism-and-its-limits">4.2 Quantum Parallelism — and Its Limits<a class="headerlink" href="#42-quantum-parallelism-and-its-limits" title="Permanent link">&para;</a></h3>
-<p>When a unitary operator <span class="arithmatex">\(U\)</span> acts on an <span class="arithmatex">\(n\)</span>-qubit superposition, it transforms <strong>all <span class="arithmatex">\(2^n\)</span> amplitudes simultaneously</strong>. A single application of <span class="arithmatex">\(U\)</span> effectively evaluates a function <span class="arithmatex">\(f(x)\)</span> for all <span class="arithmatex">\(2^n\)</span> inputs at once. This is quantum parallelism.</p>
-<p>But here is the critical caveat that separates quantum reality from popular myth: <strong>measurement yields only ONE outcome</strong>. When we measure an <span class="arithmatex">\(n\)</span>-qubit register, we get a single <span class="arithmatex">\(n\)</span>-bit string, sampled from the probability distribution <span class="arithmatex">\(\{|\alpha_i|^2\}\)</span>. We cannot "read out" all <span class="arithmatex">\(2^n\)</span> amplitudes — they are hidden from direct observation.</p>
-<p>The entire art of quantum algorithm design is therefore to construct sequences of unitary operations — interference patterns — such that:
-- <strong>Wrong answers</strong> have their amplitudes <strong>cancelled</strong> (destructive interference)
-- <strong>Correct answers</strong> have their amplitudes <strong>amplified</strong> (constructive interference)</p>
-<p>Measurement then reveals the answer with high probability. Without this interference engineering, quantum parallelism is useless — you'd get a random sample from a uniform distribution, equivalent to knowing nothing.</p>
-<div class="admonition tip">
+<p>The Toffoli gate is its own inverse: applying it twice returns to the starting state. It is reversible by inspection: given the output <span class="arithmatex">\((a', b', c')\)</span>, we can recover the input, since <span class="arithmatex">\(a = a'\)</span>, <span class="arithmatex">\(b = b'\)</span>, and <span class="arithmatex">\(c = c' \oplus (a \wedge b) = c' \oplus (a' \wedge b')\)</span>.</p>
+<p><strong>Implementing AND reversibly:</strong> Set <span class="arithmatex">\(c = 0\)</span>. Then <span class="arithmatex">\(c' = 0 \oplus (a \wedge b) = a \wedge b\)</span>. The output <span class="arithmatex">\(c'\)</span> holds the AND result while the original inputs <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are preserved:</p>
+<div class="arithmatex">\[|a\rangle|b\rangle|0\rangle \xrightarrow{\text{Toffoli}} |a\rangle|b\rangle|a \wedge b\rangle\]</div>
+<p>This is a reversible AND gate. The inputs are preserved in the first two output bits, so no information is destroyed. The ancilla qubit <span class="arithmatex">\(|0\rangle\)</span> absorbs the "output" without erasing any input information.</p>
+<h3 id="122-fanout-via-cnot">1.2.2 FANOUT via CNOT<a class="headerlink" href="#122-fanout-via-cnot" title="Permanent link">&para;</a></h3>
+<p>The <strong>CNOT gate</strong> (controlled-NOT) takes two bits and flips the target if the control is 1:</p>
+<div class="arithmatex">\[|x\rangle|0\rangle \xrightarrow{\text{CNOT}} |x\rangle|x\rangle\]</div>
+<p>This implements FANOUT — copying a bit — reversibly. The control bit <span class="arithmatex">\(x\)</span> is preserved, and the target begins as 0 and becomes <span class="arithmatex">\(x\)</span>.</p>
+<p><strong>Critical caveat for later:</strong> This FANOUT only works when the input is a definite classical value (0 or 1). If the input is a <em>quantum superposition</em>, CNOT does NOT copy the superposition — it creates <em>entanglement</em> instead. This is the quantum no-cloning theorem, which we will encounter in Chapter 2. The CNOT fanout trick that works classically fails quantally, with profound consequences for quantum error correction and quantum networking.</p>
+<h3 id="123-general-reversibility-and-the-oracle-model">1.2.3 General Reversibility and the Oracle Model<a class="headerlink" href="#123-general-reversibility-and-the-oracle-model" title="Permanent link">&para;</a></h3>
+<p><strong>Theorem (Bennett 1973):</strong> Any classical circuit of size <span class="arithmatex">\(s\)</span> can be converted into a reversible circuit with <span class="arithmatex">\(O(s)\)</span> additional ancilla bits and <span class="arithmatex">\(O(s)\)</span> gates, using the Toffoli and CNOT gates as primitives.</p>
+<p>The construction is systematic: work through the original circuit gate by gate, implementing each irreversible gate reversibly (using the Toffoli trick with ancilla), compute the desired output, copy the output to a fresh register, then <em>uncompute</em> the ancilla bits by running the circuit in reverse. The result is a reversible circuit that:</p>
+<ol>
+<li>Takes inputs <span class="arithmatex">\(|x\rangle\)</span> and blank ancilla <span class="arithmatex">\(|0\rangle\)</span></li>
+<li>Produces <span class="arithmatex">\(|x\rangle|f(x)\rangle|0\rangle\)</span> (inputs preserved, function computed, ancilla restored)</li>
+<li>Can be inverted to recover the original inputs</li>
+</ol>
+<p><strong>The Quantum Oracle Model:</strong> This construction has a direct quantum consequence. Any classical function <span class="arithmatex">\(f: \{0,1\}^n \to \{0,1\}^m\)</span> can be implemented as a unitary quantum oracle:</p>
+<div class="arithmatex">\[B_f |x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle\]</div>
+<p>where <span class="arithmatex">\(\oplus\)</span> denotes bitwise XOR. When <span class="arithmatex">\(|y\rangle = |0\rangle\)</span>:</p>
+<div class="arithmatex">\[B_f |x\rangle|0\rangle = |x\rangle|f(x)\rangle\]</div>
+<p>This evaluates <span class="arithmatex">\(f\)</span> "quantumly" — but more importantly, because the input <span class="arithmatex">\(|x\rangle\)</span> is preserved, we can evaluate <span class="arithmatex">\(f\)</span> on a <em>superposition</em> of inputs:</p>
+<div class="arithmatex">\[B_f \left(\sum_x \alpha_x |x\rangle\right)|0\rangle = \sum_x \alpha_x |x\rangle|f(x)\rangle\]</div>
+<p><strong>One application of the oracle evaluates <span class="arithmatex">\(f\)</span> on all inputs simultaneously.</strong> This is the quantum parallelism that underlies Shor's algorithm, Grover's algorithm, Simon's algorithm, and virtually every quantum speedup result. The oracle is also its own inverse (applying <span class="arithmatex">\(B_f\)</span> twice: <span class="arithmatex">\(|x\rangle|y \oplus f(x) \oplus f(x)\rangle = |x\rangle|y\rangle\)</span>), satisfying quantum unitarity.</p>
+<div class="admonition note">
 <p class="admonition-title">Business Implication</p>
-<p>The exponential state space is the source of quantum computing's potential — but it is also the source of the engineering challenge. Maintaining a coherent superposition of <span class="arithmatex">\(2^n\)</span> states requires isolating the system from all environmental interactions. Every additional qubit doubles the state space but also doubles the susceptibility to noise. This is why "qubit count" headlines are misleading: a machine with 1,000 noisy qubits may provide less useful computation than one with 100 carefully controlled, high-fidelity qubits.</p>
+<p>The reversibility requirement is not an obstacle to quantum computing — it is a gift. Because every quantum gate must be reversible, quantum circuits are inherently "undoable." This means quantum error correction can work: if we detect that something went wrong, we can potentially reverse the corruption. Classical computers cannot do this — once an irreversible gate fires, information is gone. The oracle model also means that any classical algorithm running on classical hardware can in principle be "wrapped" in a quantum oracle and used as a subroutine in a quantum algorithm. Quantum computing does not replace classical computation — it augments it.</p>
 </div>
 <hr />
-<h2 id="5-physical-implementations-of-qubits">5. Physical Implementations of Qubits<a class="headerlink" href="#5-physical-implementations-of-qubits" title="Permanent link">&para;</a></h2>
-<p>Any two-level quantum system can serve as a qubit. Current leading implementations include:</p>
+<h2 id="13-enter-the-qubit-the-quantum-generalization">1.3 Enter the Qubit: The Quantum Generalization<a class="headerlink" href="#13-enter-the-qubit-the-quantum-generalization" title="Permanent link">&para;</a></h2>
+<h3 id="131-from-probability-to-amplitude-the-quantum-leap">1.3.1 From Probability to Amplitude: The Quantum Leap<a class="headerlink" href="#131-from-probability-to-amplitude-the-quantum-leap" title="Permanent link">&para;</a></h3>
+<p>The deepest insight in quantum computing pedagogy — due largely to John Watrous — is that the quantum model of computation is not an alien mathematical framework invented from scratch. It is a <em>natural generalization</em> of the classical probabilistic model, obtained by replacing probability with amplitude.</p>
+<p>Let us build this analogy carefully, because it makes the quantum formalism feel inevitable rather than mysterious.</p>
+<p><strong>Step 1: The Classical Probabilistic Bit</strong></p>
+<p>A classical bit that we are uncertain about can be described by a <em>probability vector</em>:</p>
+<div class="arithmatex">\[\mathbf{p} = \begin{pmatrix} p_0 \\ p_1 \end{pmatrix} \quad \text{where } p_0, p_1 \geq 0 \text{ and } p_0 + p_1 = 1\]</div>
+<p>Here <span class="arithmatex">\(p_0\)</span> is the probability that the bit is 0, and <span class="arithmatex">\(p_1\)</span> is the probability that the bit is 1. A definite classical bit in state 0 corresponds to <span class="arithmatex">\(\mathbf{p} = \begin{pmatrix}1\\0\end{pmatrix}\)</span>; in state 1 to <span class="arithmatex">\(\mathbf{p} = \begin{pmatrix}0\\1\end{pmatrix}\)</span>.</p>
+<p>The constraint is that the entries are nonnegative real numbers summing to 1 — the standard L1 norm constraint of probability theory.</p>
+<p><strong>Step 2: Classical Operations as Stochastic Matrices</strong></p>
+<p>A classical deterministic or probabilistic operation on a bit is represented by a <em>stochastic matrix</em> — a matrix whose columns are probability vectors (entries nonneg, each column sums to 1).</p>
+<p>The deterministic NOT gate corresponds to the stochastic matrix:</p>
+<div class="arithmatex">\[\text{NOT} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
+<p>This maps <span class="arithmatex">\(\begin{pmatrix}1\\0\end{pmatrix} \to \begin{pmatrix}0\\1\end{pmatrix}\)</span> (0 becomes 1) and <span class="arithmatex">\(\begin{pmatrix}0\\1\end{pmatrix} \to \begin{pmatrix}1\\0\end{pmatrix}\)</span> (1 becomes 0), as expected.</p>
+<p>A probabilistic operation that "randomizes" the bit — sets it to 0 or 1 with equal probability regardless of input — would be represented by <span class="arithmatex">\(\begin{pmatrix}1/2 &amp; 1/2 \\ 1/2 &amp; 1/2\end{pmatrix}\)</span>.</p>
+<p><strong>Step 3: Classical Measurement</strong></p>
+<p>"Measuring" the probabilistic bit means observing its value. The act of measurement collapses the probability vector:</p>
+<ul>
+<li>If we observe 0 (probability <span class="arithmatex">\(p_0\)</span>): the state becomes <span class="arithmatex">\(\begin{pmatrix}1\\0\end{pmatrix}\)</span></li>
+<li>If we observe 1 (probability <span class="arithmatex">\(p_1\)</span>): the state becomes <span class="arithmatex">\(\begin{pmatrix}0\\1\end{pmatrix}\)</span></li>
+</ul>
+<p>After measurement, the probabilistic uncertainty is gone. The bit has a definite value.</p>
+<p><strong>Step 4: The Quantum Leap — Replace L1 with L2</strong></p>
+<p>Now we make a single, radical change: replace <em>real nonnegative amplitudes</em> with <em>complex amplitudes</em>, and replace the L1 norm constraint with the L2 norm constraint.</p>
+<p>A qubit state is described by an <em>amplitude vector</em>:</p>
+<div class="arithmatex">\[|\psi\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix} \quad \text{where } \alpha, \beta \in \mathbb{C} \text{ and } |\alpha|^2 + |\beta|^2 = 1\]</div>
+<p>The constraint is now that the sum of the <em>squared magnitudes</em> equals 1 — the L2 (Euclidean) norm, not the L1 norm.</p>
+<p><strong>Step 5: Quantum Operations as Unitary Matrices</strong></p>
+<p>A quantum operation is represented by a <em>unitary matrix</em> — a matrix <span class="arithmatex">\(U\)</span> satisfying <span class="arithmatex">\(U^\dagger U = I\)</span>, where <span class="arithmatex">\(U^\dagger\)</span> is the conjugate transpose. This is the quantum analogue of the stochastic matrix, but with a key difference: unitary matrices preserve the L2 norm (the Euclidean distance), while stochastic matrices preserve the L1 norm (the sum of entries).</p>
+<p>The quantum NOT gate (Pauli-X gate) is:</p>
+<div class="arithmatex">\[X = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\]</div>
+<p>This is the same matrix as the classical NOT! But now it acts on complex amplitude vectors and is unitary (<span class="arithmatex">\(X^\dagger X = I\)</span>) rather than merely stochastic.</p>
+<p><strong>Step 6: Quantum Measurement</strong></p>
+<p>Measuring the qubit collapses the amplitude vector to a basis state:</p>
+<ul>
+<li>Outcome 0 with probability <span class="arithmatex">\(|\alpha|^2\)</span>: state becomes <span class="arithmatex">\(\begin{pmatrix}1\\0\end{pmatrix} = |0\rangle\)</span></li>
+<li>Outcome 1 with probability <span class="arithmatex">\(|\beta|^2\)</span>: state becomes <span class="arithmatex">\(\begin{pmatrix}0\\1\end{pmatrix} = |1\rangle\)</span></li>
+</ul>
+<p>The quantum analogue of classical measurement is stochastically identical in structure — a collapse to a definite outcome — but the probabilities are <span class="arithmatex">\(|\alpha|^2\)</span> rather than <span class="arithmatex">\(\alpha\)</span> itself.</p>
+<p><strong>The Parallel Summary</strong></p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Classical (probabilistic)</th>
+<th>Quantum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State</td>
+<td>Probability vector <span class="arithmatex">\(\mathbf{p}\)</span></td>
+<td>Amplitude vector $</td>
+</tr>
+<tr>
+<td>Entries</td>
+<td>Real nonneg numbers</td>
+<td>Complex numbers</td>
+</tr>
+<tr>
+<td>Norm constraint</td>
+<td><span class="arithmatex">\(\sum p_i = 1\)</span> (L1)</td>
+<td>$\sum</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Stochastic matrices</td>
+<td>Unitary matrices</td>
+</tr>
+<tr>
+<td>Measurement</td>
+<td>Collapses to basis vector</td>
+<td>Collapses to basis state</td>
+</tr>
+<tr>
+<td>Probability of outcome</td>
+<td><span class="arithmatex">\(p_i\)</span> directly</td>
+<td>$</td>
+</tr>
+</tbody>
+</table>
+<p>The quantum model is the classical probabilistic model with two changes: (1) amplitudes are complex rather than real nonneg, and (2) the norm is Euclidean rather than sum-to-one. These two changes, seemingly modest, create an entirely new computational universe — because complex numbers can <em>interfere</em>, while probabilities cannot.</p>
+<div class="admonition tip">
+<p class="admonition-title">Why Complex Numbers?</p>
+<p>Why must amplitudes be complex rather than real? The answer lies in quantum mechanics: the Schrödinger equation for time evolution is <span class="arithmatex">\(i\hbar \frac{\partial}{\partial t}|\psi\rangle = H|\psi\rangle\)</span>, and the factor <span class="arithmatex">\(i = \sqrt{-1}\)</span> forces solutions to be complex-valued. Real amplitudes would produce a mathematical model that cannot describe phenomena like electron spin, orbital angular momentum, or the interference patterns observed in double-slit experiments. Complex amplitudes are not a mathematical convenience — they are physically required.</p>
+</div>
+<h3 id="132-the-qubit-state-space">1.3.2 The Qubit State Space<a class="headerlink" href="#132-the-qubit-state-space" title="Permanent link">&para;</a></h3>
+<p>Having established the framework, we can now define the qubit precisely.</p>
+<p>A <strong>qubit</strong> is the fundamental unit of quantum information: a two-state quantum system whose state is described by a unit vector in a two-dimensional complex Hilbert space <span class="arithmatex">\(\mathbb{C}^2\)</span>.</p>
+<p>We write the basis states as:</p>
+<div class="arithmatex">\[|0\rangle = \begin{pmatrix}1\\0\end{pmatrix}, \quad |1\rangle = \begin{pmatrix}0\\1\end{pmatrix}\]</div>
+<p>A general qubit state is the superposition:</p>
+<div class="arithmatex">\[|\psi\rangle = \alpha|0\rangle + \beta|1\rangle = \begin{pmatrix}\alpha\\\beta\end{pmatrix}, \quad \alpha, \beta \in \mathbb{C}, \quad |\alpha|^2 + |\beta|^2 = 1\]</div>
+<p><strong>What superposition means:</strong> The qubit is NOT "0 and 1 at the same time." This common misconception conflates the quantum state with a classical mixture of possibilities. Rather, the qubit exists in a state described by a specific vector <span class="arithmatex">\((\alpha, \beta)\)</span> in a complex vector space. Before measurement, the qubit <em>has no definite value</em> — it is not secretly 0 or secretly 1. Measurement creates the definite value.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 1.1: Measurement Probabilities</p>
+<p>Consider the qubit state:
+$<span class="arithmatex">\(|\psi\rangle = \frac{1}{\sqrt{3}}|0\rangle + \sqrt{\frac{2}{3}}|1\rangle\)</span>$</p>
+<p>Verify normalization: <span class="arithmatex">\(\left|\frac{1}{\sqrt{3}}\right|^2 + \left|\sqrt{\frac{2}{3}}\right|^2 = \frac{1}{3} + \frac{2}{3} = 1\)</span> ✓</p>
+<p>Measurement probabilities:
+- <span class="arithmatex">\(P(\text{outcome } 0) = |1/\sqrt{3}|^2 = 1/3\)</span>
+- <span class="arithmatex">\(P(\text{outcome } 1) = |\sqrt{2/3}|^2 = 2/3\)</span></p>
+<p>After measuring outcome 0, the qubit collapses to <span class="arithmatex">\(|0\rangle\)</span>. After measuring outcome 1, it collapses to <span class="arithmatex">\(|1\rangle\)</span>. The amplitudes <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are not directly observable — only the probabilities <span class="arithmatex">\(|\alpha|^2\)</span> and <span class="arithmatex">\(|\beta|^2\)</span> can be measured.</p>
+</div>
+<h3 id="133-the-bloch-sphere">1.3.3 The Bloch Sphere<a class="headerlink" href="#133-the-bloch-sphere" title="Permanent link">&para;</a></h3>
+<p>Any single-qubit pure state (up to a global phase, which is physically unobservable) can be written as:</p>
+<div class="arithmatex">\[|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle\]</div>
+<p>where <span class="arithmatex">\(\theta \in [0, \pi]\)</span> and <span class="arithmatex">\(\phi \in [0, 2\pi)\)</span>. This parameterizes all qubit states by two angles — the coordinates of a point on a unit sphere, called the <strong>Bloch sphere</strong>.</p>
+<p>Key points on the Bloch sphere:
+- <strong>North pole</strong> (<span class="arithmatex">\(\theta = 0\)</span>): <span class="arithmatex">\(|0\rangle\)</span> — the <span class="arithmatex">\(|0\rangle\)</span> eigenstate of <span class="arithmatex">\(Z\)</span>
+- <strong>South pole</strong> (<span class="arithmatex">\(\theta = \pi\)</span>): <span class="arithmatex">\(|1\rangle\)</span> — the <span class="arithmatex">\(|1\rangle\)</span> eigenstate of <span class="arithmatex">\(Z\)</span>
+- <strong>+x axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = 0\)</span>): <span class="arithmatex">\(|{+}\rangle = (|0\rangle + |1\rangle)/\sqrt{2}\)</span>
+- <strong>−x axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = \pi\)</span>): <span class="arithmatex">\(|{-}\rangle = (|0\rangle - |1\rangle)/\sqrt{2}\)</span>
+- <strong>+y axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = \pi/2\)</span>): <span class="arithmatex">\(|{+i}\rangle = (|0\rangle + i|1\rangle)/\sqrt{2}\)</span>
+- <strong>−y axis</strong> (<span class="arithmatex">\(\theta = \pi/2, \phi = 3\pi/2\)</span>): <span class="arithmatex">\(|{-i}\rangle = (|0\rangle - i|1\rangle)/\sqrt{2}\)</span></p>
+<p>The Bloch sphere visualization captures a key truth: a qubit has a <em>continuum</em> of possible pure states, parameterized by a sphere. A classical bit has exactly two states — two points. The qubit has uncountably many states — an entire sphere.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 1.2: Locating a State on the Bloch Sphere</p>
+<p>Given <span class="arithmatex">\(|\psi\rangle = \frac{1}{\sqrt{3}}|0\rangle + \sqrt{\frac{2}{3}}|1\rangle\)</span>, find the Bloch sphere angles <span class="arithmatex">\((\theta, \phi)\)</span>.</p>
+<p>Comparing with <span class="arithmatex">\(\cos(\theta/2)|0\rangle + e^{i\phi}\sin(\theta/2)|1\rangle\)</span>:
+- <span class="arithmatex">\(\cos(\theta/2) = 1/\sqrt{3}\)</span>, so <span class="arithmatex">\(\theta/2 = \arccos(1/\sqrt{3}) \approx 54.7°\)</span>, thus <span class="arithmatex">\(\theta \approx 109.5°\)</span>
+- <span class="arithmatex">\(e^{i\phi}\sin(\theta/2) = \sqrt{2/3}\)</span>; since the coefficient is real and positive, <span class="arithmatex">\(\phi = 0\)</span></p>
+<p>This state sits in the <span class="arithmatex">\(xz\)</span>-plane (<span class="arithmatex">\(\phi = 0\)</span>) below the equator, tilted toward <span class="arithmatex">\(|1\rangle\)</span>.</p>
+</div>
+<h3 id="134-physical-implementations-of-the-qubit">1.3.4 Physical Implementations of the Qubit<a class="headerlink" href="#134-physical-implementations-of-the-qubit" title="Permanent link">&para;</a></h3>
+<p>While the mathematics is substrate-agnostic, qubits are realized in different physical systems, each with distinct properties:</p>
 <table>
 <thead>
 <tr>
 <th>Modality</th>
-<th>Physical qubit</th>
-<th>Coherence time</th>
-<th>Gate speed</th>
-<th>Connectivity</th>
+<th>Two-state system</th>
+<th>Coherence time (T2)</th>
+<th>Gate fidelity (2-qubit)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Superconducting</td>
-<td>Transmon circuit</td>
-<td>100–300 μs</td>
-<td>20–100 ns</td>
-<td>Nearest-neighbor</td>
+<td>Energy levels of Josephson junction</td>
+<td>~100–500 μs</td>
+<td>99.0–99.7%</td>
 </tr>
 <tr>
 <td>Trapped ion</td>
-<td><span class="arithmatex">\(^{171}\)</span>Yb<span class="arithmatex">\(^+\)</span> or Ca<span class="arithmatex">\(^+\)</span> ion</td>
-<td>Seconds to minutes</td>
-<td>50–200 μs</td>
-<td>All-to-all</td>
+<td>Electronic energy levels of ion</td>
+<td>Seconds–minutes</td>
+<td>99.5–99.99%</td>
+</tr>
+<tr>
+<td>Photonic</td>
+<td>Polarization or path of photon</td>
+<td>Very long (propagation-limited)</td>
+<td>99%+ (linear optical)</td>
 </tr>
 <tr>
 <td>Neutral atom</td>
-<td>Rb or Cs atom in optical tweezer</td>
+<td>Hyperfine levels</td>
 <td>Seconds</td>
-<td>0.5–5 μs</td>
-<td>Reconfigurable</td>
+<td>99.3–99.9%</td>
 </tr>
 <tr>
-<td>Photon</td>
-<td>Polarization or path</td>
-<td>Indefinite (photons don't decay)</td>
-<td>Picoseconds</td>
-<td>Limited entangling</td>
+<td>Spin (semiconductor)</td>
+<td>Electron spin in quantum dot</td>
+<td>~1 ms</td>
+<td>99.5%+ (Si spin)</td>
 </tr>
 <tr>
 <td>Topological</td>
-<td>Majorana zero mode (proposed)</td>
-<td>Theoretically very long</td>
-<td>Unknown</td>
-<td>TBD</td>
+<td>Non-Abelian anyon</td>
+<td>(Theoretical; not yet demonstrated)</td>
+<td>(Goal: inherent fault tolerance)</td>
 </tr>
 </tbody>
 </table>
-<p>Each modality trades off coherence time, gate speed, connectivity, and scalability differently. Chapter 9 examines these trade-offs in detail against current vendor roadmaps.</p>
-<div class="admonition warning">
-<p class="admonition-title">Common Misconception</p>
-<p><strong>Longer coherence time is not always better.</strong> What matters is the ratio of coherence time to gate operation time — the number of gates you can complete before decoherence corrupts the computation. Superconducting qubits have short coherence times (~200 μs) but very fast gates (~50 ns), giving ~4,000 gates per coherence time. Trapped ions have long coherence times (seconds) but slow gates (~100 μs), giving ~100,000 gates per coherence time. For deep circuits, trapped ions win; for fast, shallow circuits, superconducting systems may be preferred.</p>
+<p>Each modality occupies a different point in the tradeoff space between coherence (how long the qubit stays quantum), connectivity (which qubits can interact), scalability (how many qubits can be integrated), and gate speed (how fast operations execute). No current platform dominates on all axes.</p>
+<hr />
+<h2 id="135-dirac-notation-the-language-of-quantum-computing">1.3.5 Dirac Notation: The Language of Quantum Computing<a class="headerlink" href="#135-dirac-notation-the-language-of-quantum-computing" title="Permanent link">&para;</a></h2>
+<p>Before proceeding to multi-qubit systems and quantum gates, we must establish the notation that will carry us through the rest of this book. <strong>Dirac notation</strong> (also called bra-ket notation) was invented by physicist Paul Dirac and is universally used in quantum mechanics and quantum information. It is not merely notational convenience — it encodes the mathematical structure of quantum states in a visually transparent way.</p>
+<h3 id="kets-bras-and-inner-products">Kets, Bras, and Inner Products<a class="headerlink" href="#kets-bras-and-inner-products" title="Permanent link">&para;</a></h3>
+<p>A <strong>ket</strong> <span class="arithmatex">\(|\psi\rangle\)</span> represents a quantum state — a column vector:</p>
+<div class="arithmatex">\[|\psi\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}\]</div>
+<p>A <strong>bra</strong> <span class="arithmatex">\(\langle\psi|\)</span> is the <em>conjugate transpose</em> of the corresponding ket — a row vector:</p>
+<div class="arithmatex">\[\langle\psi| = \begin{pmatrix} \alpha^* &amp; \beta^* \end{pmatrix}\]</div>
+<p>where <span class="arithmatex">\(\alpha^*\)</span> denotes the complex conjugate of <span class="arithmatex">\(\alpha\)</span> (change the sign of the imaginary part: if <span class="arithmatex">\(\alpha = a + bi\)</span> then <span class="arithmatex">\(\alpha^* = a - bi\)</span>).</p>
+<p>The <strong>inner product</strong> <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span> of two states is the row vector times the column vector:</p>
+<div class="arithmatex">\[\langle\phi|\psi\rangle = \begin{pmatrix} \gamma^* &amp; \delta^* \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \gamma^*\alpha + \delta^*\beta \in \mathbb{C}\]</div>
+<p>This is a scalar — a single complex number that measures the "overlap" between states <span class="arithmatex">\(|\phi\rangle\)</span> and <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<h3 id="key-properties">Key Properties<a class="headerlink" href="#key-properties" title="Permanent link">&para;</a></h3>
+<p><strong>Normalization:</strong> A physical state has unit norm:
+$<span class="arithmatex">\(\langle\psi|\psi\rangle = |\alpha|^2 + |\beta|^2 = 1\)</span>$</p>
+<p><strong>Orthogonality</strong> of basis states:
+$<span class="arithmatex">\(\langle 0|0\rangle = 1, \quad \langle 1|1\rangle = 1, \quad \langle 0|1\rangle = 0, \quad \langle 1|0\rangle = 0\)</span>$</p>
+<p><strong>Conjugate symmetry:</strong> <span class="arithmatex">\(\langle\phi|\psi\rangle = \langle\psi|\phi\rangle^*\)</span></p>
+<p><strong>Measurement probability:</strong> If the state is <span class="arithmatex">\(|\psi\rangle\)</span> and we measure in the basis <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span>, the probability of outcome <span class="arithmatex">\(i\)</span> is <span class="arithmatex">\(|\langle i|\psi\rangle|^2\)</span>.</p>
+<h3 id="outer-products-and-projectors">Outer Products and Projectors<a class="headerlink" href="#outer-products-and-projectors" title="Permanent link">&para;</a></h3>
+<p>The <strong>outer product</strong> <span class="arithmatex">\(|\psi\rangle\langle\phi|\)</span> is a <em>matrix</em> — the column times the row:</p>
+<div class="arithmatex">\[|\psi\rangle\langle\phi| = \begin{pmatrix}\alpha\\\beta\end{pmatrix}\begin{pmatrix}\gamma^* &amp; \delta^*\end{pmatrix} = \begin{pmatrix}\alpha\gamma^* &amp; \alpha\delta^* \\ \beta\gamma^* &amp; \beta\delta^*\end{pmatrix}\]</div>
+<p>When <span class="arithmatex">\(\phi = \psi\)</span>, the outer product <span class="arithmatex">\(|\psi\rangle\langle\psi|\)</span> is a <strong>projector</strong> — a matrix that projects any state onto the direction <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p><strong>Completeness relation:</strong> The identity operator decomposes as:
+$<span class="arithmatex">\(|0\rangle\langle 0| + |1\rangle\langle 1| = \begin{pmatrix}1&amp;0\\0&amp;0\end{pmatrix} + \begin{pmatrix}0&amp;0\\0&amp;1\end{pmatrix} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} = I\)</span>$</p>
+<p>This is the completeness relation: the projectors onto the basis states sum to the identity. It expresses the fact that measuring in the <span class="arithmatex">\(\{|0\rangle, |1\rangle\}\)</span> basis always yields <em>some</em> outcome.</p>
+<h3 id="tensor-products">Tensor Products<a class="headerlink" href="#tensor-products" title="Permanent link">&para;</a></h3>
+<p>For multi-qubit systems, the tensor product combines states. If qubit A is in state <span class="arithmatex">\(|\psi\rangle\)</span> and qubit B is in state <span class="arithmatex">\(|\phi\rangle\)</span>, the joint state is:</p>
+<div class="arithmatex">\[|\psi\rangle_A \otimes |\phi\rangle_B\]</div>
+<p>This is also written <span class="arithmatex">\(|\psi\rangle|\phi\rangle\)</span>, or <span class="arithmatex">\(|\psi\phi\rangle\)</span>, or <span class="arithmatex">\(|\psi,\phi\rangle\)</span> — all mean the same thing. We will use all of these interchangeably throughout the book, following standard convention in the field.</p>
+<h3 id="the-dirac-notation-translation-table">The Dirac Notation Translation Table<a class="headerlink" href="#the-dirac-notation-translation-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Matrix/column notation</th>
+<th>Dirac notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State vector</td>
+<td><span class="arithmatex">\(\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)</span></td>
+<td>$</td>
+</tr>
+<tr>
+<td>Conjugate transpose</td>
+<td><span class="arithmatex">\(\begin{pmatrix}\alpha^* &amp; \beta^*\end{pmatrix}\)</span></td>
+<td>$\langle\psi</td>
+</tr>
+<tr>
+<td>Inner product</td>
+<td><span class="arithmatex">\(\begin{pmatrix}\alpha^* &amp; \beta^*\end{pmatrix}\begin{pmatrix}\gamma\\\delta\end{pmatrix}\)</span></td>
+<td>$\langle\psi</td>
+</tr>
+<tr>
+<td>Outer product (matrix)</td>
+<td><span class="arithmatex">\(\begin{pmatrix}\alpha\\\beta\end{pmatrix}\begin{pmatrix}\alpha^* &amp; \beta^*\end{pmatrix}\)</span></td>
+<td>$</td>
+</tr>
+<tr>
+<td>Gate application</td>
+<td><span class="arithmatex">\(U\begin{pmatrix}\alpha\\\beta\end{pmatrix}\)</span></td>
+<td>$U</td>
+</tr>
+<tr>
+<td>Expectation value</td>
+<td><span class="arithmatex">\(\mathbf{v}^T M \mathbf{v}\)</span></td>
+<td>$\langle\psi</td>
+</tr>
+<tr>
+<td>Probability of outcome <span class="arithmatex">\(i\)</span></td>
+<td>$</td>
+<td>e_i^T \mathbf{v}</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Why Dirac Notation?</p>
+<p>Matrix notation becomes unwieldy for multi-qubit systems. A 10-qubit system lives in a <span class="arithmatex">\(2^{10} = 1024\)</span>-dimensional space — writing explicit column vectors is impractical. Dirac notation handles this gracefully: <span class="arithmatex">\(|\psi\rangle = \sum_{x \in \{0,1\}^{10}} \alpha_x |x\rangle\)</span> compactly encodes 1024 amplitudes. As the systems we study grow from 1 qubit to 100 qubits, Dirac notation's efficiency becomes essential.</p>
 </div>
 <hr />
-<div class="admonition abstract">
-<p class="admonition-title">Chapter Summary</p>
+<h2 id="14-quantum-operations-are-unitary">1.4 Quantum Operations Are Unitary<a class="headerlink" href="#14-quantum-operations-are-unitary" title="Permanent link">&para;</a></h2>
+<h3 id="141-unitary-matrices">1.4.1 Unitary Matrices<a class="headerlink" href="#141-unitary-matrices" title="Permanent link">&para;</a></h3>
+<p>A <strong>unitary operator</strong> <span class="arithmatex">\(U\)</span> acting on the qubit state space is a linear transformation satisfying:</p>
+<div class="arithmatex">\[U^\dagger U = U U^\dagger = I\]</div>
+<p>where <span class="arithmatex">\(U^\dagger\)</span> is the conjugate transpose of <span class="arithmatex">\(U\)</span> (take the transpose and then complex-conjugate each entry). Three profound consequences follow immediately.</p>
+<p><strong>Consequence 1: Unitarity preserves probability.</strong> If <span class="arithmatex">\(|\psi\rangle\)</span> is normalized (<span class="arithmatex">\(\langle\psi|\psi\rangle = 1\)</span>), then <span class="arithmatex">\(U|\psi\rangle\)</span> is also normalized:
+$<span class="arithmatex">\(\langle\psi|U^\dagger U|\psi\rangle = \langle\psi|I|\psi\rangle = \langle\psi|\psi\rangle = 1\)</span>$</p>
+<p>Total probability is always conserved. This is the quantum analogue of stochastic matrices preserving the sum of probabilities.</p>
+<p><strong>Consequence 2: Every quantum gate is reversible.</strong> Since <span class="arithmatex">\(U^\dagger U = I\)</span>, the inverse of <span class="arithmatex">\(U\)</span> is <span class="arithmatex">\(U^{-1} = U^\dagger\)</span>. Given any quantum state <span class="arithmatex">\(U|\psi\rangle\)</span>, we can always recover <span class="arithmatex">\(|\psi\rangle\)</span> by applying <span class="arithmatex">\(U^\dagger\)</span>:
+$<span class="arithmatex">\(U^\dagger(U|\psi\rangle) = I|\psi\rangle = |\psi\rangle\)</span>$</p>
+<p>No information is ever destroyed by a unitary gate. This is not a design choice — it follows necessarily from the mathematical structure of quantum mechanics.</p>
+<p><strong>Consequence 3: Deterministic evolution.</strong> Given the initial state <span class="arithmatex">\(|\psi\rangle\)</span> and the unitary <span class="arithmatex">\(U\)</span>, the final state <span class="arithmatex">\(U|\psi\rangle\)</span> is exactly determined. The <em>only</em> source of randomness in quantum mechanics is measurement (the collapse of the amplitude vector). The unitary evolution between measurements is completely deterministic.</p>
+<h3 id="142-the-fundamental-single-qubit-gates">1.4.2 The Fundamental Single-Qubit Gates<a class="headerlink" href="#142-the-fundamental-single-qubit-gates" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 1.3: Pauli-X Gate</p>
+<p>The <strong>Pauli-X gate</strong> (quantum NOT, or bit-flip):
+$<span class="arithmatex">\(X = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}\)</span>$</p>
+<p><strong>Verify unitarity:</strong> <span class="arithmatex">\(X^\dagger = X\)</span> (the matrix is real and symmetric), so <span class="arithmatex">\(X^\dagger X = X^2 = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} = I\)</span> ✓</p>
+<p><strong>Apply to general state:</strong>
+$<span class="arithmatex">\(X|\psi\rangle = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\begin{pmatrix}\alpha\\\beta\end{pmatrix} = \begin{pmatrix}\beta\\\alpha\end{pmatrix} = \beta|0\rangle + \alpha|1\rangle\)</span>$</p>
+<p>The amplitudes are swapped: <span class="arithmatex">\(|0\rangle \leftrightarrow |1\rangle\)</span>. This is the quantum bit-flip.</p>
+<p><strong>Note:</strong> <span class="arithmatex">\(X\)</span> is its own inverse (<span class="arithmatex">\(X^2 = I\)</span>), as required for NOT: applying NOT twice returns to the original state.</p>
+</div>
+<p>The <strong>Pauli-Z gate</strong> (phase-flip):
+$<span class="arithmatex">\(Z = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix}\)</span>$</p>
+<p><span class="arithmatex">\(Z\)</span> leaves <span class="arithmatex">\(|0\rangle\)</span> unchanged and maps <span class="arithmatex">\(|1\rangle \to -|1\rangle\)</span>. The minus sign is a <em>relative phase</em> between <span class="arithmatex">\(|0\rangle\)</span> and <span class="arithmatex">\(|1\rangle\)</span>, which is physically meaningful and affects interference.</p>
+<p>The <strong>Hadamard gate</strong> creates superposition from basis states:
+$<span class="arithmatex">\(H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 &amp; 1 \\ 1 &amp; -1\end{pmatrix}\)</span>$</p>
+<div class="arithmatex">\[H|0\rangle = \frac{|0\rangle + |1\rangle}{\sqrt{2}} \equiv |{+}\rangle, \qquad H|1\rangle = \frac{|0\rangle - |1\rangle}{\sqrt{2}} \equiv |{-}\rangle\]</div>
+<p>The Hadamard gate transforms a definite basis state into an equal superposition — the starting point for most quantum algorithms. It is its own inverse: <span class="arithmatex">\(H^2 = I\)</span>.</p>
+<h3 id="143-contrast-with-classical-gates">1.4.3 Contrast with Classical Gates<a class="headerlink" href="#143-contrast-with-classical-gates" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Classical AND gate</th>
+<th>Quantum gate (general)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs/outputs</td>
+<td>2 bits in, 1 bit out</td>
+<td><span class="arithmatex">\(n\)</span> qubits in, <span class="arithmatex">\(n\)</span> qubits out</td>
+</tr>
+<tr>
+<td>Reversible?</td>
+<td>No (3 inputs → 1 output)</td>
+<td>Yes (always <span class="arithmatex">\(U^\dagger\)</span> exists)</td>
+</tr>
+<tr>
+<td>Information loss?</td>
+<td>Yes (inputs not recoverable)</td>
+<td>No (unitary preserves all info)</td>
+</tr>
+<tr>
+<td>Deterministic?</td>
+<td>Yes</td>
+<td>Yes (evolution); No (measurement)</td>
+</tr>
+<tr>
+<td>Implemented by</td>
+<td>Physical switch</td>
+<td>Controlled quantum interaction</td>
+</tr>
+</tbody>
+</table>
+<p>The irreversibility of classical gates is a <em>choice</em> — the Toffoli gate shows we could compute reversibly if we wanted. But we don't, because irreversible gates are physically cheaper and simpler to manufacture. Quantum mechanics removes this choice: the Schrödinger equation mandates reversibility.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>The unitarity requirement has a counterintuitive implication for quantum hardware: the number of output wires always equals the number of input wires. A quantum computer cannot "garbage collect" intermediate results — unused ancilla qubits must be explicitly uncomputed. This adds overhead that classical programmers do not face. Quantum algorithm design must account for this "cleaning up" of ancilla state, which consumes circuit depth and qubit resources. When evaluating quantum advantage claims, understanding ancilla overhead is essential for comparing quantum and classical resource requirements.</p>
+</div>
+<hr />
+<h2 id="15-the-n-qubit-state-space-where-exponential-power-lives">1.5 The n-Qubit State Space: Where Exponential Power Lives<a class="headerlink" href="#15-the-n-qubit-state-space-where-exponential-power-lives" title="Permanent link">&para;</a></h2>
+<h3 id="151-the-tensor-product-structure">1.5.1 The Tensor Product Structure<a class="headerlink" href="#151-the-tensor-product-structure" title="Permanent link">&para;</a></h3>
+<p>The state of <span class="arithmatex">\(n\)</span> qubits lives in the tensor product space:</p>
+<div class="arithmatex">\[\mathcal{H} = \underbrace{\mathbb{C}^2 \otimes \mathbb{C}^2 \otimes \cdots \otimes \mathbb{C}^2}_{n \text{ times}} = (\mathbb{C}^2)^{\otimes n}\]</div>
+<p>This is a <span class="arithmatex">\(2^n\)</span>-dimensional complex Hilbert space.</p>
+<p><strong>Building two-qubit states from one-qubit states:</strong> The tensor product of two single-qubit states is computed explicitly:</p>
+<div class="arithmatex">\[(\alpha|0\rangle + \beta|1\rangle) \otimes (\gamma|0\rangle + \delta|1\rangle)$$
+$$= \alpha\gamma|00\rangle + \alpha\delta|01\rangle + \beta\gamma|10\rangle + \beta\delta|11\rangle\]</div>
+<p>where <span class="arithmatex">\(|00\rangle = |0\rangle \otimes |0\rangle\)</span>, <span class="arithmatex">\(|01\rangle = |0\rangle \otimes |1\rangle\)</span>, etc. The result is a 4-dimensional vector with amplitudes <span class="arithmatex">\((\alpha\gamma, \alpha\delta, \beta\gamma, \beta\delta)\)</span> in the ordered basis <span class="arithmatex">\(\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}\)</span>.</p>
+<p><strong>Explicit Kronecker product:</strong> In matrix form, the tensor product of <span class="arithmatex">\(2 \times 2\)</span> matrices <span class="arithmatex">\(A \otimes B\)</span> is:</p>
+<div class="arithmatex">\[A \otimes B = \begin{pmatrix}a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22}\end{pmatrix} \otimes B = \begin{pmatrix}a_{11}B &amp; a_{12}B \\ a_{21}B &amp; a_{22}B\end{pmatrix}\]</div>
+<p>For example, applying Hadamard to the first qubit only of a two-qubit system (leaving the second qubit alone) is implemented by the <span class="arithmatex">\(4 \times 4\)</span> matrix <span class="arithmatex">\(H \otimes I\)</span>:</p>
+<div class="arithmatex">\[H \otimes I = \frac{1}{\sqrt{2}}\begin{pmatrix}1&amp;0&amp;1&amp;0\\0&amp;1&amp;0&amp;1\\1&amp;0&amp;-1&amp;0\\0&amp;1&amp;0&amp;-1\end{pmatrix}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 1.4: Two-Qubit Tensor Product States</p>
+<p><strong>Example A:</strong> Both qubits in state <span class="arithmatex">\(|{+}\rangle = (|0\rangle + |1\rangle)/\sqrt{2}\)</span>:</p>
+<div class="arithmatex">\[|{+}\rangle \otimes |{+}\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) \otimes \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$$
+$$= \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\]</div>
+<p>This state is a superposition of all four two-bit strings with equal amplitude <span class="arithmatex">\(1/2\)</span>. <strong>Crucially: this is a product state — it is NOT entangled</strong>, even though it is a superposition of four terms. It factors exactly as <span class="arithmatex">\(|{+}\rangle \otimes |{+}\rangle\)</span>.</p>
+<p>Many readers confuse "superposition of multiple basis states" with "entanglement." They are distinct. Entanglement means a state <em>cannot</em> be factored as a tensor product — regardless of how many terms it has.</p>
+<p><strong>Example B:</strong> The Bell state <span class="arithmatex">\((|00\rangle + |11\rangle)/\sqrt{2}\)</span> is entangled:</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{2}}(|00\rangle + |11\rangle) \neq (\alpha|0\rangle + \beta|1\rangle) \otimes (\gamma|0\rangle + \delta|1\rangle)\]</div>
+<p>If it factored, we would need <span class="arithmatex">\(\alpha\delta = 0\)</span> (coefficient of <span class="arithmatex">\(|01\rangle\)</span> is zero) and <span class="arithmatex">\(\beta\gamma = 0\)</span> (coefficient of <span class="arithmatex">\(|10\rangle\)</span> is zero), but also <span class="arithmatex">\(\alpha\gamma = \beta\delta = 1/\sqrt{2}\)</span> (nonzero). From <span class="arithmatex">\(\alpha\delta = 0\)</span>: either <span class="arithmatex">\(\alpha = 0\)</span> or <span class="arithmatex">\(\delta = 0\)</span>. If <span class="arithmatex">\(\alpha = 0\)</span>, then <span class="arithmatex">\(\alpha\gamma = 0 \neq 1/\sqrt{2}\)</span> — contradiction. If <span class="arithmatex">\(\delta = 0\)</span>, then <span class="arithmatex">\(\beta\delta = 0 \neq 1/\sqrt{2}\)</span> — contradiction. No factoring exists: the Bell state is genuinely entangled.</p>
+</div>
+<h3 id="152-the-general-n-qubit-state-and-quantum-parallelism">1.5.2 The General n-Qubit State and Quantum Parallelism<a class="headerlink" href="#152-the-general-n-qubit-state-and-quantum-parallelism" title="Permanent link">&para;</a></h3>
+<p>A general state of <span class="arithmatex">\(n\)</span> qubits is:</p>
+<div class="arithmatex">\[|\psi\rangle = \sum_{x=0}^{2^n-1} \alpha_x |x\rangle, \quad \sum_{x=0}^{2^n-1} |\alpha_x|^2 = 1\]</div>
+<p>where the sum runs over all <span class="arithmatex">\(2^n\)</span> binary strings of length <span class="arithmatex">\(n\)</span>, and <span class="arithmatex">\(|x\rangle\)</span> denotes the computational basis state corresponding to the <span class="arithmatex">\(n\)</span>-bit binary representation of <span class="arithmatex">\(x\)</span>.</p>
+<p>There are <span class="arithmatex">\(2^n\)</span> complex amplitudes <span class="arithmatex">\(\{\alpha_x\}\)</span>. For <span class="arithmatex">\(n = 300\)</span> qubits, this is <span class="arithmatex">\(2^{300}\)</span> amplitudes — far more than the estimated <span class="arithmatex">\(10^{80}\)</span> atoms in the observable universe. No classical computer can store or manipulate this state vector directly.</p>
+<p><strong>Quantum Parallelism:</strong> When a unitary gate <span class="arithmatex">\(U\)</span> is applied to the superposition <span class="arithmatex">\(|\psi\rangle = \sum_x \alpha_x |x\rangle\)</span>, it transforms <em>all <span class="arithmatex">\(2^n\)</span> amplitudes simultaneously</em>:</p>
+<div class="arithmatex">\[U\left(\sum_x \alpha_x |x\rangle\right) = \sum_x \alpha_x U|x\rangle\]</div>
+<p>A single application of <span class="arithmatex">\(U\)</span> effectively processes all <span class="arithmatex">\(2^n\)</span> inputs at once. For the oracle <span class="arithmatex">\(B_f\)</span> defined in Section 1.2.3:</p>
+<div class="arithmatex">\[B_f\left(\sum_x \alpha_x |x\rangle\right)|0\rangle = \sum_x \alpha_x |x\rangle|f(x)\rangle\]</div>
+<p>One oracle call evaluates <span class="arithmatex">\(f\)</span> on all <span class="arithmatex">\(2^n\)</span> inputs simultaneously — a seemingly magical capability. But there is a catch.</p>
+<h3 id="153-the-measurement-bottleneck">1.5.3 The Measurement Bottleneck<a class="headerlink" href="#153-the-measurement-bottleneck" title="Permanent link">&para;</a></h3>
+<p>Quantum parallelism is not as powerful as it might seem, because <strong>measurement collapses the superposition to a single outcome.</strong></p>
+<p>After computing <span class="arithmatex">\(\sum_x \alpha_x |x\rangle|f(x)\rangle\)</span>, a measurement of the output register yields <span class="arithmatex">\(f(x)\)</span> for a <em>single</em> randomly chosen <span class="arithmatex">\(x\)</span> (chosen according to probabilities <span class="arithmatex">\(\{|\alpha_x|^2\}\)</span>). We do not get to read out <span class="arithmatex">\(f(x)\)</span> for all <span class="arithmatex">\(2^n\)</span> values of <span class="arithmatex">\(x\)</span> simultaneously.</p>
+<p>This is the fundamental challenge of quantum algorithm design: <strong>interference must be used to amplify the amplitude of the desired answer.</strong></p>
+<p>A quantum algorithm works by carefully constructing a sequence of unitary operations such that:
+- Correct answers accumulate large amplitude (constructive interference)
+- Incorrect answers see their amplitudes cancel out (destructive interference)</p>
+<p>When we finally measure, the correct answer is obtained with high probability — not because we computed all possibilities, but because the interference structure of the algorithm concentrated probability on the correct answer.</p>
+<p>This is the quantum analogue of how a diffraction grating separates light: multiple waves interfere constructively at certain angles and destructively at others. The "wavelength" here is the phase of complex amplitudes.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example 1.5: Quantum Parallelism — Starting State for Grover's Algorithm</p>
+<p>To initialize an equal superposition of all <span class="arithmatex">\(2^n\)</span> inputs, apply the <span class="arithmatex">\(n\)</span>-fold Hadamard <span class="arithmatex">\(H^{\otimes n}\)</span> to the all-zeros state:</p>
+<div class="arithmatex">\[H^{\otimes n}|0\rangle^{\otimes n} = \frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}|x\rangle\]</div>
+<p>For <span class="arithmatex">\(n = 2\)</span>:
+$<span class="arithmatex">\(H^{\otimes 2}|00\rangle = (H|0\rangle)(H|0\rangle) = |{+}\rangle \otimes |{+}\rangle = \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\)</span>$</p>
+<p>Each of the four states has amplitude <span class="arithmatex">\(1/2\)</span> and probability <span class="arithmatex">\(1/4\)</span>. A direct measurement would yield a random 2-bit string — useless. But Grover's algorithm (Chapter 4) constructs an interference pattern that amplifies the amplitude of the <em>target</em> state to nearly 1, so measurement yields the correct answer with high probability after only <span class="arithmatex">\(O(\sqrt{2^n})\)</span> oracle calls.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>The exponential state space is the source of quantum computing's potential — but also the source of its engineering challenges and its measurement bottleneck. "More qubits" does not automatically mean "more useful computation." The quality of a quantum computation depends on three factors simultaneously: (1) the number of logical qubits available, (2) the depth of circuit the hardware can execute before decoherence corrupts the state, and (3) the cleverness of the algorithm in concentrating probability on the desired answer. A 1,000-qubit system with high noise and short coherence time may be less useful than a 100-qubit system with excellent gate fidelities. When evaluating vendor roadmaps, CXOs should demand all three metrics — qubit count, gate fidelity, and circuit depth capability — not just the headline qubit number.</p>
+</div>
+<hr />
+<h2 id="16-the-road-ahead-from-single-qubits-to-quantum-advantage">1.6 The Road Ahead: From Single Qubits to Quantum Advantage<a class="headerlink" href="#16-the-road-ahead-from-single-qubits-to-quantum-advantage" title="Permanent link">&para;</a></h2>
+<h3 id="161-what-we-have-established">1.6.1 What We Have Established<a class="headerlink" href="#161-what-we-have-established" title="Permanent link">&para;</a></h3>
+<p>In this chapter, we have laid the mathematical and conceptual foundations for everything that follows:</p>
 <ol>
 <li>
-<p><strong>Classical computation is fundamentally irreversible</strong>: most logic gates (AND, OR, NAND) destroy information, and Landauer's principle establishes that this carries a thermodynamic cost. Reversible gates (Toffoli) can implement any classical function while preserving information.</p>
+<p><strong>Computation is physical</strong>: Landauer's principle connects information erasure to thermodynamic cost, and the laws of physics set fundamental limits on what classical computation can achieve efficiently.</p>
 </li>
 <li>
-<p><strong>A qubit is a two-dimensional complex vector</strong>: described by amplitudes <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> with <span class="arithmatex">\(|\alpha|^2 + |\beta|^2 = 1\)</span>. It is not "both 0 and 1" — it is a continuous quantum state that collapses probabilistically upon measurement.</p>
+<p><strong>Reversibility is natural in physics</strong>: Classical computation can be made reversible (Toffoli, Bennett's theorem), and quantum mechanics <em>requires</em> reversibility. The oracle model <span class="arithmatex">\(B_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle\)</span> is the bridge.</p>
 </li>
 <li>
-<p><strong>Quantum gates are unitary transformations</strong>: they preserve norm (total probability), are always reversible (<span class="arithmatex">\(U^{-1} = U^\dagger\)</span>), and can be visualized as rotations on the Bloch sphere.</p>
+<p><strong>Quantum is a generalization of classical probabilistic</strong>: Replace L1 probability vectors with L2 amplitude vectors, replace stochastic matrices with unitary matrices. The formalism is natural, not alien.</p>
 </li>
 <li>
-<p><strong>The n-qubit state space is exponentially large</strong>: <span class="arithmatex">\(2^n\)</span> complex amplitudes, all evolving simultaneously under unitary operations. Measurement yields only one outcome — quantum algorithms must use interference to concentrate probability on correct answers.</p>
+<p><strong>Dirac notation is the language</strong>: Kets <span class="arithmatex">\(|\psi\rangle\)</span>, bras <span class="arithmatex">\(\langle\psi|\)</span>, inner products <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span>, outer products <span class="arithmatex">\(|\psi\rangle\langle\phi|\)</span>, and tensor products <span class="arithmatex">\(|\psi\rangle \otimes |\phi\rangle\)</span> are the vocabulary of quantum information.</p>
 </li>
 <li>
-<p><strong>Multiple physical platforms implement qubits</strong>: each with different trade-offs in coherence time, gate speed, and connectivity. No single platform has "won" — the landscape remains competitive through 2026 and beyond.</p>
+<p><strong>Exponential state space + interference</strong>: <span class="arithmatex">\(n\)</span> qubits provide <span class="arithmatex">\(2^n\)</span>-dimensional state space. Quantum algorithms exploit interference to amplify correct answers — this is the mechanism of quantum speedup.</p>
 </li>
 </ol>
-</div>
+<h3 id="162-historical-note">1.6.2 Historical Note<a class="headerlink" href="#162-historical-note" title="Permanent link">&para;</a></h3>
+<p>The ideas in this chapter were developed over several decades:</p>
+<ul>
+<li><strong>Rolf Landauer (1961)</strong> established the thermodynamic connection between information and physics, showing that erasure is irreversible at the physical level.</li>
+<li><strong>Charles Bennett (1973)</strong> showed that reversible classical computation is possible with modest overhead, laying the groundwork for quantum computation's reversibility requirement.</li>
+<li><strong>Richard Feynman (1981)</strong> proposed that a quantum mechanical system could simulate other quantum systems efficiently — the first argument that quantum computers might outperform classical ones for certain tasks.</li>
+<li><strong>David Deutsch (1985)</strong> formalized the universal quantum computer and proved the first quantum algorithm (Deutsch's algorithm), demonstrating in principle that quantum computers could outperform classical computers on at least one problem.</li>
+</ul>
+<p>Each of these insights contributed a piece of the foundation. Landauer showed why physics matters for computation. Bennett showed that reversibility is achievable. Feynman asked why not use quantum systems directly. Deutsch made it rigorous.</p>
+<h3 id="163-what-comes-next">1.6.3 What Comes Next<a class="headerlink" href="#163-what-comes-next" title="Permanent link">&para;</a></h3>
+<p>Chapter 2 develops the two resources that distinguish quantum from classical computation: superposition (which we have introduced) and entanglement (the genuinely quantum phenomenon with no classical analogue). We will see why entanglement is <em>necessary</em> for exponential quantum speedup — not merely sufficient — and how decoherence destroys it.</p>
+<p>Chapter 3 develops the full grammar of quantum gates and circuits, showing how unitary operations are composed into algorithms.</p>
+<p>Chapter 4 presents the landmark quantum algorithms — Shor's period-finding, Grover's search, Simon's algorithm, and quantum phase estimation — showing exactly where the quantum speedups originate and how the interference mechanism produces them.</p>
+<hr />
+<h2 id="chapter-1-summary">Chapter 1 Summary<a class="headerlink" href="#chapter-1-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Key equation</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landauer's limit</td>
+<td><span class="arithmatex">\(E_{\min} = k_B T \ln 2\)</span></td>
+<td>Erasure has thermodynamic cost</td>
+</tr>
+<tr>
+<td>Toffoli gate</td>
+<td>$</td>
+<td>a,b,c\rangle \to</td>
+</tr>
+<tr>
+<td>Oracle model</td>
+<td>$B_f</td>
+<td>x\rangle</td>
+</tr>
+<tr>
+<td>Qubit state</td>
+<td>$</td>
+<td>\psi\rangle = \alpha</td>
+</tr>
+<tr>
+<td>Measurement rule</td>
+<td>$P(\text{outcome }i) =</td>
+<td>\langle i</td>
+</tr>
+<tr>
+<td>Unitarity</td>
+<td><span class="arithmatex">\(U^\dagger U = I\)</span></td>
+<td>Reversibility + probability conservation</td>
+</tr>
+<tr>
+<td>n-qubit state space</td>
+<td><span class="arithmatex">\(2^n\)</span> dimensions</td>
+<td>Source of quantum parallelism</td>
+</tr>
+<tr>
+<td>Tensor product</td>
+<td>$(\alpha</td>
+<td>0\rangle+\beta</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Landauer, R. "Irreversibility and heat generation in the computing process." <em>IBM Journal of Research and Development</em> 5(3), 183–191, 1961.</li>
+<li>Bennett, C.H. "Logical reversibility of computation." <em>IBM Journal of Research and Development</em> 17(6), 525–532, 1973.</li>
+<li>Feynman, R.P. "Simulating physics with computers." <em>International Journal of Theoretical Physics</em> 21(6–7), 467–488, 1982.</li>
+<li>Deutsch, D. "Quantum theory, the Church-Turing principle and the universal quantum computer." <em>Proceedings of the Royal Society A</em> 400, 97–117, 1985.</li>
+<li>Nielsen, M.A. and Chuang, I.L. <em>Quantum Computation and Quantum Information</em>. Cambridge University Press, 2000. (Chapters 1, 2)</li>
+<li>Watrous, J. "Quantum Computation" lecture notes, University of Calgary, 2006. (Lectures 1–3)</li>
+<li>Aaronson, S. <em>Quantum Computing Since Democritus</em>. Cambridge University Press, 2013. (Chapter 9)</li>
+</ul>
+<hr />
+<h2 id="17-the-no-cloning-theorem-a-fundamental-quantum-constraint">1.7 The No-Cloning Theorem: A Fundamental Quantum Constraint<a class="headerlink" href="#17-the-no-cloning-theorem-a-fundamental-quantum-constraint" title="Permanent link">&para;</a></h2>
+<p>Before we leave the single-qubit world for multi-qubit systems, one result deserves explicit attention here — both because it follows immediately from unitarity, and because its consequences pervade everything from quantum error correction to quantum networking.</p>
+<p><strong>Theorem (No-Cloning, Wootters and Zurek 1982; Dieks 1982):</strong> There is no unitary operator <span class="arithmatex">\(U\)</span> that can clone an arbitrary unknown quantum state. That is, there is no <span class="arithmatex">\(U\)</span> such that:</p>
+<div class="arithmatex">\[U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle \quad \text{for all } |\psi\rangle\]</div>
+<p><strong>Proof:</strong> Suppose such a <span class="arithmatex">\(U\)</span> existed. Then for any two states <span class="arithmatex">\(|\psi\rangle\)</span> and <span class="arithmatex">\(|\phi\rangle\)</span>:</p>
+<div class="arithmatex">\[U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$$
+$$U|\phi\rangle|0\rangle = |\phi\rangle|\phi\rangle\]</div>
+<p>Taking the inner product of these two equations:</p>
+<div class="arithmatex">\[\langle\phi|\langle 0|U^\dagger U|\psi\rangle|0\rangle = \langle\phi|\langle\phi|\psi\rangle|\psi\rangle\]</div>
+<p>Since <span class="arithmatex">\(U^\dagger U = I\)</span> (unitarity):</p>
+<div class="arithmatex">\[\langle\phi|\psi\rangle \cdot \langle 0|0\rangle = \langle\phi|\psi\rangle \cdot \langle\phi|\psi\rangle\]</div>
+<div class="arithmatex">\[\langle\phi|\psi\rangle = \langle\phi|\psi\rangle^2\]</div>
+<p>This equation holds only when <span class="arithmatex">\(\langle\phi|\psi\rangle = 0\)</span> (orthogonal states) or <span class="arithmatex">\(\langle\phi|\psi\rangle = 1\)</span> (identical states). For any other pair of states — all the infinitely many non-orthogonal, non-identical states — no such <span class="arithmatex">\(U\)</span> can exist. <span class="arithmatex">\(\square\)</span></p>
+<p>The no-cloning theorem has three immediate practical consequences:</p>
 <ol>
-<li>Landauer, R. "Irreversibility and heat generation in the computing process." <em>IBM Journal of Research and Development</em> 5(3), 183–191 (1961).</li>
-<li>Toffoli, T. "Reversible computing." <em>Automata, Languages and Programming</em> (Springer, 1980).</li>
-<li>Nielsen, M. A. &amp; Chuang, I. L. <em>Quantum Computation and Quantum Information</em>. Cambridge University Press (2000), Chapters 1–2.</li>
-<li>Bloch, F. "Nuclear induction." <em>Physical Review</em> 70, 460–474 (1946).</li>
-<li>Bennett, C. H. "The thermodynamics of computation — a review." <em>International Journal of Theoretical Physics</em> 21, 905–940 (1982).</li>
+<li>
+<p><strong>Quantum error correction is fundamentally different from classical error correction.</strong> Classical redundancy works by making copies: store 000 instead of 0, and if one bit flips to 001, majority vote gives back 0. Quantum systems cannot do this — we cannot copy a qubit to check for errors. Quantum error correction must extract <em>syndromes</em> (error indicators) without learning the encoded state, using entanglement rather than copying.</p>
+</li>
+<li>
+<p><strong>Quantum networking requires teleportation.</strong> In a classical network, copying data is trivial. A quantum network that needs to transmit quantum states cannot simply copy and forward — it must use quantum teleportation (Chapter 5), which destroys the original.</p>
+</li>
+<li>
+<p><strong>The CNOT fanout we described in Section 1.2.2 only clones classical states</strong>, not quantum superpositions. <span class="arithmatex">\(|x\rangle|0\rangle \to |x\rangle|x\rangle\)</span> works when <span class="arithmatex">\(x \in \{0,1\}\)</span>, but if <span class="arithmatex">\(x = \alpha|0\rangle + \beta|1\rangle\)</span> (a superposition), the CNOT creates entanglement — not a copy.</p>
+</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>The no-cloning theorem does <em>not</em> say that quantum information cannot be <em>moved</em> from one place to another. Quantum teleportation (Chapter 5) moves a quantum state from Alice to Bob perfectly — but it destroys the original. What is impossible is having both the original and a copy simultaneously.</p>
+</div>
+<hr />
+<h2 id="18-quantum-vs-classical-a-side-by-side-comparison">1.8 Quantum vs. Classical: A Side-by-Side Comparison<a class="headerlink" href="#18-quantum-vs-classical-a-side-by-side-comparison" title="Permanent link">&para;</a></h2>
+<p>Having established the mathematical foundations, let us step back and compare classical and quantum computation along the key dimensions that determine their relative capabilities and engineering challenges.</p>
+<h3 id="181-the-computational-models-compared">1.8.1 The Computational Models Compared<a class="headerlink" href="#181-the-computational-models-compared" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Classical computation</th>
+<th>Quantum computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic unit</td>
+<td>Bit: <span class="arithmatex">\(\{0, 1\}\)</span></td>
+<td>Qubit: $\alpha</td>
+</tr>
+<tr>
+<td>State space (<span class="arithmatex">\(n\)</span> units)</td>
+<td><span class="arithmatex">\(2^n\)</span> possible states, one at a time</td>
+<td><span class="arithmatex">\(2^n\)</span>-dimensional amplitude vector</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Irreversible Boolean gates (AND, OR)</td>
+<td>Reversible unitary matrices</td>
+</tr>
+<tr>
+<td>Parallelism</td>
+<td>Execute one input at a time</td>
+<td>All <span class="arithmatex">\(2^n\)</span> inputs in superposition simultaneously</td>
+</tr>
+<tr>
+<td>Randomness source</td>
+<td>External random number generator</td>
+<td>Quantum measurement (fundamentally random)</td>
+</tr>
+<tr>
+<td>Error model</td>
+<td>Discrete bit flips</td>
+<td>Continuous amplitude rotation + decoherence</td>
+</tr>
+<tr>
+<td>Copying information</td>
+<td>Trivial (fan-out)</td>
+<td>Impossible for unknown states (no-cloning)</td>
+</tr>
+<tr>
+<td>Verifying computation</td>
+<td>Deterministic check</td>
+<td>Probabilistic; may require many measurement runs</td>
+</tr>
+<tr>
+<td>Energy minimum (1 op.)</td>
+<td><span class="arithmatex">\(k_B T \ln 2\)</span> (if irreversible)</td>
+<td><span class="arithmatex">\(0\)</span> (ideal; unitary evolution is reversible)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="182-where-quantum-computers-excel-and-where-they-dont">1.8.2 Where Quantum Computers Excel (and Where They Don't)<a class="headerlink" href="#182-where-quantum-computers-excel-and-where-they-dont" title="Permanent link">&para;</a></h3>
+<p>The existence of an exponential state space does not mean quantum computers are faster at everything. The state space is only useful if algorithms can leverage it through structured interference.</p>
+<p><strong>Proven exponential quantum speedups:</strong>
+- Factoring integers (Shor's algorithm): exponential over best classical algorithms
+- Discrete logarithm (Shor's algorithm): exponential over best classical algorithms
+- Hidden subgroup problems over abelian groups (QFT-based): exponential</p>
+<p><strong>Proven polynomial quantum speedups:</strong>
+- Unstructured search (Grover's algorithm): quadratic (<span class="arithmatex">\(O(\sqrt{N})\)</span> vs. <span class="arithmatex">\(O(N)\)</span>)
+- Collision finding: cubic speedup in some formulations
+- Quantum simulation of physical systems: polynomial in system size</p>
+<p><strong>No known quantum advantage:</strong>
+- General NP-complete problems (traveling salesman, SAT): quantum computers are NOT believed to solve NP-complete problems efficiently
+- Database queries without structure: Grover gives only quadratic speedup, which may not overcome practical overheads
+- Most machine learning tasks: quantum ML remains an active research area with mixed results</p>
+<p>The key takeaway — one we will return to in every chapter — is that quantum advantage requires <em>mathematical structure</em> that quantum algorithms can exploit. The mere existence of exponential state space is necessary but not sufficient.</p>
+<div class="admonition note">
+<p class="admonition-title">Business Implication</p>
+<p>The two most important quantum advantages for enterprises in the near-to-medium term are: (1) <strong>Shor's factoring algorithm</strong>, which poses an existential threat to RSA and ECC cryptography and demands urgent PQC migration (Chapters 4 and 7); and (2) <strong>quantum simulation of molecular systems</strong> (VQE, QPE), which may enable pharmaceutical discovery, materials science, and chemistry applications on fault-tolerant hardware projected for the late 2020s. For most other business applications — database search, optimization, machine learning — the quantum advantage (if any) is less certain, more modest, or further in the future. PQC migration is the highest-priority quantum action for virtually all enterprises today, because the threat (harvest-now-decrypt-later attacks) is present regardless of when fault-tolerant quantum computers arrive.</p>
+</div>
+<hr />
+<h2 id="19-complexity-classes-and-the-quantum-computational-landscape">1.9 Complexity Classes and the Quantum Computational Landscape<a class="headerlink" href="#19-complexity-classes-and-the-quantum-computational-landscape" title="Permanent link">&para;</a></h2>
+<h3 id="191-defining-bqp">1.9.1 Defining BQP<a class="headerlink" href="#191-defining-bqp" title="Permanent link">&para;</a></h3>
+<p>The central question for quantum advantage is: which computational problems can quantum computers solve efficiently that classical computers cannot?</p>
+<p><strong>Computational complexity</strong> classifies problems by their resource requirements (time and space) as a function of input size <span class="arithmatex">\(n\)</span>.</p>
+<p>Key complexity classes:</p>
+<ul>
+<li>
+<p><strong>P</strong>: Problems solvable in polynomial time by a deterministic classical computer. Example: sorting a list, finding shortest paths, linear programming.</p>
+</li>
+<li>
+<p><strong>BPP</strong> (Bounded-error Probabilistic Polynomial time): Problems solvable in polynomial time by a randomized classical computer with error probability <span class="arithmatex">\(\leq 1/3\)</span>. This captures practical classical algorithms. <span class="arithmatex">\(P \subseteq BPP\)</span>.</p>
+</li>
+<li>
+<p><strong>BQP</strong> (Bounded-error Quantum Polynomial time): Problems solvable in polynomial time by a quantum computer with error probability <span class="arithmatex">\(\leq 1/3\)</span>. Factoring is in BQP (Shor's algorithm). <span class="arithmatex">\(BPP \subseteq BQP\)</span>.</p>
+</li>
+<li>
+<p><strong>NP</strong> (Nondeterministic Polynomial time): Problems whose solutions can be <em>verified</em> in polynomial time. Includes SAT, 3-coloring, traveling salesman. Believed <span class="arithmatex">\(NP \not\subseteq BQP\)</span>.</p>
+</li>
+<li>
+<p><strong>PSPACE</strong>: Problems solvable in polynomial space (possibly exponential time). <span class="arithmatex">\(BQP \subseteq PSPACE\)</span>.</p>
+</li>
+</ul>
+<p>The believed relationships:</p>
+<div class="arithmatex">\[P \subseteq BPP \subseteq BQP \subseteq PSPACE\]</div>
+<p>and</p>
+<div class="arithmatex">\[NP \not\subseteq BQP \text{ (believed, unproven)}\]</div>
+<p>The key point: <strong>BQP and NP are believed to be incomparable</strong> — quantum computers likely solve some problems not in NP, and NP contains problems quantum computers likely cannot solve efficiently.</p>
+<h3 id="192-where-does-factoring-live">1.9.2 Where Does Factoring Live?<a class="headerlink" href="#192-where-does-factoring-live" title="Permanent link">&para;</a></h3>
+<p>Factoring integers is in NP (given a purported factoring, verification is easy: just multiply). It is also in BQP (Shor's algorithm). But factoring is NOT believed to be NP-complete: no known polynomial-time reduction from NP-hard problems to factoring. This is why Shor's algorithm is powerful but not the end of classical cryptography — it breaks number-theoretic cryptography specifically, not all of cryptography.</p>
+<div class="admonition warning">
+<p class="admonition-title">The Most Important Quantum Computing Misconception</p>
+<p>Quantum computers will NOT solve NP-complete problems efficiently. Grover's algorithm applied to 3-SAT gives a quadratic speedup (<span class="arithmatex">\(O(2^{n/2})\)</span> instead of <span class="arithmatex">\(O(2^n)\)</span> for brute force), but this is not polynomial. The traveling salesman problem, protein folding (in general), most combinatorial optimization problems — these are not believed to become tractable on quantum hardware.</p>
+<p>Vendors who claim their quantum hardware "solves optimization problems" are either discussing very specific instances (small size, special structure), quantum annealing heuristics with uncertain theoretical backing, or conflating approximate solutions with exact ones. Due diligence requires asking: compared to what classical benchmark? For what instance sizes? With what approximation guarantee?</p>
+</div>
+<hr />
+<h2 id="110-chapter-synthesis-a-roadmap-to-quantum-advantage">1.10 Chapter Synthesis: A Roadmap to Quantum Advantage<a class="headerlink" href="#110-chapter-synthesis-a-roadmap-to-quantum-advantage" title="Permanent link">&para;</a></h2>
+<p>This chapter has established four interlocking ideas that form the foundation for the rest of Part I:</p>
+<p><strong>1. The physical basis of computation:</strong> Landauer's principle connects information erasure to thermodynamic cost. This is not metaphor — it is measurable physics. Quantum mechanics imposes additional constraints: unitarity (reversibility), the no-cloning theorem, and the measurement collapse postulate.</p>
+<p><strong>2. The classical-to-quantum continuum:</strong> The quantum model is not a mystery — it is the classical probabilistic model with complex amplitudes and L2 norm. Stochastic matrices become unitary matrices; L1 probability becomes L2 probability (amplitude-squared). This generalization introduces interference as a new computational resource.</p>
+<p><strong>3. Exponential state space and the measurement bottleneck:</strong> <span class="arithmatex">\(n\)</span> qubits provide <span class="arithmatex">\(2^n\)</span>-dimensional state space and quantum parallelism. But measurement collapses the state to a single outcome. Useful quantum algorithms must harness interference to concentrate probability on correct answers — this is the discipline of quantum algorithm design.</p>
+<p><strong>4. The oracle model as the bridge:</strong> Bennett's reversibility theorem and the oracle construction <span class="arithmatex">\(B_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle\)</span> show how any classical computation can be embedded in a quantum circuit. This is the technical foundation for Shor's, Grover's, and Simon's algorithms.</p>
+<p>In Chapter 2, we introduce the distinctively quantum resource that makes these algorithms possible: entanglement. We will see why entanglement is not merely a curiosity — it is the resource that separates the quantum from the classical, and its fragility is the central engineering challenge of building quantum computers.</p>
+<div class="admonition note">
+<p class="admonition-title">Final Business Implication for Chapter 1</p>
+<p>The single most practically important result in this chapter is one we have only gestured at: Shor's algorithm (Chapter 4) places factoring in BQP. This means that RSA-2048 and elliptic curve cryptography — the security infrastructure protecting virtually all internet commerce, banking, military communications, and cloud data — will be broken by a sufficiently powerful quantum computer. The "sufficiently powerful" threshold (estimated at ~20 million physical qubits by Gidney and Ekerå, 2021, though this estimate continues to decrease with algorithmic improvements) is not here yet. But nation-state adversaries are almost certainly conducting "harvest now, decrypt later" collection today: storing encrypted data they cannot read now, intending to decrypt it once capable quantum hardware exists.</p>
+<p>Every organization that handles data with a 10+ year confidentiality requirement is already at risk. The appropriate response is not to wait for quantum computers to arrive — it is to begin post-quantum cryptographic migration now, following the NIST FIPS 203/204/205 standards finalized in August 2024. Chapter 4 will explain why, mathematically. Chapter 7 will explain what to do about it strategically. This chapter has established why the mathematics matters: because the physics of quantum mechanics makes Shor's algorithm possible in principle, and engineering progress is making it increasingly practical.</p>
+</div>
+<hr />
+<h2 id="key-terms-introduced-in-chapter-1">Key Terms Introduced in Chapter 1<a class="headerlink" href="#key-terms-introduced-in-chapter-1" title="Permanent link">&para;</a></h2>
+<p><strong>Amplitude:</strong> A complex number <span class="arithmatex">\(\alpha \in \mathbb{C}\)</span> describing the contribution of a basis state to a quantum superposition. Related to probability by <span class="arithmatex">\(P = |\alpha|^2\)</span>.</p>
+<p><strong>Bloch sphere:</strong> A unit sphere whose points represent all pure single-qubit states, parameterized by angles <span class="arithmatex">\((\theta, \phi)\)</span>.</p>
+<p><strong>Bra:</strong> <span class="arithmatex">\(\langle\psi|\)</span> — the conjugate transpose of ket <span class="arithmatex">\(|\psi\rangle\)</span>; a row vector in the dual space.</p>
+<p><strong>Dirac notation:</strong> Bra-ket notation for quantum states: kets <span class="arithmatex">\(|\psi\rangle\)</span>, bras <span class="arithmatex">\(\langle\psi|\)</span>, inner products <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span>, outer products <span class="arithmatex">\(|\psi\rangle\langle\phi|\)</span>.</p>
+<p><strong>Inner product:</strong> <span class="arithmatex">\(\langle\phi|\psi\rangle = \sum_i \phi_i^* \psi_i\)</span> — a scalar measuring the overlap between two quantum states.</p>
+<p><strong>Ket:</strong> <span class="arithmatex">\(|\psi\rangle\)</span> — a column vector representing a quantum state.</p>
+<p><strong>Landauer's principle:</strong> Erasing one bit of information dissipates at least <span class="arithmatex">\(k_B T \ln 2\)</span> of energy as heat.</p>
+<p><strong>No-cloning theorem:</strong> There is no unitary that can copy an arbitrary unknown quantum state.</p>
+<p><strong>Oracle (quantum):</strong> A unitary <span class="arithmatex">\(B_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle\)</span> implementing a classical function <span class="arithmatex">\(f\)</span> reversibly on superpositions.</p>
+<p><strong>Qubit:</strong> A two-state quantum system described by a unit vector in <span class="arithmatex">\(\mathbb{C}^2\)</span>.</p>
+<p><strong>Superposition:</strong> A quantum state that is a linear combination of basis states: <span class="arithmatex">\(\alpha|0\rangle + \beta|1\rangle\)</span>.</p>
+<p><strong>Tensor product:</strong> The mathematical operation <span class="arithmatex">\(\otimes\)</span> combining multi-qubit state spaces; <span class="arithmatex">\(n\)</span> qubits live in a <span class="arithmatex">\(2^n\)</span>-dimensional space <span class="arithmatex">\((\mathbb{C}^2)^{\otimes n}\)</span>.</p>
+<p><strong>Toffoli gate (CCNOT):</strong> A universal reversible classical gate: <span class="arithmatex">\(|a,b,c\rangle \to |a,b,c \oplus (a \wedge b)\rangle\)</span>.</p>
+<p><strong>Unitary operator:</strong> A linear operator <span class="arithmatex">\(U\)</span> satisfying <span class="arithmatex">\(U^\dagger U = I\)</span>; represents all quantum operations. Preserves L2 norm and is always reversible.</p>
 
 
 
