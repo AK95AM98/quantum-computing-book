@@ -4,7 +4,7 @@ site_author: "Prof. Sharat Batra, University of Minnesota"
 repo_name: "GitHub Repo"
 site_url: "https://AK95AM98.github.io/quantum-computing-book/"
 repo_url: "https://github.com/AK95AM98/quantum-computing-book"
-edit_uri: "blob/main/docs"
+edit_uri: "edit/main/docs/"
 copyright: "© 2026 Prof. Sharat Batra, University of Minnesota"
 
 theme:
@@ -66,7 +66,7 @@ markdown_extensions:
       permalink: true
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - js/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
@@ -85,6 +85,7 @@ nav:
   - Course Description: course-description.md
   - Part I — Foundations:
     - chapters/01-classical-vs-quantum/index.md
+    - "Ch 1 — Quarky Alternate": chapters/01-classical-vs-quantum/index-alternate.md
     - Quiz 1: chapters/01-classical-vs-quantum/quiz.md
     - chapters/02-entanglement/index.md
     - Quiz 2: chapters/02-entanglement/quiz.md
@@ -118,6 +119,7 @@ nav:
     - Quiz 15: chapters/15-action-plan/quiz.md
   - MicroSims:
     - sims/index.md
+    - "Quarky Mascot": sims/quarky/index.md
     - Bloch Sphere: sims/bloch-sphere/index.md
     - Gate Explorer: sims/gate-explorer/index.md
     - Grover Visualization: sims/grover-visualization/index.md
