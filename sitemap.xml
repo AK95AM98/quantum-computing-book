@@ -2,202 +2,214 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/about/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/course-description/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/faq/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/glossary/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/how-to-use/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/preface/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/references/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/01-classical-vs-quantum/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/01-classical-vs-quantum/index-alternate/</loc>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/01-classical-vs-quantum/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/02-entanglement/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/02-entanglement/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/03-gates-circuits/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/03-gates-circuits/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/04-algorithms/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/04-algorithms/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/05-communication/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/05-communication/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/06-density-matrices/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/06-density-matrices/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/07-noise/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/07-noise/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/08-error-correction/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/08-error-correction/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/09-roadmaps/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/09-roadmaps/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/10-modular-scaling/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/10-modular-scaling/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/11-milestones/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/11-milestones/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/12-pqc-imperative/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/12-pqc-imperative/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/13-use-cases/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/13-use-cases/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/14-readiness/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/14-readiness/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/15-action-plan/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/chapters/15-action-plan/quiz/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>https://AK95AM98.github.io/quantum-computing-book/images/quarky-prompt/</loc>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/learning-graph/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/learning-graph/concept-list/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/bloch-sphere/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/gate-explorer/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/grover-visualization/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/learning-graph/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/mosca-calculator/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/pqc-key-sizes/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/qec-overhead/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
+    </url>
+    <url>
+         <loc>https://AK95AM98.github.io/quantum-computing-book/sims/quarky/</loc>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/roadmap-timeline/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
     <url>
          <loc>https://AK95AM98.github.io/quantum-computing-book/sims/surface-code-sim/</loc>
-         <lastmod>2026-04-06</lastmod>
+         <lastmod>2026-04-16</lastmod>
     </url>
 </urlset>

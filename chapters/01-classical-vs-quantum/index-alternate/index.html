@@ -1,0 +1,3275 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A technical and strategic guide for graduate students, technology strategists, and enterprise leaders navigating the quantum computing revolution.">
+      
+      
+        <meta name="author" content="Prof. Sharat Batra, University of Minnesota">
+      
+      
+        <link rel="canonical" href="https://AK95AM98.github.io/quantum-computing-book/chapters/01-classical-vs-quantum/index-alternate/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../quiz/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Chapter 1 (Alternate): Classical vs. Quantum — Explained with Quarky - Quantum Computing: From Qubits to Business Value</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-alternate-classical-vs-quantum-explained-with-quarky" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-header__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Quantum Computing: From Qubits to Business Value
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1 (Alternate): Classical vs. Quantum — Explained with Quarky
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../preface/" class="md-tabs__link">
+        
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../how-to-use/" class="md-tabs__link">
+        
+  
+    
+  
+  How to Use This Book
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../course-description/" class="md-tabs__link">
+        
+  
+    
+  
+  Course Description
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Part I — Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../07-noise/" class="md-tabs__link">
+          
+  
+    
+  
+  Part II — Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../12-pqc-imperative/" class="md-tabs__link">
+          
+  
+    
+  
+  Part III — Business
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../sims/" class="md-tabs__link">
+          
+  
+    
+  
+  MicroSims
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../learning-graph/" class="md-tabs__link">
+          
+  
+    
+  
+  Learning Graph
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references/" class="md-tabs__link">
+        
+  
+    
+  
+  References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Quantum Computing: From Qubits to Business Value" class="md-nav__button md-logo" aria-label="Quantum Computing: From Qubits to Business Value" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Quantum Computing: From Qubits to Business Value
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AK95AM98/quantum-computing-book" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how-to-use/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use This Book
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Part I — Foundations
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Part I — Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Ch 1 — Quarky Alternate
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Ch 1 — Quarky Alternate
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#meet-your-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meet Your Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-why-does-physics-care-about-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.0 Why Does Physics Care About Bits?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-classical-bits-the-world-before-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Classical Bits — The World Before Quarky
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Classical Bits — The World Before Quarky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boolean-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Gates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-making-classical-logic-reversible-the-toffoli-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Making Classical Logic Reversible — The Toffoli Gate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-enter-quarky-what-is-a-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Enter Quarky: What Is a Qubit?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Enter Quarky: What Is a Qubit?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-classical-probability-to-quantum-amplitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Classical Probability to Quantum Amplitude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition-what-it-really-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition — What It Really Means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-the-bloch-sphere-quarkys-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 The Bloch Sphere — Quarky's Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-quantum-gates-spinning-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Quantum Gates — Spinning Quarky
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Quantum Gates — Spinning Quarky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-essential-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Essential Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-all-quantum-gates-are-reversible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why All Quantum Gates Are Reversible
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-dirac-notation-how-physicists-write-about-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Dirac Notation — How Physicists Write About Quarky
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-many-quarkys-the-n-qubit-state-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Many Quarkys: The n-Qubit State Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 Many Quarkys: The n-Qubit State Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-parallelism-and-its-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Parallelism and Its Catch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-vs-superposition-two-different-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement vs. Superposition — Two Different Things
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-the-no-cloning-theorem-you-cant-copy-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 The No-Cloning Theorem — You Can't Copy Quarky
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-quantum-vs-classical-the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9 Quantum vs. Classical — The Full Picture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9 Quantum vs. Classical — The Full Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-by-Side Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-quantum-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Quantum Wins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-complexity-where-does-quantum-sit-in-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10 Complexity: Where Does Quantum Sit in the Map?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-summary-quarkys-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 Summary — Quarky's Recap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1 Summary — Quarky's Recap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-equations-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Equations at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2: Superposition, Entanglement, and the Quantum Resources That Enable Speedup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-entanglement/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3: Quantum Gates and Circuits — The Grammar of Quantum Computation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-gates-circuits/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4: Quantum Algorithms — Shor, Grover, and the Speedup Landscape
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-algorithms/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5: Quantum Communication, Cryptography, and Network Protocols
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-communication/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6: The Density Matrix, Mixed States, and the Transition to Noisy Reality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-density-matrices/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../07-noise/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Part II — Engineering
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Part II — Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-noise/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8: Quantum Error Correction — The Surface Code and Beyond
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-error-correction/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 9: Hardware Roadmaps — IBM, Google, Microsoft, IonQ, and the Modular Scaling Revolution
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-roadmaps/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 10: Modular Scaling — Connecting Chips into Quantum Supercomputers
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--complete"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-modular-scaling/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 11: Milestone Framework — When Will Quantum Hardware Credibly Solve Real Problems?
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--published"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-milestones/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../12-pqc-imperative/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Part III — Business
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Part III — Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-pqc-imperative/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 12
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 13: Enterprise Use Cases — Where Quantum Computing Creates and Destroys Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../13-use-cases/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 13
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 14: Regulatory Landscape and Organizational Readiness — Building the Quantum-Ready Enterprise
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14-readiness/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 15: The CXO Action Plan — Phased Roadmap, Budget, and the Path Forward
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../15-action-plan/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz 15
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sims/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSims
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/quarky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quarky Mascot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/bloch-sphere/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bloch Sphere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/gate-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gate Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/grover-visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grover Visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/surface-code-sim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Surface Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/qec-overhead/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QEC Overhead
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/mosca-calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mosca Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/pqc-key-sizes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PQC Key Sizes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/roadmap-timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap Timeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sims/learning-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Graph Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../learning-graph/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-graph/concept-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#meet-your-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meet Your Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-why-does-physics-care-about-bits" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.0 Why Does Physics Care About Bits?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-classical-bits-the-world-before-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Classical Bits — The World Before Quarky
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Classical Bits — The World Before Quarky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boolean-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Gates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-making-classical-logic-reversible-the-toffoli-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Making Classical Logic Reversible — The Toffoli Gate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-enter-quarky-what-is-a-qubit" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Enter Quarky: What Is a Qubit?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Enter Quarky: What Is a Qubit?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-classical-probability-to-quantum-amplitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Classical Probability to Quantum Amplitude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superposition-what-it-really-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superposition — What It Really Means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-the-bloch-sphere-quarkys-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 The Bloch Sphere — Quarky's Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-quantum-gates-spinning-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Quantum Gates — Spinning Quarky
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Quantum Gates — Spinning Quarky">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-essential-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Essential Gates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-all-quantum-gates-are-reversible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why All Quantum Gates Are Reversible
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-dirac-notation-how-physicists-write-about-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Dirac Notation — How Physicists Write About Quarky
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-many-quarkys-the-n-qubit-state-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Many Quarkys: The n-Qubit State Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 Many Quarkys: The n-Qubit State Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantum-parallelism-and-its-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Parallelism and Its Catch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entanglement-vs-superposition-two-different-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entanglement vs. Superposition — Two Different Things
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-the-no-cloning-theorem-you-cant-copy-quarky" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 The No-Cloning Theorem — You Can't Copy Quarky
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-quantum-vs-classical-the-full-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.9 Quantum vs. Classical — The Full Picture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9 Quantum vs. Classical — The Full Picture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-by-Side Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-quantum-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Quantum Wins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#110-complexity-where-does-quantum-sit-in-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.10 Complexity: Where Does Quantum Sit in the Map?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-summary-quarkys-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1 Summary — Quarky's Recap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1 Summary — Quarky's Recap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-equations-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Equations at a Glance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="chapter-1-alternate-classical-vs-quantum-explained-with-quarky">Chapter 1 (Alternate): Classical vs. Quantum — Explained with Quarky<a class="headerlink" href="#chapter-1-alternate-classical-vs-quantum-explained-with-quarky" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>About this version:</strong> This is a concept-first, analogy-driven companion to the <a href="../">standard Chapter 1</a>. Every idea is introduced by Quarky in plain English before the formal math. The two versions cover the same topics — use whichever helps you build intuition first.</p>
+</blockquote>
+<hr />
+<h2 id="meet-your-guide">Meet Your Guide<a class="headerlink" href="#meet-your-guide" title="Permanent link">&para;</a></h2>
+<div style="display:flex; align-items:center; gap:20px; margin-bottom:1rem;">
+<iframe src="../../sims/quarky/main.html" width="300" height="280"
+  style="border:none; border-radius:12px; flex-shrink:0;"></iframe>
+<div>
+
+**This is Quarky.** Quarky is a qubit — the quantum version of a computer bit.
+
+Press **▶ Start** and watch. Quarky's colour shifts between blue and pink. That shifting is **superposition** — Quarky is neither purely 0 nor purely 1. The number drifting on Quarky's body shows the full quantum state: **α\|0⟩ + β\|1⟩**.
+
+Press **Measure** and Quarky snaps to one definite colour. That snap is **wave-function collapse** — the moment you look, the quantum uncertainty ends.
+
+Press **Entangle** and Quarky glows gold. Two entangled Quarkys share a fate: measure one and the other "knows" instantly.
+
+Everything in this chapter — bits, gates, superposition, the Bloch sphere, unitarity — is the story of *how* and *why* Quarky works the way it does.
+
+</div>
+</div>
+
+<p><a class="md-button" href="../../../sims/quarky/main.html">Open Quarky full screen</a></p>
+<hr />
+<h2 id="10-why-does-physics-care-about-bits">1.0 Why Does Physics Care About Bits?<a class="headerlink" href="#10-why-does-physics-care-about-bits" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Imagine writing something on a whiteboard, then erasing it. The chalk dust flies off and heats up the room — just a tiny bit. That warmth is real energy. <strong>Forgetting information always costs energy.</strong> Quarky never forgets — every quantum operation is reversible, like always being able to un-erase the board.</p>
+</div>
+<p>In 1961, physicist <strong>Rolf Landauer</strong> proved that erasing one classical bit <em>must</em> release heat:</p>
+<div class="arithmatex">\[E_{\min} = k_B T \ln 2 \approx 2.8 \times 10^{-21} \text{ J at room temperature}\]</div>
+<p>That's tiny — but it's not zero. Every AND gate, every OR gate in your laptop is erasing information millions of times per second, paying that thermal price.</p>
+<p>Quantum mechanics imposes a stricter rule: <strong>quantum operations cannot erase information at all.</strong> The physics equation governing a qubit — the Schrödinger equation — produces only <em>reversible</em> transformations. Quarky can be rotated in any direction on the Bloch sphere, but it can always be rotated back. Nothing is lost.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: How Wasteful Is Your Laptop?</p>
+<p>A 3 GHz processor does ~<span class="arithmatex">\(10^{10}\)</span> operations/second.
+Landauer minimum: <span class="arithmatex">\(10^{10} \times 2.8 \times 10^{-21} \approx 2.8 \times 10^{-11}\)</span> W.
+Actual dissipation: ~100 W.</p>
+<p>Your CPU wastes energy at roughly <strong><span class="arithmatex">\(10^{12}\)</span> times</strong> the thermodynamic minimum — because irreversible logic gates are simpler to engineer. Quantum gates, being reversible, could in principle compute with zero thermodynamic cost.</p>
+</div>
+<hr />
+<h2 id="11-classical-bits-the-world-before-quarky">1.1 Classical Bits — The World Before Quarky<a class="headerlink" href="#11-classical-bits-the-world-before-quarky" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>A classical bit is like a light switch: either ON (1) or OFF (0). Nothing in between. I'm different — I can be <em>any mixture</em> of on and off at the same time, until you look.</p>
+</div>
+<p>A <strong>classical bit</strong> is a two-state physical system: a transistor (on/off), a magnetic domain (north/south), a voltage level (high/low). It has exactly two distinguishable, stable states: <strong>0</strong> and <strong>1</strong>.</p>
+<h3 id="boolean-gates">Boolean Gates<a class="headerlink" href="#boolean-gates" title="Permanent link">&para;</a></h3>
+<p>Classical computers manipulate bits with <strong>logic gates</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Inputs</th>
+<th>Output</th>
+<th>Reversible?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NOT</td>
+<td>1 bit</td>
+<td>1 bit</td>
+<td>✅ Yes — 0→1, 1→0; we can always undo it</td>
+</tr>
+<tr>
+<td>AND</td>
+<td>2 bits</td>
+<td>1 bit</td>
+<td>❌ No — output 0 could come from (0,0), (0,1), or (1,0)</td>
+</tr>
+<tr>
+<td>OR</td>
+<td>2 bits</td>
+<td>1 bit</td>
+<td>❌ No — output 1 could come from (0,1), (1,0), or (1,1)</td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>2 bits</td>
+<td>1 bit</td>
+<td>✅ Yes — <span class="arithmatex">\((a \oplus b) \oplus b = a\)</span></td>
+</tr>
+<tr>
+<td>NAND</td>
+<td>2 bits</td>
+<td>1 bit</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>The AND gate is a <em>one-way door</em>. You can walk through it (compute 0 AND 1 = 0), but you can't walk back through it to know whether the inputs were (0,1), (1,0), or (0,0). Information has been destroyed. I never destroy information — every gate I go through has an exit door that points right back to where I started.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>NAND is <strong>logically universal</strong> — you can build any classical function from NAND gates alone. But that universality comes with a cost: NAND is irreversible. Quantum universality requires a different primitive.</p>
+</div>
+<hr />
+<h2 id="12-making-classical-logic-reversible-the-toffoli-gate">1.2 Making Classical Logic Reversible — The Toffoli Gate<a class="headerlink" href="#12-making-classical-logic-reversible-the-toffoli-gate" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Can you make AND reversible? Yes — just don't throw away the inputs! If you keep <em>a</em>, <em>b</em>, and also store the result <em>a AND b</em> in a third slot, then all three inputs and all three outputs are there. You can always run it backwards. This three-legged gate is called <strong>Toffoli</strong>, and it's the bridge between the classical world and mine.</p>
+</div>
+<p>The <strong>Toffoli gate</strong> (CCNOT) takes three bits in and gives three bits out:</p>
+<div class="arithmatex">\[|a, b, c\rangle \;\longrightarrow\; |a,\; b,\; c \oplus (a \wedge b)\rangle\]</div>
+<ul>
+<li><strong>a</strong> and <strong>b</strong> pass through unchanged (controls)</li>
+<li><strong>c</strong> flips only if both <strong>a = 1</strong> and <strong>b = 1</strong></li>
+<li>Set <strong>c = 0</strong> and you get AND without destroying the inputs: <span class="arithmatex">\(|a\rangle|b\rangle|0\rangle \to |a\rangle|b\rangle|a \wedge b\rangle\)</span></li>
+</ul>
+<p>The Toffoli gate is <strong>its own inverse</strong>: apply it twice and you're back where you started.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Reversible AND</p>
+<p>Inputs: <span class="arithmatex">\(a=1, b=1, c=0\)</span></p>
+<p>Toffoli: <span class="arithmatex">\(c' = 0 \oplus (1 \wedge 1) = 1\)</span></p>
+<p>Output: <span class="arithmatex">\((1, 1, 1)\)</span> — the AND result is in the third slot, but <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> are still there.</p>
+<p>Apply Toffoli again: <span class="arithmatex">\(c'' = 1 \oplus (1 \wedge 1) = 0\)</span>. Back to <span class="arithmatex">\((1, 1, 0)\)</span>. ✅ Reversed.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>Bennett (1973) proved that <strong>any classical program can be rewritten reversibly</strong> with modest overhead. This is why quantum computers can run classical subroutines — any classical function <span class="arithmatex">\(f\)</span> can be wrapped in a reversible quantum oracle and used inside a quantum algorithm. Quantum computing augments classical computing; it does not replace it.</p>
+</div>
+<hr />
+<h2 id="13-enter-quarky-what-is-a-qubit">1.3 Enter Quarky: What Is a Qubit?<a class="headerlink" href="#13-enter-quarky-what-is-a-qubit" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>A classical bit is a coin lying flat — heads (0) or tails (1). I'm a coin <em>spinning in the air</em>. While I spin, I'm some mixture of heads and tails at the same time. When you catch me (measure me), I land on one side. But before you catch me — I genuinely had no definite value. I wasn't secretly heads or secretly tails. I was <em>both</em>, described by two numbers called amplitudes.</p>
+</div>
+<h3 id="from-classical-probability-to-quantum-amplitude">From Classical Probability to Quantum Amplitude<a class="headerlink" href="#from-classical-probability-to-quantum-amplitude" title="Permanent link">&para;</a></h3>
+<p>Here is the clearest way to see where quantum mechanics comes from. Start with a <strong>classical uncertain bit</strong>:</p>
+<div class="arithmatex">\[\text{Classical probabilistic state: } \mathbf{p} = \begin{pmatrix}p_0 \\ p_1\end{pmatrix}, \quad p_0, p_1 \geq 0, \quad p_0 + p_1 = 1\]</div>
+<p>Now make <strong>one change</strong>: replace real nonnegative probabilities with <strong>complex numbers</strong>, and replace "sum to 1" with "sum of squares equals 1":</p>
+<div class="arithmatex">\[\text{Quantum state: } |\psi\rangle = \begin{pmatrix}\alpha \\ \beta\end{pmatrix}, \quad \alpha, \beta \in \mathbb{C}, \quad |\alpha|^2 + |\beta|^2 = 1\]</div>
+<p>That single change — L1 norm → L2 norm, real → complex — creates an entirely new computational universe. The reason it matters: <strong>complex numbers can interfere</strong>. Waves can cancel. Classical probabilities can only add.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Classical probabilistic bit</th>
+<th>Quarky (qubit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State</td>
+<td>Probability vector <span class="arithmatex">\(\mathbf{p}\)</span></td>
+<td>Amplitude vector $</td>
+</tr>
+<tr>
+<td>Entries</td>
+<td>Real nonneg numbers</td>
+<td>Complex numbers</td>
+</tr>
+<tr>
+<td>Norm</td>
+<td><span class="arithmatex">\(p_0 + p_1 = 1\)</span> (L1)</td>
+<td>$</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Stochastic matrices</td>
+<td>Unitary matrices</td>
+</tr>
+<tr>
+<td>Measurement rule</td>
+<td>Observe <span class="arithmatex">\(p_0\)</span> directly</td>
+<td>Probability = $</td>
+</tr>
+<tr>
+<td>Can amplitudes cancel?</td>
+<td>No</td>
+<td><strong>Yes — this is interference</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>The difference between classical probability and quantum amplitude is like the difference between <em>mixing paint</em> and <em>combining waves</em>. Mix red and blue paint — you get purple, always. But combine a red wave and a blue wave — sometimes they amplify each other, sometimes they cancel completely. That cancellation is what makes quantum algorithms powerful.</p>
+</div>
+<h3 id="superposition-what-it-really-means">Superposition — What It Really Means<a class="headerlink" href="#superposition-what-it-really-means" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>A qubit in superposition is <strong>not</strong> "secretly 0 or secretly 1 and we just don't know which." It genuinely has no definite value before measurement. This is not a statement about our ignorance — it is a statement about reality. Experiments (Bell inequality tests) have confirmed this to extraordinary precision.</p>
+</div>
+<p>The superposition state is described by two complex numbers <span class="arithmatex">\((\alpha, \beta)\)</span>. When you measure:</p>
+<ul>
+<li>You get outcome <strong>0</strong> with probability <span class="arithmatex">\(|\alpha|^2\)</span></li>
+<li>You get outcome <strong>1</strong> with probability <span class="arithmatex">\(|\beta|^2\)</span></li>
+<li>The state <em>becomes</em> <span class="arithmatex">\(|0\rangle\)</span> or <span class="arithmatex">\(|1\rangle\)</span> — the superposition is gone</li>
+</ul>
+<p>Watch Quarky: press <strong>▶ Start</strong>, watch the colour shift. Press <strong>Measure</strong> — Quarky snaps. That snap is irreversible. The superposition is consumed.</p>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Measurement Probabilities</p>
+<p>Quarky is in state <span class="arithmatex">\(|\psi\rangle = \dfrac{1}{\sqrt{3}}|0\rangle + \sqrt{\dfrac{2}{3}}|1\rangle\)</span></p>
+<p>Check normalization: <span class="arithmatex">\(\left(\dfrac{1}{\sqrt{3}}\right)^2 + \left(\sqrt{\dfrac{2}{3}}\right)^2 = \dfrac{1}{3} + \dfrac{2}{3} = 1\)</span> ✅</p>
+<p>Measurement results:
+- Probability of <strong>|0⟩</strong>: <span class="arithmatex">\(\dfrac{1}{3}\)</span> ≈ 33%
+- Probability of <strong>|1⟩</strong>: <span class="arithmatex">\(\dfrac{2}{3}\)</span> ≈ 67%</p>
+<p>This Quarky is <em>tilted</em> toward |1⟩ — like a biased coin, but the bias comes from quantum amplitudes, not a weighted coin.</p>
+</div>
+<hr />
+<h2 id="14-the-bloch-sphere-quarkys-map">1.4 The Bloch Sphere — Quarky's Map<a class="headerlink" href="#14-the-bloch-sphere-quarkys-map" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Every possible state I can be in corresponds to a point on a globe. The North Pole is <span class="arithmatex">\(|0\rangle\)</span> (pure blue). The South Pole is <span class="arithmatex">\(|1\rangle\)</span> (pure pink). The equator is maximum superposition — equally likely to be either. The little Bloch sphere in my animation's top-right corner shows you exactly where I am at every moment. Quantum gates are <em>rotations</em> of that globe.</p>
+</div>
+<p>Any single-qubit pure state can be written:</p>
+<div class="arithmatex">\[|\psi\rangle = \cos\frac{\theta}{2}|0\rangle + e^{i\phi}\sin\frac{\theta}{2}|1\rangle\]</div>
+<p>where <span class="arithmatex">\(\theta \in [0,\pi]\)</span> (latitude) and <span class="arithmatex">\(\phi \in [0,2\pi)\)</span> (longitude). This is the <strong>Bloch sphere</strong>.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>         |0⟩ (North Pole)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>           ●
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>          /|\
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>         / | \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        /  |  \
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  |+⟩ ●   |   ● |-⟩    ← Equator: equal superposition
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        \  |  /
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>         \ | /
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          \|/
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>           ●
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>         |1⟩ (South Pole)
+</span></code></pre></div>
+<p>Key landmarks on Quarky's globe:</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>State</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>North Pole</td>
+<td>$</td>
+<td>0\rangle$</td>
+</tr>
+<tr>
+<td>South Pole</td>
+<td>$</td>
+<td>1\rangle$</td>
+</tr>
+<tr>
+<td>Equator, +x</td>
+<td>$|{+}\rangle = \frac{</td>
+<td>0\rangle+</td>
+</tr>
+<tr>
+<td>Equator, −x</td>
+<td>$|{-}\rangle = \frac{</td>
+<td>0\rangle-</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>A classical bit only has two addresses: North Pole or South Pole. I have an <strong>entire globe</strong> of addresses — infinitely many states. But here's the catch: when you measure me, you always get North or South. The richness of my in-between states only matters <em>during computation</em>, while you let me evolve without looking.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Finding a State on the Bloch Sphere</p>
+<p>Given: <span class="arithmatex">\(|\psi\rangle = \dfrac{1}{\sqrt{3}}|0\rangle + \sqrt{\dfrac{2}{3}}|1\rangle\)</span></p>
+<p>Compare with <span class="arithmatex">\(\cos(\theta/2)|0\rangle + e^{i\phi}\sin(\theta/2)|1\rangle\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(\cos(\theta/2) = 1/\sqrt{3}\)</span> → <span class="arithmatex">\(\theta \approx 109.5°\)</span> (below the equator, tilted toward South Pole)</li>
+<li>Coefficient of <span class="arithmatex">\(|1\rangle\)</span> is real and positive → <span class="arithmatex">\(\phi = 0\)</span> (on the <span class="arithmatex">\(xz\)</span>-plane)</li>
+</ul>
+<p>Quarky sits in the southern hemisphere, leaning toward |1⟩, on the prime meridian.</p>
+</div>
+<hr />
+<h2 id="15-quantum-gates-spinning-quarky">1.5 Quantum Gates — Spinning Quarky<a class="headerlink" href="#15-quantum-gates-spinning-quarky" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>A quantum gate is a rotation on my Bloch sphere globe. The <strong>X gate</strong> (quantum NOT) flips me from North to South or South to North — just like a classical NOT. The <strong>Hadamard gate</strong> rotates me from a pole to the equator — putting me into perfect superposition. Every rotation is reversible; there's always a rotation that undoes it.</p>
+</div>
+<h3 id="the-three-essential-gates">The Three Essential Gates<a class="headerlink" href="#the-three-essential-gates" title="Permanent link">&para;</a></h3>
+<p><strong>Pauli-X (quantum NOT — bit flip):</strong></p>
+<div class="arithmatex">\[X = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix} \qquad X|0\rangle = |1\rangle, \quad X|1\rangle = |0\rangle\]</div>
+<p>This is a 180° rotation around the x-axis of the Bloch sphere. Quarky flips from North to South.</p>
+<p><strong>Pauli-Z (phase flip):</strong></p>
+<div class="arithmatex">\[Z = \begin{pmatrix}1 &amp; 0 \\ 0 &amp; -1\end{pmatrix} \qquad Z|0\rangle = |0\rangle, \quad Z|1\rangle = -|1\rangle\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>The Z gate doesn't change <em>where</em> I am on the Bloch sphere — it changes my <em>phase</em>, which is like changing which direction I'm spinning. You can't see the phase directly, but it affects how I interfere with other qubits. Phase is quantum computing's secret ingredient.</p>
+</div>
+<p><strong>Hadamard (superposition maker):</strong></p>
+<div class="arithmatex">\[H = \frac{1}{\sqrt{2}}\begin{pmatrix}1 &amp; 1 \\ 1 &amp; -1\end{pmatrix} \qquad H|0\rangle = \frac{|0\rangle+|1\rangle}{\sqrt{2}}, \quad H|1\rangle = \frac{|0\rangle-|1\rangle}{\sqrt{2}}\]</div>
+<p>The Hadamard takes Quarky from a pole to the equator — from "definitely 0" to "equally likely to be 0 or 1." It is the starting move of nearly every quantum algorithm.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Apply Hadamard to me twice and I'm back where I started — <span class="arithmatex">\(H^2 = I\)</span>. It's a 90° rotation followed by another 90° rotation that <em>undoes</em> the first. Every quantum gate has an undo button. That's the law.</p>
+</div>
+<h3 id="why-all-quantum-gates-are-reversible">Why All Quantum Gates Are Reversible<a class="headerlink" href="#why-all-quantum-gates-are-reversible" title="Permanent link">&para;</a></h3>
+<p>All quantum gates are <strong>unitary</strong>: they satisfy <span class="arithmatex">\(U^\dagger U = I\)</span>, where <span class="arithmatex">\(U^\dagger\)</span> is the conjugate transpose of <span class="arithmatex">\(U\)</span>.</p>
+<p>Three things follow automatically from this one equation:</p>
+<ol>
+<li><strong>Probability is always preserved.</strong> If Quarky starts with total probability 1, it ends with total probability 1. Nothing leaks out.</li>
+<li><strong>Every gate has an inverse.</strong> <span class="arithmatex">\(U^{-1} = U^\dagger\)</span>. You can always undo a quantum gate.</li>
+<li><strong>Evolution is deterministic.</strong> Between measurements, Quarky's state evolves with perfect predictability. Randomness only enters at measurement.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Verifying the X Gate Is Unitary</p>
+<p><span class="arithmatex">\(X = \begin{pmatrix}0 &amp; 1 \\ 1 &amp; 0\end{pmatrix}\)</span>, which is real and symmetric, so <span class="arithmatex">\(X^\dagger = X\)</span>.</p>
+<p><span class="arithmatex">\(X^\dagger X = X^2 = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} = I\)</span> ✅</p>
+<p>X is unitary. Applying X twice returns Quarky to the original state. NOT NOT = nothing. ✅</p>
+</div>
+<hr />
+<h2 id="16-dirac-notation-how-physicists-write-about-quarky">1.6 Dirac Notation — How Physicists Write About Quarky<a class="headerlink" href="#16-dirac-notation-how-physicists-write-about-quarky" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>When scientists write about me, they use a special shorthand called <strong>bra-ket notation</strong>. My state is a <em>ket</em>: <span class="arithmatex">\(|\psi\rangle\)</span>. The <em>bra</em> <span class="arithmatex">\(\langle\psi|\)</span> is like a mirror image used to compute overlaps. When you put bra and ket together — <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span> — you get a number telling you how similar two states are. It's the quantum version of asking "how close are two directions on a compass?"</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>What it is</th>
+<th>Analogy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>\psi\rangle$</td>
+<td>Column vector (ket)</td>
+</tr>
+<tr>
+<td>$\langle\psi</td>
+<td>$</td>
+<td>Row vector (bra) = conjugate transpose</td>
+</tr>
+<tr>
+<td>$\langle\phi</td>
+<td>\psi\rangle$</td>
+<td>Inner product = a number</td>
+</tr>
+<tr>
+<td>$</td>
+<td>\psi\rangle\langle\phi</td>
+<td>$</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\otimes\)</span></td>
+<td>Tensor product</td>
+<td>Two Quarkys combined</td>
+</tr>
+</tbody>
+</table>
+<p>Key facts:</p>
+<ul>
+<li><strong>Normalization:</strong> <span class="arithmatex">\(\langle\psi|\psi\rangle = |\alpha|^2 + |\beta|^2 = 1\)</span></li>
+<li><strong>Orthogonality:</strong> <span class="arithmatex">\(\langle 0|1\rangle = 0\)</span> — basis states are perpendicular (like x and y axes)</li>
+<li><strong>Measurement probability:</strong> <span class="arithmatex">\(P(\text{outcome } i) = |\langle i|\psi\rangle|^2\)</span></li>
+<li><strong>Completeness:</strong> <span class="arithmatex">\(|0\rangle\langle 0| + |1\rangle\langle 1| = I\)</span> — every measurement yields <em>some</em> outcome</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Why not just use matrices and columns? Because with 50 qubits, the matrix has <span class="arithmatex">\(2^{50} \approx 10^{15}\)</span> rows. Nobody writes that out. Dirac notation lets us write <span class="arithmatex">\(\sum_{x} \alpha_x |x\rangle\)</span> to mean all <span class="arithmatex">\(10^{15}\)</span> amplitudes at once. It's a compression format for quantum states.</p>
+</div>
+<hr />
+<h2 id="17-many-quarkys-the-n-qubit-state-space">1.7 Many Quarkys: The n-Qubit State Space<a class="headerlink" href="#17-many-quarkys-the-n-qubit-state-space" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Put two of me together and we live in a space with <strong>4 dimensions</strong> (representing states |00⟩, |01⟩, |10⟩, |11⟩). Put 10 of us together: <span class="arithmatex">\(2^{10} = 1{,}024\)</span> dimensions. Put 300 of us together: <span class="arithmatex">\(2^{300}\)</span> dimensions — more than the number of atoms in the universe. That exponential explosion is where quantum computing's power lives. But it comes with a catch: you can only <em>read</em> one value when you measure.</p>
+</div>
+<p>The state of <span class="arithmatex">\(n\)</span> qubits:</p>
+<div class="arithmatex">\[|\psi\rangle = \sum_{x=0}^{2^n-1} \alpha_x |x\rangle, \qquad \sum_{x=0}^{2^n-1} |\alpha_x|^2 = 1\]</div>
+<p>There are <span class="arithmatex">\(2^n\)</span> complex amplitudes. For <span class="arithmatex">\(n = 300\)</span>, this is a number larger than <span class="arithmatex">\(10^{80}\)</span> — more coefficients than atoms in the observable universe.</p>
+<h3 id="quantum-parallelism-and-its-catch">Quantum Parallelism and Its Catch<a class="headerlink" href="#quantum-parallelism-and-its-catch" title="Permanent link">&para;</a></h3>
+<p>Apply Hadamard to all <span class="arithmatex">\(n\)</span> qubits starting from <span class="arithmatex">\(|0\cdots 0\rangle\)</span>:</p>
+<div class="arithmatex">\[H^{\otimes n}|0\rangle^{\otimes n} = \frac{1}{\sqrt{2^n}}\sum_{x=0}^{2^n-1}|x\rangle\]</div>
+<p>With one operation, Quarky is now simultaneously in <em>all</em> <span class="arithmatex">\(2^n\)</span> basis states with equal amplitude.</p>
+<p>Apply an oracle <span class="arithmatex">\(B_f\)</span> to this superposition:</p>
+<div class="arithmatex">\[B_f \left(\frac{1}{\sqrt{2^n}}\sum_x |x\rangle\right)|0\rangle = \frac{1}{\sqrt{2^n}}\sum_x |x\rangle|f(x)\rangle\]</div>
+<p><strong>One oracle call evaluates <span class="arithmatex">\(f\)</span> on all <span class="arithmatex">\(2^n\)</span> inputs at once.</strong> This is quantum parallelism.</p>
+<div class="admonition warning">
+<p class="admonition-title">The Catch</p>
+<p>If you measure now, you get <span class="arithmatex">\(f(x)\)</span> for just <em>one</em> randomly chosen <span class="arithmatex">\(x\)</span>. All that parallel computation collapses to a single answer. Quantum algorithms must <strong>use interference to amplify the probability of the right answer</strong> before measuring. Simply running the oracle once and measuring is not useful by itself.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Quantum parallelism is like writing every possible answer on a whiteboard simultaneously — but then a fog machine covers the board and you can only peek at one spot. The art of quantum algorithm design is arranging the fog so that when you peek, the correct answer is almost always where you look.</p>
+</div>
+<h3 id="entanglement-vs-superposition-two-different-things">Entanglement vs. Superposition — Two Different Things<a class="headerlink" href="#entanglement-vs-superposition-two-different-things" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Press <strong>Entangle</strong> on my animation. I turn gold. Now imagine there's a second Quarky across the room. If you measure me and I turn blue (|0⟩), the other Quarky <em>instantly</em> turns pink (|1⟩) — even if it's on the other side of the world. That's entanglement. It's not the same as superposition. Superposition is me being uncertain on my own. Entanglement is two of us being <em>correlated</em> in a way that has no classical explanation.</p>
+</div>
+<p><strong>Superposition:</strong> A single qubit has a non-definite state. <span class="arithmatex">\(|\psi\rangle = \frac{|0\rangle+|1\rangle}{\sqrt{2}}\)</span> is a <em>product</em> state — there's no second qubit involved.</p>
+<p><strong>Entanglement:</strong> Two qubits whose joint state <em>cannot</em> be written as a product of individual states:</p>
+<div class="arithmatex">\[\frac{|00\rangle + |11\rangle}{\sqrt{2}} \neq |\psi_A\rangle \otimes |\psi_B\rangle \quad \text{for any single-qubit states } |\psi_A\rangle, |\psi_B\rangle\]</div>
+<div class="admonition example">
+<p class="admonition-title">Worked Example: Is This State Entangled?</p>
+<p>State A: <span class="arithmatex">\(\frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\)</span></p>
+<p>This <em>looks</em> complicated but equals <span class="arithmatex">\(|{+}\rangle \otimes |{+}\rangle\)</span> — a product state. <strong>Not entangled.</strong></p>
+<p>State B: <span class="arithmatex">\(\frac{|00\rangle + |11\rangle}{\sqrt{2}}\)</span> (Bell state)</p>
+<p>If it factored: we'd need <span class="arithmatex">\(\alpha\delta = 0\)</span> AND <span class="arithmatex">\(\beta\gamma = 0\)</span> but also <span class="arithmatex">\(\alpha\gamma \neq 0\)</span> AND <span class="arithmatex">\(\beta\delta \neq 0\)</span>. Impossible. <strong>Entangled.</strong> ✅</p>
+</div>
+<hr />
+<h2 id="18-the-no-cloning-theorem-you-cant-copy-quarky">1.8 The No-Cloning Theorem — You Can't Copy Quarky<a class="headerlink" href="#18-the-no-cloning-theorem-you-cant-copy-quarky" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Can you make a copy of me? In the classical world, copying is trivial — Ctrl+C. But there's a fundamental law of physics that says <strong>you cannot copy an unknown quantum state</strong>. If you could, it would violate the rules of unitary evolution. This has huge implications: quantum error correction has to be clever, and quantum networks work differently from classical ones.</p>
+</div>
+<p><strong>Theorem (Wootters &amp; Zurek, 1982):</strong> There is no unitary <span class="arithmatex">\(U\)</span> such that <span class="arithmatex">\(U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle\)</span> for <em>all</em> states <span class="arithmatex">\(|\psi\rangle\)</span>.</p>
+<p><strong>Why?</strong> Suppose such a <span class="arithmatex">\(U\)</span> existed. Take two states <span class="arithmatex">\(|\psi\rangle\)</span> and <span class="arithmatex">\(|\phi\rangle\)</span> and apply <span class="arithmatex">\(U\)</span> to both:</p>
+<div class="arithmatex">\[\langle\phi|\psi\rangle = \langle\phi|\psi\rangle^2\]</div>
+<p>This equation only holds when <span class="arithmatex">\(\langle\phi|\psi\rangle = 0\)</span> (orthogonal) or <span class="arithmatex">\(= 1\)</span> (identical). For the infinitely many states in between — no cloning machine can exist.</p>
+<p>Three consequences:</p>
+<table>
+<thead>
+<tr>
+<th>Implication</th>
+<th>Classical</th>
+<th>Quantum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error correction</td>
+<td>Copy bits, take majority vote</td>
+<td>Must detect errors <em>without</em> reading the state</td>
+</tr>
+<tr>
+<td>Networking</td>
+<td>Copy packets freely</td>
+<td>Use quantum teleportation (destroys original)</td>
+</tr>
+<tr>
+<td>Fan-out</td>
+<td>$</td>
+<td>x\rangle</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Common Misconception</p>
+<p>No-cloning does NOT mean quantum states can't be <em>moved</em>. Quantum teleportation transfers a state perfectly from Alice to Bob. The original is destroyed. There is never a moment where both Alice and Bob have a copy simultaneously.</p>
+</div>
+<hr />
+<h2 id="19-quantum-vs-classical-the-full-picture">1.9 Quantum vs. Classical — The Full Picture<a class="headerlink" href="#19-quantum-vs-classical-the-full-picture" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Let me summarize the key differences between me and a classical bit, side by side. The most important lesson: quantum advantage is not automatic. My exponential state space only helps if a clever algorithm uses interference to point the measurement at the right answer.</p>
+</div>
+<h3 id="side-by-side-comparison">Side-by-Side Comparison<a class="headerlink" href="#side-by-side-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Classical bit</th>
+<th>Quarky (qubit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>States available</td>
+<td>2 (0 or 1)</td>
+<td>Infinite (entire Bloch sphere)</td>
+</tr>
+<tr>
+<td>State space for <span class="arithmatex">\(n\)</span> units</td>
+<td><span class="arithmatex">\(2^n\)</span> possible states, one at a time</td>
+<td><span class="arithmatex">\(2^n\)</span>-dimensional amplitude vector</td>
+</tr>
+<tr>
+<td>Gates</td>
+<td>Irreversible (AND, OR, NAND)</td>
+<td>Reversible (unitary matrices)</td>
+</tr>
+<tr>
+<td>Parallelism</td>
+<td>One input at a time</td>
+<td>All <span class="arithmatex">\(2^n\)</span> inputs simultaneously in superposition</td>
+</tr>
+<tr>
+<td>Copying</td>
+<td>Trivial</td>
+<td>Impossible for unknown states</td>
+</tr>
+<tr>
+<td>Randomness</td>
+<td>External (RNG)</td>
+<td>Fundamental (measurement)</td>
+</tr>
+<tr>
+<td>Error model</td>
+<td>Discrete bit flips</td>
+<td>Continuous amplitude rotation + decoherence</td>
+</tr>
+<tr>
+<td>Energy per gate</td>
+<td><span class="arithmatex">\(\geq k_B T \ln 2\)</span> (if irreversible)</td>
+<td>0 (ideal; reversible evolution)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-quantum-wins">Where Quantum Wins<a class="headerlink" href="#where-quantum-wins" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Problem type</th>
+<th>Speedup</th>
+<th>Algorithm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer factoring</td>
+<td><strong>Exponential</strong></td>
+<td>Shor's algorithm (Ch. 4)</td>
+</tr>
+<tr>
+<td>Unstructured search</td>
+<td><strong>Quadratic</strong> (<span class="arithmatex">\(\sqrt{N}\)</span> vs <span class="arithmatex">\(N\)</span>)</td>
+<td>Grover's algorithm (Ch. 4)</td>
+</tr>
+<tr>
+<td>Quantum simulation</td>
+<td><strong>Polynomial</strong> in system size</td>
+<td>VQE, QPE (Ch. 4)</td>
+</tr>
+<tr>
+<td>NP-complete problems (TSP, SAT)</td>
+<td><strong>None known</strong></td>
+<td>Quantum computers are NOT magic solvers</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Business Implication</p>
+<p>The most urgent business implication is <strong>cryptography</strong>. Shor's algorithm (running on a future fault-tolerant quantum computer) will break RSA and elliptic-curve cryptography — the security layer protecting essentially all internet commerce and banking today. Nation-state adversaries are storing encrypted data now to decrypt later ("harvest now, decrypt later"). Organizations with data that must stay secret for 10+ years should begin <strong>post-quantum cryptographic migration</strong> now, following NIST FIPS 203/204/205 standards (finalized August 2024).</p>
+</div>
+<hr />
+<h2 id="110-complexity-where-does-quantum-sit-in-the-map">1.10 Complexity: Where Does Quantum Sit in the Map?<a class="headerlink" href="#110-complexity-where-does-quantum-sit-in-the-map" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Quarky Says</p>
+<p>Computer scientists sort problems into buckets based on how hard they are. My bucket is called <strong>BQP</strong> — problems I can solve efficiently. It overlaps with but is different from the classical buckets P, BPP, and NP. The most important thing to know: <strong>I cannot solve NP-complete problems efficiently.</strong> Quantum speedup requires mathematical structure I can exploit through interference. Without that structure, I'm not much faster than a classical computer.</p>
+</div>
+<p>Key complexity classes:</p>
+<ul>
+<li><strong>P</strong> — Solvable in polynomial time, classically and deterministically</li>
+<li><strong>BPP</strong> — Solvable efficiently with classical randomness</li>
+<li><strong>BQP</strong> — Solvable efficiently on a quantum computer (Quarky's home)</li>
+<li><strong>NP</strong> — Solutions can be <em>verified</em> in polynomial time (e.g., Sudoku, traveling salesman)</li>
+<li><strong>PSPACE</strong> — Solvable with polynomial memory (possibly exponential time)</li>
+</ul>
+<p>Known relationships:</p>
+<div class="arithmatex">\[P \subseteq BPP \subseteq BQP \subseteq PSPACE\]</div>
+<p><strong>Factoring</strong> is in BQP (Shor) and in NP, but is NOT believed NP-complete.
+<strong>NP-complete problems</strong> are NOT believed to be in BQP.</p>
+<div class="admonition warning">
+<p class="admonition-title">The Most Important Quantum Computing Misconception</p>
+<p>Quantum computers will <strong>not</strong> solve the traveling salesman problem, protein folding in general, or combinatorial optimization problems in polynomial time. Grover's algorithm gives a quadratic speedup on brute-force search — still exponential, just a smaller exponent. When a vendor claims their quantum hardware "solves optimization," ask: <em>compared to what classical benchmark, on what instance size, with what approximation guarantee?</em></p>
+</div>
+<hr />
+<h2 id="chapter-1-summary-quarkys-recap">Chapter 1 Summary — Quarky's Recap<a class="headerlink" href="#chapter-1-summary-quarkys-recap" title="Permanent link">&para;</a></h2>
+<iframe src="../../sims/quarky/main.html" width="100%" height="200"
+  style="border:none; border-radius:8px; margin-bottom:1rem;"></iframe>
+
+<div class="admonition abstract">
+<p class="admonition-title">Chapter Summary</p>
+<ol>
+<li>
+<p><strong>Computation is physical.</strong> Erasing a bit costs energy (<span class="arithmatex">\(E = k_B T \ln 2\)</span>). Quantum gates, being reversible, are thermodynamically free.</p>
+</li>
+<li>
+<p><strong>Classical can be made reversible.</strong> The Toffoli gate (Bennett, 1973) shows any irreversible circuit can be rewritten reversibly. This bridge connects classical and quantum computation via the oracle model <span class="arithmatex">\(B_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle\)</span>.</p>
+</li>
+<li>
+<p><strong>Quantum = Classical probabilistic + complex amplitudes + L2 norm.</strong> Replace probabilities with amplitudes. Replace L1 norm with L2 norm. Gain: interference. This is not a mystery — it is a natural generalization.</p>
+</li>
+<li>
+<p><strong>Quarky lives on a Bloch sphere.</strong> Every single-qubit state is a point on a globe. Quantum gates are rotations. Measurement collapses to a pole.</p>
+</li>
+<li>
+<p><strong>Exponential power + measurement bottleneck.</strong> <span class="arithmatex">\(n\)</span> qubits span <span class="arithmatex">\(2^n\)</span> dimensions. But measurement collapses to one outcome. Interference must amplify the right answer before you look.</p>
+</li>
+<li>
+<p><strong>You can't copy Quarky.</strong> The no-cloning theorem is a law of physics, not an engineering limitation.</p>
+</li>
+<li>
+<p><strong>Quantum advantage requires structure.</strong> BQP ≠ NP. Quantum computers are not universal optimizers.</p>
+</li>
+</ol>
+</div>
+<h3 id="key-equations-at-a-glance">Key Equations at a Glance<a class="headerlink" href="#key-equations-at-a-glance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landauer's limit</td>
+<td><span class="arithmatex">\(E_{\min} = k_B T \ln 2\)</span></td>
+</tr>
+<tr>
+<td>Qubit state</td>
+<td>$</td>
+</tr>
+<tr>
+<td>Measurement probability</td>
+<td>$P(\text{outcome }i) =</td>
+</tr>
+<tr>
+<td>Bloch sphere</td>
+<td>$</td>
+</tr>
+<tr>
+<td>Unitarity</td>
+<td><span class="arithmatex">\(U^\dagger U = I\)</span></td>
+</tr>
+<tr>
+<td>Toffoli gate</td>
+<td>$</td>
+</tr>
+<tr>
+<td>Oracle model</td>
+<td>$B_f</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n\)</span>-qubit space</td>
+<td><span class="arithmatex">\(2^n\)</span> dimensions</td>
+</tr>
+<tr>
+<td>No-cloning</td>
+<td>$\nexists\, U: U</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Landauer, R. "Irreversibility and heat generation in the computing process." <em>IBM Journal of Research and Development</em> 5(3), 1961.</li>
+<li>Bennett, C.H. "Logical reversibility of computation." <em>IBM Journal of Research and Development</em> 17(6), 1973.</li>
+<li>Wootters, W.K. and Zurek, W.H. "A single quantum cannot be cloned." <em>Nature</em> 299, 1982.</li>
+<li>Feynman, R.P. "Simulating physics with computers." <em>International Journal of Theoretical Physics</em> 21(6–7), 1982.</li>
+<li>Nielsen, M.A. and Chuang, I.L. <em>Quantum Computation and Quantum Information.</em> Cambridge University Press, 2000.</li>
+<li>Watrous, J. Quantum Computation lecture notes, University of Calgary, 2006.</li>
+</ul>
+<hr />
+<p><em>← <a href="../">Standard Chapter 1</a> | <a href="../../02-entanglement/">Chapter 2: Entanglement →</a></em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Prof. Sharat Batra, University of Minnesota
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AK95AM98/quantum-computing-book" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../../js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
